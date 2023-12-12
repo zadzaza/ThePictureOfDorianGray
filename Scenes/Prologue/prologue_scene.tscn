@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=12 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Texture2D" uid="uid://280b5mrx43ux" path="res://Sprites/Threes/three1.png" id="2_q26pc"]
 [ext_resource type="Texture2D" uid="uid://crjqh1ierfffw" path="res://besedka2.png" id="3_6xg2x"]
 [ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Scenes/Player/player_scene.tscn" id="4_rxhjn"]
+[ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Sprites/Threes/survival.png" id="4_ut4is"]
 [ext_resource type="PackedScene" uid="uid://cn6wcrssspc1h" path="res://Scenes/sky_background.tscn" id="5_c53o5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6jye"]
@@ -114,12 +115,25 @@ texture_region_size = Vector2i(64, 64)
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrv2x"]
+texture = ExtResource("4_ut4is")
+texture_region_size = Vector2i(4, 4)
+89:39/size_in_atlas = Vector2i(17, 4)
+89:39/0 = 0
+89:39/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+89:39/0/physics_layer_0/angular_velocity = 0.0
+61:0/size_in_atlas = Vector2i(21, 30)
+61:0/0 = 0
+61:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+61:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_0cnrr"]
 tile_size = Vector2i(2, 2)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_j6jye")
 sources/1 = SubResource("TileSetAtlasSource_k40nw")
 sources/2 = SubResource("TileSetAtlasSource_8nm2k")
+sources/3 = SubResource("TileSetAtlasSource_mrv2x")
 
 [node name="PrologueScene" type="Node2D"]
 
