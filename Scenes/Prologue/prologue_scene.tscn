@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Texture2D" uid="uid://280b5mrx43ux" path="res://Sprites/Threes/three1.png" id="2_q26pc"]
 [ext_resource type="Texture2D" uid="uid://crjqh1ierfffw" path="res://besedka2.png" id="3_6xg2x"]
-[ext_resource type="Texture2D" uid="uid://bs2373nh6tl3l" path="res://icon.svg" id="4_2e8yu"]
 [ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Scenes/Player/player_scene.tscn" id="4_rxhjn"]
+[ext_resource type="Texture2D" uid="uid://c8jisvv6n8iwx" path="res://Sprites/Light/16x16_FX_3.png" id="5_f4j5g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6jye"]
 texture = ExtResource("1_7idll")
@@ -136,9 +136,17 @@ layer_2/name = "threes"
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(2228366, 1, 0)
 
-[node name="PointLight2D" type="PointLight2D" parent="TileMap"]
-position = Vector2(1143, -602)
-texture = ExtResource("4_2e8yu")
-
 [node name="PlayerScene" parent="." instance=ExtResource("4_rxhjn")]
+texture_filter = 1
 position = Vector2(1494, 196)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture_filter = 2
+position = Vector2(293, -2.00002)
+rotation = 0.509121
+scale = Vector2(-37.4376, 52.4662)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 11.0
+texture = ExtResource("5_f4j5g")

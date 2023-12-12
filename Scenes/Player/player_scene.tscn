@@ -15,9 +15,11 @@ position = Vector2(-3, -3)
 texture = ExtResource("2_a7b83")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-3, -3)
 shape = SubResource("RectangleShape2D_u8pur")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
+position_smoothing_speed = 2.0
