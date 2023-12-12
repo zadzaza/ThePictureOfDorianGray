@@ -23,6 +23,8 @@ texture = ExtResource("1_hkx5d")
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(575, -373)
 motion_mirroring = Vector2(6912, 0)
+script = ExtResource("4_q4mxk")
+CLOUD_SPEED = 90
 
 [node name="3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(1158, 54)
@@ -37,6 +39,8 @@ texture = ExtResource("2_pw13v")
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(575, -373)
 motion_mirroring = Vector2(6912, 0)
+script = ExtResource("4_q4mxk")
+CLOUD_SPEED = 70
 
 [node name="4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(1158, 50)
@@ -52,7 +56,7 @@ texture = ExtResource("3_ckfx7")
 position = Vector2(575, -373)
 motion_mirroring = Vector2(6912, 0)
 script = ExtResource("4_q4mxk")
-CLOUD_SPEED = 100
+CLOUD_SPEED = 40
 
 [node name="5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(1160, 52)
