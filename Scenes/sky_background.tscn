@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn6wcrssspc1h"]
+
+[ext_resource type="Texture2D" uid="uid://b0o1fno3s6py2" path="res://Sprites/SkyBG/Clouds 5/1.png" id="1_hkx5d"]
+[ext_resource type="Texture2D" uid="uid://bnak2nhqgj2l0" path="res://Sprites/SkyBG/Clouds 5/3.png" id="2_pw13v"]
+[ext_resource type="Texture2D" uid="uid://dadtpou2yi3vo" path="res://Sprites/SkyBG/Clouds 5/4.png" id="3_ckfx7"]
+[ext_resource type="Texture2D" uid="uid://dxr1r2wfjmx0m" path="res://Sprites/SkyBG/Clouds 5/5.png" id="4_kjdn3"]
+[ext_resource type="Script" path="res://Scripts/cloud_movement.gd" id="4_q4mxk"]
+
+[node name="SkyBackground" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+position = Vector2(575, -373)
+motion_mirroring = Vector2(2304, 0)
+
+[node name="1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1189.5, 201.497)
+scale = Vector2(16.3385, 17.5648)
+texture = ExtResource("1_hkx5d")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(575, -373)
+motion_mirroring = Vector2(3456, 0)
+
+[node name="3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1158, 54)
+scale = Vector2(6, 6)
+texture = ExtResource("2_pw13v")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(575, -373)
+motion_mirroring = Vector2(3456, 0)
+
+[node name="4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(1158, 50)
+scale = Vector2(6, 6)
+texture = ExtResource("3_ckfx7")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(575, -373)
+motion_mirroring = Vector2(3456, 0)
+script = ExtResource("4_q4mxk")
+CLOUD_SPEED = 100
+
+[node name="5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(1160, 52)
+scale = Vector2(6, 6)
+texture = ExtResource("4_kjdn3")

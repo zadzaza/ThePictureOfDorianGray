@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://280b5mrx43ux" path="res://Sprites/Threes/three1.png" id="2_q26pc"]
 [ext_resource type="Texture2D" uid="uid://crjqh1ierfffw" path="res://besedka2.png" id="3_6xg2x"]
 [ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Scenes/Player/player_scene.tscn" id="4_rxhjn"]
-[ext_resource type="Texture2D" uid="uid://c8jisvv6n8iwx" path="res://Sprites/Light/16x16_FX_3.png" id="5_f4j5g"]
+[ext_resource type="PackedScene" uid="uid://cn6wcrssspc1h" path="res://Scenes/sky_background.tscn" id="5_c53o5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6jye"]
 texture = ExtResource("1_7idll")
@@ -137,16 +137,22 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(2228366, 1, 0)
 
 [node name="PlayerScene" parent="." instance=ExtResource("4_rxhjn")]
+light_mask = 2
 texture_filter = 1
 position = Vector2(1494, 196)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-texture_filter = 2
-position = Vector2(293, -2.00002)
-rotation = 0.509121
-scale = Vector2(-37.4376, 52.4662)
-energy = 0.5
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(1394, -676)
+rotation = 0.49616
+energy = 0.45
 shadow_enabled = true
+shadow_color = Color(0.356863, 0.356863, 0.356863, 0)
 shadow_filter = 2
-shadow_filter_smooth = 11.0
-texture = ExtResource("5_f4j5g")
+shadow_filter_smooth = 1.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.65098, 0.627451, 0.717647, 1)
+
+[node name="SkyBackground" parent="." instance=ExtResource("5_c53o5")]
+position = Vector2(1159, 34)
+scale = Vector2(0.86523, 3.63258)
