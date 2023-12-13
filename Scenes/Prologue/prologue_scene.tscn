@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=14 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Texture2D" uid="uid://280b5mrx43ux" path="res://Sprites/Threes/three1.png" id="2_q26pc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Scenes/Player/player_scene.tscn" id="4_rxhjn"]
 [ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Sprites/Threes/survival.png" id="4_ut4is"]
 [ext_resource type="PackedScene" uid="uid://cn6wcrssspc1h" path="res://Scenes/sky_background.tscn" id="5_c53o5"]
+[ext_resource type="Texture2D" uid="uid://bs2373nh6tl3l" path="res://icon.svg" id="8_4yd4p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6jye"]
 texture = ExtResource("1_7idll")
@@ -135,6 +136,8 @@ sources/1 = SubResource("TileSetAtlasSource_k40nw")
 sources/2 = SubResource("TileSetAtlasSource_8nm2k")
 sources/3 = SubResource("TileSetAtlasSource_mrv2x")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tp8kc"]
+
 [node name="PrologueScene" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -149,6 +152,11 @@ layer_1/tile_data = PackedInt32Array(16449733, 2031616, 9, 16711947, 2621440, 10
 layer_2/name = "threes"
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(2228366, 1, 0)
+
+[node name="Water" type="Sprite2D" parent="TileMap"]
+material = SubResource("ShaderMaterial_tp8kc")
+position = Vector2(1187, 648)
+texture = ExtResource("8_4yd4p")
 
 [node name="PlayerScene" parent="." instance=ExtResource("4_rxhjn")]
 light_mask = 2
