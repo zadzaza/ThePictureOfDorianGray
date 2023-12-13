@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=16 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Texture2D" uid="uid://280b5mrx43ux" path="res://Sprites/Threes/three1.png" id="2_q26pc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Scenes/Player/player_scene.tscn" id="4_rxhjn"]
 [ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Sprites/Threes/survival.png" id="4_ut4is"]
 [ext_resource type="PackedScene" uid="uid://cn6wcrssspc1h" path="res://Scenes/sky_background.tscn" id="5_c53o5"]
+[ext_resource type="Texture2D" uid="uid://dmuc30fljaaau" path="res://new_noise_texture_2d.tres" id="8_svjtb"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/water_vfx.gdshader" id="10_va8yl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6jye"]
@@ -136,17 +137,21 @@ sources/1 = SubResource("TileSetAtlasSource_k40nw")
 sources/2 = SubResource("TileSetAtlasSource_8nm2k")
 sources/3 = SubResource("TileSetAtlasSource_mrv2x")
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nct2v"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
 shader = ExtResource("10_va8yl")
 shader_parameter/level = 0.5
-shader_parameter/water_albedo = Color(0.26, 0.23, 0.73, 1)
-shader_parameter/water_opacity = 0.35
-shader_parameter/water_speed = 0.05
-shader_parameter/wave_distortion = 0.2
+shader_parameter/water_albedo = Color(0.0745098, 0.356863, 0.478431, 1)
+shader_parameter/water_opacity = 0.124
+shader_parameter/water_speed = 0.01
+shader_parameter/wave_distortion = 0.0
 shader_parameter/wave_multiplyer = 7
-shader_parameter/water_texture_on = true
+shader_parameter/water_texture_on = false
 shader_parameter/reflection_X_offset = 0.0
 shader_parameter/reflection_Y_offset = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_nct2v")
+shader_parameter/noise_texture2 = ExtResource("8_svjtb")
 
 [node name="PrologueScene" type="Node2D"]
 
@@ -186,7 +191,8 @@ scale = Vector2(0.86523, 3.63258)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_7wql8")
-offset_left = -2031.0
-offset_top = -336.0
-offset_right = 4824.0
-offset_bottom = 1559.0
+offset_left = -2028.0
+offset_top = -283.0
+offset_right = 4227.0
+offset_bottom = 1534.0
+color = Color(0, 0.538855, 0.989114, 1)

@@ -19,7 +19,7 @@ void fragment() {
 	COLOR = vec4(0.0);
 	
 	if (uv.y >= level) {
-		COLOR.a = 1.0;
+		COLOR.a = 0.1;
 		
 		// distorted reflections
 		vec2 water_uv = vec2(uv.x, uv.y * float(wave_multiplyer));
