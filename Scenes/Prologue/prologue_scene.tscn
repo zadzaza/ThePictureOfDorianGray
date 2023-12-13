@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Scenes/Player/player_scene.tscn" id="4_rxhjn"]
 [ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Sprites/Threes/survival.png" id="4_ut4is"]
 [ext_resource type="PackedScene" uid="uid://cn6wcrssspc1h" path="res://Scenes/sky_background.tscn" id="5_c53o5"]
-[ext_resource type="Texture2D" uid="uid://bs2373nh6tl3l" path="res://icon.svg" id="8_4yd4p"]
+[ext_resource type="Shader" path="res://Scenes/Prologue/water_vfx.gdshader" id="10_va8yl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6jye"]
 texture = ExtResource("1_7idll")
@@ -136,7 +136,17 @@ sources/1 = SubResource("TileSetAtlasSource_k40nw")
 sources/2 = SubResource("TileSetAtlasSource_8nm2k")
 sources/3 = SubResource("TileSetAtlasSource_mrv2x")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tp8kc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
+shader = ExtResource("10_va8yl")
+shader_parameter/level = 0.5
+shader_parameter/water_albedo = Color(0.26, 0.23, 0.73, 1)
+shader_parameter/water_opacity = 0.35
+shader_parameter/water_speed = 0.05
+shader_parameter/wave_distortion = 0.2
+shader_parameter/wave_multiplyer = 7
+shader_parameter/water_texture_on = true
+shader_parameter/reflection_X_offset = 0.0
+shader_parameter/reflection_Y_offset = 0.0
 
 [node name="PrologueScene" type="Node2D"]
 
@@ -153,15 +163,10 @@ layer_2/name = "threes"
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(2228366, 1, 0)
 
-[node name="Water" type="Sprite2D" parent="TileMap"]
-material = SubResource("ShaderMaterial_tp8kc")
-position = Vector2(1187, 648)
-texture = ExtResource("8_4yd4p")
-
 [node name="PlayerScene" parent="." instance=ExtResource("4_rxhjn")]
 light_mask = 2
 texture_filter = 1
-position = Vector2(1494, 196)
+position = Vector2(1009, 373)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(1394, -676)
@@ -178,3 +183,10 @@ color = Color(0.65098, 0.627451, 0.717647, 1)
 [node name="SkyBackground" parent="." instance=ExtResource("5_c53o5")]
 position = Vector2(1159, 34)
 scale = Vector2(0.86523, 3.63258)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7wql8")
+offset_left = -2031.0
+offset_top = -336.0
+offset_right = 4824.0
+offset_bottom = 1559.0
