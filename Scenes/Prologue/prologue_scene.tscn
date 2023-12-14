@@ -14,6 +14,7 @@
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/noise-overlay.gdshader" id="9_cnwg4"]
 [ext_resource type="Texture2D" uid="uid://ctm37ukw5tlud" path="res://Sprites/Threes/brevno.png" id="9_k4mfr"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/water_reflection.gdshader" id="10_va8yl"]
+[ext_resource type="Texture2D" uid="uid://dvrfijm4kjin7" path="res://Scenes/Prologue/shaders/blue_noise.png" id="14_i6rbb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6jye"]
 texture = ExtResource("1_7idll")
@@ -199,16 +200,13 @@ shader_parameter/water_texture_on = false
 shader_parameter/reflection_X_offset = 0.0
 shader_parameter/reflection_Y_offset = 0.306
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s2q6p"]
-load_path = "res://.godot/imported/blue_noise.png-281e273d7aac67a36c481d1aa2c07cc8.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1feey"]
 shader = ExtResource("9_cnwg4")
-shader_parameter/strength = 2.5
+shader_parameter/strength = 5.0
 shader_parameter/uv_scaling = 1.0
 shader_parameter/movement_direction = Vector2(-0.5, 0.5)
 shader_parameter/movement_speed = 0.01
-shader_parameter/NOISE_TEXTURE = SubResource("CompressedTexture2D_s2q6p")
+shader_parameter/NOISE_TEXTURE = ExtResource("14_i6rbb")
 
 [node name="PrologueScene" type="Node2D"]
 

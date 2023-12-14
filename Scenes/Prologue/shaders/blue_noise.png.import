@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crla1nlnvg60v"
-path="res://.godot/imported/noiseTexture(1).png-fbee0981a6f6cca7e17300cbdc98e32f.ctex"
+uid="uid://dvrfijm4kjin7"
+path="res://.godot/imported/blue_noise.png-3646ffee20aa673aa920410d0ec2dcf5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://noiseTexture(1).png"
-dest_files=["res://.godot/imported/noiseTexture(1).png-fbee0981a6f6cca7e17300cbdc98e32f.ctex"]
+source_file="res://Scenes/Prologue/shaders/blue_noise.png"
+dest_files=["res://.godot/imported/blue_noise.png-3646ffee20aa673aa920410d0ec2dcf5.ctex"]
 
 [params]
 
