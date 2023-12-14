@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=17 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Texture2D" uid="uid://280b5mrx43ux" path="res://Sprites/Threes/three1.png" id="2_q26pc"]
@@ -138,8 +138,6 @@ sources/1 = SubResource("TileSetAtlasSource_k40nw")
 sources/2 = SubResource("TileSetAtlasSource_8nm2k")
 sources/3 = SubResource("TileSetAtlasSource_mrv2x")
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nct2v"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
 shader = ExtResource("10_va8yl")
 shader_parameter/level = 0.5
@@ -150,11 +148,9 @@ shader_parameter/wave_distortion = 0.0
 shader_parameter/wave_multiplyer = 7
 shader_parameter/water_texture_on = false
 shader_parameter/reflection_X_offset = 0.0
-shader_parameter/reflection_Y_offset = 0.313
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_nct2v")
-shader_parameter/noise_texture2 = ExtResource("10_h8k5h")
+shader_parameter/reflection_Y_offset = 0.28
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pldi0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1feey"]
 shader = ExtResource("9_cnwg4")
 shader_parameter/strength = 5.0
 shader_parameter/uv_scaling = 0.2
@@ -180,7 +176,7 @@ layer_2/tile_data = PackedInt32Array(2228366, 1, 0)
 [node name="PlayerScene" parent="." instance=ExtResource("4_rxhjn")]
 light_mask = 2
 texture_filter = 1
-position = Vector2(909, 299)
+position = Vector2(697, 334)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(1394, -676)
@@ -199,23 +195,27 @@ position = Vector2(1159, 34)
 scale = Vector2(0.86523, 3.63258)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_7wql8")
-offset_left = -1926.0
-offset_top = -127.0
-offset_right = 4329.0
+offset_left = -1913.0
+offset_top = -137.0
+offset_right = 4342.0
 offset_bottom = 1420.0
 color = Color(0, 0.538855, 0.989114, 1)
 
-[node name="NoiseOverlayShader" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_pldi0")
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="NoiseOverlayShader" type="ColorRect" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_1feey")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1192.0
-offset_top = -780.0
-offset_right = -1272.0
-offset_bottom = -724.0
+offset_left = -1167.0
+offset_top = 641.0
+offset_right = 2525.0
+offset_bottom = 1088.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(1, 1, 1, 0)

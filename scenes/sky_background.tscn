@@ -16,8 +16,8 @@ position = Vector2(-56, -377)
 motion_mirroring = Vector2(2304, 0)
 
 [node name="1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1189.5, 201.497)
-scale = Vector2(16.3385, 17.5648)
+position = Vector2(1189.5, -876)
+scale = Vector2(16.3385, 11.321)
 texture = ExtResource("1_hkx5d")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -27,12 +27,12 @@ script = ExtResource("4_q4mxk")
 CLOUD_SPEED = 90
 
 [node name="3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(1158, 54)
+position = Vector2(1158, -12)
 scale = Vector2(6, 6)
 texture = ExtResource("2_pw13v")
 
 [node name="4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(4616, 54)
+position = Vector2(4616, -12)
 scale = Vector2(6, 6)
 texture = ExtResource("2_pw13v")
 
@@ -43,12 +43,12 @@ script = ExtResource("4_q4mxk")
 CLOUD_SPEED = 70
 
 [node name="4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(1158, 50)
+position = Vector2(1158, -16)
 scale = Vector2(6, 6)
 texture = ExtResource("3_ckfx7")
 
 [node name="5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(4614, 50)
+position = Vector2(4614, -16)
 scale = Vector2(6, 6)
 texture = ExtResource("3_ckfx7")
 
@@ -59,11 +59,11 @@ script = ExtResource("4_q4mxk")
 CLOUD_SPEED = 40
 
 [node name="5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(1160, 52)
+position = Vector2(1160, -14)
 scale = Vector2(6, 6)
 texture = ExtResource("4_kjdn3")
 
 [node name="6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(4616, 52)
+position = Vector2(4616, -14)
 scale = Vector2(6, 6)
 texture = ExtResource("4_kjdn3")

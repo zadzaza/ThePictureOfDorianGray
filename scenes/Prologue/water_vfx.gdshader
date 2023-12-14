@@ -30,7 +30,7 @@ void fragment() {
 		if (water_texture_on) {
 			float water_texture_limit = 0.35;
 			vec4 water_texture = texture(noise_texture2, uv * vec2(0.5, 4.0) + vec2(noise, 0.0));
-			float water_texture_value = (water_texture.x < water_texture_limit) ? 1.0 : 0.0;	
+			float water_texture_value = (water_texture.x < water_texture_limit) ? 1.0 : 0.0;
 			COLOR.xyz = vec3(water_texture_value);
 		}
 	
