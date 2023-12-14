@@ -200,9 +200,9 @@ layer = 0
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_7wql8")
 offset_left = -1913.0
-offset_top = -137.0
+offset_top = -86.0
 offset_right = 4342.0
-offset_bottom = 1420.0
+offset_bottom = 1384.0
 color = Color(0, 0.538855, 0.989114, 1)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -213,7 +213,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1167.0
-offset_top = 641.0
+offset_top = 646.0
 offset_right = 2525.0
 offset_bottom = 1088.0
 grow_horizontal = 2
