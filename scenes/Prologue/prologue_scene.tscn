@@ -1,13 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=18 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Texture2D" uid="uid://280b5mrx43ux" path="res://Sprites/Threes/three1.png" id="2_q26pc"]
 [ext_resource type="Texture2D" uid="uid://crjqh1ierfffw" path="res://besedka2.png" id="3_6xg2x"]
-[ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Scenes/Player/player_scene.tscn" id="4_rxhjn"]
+[ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://scenes/Player/player_scene.tscn" id="4_rxhjn"]
 [ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Sprites/Threes/survival.png" id="4_ut4is"]
-[ext_resource type="PackedScene" uid="uid://cn6wcrssspc1h" path="res://Scenes/sky_background.tscn" id="5_c53o5"]
-[ext_resource type="Texture2D" uid="uid://dmuc30fljaaau" path="res://new_noise_texture_2d.tres" id="8_svjtb"]
-[ext_resource type="Shader" path="res://Scenes/Prologue/water_vfx.gdshader" id="10_va8yl"]
+[ext_resource type="PackedScene" uid="uid://cn6wcrssspc1h" path="res://scenes/sky_background.tscn" id="5_c53o5"]
+[ext_resource type="Shader" path="res://scenes/gameplay/noise-overlay.gdshader" id="9_cnwg4"]
+[ext_resource type="Texture2D" uid="uid://cisah2bibkfpn" path="res://assets/blue_noise.png" id="10_h8k5h"]
+[ext_resource type="Shader" path="res://scenes/Prologue/water_vfx.gdshader" id="10_va8yl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6jye"]
 texture = ExtResource("1_7idll")
@@ -144,14 +145,22 @@ shader = ExtResource("10_va8yl")
 shader_parameter/level = 0.5
 shader_parameter/water_albedo = Color(0.0745098, 0.356863, 0.478431, 1)
 shader_parameter/water_opacity = 0.124
-shader_parameter/water_speed = 0.01
+shader_parameter/water_speed = 0.05
 shader_parameter/wave_distortion = 0.0
 shader_parameter/wave_multiplyer = 7
 shader_parameter/water_texture_on = false
 shader_parameter/reflection_X_offset = 0.0
-shader_parameter/reflection_Y_offset = 0.0
+shader_parameter/reflection_Y_offset = 0.313
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_nct2v")
-shader_parameter/noise_texture2 = ExtResource("8_svjtb")
+shader_parameter/noise_texture2 = ExtResource("10_h8k5h")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pldi0"]
+shader = ExtResource("9_cnwg4")
+shader_parameter/strength = 5.0
+shader_parameter/uv_scaling = 0.2
+shader_parameter/movement_direction = Vector2(-0.5, 0.5)
+shader_parameter/movement_speed = 0.01
+shader_parameter/NOISE_TEXTURE = ExtResource("10_h8k5h")
 
 [node name="PrologueScene" type="Node2D"]
 
@@ -171,7 +180,7 @@ layer_2/tile_data = PackedInt32Array(2228366, 1, 0)
 [node name="PlayerScene" parent="." instance=ExtResource("4_rxhjn")]
 light_mask = 2
 texture_filter = 1
-position = Vector2(1009, 373)
+position = Vector2(909, 299)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(1394, -676)
@@ -189,10 +198,24 @@ color = Color(0.65098, 0.627451, 0.717647, 1)
 position = Vector2(1159, 34)
 scale = Vector2(0.86523, 3.63258)
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_7wql8")
-offset_left = -2028.0
-offset_top = -283.0
-offset_right = 4227.0
-offset_bottom = 1534.0
+offset_left = -1926.0
+offset_top = -127.0
+offset_right = 4329.0
+offset_bottom = 1420.0
 color = Color(0, 0.538855, 0.989114, 1)
+
+[node name="NoiseOverlayShader" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_pldi0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1192.0
+offset_top = -780.0
+offset_right = -1272.0
+offset_bottom = -724.0
+grow_horizontal = 2
+grow_vertical = 2

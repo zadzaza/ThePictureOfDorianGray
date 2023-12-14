@@ -38,5 +38,6 @@ void fragment() {
 		vec4 current_texture = texture(SCREEN_TEXTURE, vec2(SCREEN_UV.x + noise + reflection_X_offset, 1.0 - SCREEN_UV.y - (level - 0.5) * 2.0 + reflection_Y_offset));
 		COLOR = mix(COLOR, current_texture, 0.5);
 		COLOR = mix(COLOR, water_albedo, water_opacity);
+
 	}
 }

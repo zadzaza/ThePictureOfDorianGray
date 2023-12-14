@@ -2,7 +2,7 @@
 
 shader_type canvas_item;
 
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear;
 uniform float horizon : hint_range(0.0,1.0); // The height of the horizon
 uniform sampler2D noise; // add two noises. Play with these some time to get a decent result
 uniform sampler2D noise2;
