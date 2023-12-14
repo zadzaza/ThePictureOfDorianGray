@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=28 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Texture2D" uid="uid://280b5mrx43ux" path="res://Sprites/Threes/tree1.png" id="2_q26pc"]
@@ -14,7 +14,6 @@
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/noise-overlay.gdshader" id="9_cnwg4"]
 [ext_resource type="Texture2D" uid="uid://ctm37ukw5tlud" path="res://Sprites/Threes/brevno.png" id="9_k4mfr"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/water_reflection.gdshader" id="10_va8yl"]
-[ext_resource type="Texture2D" uid="uid://c5j86ho5yfxaa" path="res://Sprites/Threes/bh_tree.png" id="15_7vk7x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6jye"]
 texture = ExtResource("1_7idll")
@@ -280,7 +279,3 @@ position = Vector2(779, 485)
 scale = Vector2(0.679435, 0.779661)
 texture = ExtResource("9_k4mfr")
 flip_h = true
-
-[node name="BhTree" type="Sprite2D" parent="."]
-position = Vector2(870, 217)
-texture = ExtResource("15_7vk7x")
