@@ -1,8 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=29 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Texture2D" uid="uid://280b5mrx43ux" path="res://Sprites/Threes/tree1.png" id="2_q26pc"]
-[ext_resource type="Texture2D" uid="uid://crjqh1ierfffw" path="res://besedka2.png" id="3_6xg2x"]
 [ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Scenes/Player/player_scene.tscn" id="4_rxhjn"]
 [ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Sprites/Threes/survival.png" id="4_ut4is"]
 [ext_resource type="Texture2D" uid="uid://cswo4wx4mdwyy" path="res://Sprites/Threes/tree2.png" id="5_6484s"]
@@ -116,8 +115,11 @@ texture = ExtResource("2_q26pc")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yxmb4"]
+load_path = "res://.godot/imported/besedka2.png-d293ecbaf01effc8d94664c24db745b3.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nm2k"]
-texture = ExtResource("3_6xg2x")
+texture = SubResource("CompressedTexture2D_yxmb4")
 texture_region_size = Vector2i(64, 64)
 1:1/size_in_atlas = Vector2i(21, 19)
 1:1/0 = 0
@@ -188,6 +190,10 @@ sources/6 = SubResource("TileSetAtlasSource_woj4j")
 sources/7 = SubResource("TileSetAtlasSource_2tl33")
 sources/8 = SubResource("TileSetAtlasSource_n4er8")
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d77sk"]
+cull_mode = 1
+polygon = PackedVector2Array(1611.54, -552.334, 1611.52, -585.334, 1618.52, -585.34, 1618.51, -594.34, 1626.51, -594.347, 1626.5, -602.347, 1660.5, -602.375, 1660.51, -594.375, 1669.51, -594.382, 1669.52, -586.382, 1678.52, -586.39, 1678.54, -552.39, 1669.54, -552.382, 1669.55, -543.382, 1618.55, -543.34, 1618.54, -552.34)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
 shader = ExtResource("10_va8yl")
 shader_parameter/level = 0.522
@@ -202,7 +208,7 @@ shader_parameter/reflection_Y_offset = 0.306
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1feey"]
 shader = ExtResource("9_cnwg4")
-shader_parameter/strength = 2.0
+shader_parameter/strength = 5.0
 shader_parameter/uv_scaling = 1.0
 shader_parameter/movement_direction = Vector2(-0.5, 0.5)
 shader_parameter/movement_speed = 0.01
@@ -223,17 +229,22 @@ layer_2/name = "threes"
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(2228366, 1, 0)
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="TileMap"]
+visible = false
+rotation = 0.000827819
+occluder = SubResource("OccluderPolygon2D_d77sk")
+
 [node name="PlayerScene" parent="." instance=ExtResource("4_rxhjn")]
 light_mask = 2
 texture_filter = 1
-position = Vector2(697, 334)
+position = Vector2(831, 397)
 
 [node name="SunLight" type="DirectionalLight2D" parent="."]
-position = Vector2(1394, -676)
-rotation = 0.49616
+position = Vector2(2282, -1073)
+rotation = 0.988266
 energy = 0.45
 shadow_enabled = true
-shadow_color = Color(0.356863, 0.356863, 0.356863, 0)
+shadow_color = Color(0.603922, 0.603922, 0.603922, 1)
 shadow_filter = 2
 shadow_filter_smooth = 1.0
 
