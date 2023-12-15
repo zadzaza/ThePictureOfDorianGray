@@ -1,7 +1,7 @@
 shader_type canvas_item;
 render_mode unshaded, blend_mul;
 
-const int LIGHT_N = 0;
+const int LIGHT_N = 100;
 const int STEP_MAX = 32;
 const float HARDNESS = 20.0;
 
