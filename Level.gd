@@ -31,10 +31,10 @@ func _ready():
 			"fan_ang" : PI * 0.25
 		},
 		{
-			"pos" : Vector2(0.0, 0.0),
-			"range" : 800.0,
+			"pos" : Vector2(100.0, 1000.0),
+			"range" : 1000.0,
 			"col" : Color.RED,
-			"ang" : 0.0,
+			"ang" : PI,
 			"fan_ang" : TAU
 		},
 		{

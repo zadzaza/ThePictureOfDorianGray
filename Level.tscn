@@ -9,15 +9,6 @@ polygon = PackedVector2Array(-47, -16, -41, -8.5, -40, 27, -35, 35, -28, 39.5, -
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wuh2n"]
 shader = ExtResource("3_b5o1w")
-shader_parameter/light_n = 0
-shader_parameter/light_pos = null
-shader_parameter/light_col = null
-shader_parameter/light_rng = null
-shader_parameter/light_ang = null
-shader_parameter/light_fan_ang = null
-shader_parameter/zoom = null
-shader_parameter/rotation = null
-shader_parameter/comp_mat = null
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_chyor")
@@ -25,15 +16,6 @@ script = ExtResource("1_chyor")
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 ignore_rotation = false
-
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1280.0
-offset_bottom = 720.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(642, 358)
@@ -47,5 +29,5 @@ occluder = SubResource("OccluderPolygon2D_7fcgs")
 
 [node name="LightAndShadow" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_wuh2n")
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_right = 2191.0
+offset_bottom = 1362.0

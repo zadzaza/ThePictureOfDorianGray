@@ -1,17 +1,18 @@
-[gd_scene load_steps=29 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=30 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
-[ext_resource type="Texture2D" uid="uid://280b5mrx43ux" path="res://Sprites/Threes/tree1.png" id="2_q26pc"]
+[ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
+[ext_resource type="Texture2D" uid="uid://280b5mrx43ux" path="res://Sprites/Trees/tree1.png" id="2_q26pc"]
 [ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Scenes/Player/player_scene.tscn" id="4_rxhjn"]
-[ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Sprites/Threes/survival.png" id="4_ut4is"]
-[ext_resource type="Texture2D" uid="uid://cswo4wx4mdwyy" path="res://Sprites/Threes/tree2.png" id="5_6484s"]
+[ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Sprites/Trees/survival.png" id="4_ut4is"]
+[ext_resource type="Texture2D" uid="uid://cswo4wx4mdwyy" path="res://Sprites/Trees/tree2.png" id="5_6484s"]
 [ext_resource type="PackedScene" uid="uid://cn6wcrssspc1h" path="res://Scenes/Prologue/sky_background.tscn" id="5_c53o5"]
-[ext_resource type="Texture2D" uid="uid://bm2d1xb8oxby3" path="res://Sprites/Threes/tree3.png" id="6_58hsq"]
-[ext_resource type="Texture2D" uid="uid://bvkwrh2de4l68" path="res://Sprites/Threes/tree4.png" id="7_c5f4i"]
-[ext_resource type="Texture2D" uid="uid://dsqwleecfbuxj" path="res://Sprites/Threes/tree5.png" id="8_pvnh8"]
-[ext_resource type="Texture2D" uid="uid://b870tnlh8q6kk" path="res://Sprites/Threes/tree6.png" id="9_11sxn"]
+[ext_resource type="Texture2D" uid="uid://bm2d1xb8oxby3" path="res://Sprites/Trees/tree3.png" id="6_58hsq"]
+[ext_resource type="Texture2D" uid="uid://bvkwrh2de4l68" path="res://Sprites/Trees/tree4.png" id="7_c5f4i"]
+[ext_resource type="Texture2D" uid="uid://dsqwleecfbuxj" path="res://Sprites/Trees/tree5.png" id="8_pvnh8"]
+[ext_resource type="Texture2D" uid="uid://b870tnlh8q6kk" path="res://Sprites/Trees/tree6.png" id="9_11sxn"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/noise-overlay.gdshader" id="9_cnwg4"]
-[ext_resource type="Texture2D" uid="uid://ctm37ukw5tlud" path="res://Sprites/Threes/brevno.png" id="9_k4mfr"]
+[ext_resource type="Texture2D" uid="uid://ctm37ukw5tlud" path="res://Sprites/Trees/brevno.png" id="9_k4mfr"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/water_reflection.gdshader" id="10_va8yl"]
 [ext_resource type="Texture2D" uid="uid://dvrfijm4kjin7" path="res://Scenes/Prologue/shaders/blue_noise.png" id="14_i6rbb"]
 
@@ -215,6 +216,7 @@ shader_parameter/movement_speed = 0.01
 shader_parameter/NOISE_TEXTURE = ExtResource("14_i6rbb")
 
 [node name="PrologueScene" type="Node2D"]
+script = ExtResource("1_kslhb")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0cnrr")
@@ -239,11 +241,16 @@ light_mask = 2
 texture_filter = 1
 position = Vector2(831, 397)
 
+[node name="Camera2D2" type="Camera2D" parent="PlayerScene"]
+offset = Vector2(0, -200)
+zoom = Vector2(0.4, 0.4)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
 [node name="SunLight" type="DirectionalLight2D" parent="."]
 position = Vector2(2282, -1073)
 rotation = 0.988266
 energy = 0.45
-shadow_enabled = true
 shadow_color = Color(0.603922, 0.603922, 0.603922, 1)
 shadow_filter = 2
 shadow_filter_smooth = 1.0

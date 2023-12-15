@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdkfb2gx4brxu"
-path="res://.godot/imported/survival.png-4d96f6fc2f39a1dd195dc87b5e8e685f.ctex"
+path="res://.godot/imported/survival.png-e5a52928b3f9d9ea8c30b395946d9bc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Threes/survival.png"
-dest_files=["res://.godot/imported/survival.png-4d96f6fc2f39a1dd195dc87b5e8e685f.ctex"]
+source_file="res://Sprites/Trees/survival.png"
+dest_files=["res://.godot/imported/survival.png-e5a52928b3f9d9ea8c30b395946d9bc5.ctex"]
 
 [params]
 
