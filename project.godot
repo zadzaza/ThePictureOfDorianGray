@@ -35,5 +35,3 @@ lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=5
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=5
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=5
 2d/sdf/oversize=2
-2d/sdf/scale=0
-2d/directional_shadow/soft_shadow_filter_quality=5

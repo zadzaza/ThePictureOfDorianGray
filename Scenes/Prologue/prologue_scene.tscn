@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=39 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -15,6 +15,23 @@
 [ext_resource type="Texture2D" uid="uid://ctm37ukw5tlud" path="res://Sprites/Trees/brevno.png" id="9_k4mfr"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/water_reflection.gdshader" id="10_va8yl"]
 [ext_resource type="Texture2D" uid="uid://dvrfijm4kjin7" path="res://Scenes/Prologue/shaders/blue_noise.png" id="14_i6rbb"]
+[ext_resource type="Texture2D" uid="uid://dicuxiu1mirrh" path="res://Sprites/Sign Posts/03.png" id="16_y221d"]
+[ext_resource type="Texture2D" uid="uid://c5j86ho5yfxaa" path="res://Sprites/Trees/bh_tree.png" id="17_x4k36"]
+[ext_resource type="Shader" path="res://Scenes/Prologue/shaders/wind_trees.gdshader" id="18_gprbo"]
+[ext_resource type="Shader" path="res://SDF_Lighting.gdshader" id="18_qjfat"]
+[ext_resource type="Texture2D" uid="uid://calhdko37321t" path="res://molbert.png" id="20_7echu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jt53"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.245
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6jye"]
 texture = ExtResource("1_7idll")
@@ -195,6 +212,9 @@ sources/8 = SubResource("TileSetAtlasSource_n4er8")
 cull_mode = 1
 polygon = PackedVector2Array(1611.54, -552.334, 1611.52, -585.334, 1618.52, -585.34, 1618.51, -594.34, 1626.51, -594.347, 1626.5, -602.347, 1660.5, -602.375, 1660.51, -594.375, 1669.51, -594.382, 1669.52, -586.382, 1678.52, -586.39, 1678.54, -552.39, 1669.54, -552.382, 1669.55, -543.382, 1618.55, -543.34, 1618.54, -552.34)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ww266"]
+polygon = PackedVector2Array(-44, 24, -44, -12, -50, -19, -42, -30, -34, -26, -25, -32, -25, -43, -12, -47, -8, -38, 2, -38, 7, -47, 19, -42, 19, -32, 27, -26, 35, -31, 44, -20, 38, -12, 38, 24, 37, 27, 34, 30, 31, 32, 27, 34, 22, 37, 16, 39, 8, 40, -2, 41, -9, 41, -23, 39, -31, 36, -35, 33, -40, 29)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
 shader = ExtResource("10_va8yl")
 shader_parameter/level = 0.522
@@ -215,8 +235,69 @@ shader_parameter/movement_direction = Vector2(-0.5, 0.5)
 shader_parameter/movement_speed = 0.01
 shader_parameter/NOISE_TEXTURE = ExtResource("14_i6rbb")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihg0g"]
+shader = ExtResource("18_qjfat")
+shader_parameter/light_n = 0
+shader_parameter/light_pos = null
+shader_parameter/light_col = null
+shader_parameter/light_rng = null
+shader_parameter/light_ang = null
+shader_parameter/light_fan_ang = null
+shader_parameter/zoom = null
+shader_parameter/rotation = null
+shader_parameter/comp_mat = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rg8p"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 0.86
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.48
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 1.0
+shader_parameter/detail = 1.0
+shader_parameter/distortion = 0.0
+shader_parameter/heightOffset = 0.0
+shader_parameter/offset = -4.86
+
 [node name="PrologueScene" type="Node2D"]
 script = ExtResource("1_kslhb")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="BhTree2" type="Sprite2D" parent="Node2D"]
+position = Vector2(-2585, 125)
+texture = ExtResource("17_x4k36")
+
+[node name="BhTree3" type="Sprite2D" parent="Node2D"]
+position = Vector2(-2117, 63)
+scale = Vector2(1.112, 1.3)
+texture = ExtResource("17_x4k36")
+
+[node name="BhTree4" type="Sprite2D" parent="Node2D"]
+position = Vector2(-1597, 422)
+texture = ExtResource("17_x4k36")
+
+[node name="BhTree5" type="Sprite2D" parent="Node2D"]
+material = SubResource("ShaderMaterial_3jt53")
+position = Vector2(-966.5, -40.5)
+scale = Vector2(1.395, 1.443)
+texture = ExtResource("17_x4k36")
+
+[node name="BhTree6" type="Sprite2D" parent="Node2D"]
+position = Vector2(-3845, 256)
+texture = ExtResource("17_x4k36")
+
+[node name="BhTree7" type="Sprite2D" parent="Node2D"]
+position = Vector2(-4117, 571)
+texture = ExtResource("17_x4k36")
+
+[node name="BhTree8" type="Sprite2D" parent="Node2D"]
+position = Vector2(-4101, 368)
+texture = ExtResource("17_x4k36")
+
+[node name="BhTree9" type="Sprite2D" parent="Node2D"]
+position = Vector2(-4443, 625)
+texture = ExtResource("17_x4k36")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0cnrr")
@@ -229,7 +310,7 @@ layer_1/z_index = 3
 layer_1/tile_data = PackedInt32Array(16449733, 2031616, 9, 16711947, 2621440, 10, 16449973, 2031616, 9, 16449659, 2031616, 9, 16449580, 2031616, 9, 16449592, 2031616, 9, 16449614, 2228224, 10, 16449888, 3211264, 10, 16449850, 2228224, 10)
 layer_2/name = "threes"
 layer_2/z_index = 1
-layer_2/tile_data = PackedInt32Array(2228366, 1, 0)
+layer_2/tile_data = PackedInt32Array(19201827, 589824, 3, 19201678, 589824, 3, 19201531, 589824, 268435459, 19201383, 589824, 268435459, 19201232, 589824, 3, 19200041, 589824, 268435459, 19199894, 589824, 268435459, 19199752, 589824, 3, 19199610, 589824, 3, 19199463, 589824, 268435459, 19199315, 589824, 3, 19200189, 589824, 3, 19200337, 589824, 3, 19200488, 589824, 268435459, 19200637, 589824, 268435459, 19200785, 589824, 3, 19200934, 589824, 3, 19201083, 589824, 3)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="TileMap"]
 visible = false
@@ -247,6 +328,10 @@ zoom = Vector2(0.4, 0.4)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="PlayerScene"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_ww266")
+
 [node name="SunLight" type="DirectionalLight2D" parent="."]
 position = Vector2(2282, -1073)
 rotation = 0.988266
@@ -256,7 +341,7 @@ shadow_filter = 2
 shadow_filter_smooth = 1.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.65098, 0.627451, 0.717647, 1)
+color = Color(0.651, 0.627, 0.718, 1)
 
 [node name="SkyBackground" parent="." instance=ExtResource("5_c53o5")]
 position = Vector2(1159, 34)
@@ -267,11 +352,12 @@ layer = 0
 
 [node name="Reflection" type="ColorRect" parent="ReflectionCanvasLayer"]
 material = SubResource("ShaderMaterial_7wql8")
-offset_left = -1913.0
+offset_left = -3797.0
 offset_top = -86.0
-offset_right = 4342.0
+offset_right = 7639.0
 offset_bottom = 1384.0
 color = Color(0, 0.538855, 0.989114, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="NoiseCanvasLayer" type="CanvasLayer" parent="."]
 
@@ -280,18 +366,61 @@ material = SubResource("ShaderMaterial_1feey")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1167.0
+offset_left = -3840.0
 offset_top = 679.0
-offset_right = 2525.0
+offset_right = 5693.0
 offset_bottom = 1088.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
 
 [node name="Brevno пусть лежит" type="StaticBody2D" parent="."]
+position = Vector2(-283, 0)
 
 [node name="Brevno" type="Sprite2D" parent="Brevno пусть лежит"]
 position = Vector2(779, 485)
 scale = Vector2(0.679435, 0.779661)
 texture = ExtResource("9_k4mfr")
 flip_h = true
+
+[node name="AnotherObjects" type="Node2D" parent="."]
+
+[node name="02" type="Sprite2D" parent="AnotherObjects"]
+position = Vector2(-109, 420)
+scale = Vector2(2, 2)
+texture = ExtResource("16_y221d")
+flip_h = true
+
+[node name="03" type="Sprite2D" parent="AnotherObjects"]
+position = Vector2(-109, 464)
+scale = Vector2(2, 2)
+texture = ExtResource("16_y221d")
+
+[node name="SignPost" type="StaticBody2D" parent="AnotherObjects"]
+
+[node name="BhTree" type="Sprite2D" parent="."]
+position = Vector2(-3097, -15)
+scale = Vector2(1.496, 1.472)
+texture = ExtResource("17_x4k36")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LightAndShadow" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_ihg0g")
+offset_left = -5116.0
+offset_top = -1978.0
+offset_right = 6588.0
+offset_bottom = 2662.0
+
+[node name="Tree2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8rg8p")
+position = Vector2(204, 68)
+texture = ExtResource("2_q26pc")
+flip_h = true
+
+[node name="Sprite-0004" type="Sprite2D" parent="."]
+position = Vector2(1637, 347)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("20_7echu")
