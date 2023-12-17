@@ -11,7 +11,11 @@ float rand(vec2 co){
     return fract(sin(dot(co.xy ,vec2(23.21,101.83))) * 34759.214);
 }
 
-void vertex(){
+void start() {
+	// Called when a particle is spawned.
+}
+
+void process(){
 	//this sets all the stuff necesary
         //spawn them in a given radius around the emmitor
 	if(RESTART)
@@ -19,7 +23,7 @@ void vertex(){
 		
 		//set the position to be randomly dispersed in an area
 		float x_modifier = (rand(vec2(TIME,0))*particle_diameter);
-		float z_modifier = (rand(vec2(TIME+1f,0))*particle_diameter);
+		float z_modifier = (rand(vec2(TIME+1.0,0))*particle_diameter);
 		
 		//centers effect
 		TRANSFORM[3][0] = x_modifier - 0.5f*particle_diameter;
@@ -27,20 +31,20 @@ void vertex(){
 		
 		
 		//VELOCITY.y = -rand(vec2(TIME+2f,0));
-		VELOCITY.y = -1f;
+		VELOCITY.y = -1.0;
 	}
 	
 	
 	//apply a changing wind that changes with time with a noticable variation
-	VELOCITY.x = 3f*sin(TIME/4f)*sin(TIME)*rand(vec2(float(INDEX),0f));
-	VELOCITY.z = 3f*cos(TIME/4f)*cos(TIME)*rand(vec2(float(INDEX)+1f,0f));
+	VELOCITY.x = 3.0*sin(TIME/4.0)*sin(TIME)*rand(vec2(float(INDEX),0.0));
+	VELOCITY.z = 3.0*cos(TIME/4.0)*cos(TIME)*rand(vec2(float(INDEX)+1.0,0.0));
 	
 	
 	
 	//gives a consistent rotation that depends on the index
-	float x_rotation = TIME*rand(vec2(float(INDEX),0f));
-	float y_rotation = TIME*rand(vec2(float(INDEX)+1f,0f));
-	float z_rotation = TIME*rand(vec2(float(INDEX)+2f,0f));
+	float x_rotation = TIME*rand(vec2(float(INDEX),0.0));
+	float y_rotation = TIME*rand(vec2(float(INDEX)+1.0,0.0));
+	float z_rotation = TIME*rand(vec2(float(INDEX)+2.0,0.0));
 	
 	
 	
