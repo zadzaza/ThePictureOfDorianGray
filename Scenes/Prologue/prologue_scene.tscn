@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=69 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://bwc65qsr3opmt" path="res://Sprites/BgTrees/shadow2.png" id="23_t8j8v"]
 [ext_resource type="Texture2D" uid="uid://bqfp6x2uynmqk" path="res://Sprites/BgTrees/shadow5.png" id="24_3ye0t"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/rays.gdshader" id="25_dmjma"]
+[ext_resource type="Texture2D" uid="uid://cckhe3kiy1fn0" path="res://Sprites/FgTrees/krona1.png" id="26_81bts"]
+[ext_resource type="Texture2D" uid="uid://q0vjs7pcoqkq" path="res://Sprites/FgTrees/krona6.png" id="26_walee"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vrlnj"]
 shader = ExtResource("18_gprbo")
@@ -114,19 +116,31 @@ shader_parameter/offset = 0.0
 shader = ExtResource("25_dmjma")
 shader_parameter/angle = -0.3
 shader_parameter/position = -0.255
-shader_parameter/spread = 0.5
-shader_parameter/cutoff = 0.03
-shader_parameter/falloff = 0.905
+shader_parameter/spread = 0.0
+shader_parameter/cutoff = -0.02
+shader_parameter/falloff = 1.0
 shader_parameter/edge_fade = 1.0
 shader_parameter/speed = 3.4
 shader_parameter/ray1_density = 8.0
 shader_parameter/ray2_density = 30.0
 shader_parameter/ray2_intensity = 0.3
-shader_parameter/color = Color(0.972549, 0.843137, 0.772549, 1)
+shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/hdr = true
-shader_parameter/seed = 5.0
+shader_parameter/seed = 8.295
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8pgps"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.125
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_82xyq"]
 shader = ExtResource("18_gprbo")
 shader_parameter/speed = 1.0
 shader_parameter/minStrength = 0.05
@@ -451,6 +465,62 @@ shader_parameter/movement_direction = Vector2(-0.5, 0.5)
 shader_parameter/movement_speed = 0.01
 shader_parameter/NOISE_TEXTURE = ExtResource("14_i6rbb")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rg8p"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.125
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = 0.0
+shader_parameter/heightOffset = 0.0
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_br8gu"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 0.86
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.386
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 0.0
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = -4.86
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vpccn"]
+shader = ExtResource("25_dmjma")
+shader_parameter/angle = -0.3
+shader_parameter/position = -0.295
+shader_parameter/spread = 0.01
+shader_parameter/cutoff = -0.305
+shader_parameter/falloff = 1.0
+shader_parameter/edge_fade = 1.0
+shader_parameter/speed = 3.82
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.3
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/hdr = true
+shader_parameter/seed = 8.295
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rlrvl"]
+shader = ExtResource("25_dmjma")
+shader_parameter/angle = -0.535
+shader_parameter/position = -1.0
+shader_parameter/spread = 0.485
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 0.675
+shader_parameter/edge_fade = 0.395
+shader_parameter/speed = 1.725
+shader_parameter/ray1_density = 7.925
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.3
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/hdr = true
+shader_parameter/seed = 5.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ihg0g"]
 shader = ExtResource("18_qjfat")
 shader_parameter/light_n = 0
@@ -463,19 +533,20 @@ shader_parameter/zoom = null
 shader_parameter/rotation = null
 shader_parameter/comp_mat = null
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rg8p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cdnkg"]
 shader = ExtResource("18_gprbo")
-shader_parameter/speed = 0.86
+shader_parameter/speed = 1.115
 shader_parameter/minStrength = 0.05
-shader_parameter/maxStrength = 0.386
+shader_parameter/maxStrength = 0.305
 shader_parameter/strengthScale = 100.0
-shader_parameter/interval = 1.0
+shader_parameter/interval = 3.5
 shader_parameter/detail = 1.0
-shader_parameter/distortion = 0.0
-shader_parameter/heightOffset = 0.0
-shader_parameter/offset = -4.86
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
 
 [node name="PrologueScene" type="Node2D"]
+position = Vector2(-1, 0)
 script = ExtResource("1_kslhb")
 
 [node name="BgTrees" type="Node2D" parent="."]
@@ -587,7 +658,7 @@ texture = ExtResource("23_t8j8v")
 flip_v = true
 
 [node name="BhTree8" type="Sprite2D" parent="BgTrees"]
-position = Vector2(-4859, 151)
+position = Vector2(-4874, 151)
 texture = ExtResource("4_rq0tm")
 
 [node name="Shadow14" type="Sprite2D" parent="BgTrees"]
@@ -629,9 +700,16 @@ position = Vector2(-6493, 71)
 texture = ExtResource("23_t8j8v")
 
 [node name="GodRays" type="Sprite2D" parent="."]
-z_index = 2
+z_index = 3
 material = SubResource("ShaderMaterial_d7vdo")
-position = Vector2(-3644, 428)
+position = Vector2(-4019, 92)
+scale = Vector2(1.05451, 1)
+texture = ExtResource("2_q26pc")
+
+[node name="GodRays2" type="Sprite2D" parent="."]
+z_index = 3
+material = SubResource("ShaderMaterial_d7vdo")
+position = Vector2(-3410, -352)
 scale = Vector2(1.05451, 1)
 texture = ExtResource("2_q26pc")
 
@@ -645,29 +723,41 @@ scale = Vector2(2, 2)
 texture = ExtResource("8_pvnh8")
 flip_h = true
 
+[node name="Krona6" type="Sprite2D" parent="FgTrees/Tree5"]
+z_index = 4
+material = SubResource("ShaderMaterial_82xyq")
+position = Vector2(2.5, 0)
+texture = ExtResource("26_walee")
+flip_h = true
+
 [node name="Tree1" type="Sprite2D" parent="FgTrees"]
+visible = false
 material = SubResource("ShaderMaterial_xxkr8")
 position = Vector2(-3286, -123)
 scale = Vector2(1.4, 1.4)
 texture = SubResource("CompressedTexture2D_fy3ik")
 
 [node name="Tree3" type="Sprite2D" parent="FgTrees"]
+visible = false
 material = SubResource("ShaderMaterial_7ickf")
 position = Vector2(-3628, -4)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_58hsq")
 
 [node name="Tree7" type="Sprite2D" parent="FgTrees"]
+visible = false
 position = Vector2(-2371, 39)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("6_58hsq")
 
 [node name="Tree9" type="Sprite2D" parent="FgTrees"]
+visible = false
 material = SubResource("ShaderMaterial_712ll")
 position = Vector2(-1570, 161)
 texture = ExtResource("6_58hsq")
 
 [node name="Tree10" type="Sprite2D" parent="FgTrees"]
+visible = false
 material = SubResource("ShaderMaterial_s55r6")
 position = Vector2(-1804, 81)
 scale = Vector2(1.6, 1.6)
@@ -675,29 +765,34 @@ texture = ExtResource("8_pvnh8")
 flip_h = true
 
 [node name="Tree8" type="Sprite2D" parent="FgTrees"]
+visible = false
 material = SubResource("ShaderMaterial_q8yrd")
 position = Vector2(-2111, 93)
 texture = ExtResource("9_11sxn")
 
 [node name="Tree6" type="Sprite2D" parent="FgTrees"]
+visible = false
 material = SubResource("ShaderMaterial_8k01u")
 position = Vector2(-2561, -90)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("7_c5f4i")
 
 [node name="Tree4" type="Sprite2D" parent="FgTrees"]
+visible = false
 material = SubResource("ShaderMaterial_n8c77")
 position = Vector2(-2885, 166)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("5_6484s")
 
 [node name="Tree11" type="Sprite2D" parent="FgTrees"]
+visible = false
 material = SubResource("ShaderMaterial_dq0lj")
 position = Vector2(-1396, 26)
 scale = Vector2(1.63, 1.63)
 texture = ExtResource("8_pvnh8")
 
 [node name="Tree12" type="Sprite2D" parent="FgTrees"]
+visible = false
 material = SubResource("ShaderMaterial_prp78")
 position = Vector2(-1113, 93)
 scale = Vector2(1.205, 1.205)
@@ -746,7 +841,7 @@ shadow_filter = 2
 shadow_filter_smooth = 1.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.651, 0.627, 0.718, 1)
+color = Color(0.65098, 0.627451, 0.717647, 1)
 
 [node name="SkyBackground" parent="." instance=ExtResource("5_c53o5")]
 position = Vector2(1107, -1034)
@@ -811,6 +906,39 @@ position = Vector2(1637, 347)
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("20_7echu")
 
+[node name="MainTree" type="StaticBody2D" parent="AnotherObjects"]
+
+[node name="MainTree" type="Sprite2D" parent="AnotherObjects/MainTree"]
+material = SubResource("ShaderMaterial_8rg8p")
+position = Vector2(204, 68)
+texture = ExtResource("2_q26pc")
+flip_h = true
+
+[node name="Krona1" type="Sprite2D" parent="AnotherObjects/MainTree"]
+z_index = 1
+material = SubResource("ShaderMaterial_br8gu")
+position = Vector2(210, 68)
+texture = ExtResource("26_81bts")
+flip_h = true
+
+[node name="GodRays" type="Sprite2D" parent="AnotherObjects/MainTree"]
+visible = false
+material = SubResource("ShaderMaterial_vpccn")
+position = Vector2(757, 10)
+texture = ExtResource("9_11sxn")
+
+[node name="GodRays3" type="Sprite2D" parent="AnotherObjects/MainTree"]
+material = SubResource("ShaderMaterial_rlrvl")
+position = Vector2(577, -239)
+scale = Vector2(0.611205, 0.266667)
+texture = ExtResource("2_q26pc")
+
+[node name="GodRays4" type="Sprite2D" parent="AnotherObjects/MainTree"]
+material = SubResource("ShaderMaterial_rlrvl")
+position = Vector2(577, -239)
+scale = Vector2(0.611205, 0.266667)
+texture = ExtResource("2_q26pc")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LightAndShadow" type="ColorRect" parent="CanvasLayer"]
@@ -821,8 +949,23 @@ offset_top = -1978.0
 offset_right = 6588.0
 offset_bottom = 2662.0
 
-[node name="Tree2" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_8rg8p")
-position = Vector2(204, 68)
-texture = ExtResource("2_q26pc")
+[node name="Tree6" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_cdnkg")
+position = Vector2(-4278, -125)
+scale = Vector2(1.37, 1.37)
+texture = ExtResource("9_11sxn")
 flip_h = true
+
+[node name="Tree4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-4540, -163)
+scale = Vector2(1.72, 1.72)
+texture = ExtResource("7_c5f4i")
+flip_h = true
+
+[node name="GodRays3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_rlrvl")
+position = Vector2(1868, -470)
+scale = Vector2(0.611205, 0.266667)
+texture = ExtResource("2_q26pc")
