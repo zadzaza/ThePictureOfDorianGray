@@ -731,33 +731,28 @@ texture = ExtResource("26_walee")
 flip_h = true
 
 [node name="Tree1" type="Sprite2D" parent="FgTrees"]
-visible = false
 material = SubResource("ShaderMaterial_xxkr8")
 position = Vector2(-3286, -123)
 scale = Vector2(1.4, 1.4)
 texture = SubResource("CompressedTexture2D_fy3ik")
 
 [node name="Tree3" type="Sprite2D" parent="FgTrees"]
-visible = false
 material = SubResource("ShaderMaterial_7ickf")
 position = Vector2(-3628, -4)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_58hsq")
 
 [node name="Tree7" type="Sprite2D" parent="FgTrees"]
-visible = false
 position = Vector2(-2371, 39)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("6_58hsq")
 
 [node name="Tree9" type="Sprite2D" parent="FgTrees"]
-visible = false
 material = SubResource("ShaderMaterial_712ll")
 position = Vector2(-1570, 161)
 texture = ExtResource("6_58hsq")
 
 [node name="Tree10" type="Sprite2D" parent="FgTrees"]
-visible = false
 material = SubResource("ShaderMaterial_s55r6")
 position = Vector2(-1804, 81)
 scale = Vector2(1.6, 1.6)
@@ -765,34 +760,29 @@ texture = ExtResource("8_pvnh8")
 flip_h = true
 
 [node name="Tree8" type="Sprite2D" parent="FgTrees"]
-visible = false
 material = SubResource("ShaderMaterial_q8yrd")
 position = Vector2(-2111, 93)
 texture = ExtResource("9_11sxn")
 
 [node name="Tree6" type="Sprite2D" parent="FgTrees"]
-visible = false
 material = SubResource("ShaderMaterial_8k01u")
 position = Vector2(-2561, -90)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("7_c5f4i")
 
 [node name="Tree4" type="Sprite2D" parent="FgTrees"]
-visible = false
 material = SubResource("ShaderMaterial_n8c77")
 position = Vector2(-2885, 166)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("5_6484s")
 
 [node name="Tree11" type="Sprite2D" parent="FgTrees"]
-visible = false
 material = SubResource("ShaderMaterial_dq0lj")
 position = Vector2(-1396, 26)
 scale = Vector2(1.63, 1.63)
 texture = ExtResource("8_pvnh8")
 
 [node name="Tree12" type="Sprite2D" parent="FgTrees"]
-visible = false
 material = SubResource("ShaderMaterial_prp78")
 position = Vector2(-1113, 93)
 scale = Vector2(1.205, 1.205)
@@ -950,7 +940,6 @@ offset_right = 6588.0
 offset_bottom = 2662.0
 
 [node name="Tree6" type="Sprite2D" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_cdnkg")
 position = Vector2(-4278, -125)
 scale = Vector2(1.37, 1.37)
@@ -958,7 +947,6 @@ texture = ExtResource("9_11sxn")
 flip_h = true
 
 [node name="Tree4" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-4540, -163)
 scale = Vector2(1.72, 1.72)
 texture = ExtResource("7_c5f4i")
