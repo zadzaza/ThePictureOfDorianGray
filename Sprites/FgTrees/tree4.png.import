@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdkfb2gx4brxu"
-path="res://.godot/imported/survival.png-e5a52928b3f9d9ea8c30b395946d9bc5.ctex"
+uid="uid://b5xjo0j7tu6ed"
+path="res://.godot/imported/tree4.png-83e2df6ccc3bf0b384ba570b75014088.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Trees/survival.png"
-dest_files=["res://.godot/imported/survival.png-e5a52928b3f9d9ea8c30b395946d9bc5.ctex"]
+source_file="res://Sprites/FgTrees/tree4.png"
+dest_files=["res://.godot/imported/tree4.png-83e2df6ccc3bf0b384ba570b75014088.ctex"]
 
 [params]
 

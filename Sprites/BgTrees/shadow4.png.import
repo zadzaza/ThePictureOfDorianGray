@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctm37ukw5tlud"
-path="res://.godot/imported/brevno.png-ca0a1913ab49f04dc55adbf746f07f22.ctex"
+uid="uid://ce02nb7pw5jya"
+path="res://.godot/imported/shadow4.png-d0ad69835e727774a46019a50e166b75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Trees/brevno.png"
-dest_files=["res://.godot/imported/brevno.png-ca0a1913ab49f04dc55adbf746f07f22.ctex"]
+source_file="res://Sprites/BgTrees/shadow4.png"
+dest_files=["res://.godot/imported/shadow4.png-d0ad69835e727774a46019a50e166b75.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5j86ho5yfxaa"
-path="res://.godot/imported/bh_tree.png-a236e34ff45d5df9487b934d96f733e4.ctex"
+uid="uid://qqlk04uxx8ui"
+path="res://.godot/imported/shadow1.png-0591c667ba70c93fc6c26297ad969a7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Trees/bh_tree.png"
-dest_files=["res://.godot/imported/bh_tree.png-a236e34ff45d5df9487b934d96f733e4.ctex"]
+source_file="res://Sprites/BgTrees/shadow1.png"
+dest_files=["res://.godot/imported/shadow1.png-0591c667ba70c93fc6c26297ad969a7c.ctex"]
 
 [params]
 
