@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bkk3y0gpyo00e" path="res://Sprites/FgTrees/tree1.png" id="2_q26pc"]
 [ext_resource type="Texture2D" uid="uid://c5j86ho5yfxaa" path="res://Sprites/BgTrees/bh_tree.png" id="4_rq0tm"]
 [ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Scenes/Player/player_scene.tscn" id="4_rxhjn"]
-[ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Sprites/FgTrees/survival.png" id="4_ut4is"]
+[ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Sprites/Tilemap/survival.png" id="4_ut4is"]
 [ext_resource type="Texture2D" uid="uid://d0jlfh78hn17w" path="res://Sprites/FgTrees/tree2.png" id="5_6484s"]
 [ext_resource type="PackedScene" uid="uid://cn6wcrssspc1h" path="res://Scenes/Prologue/sky_background.tscn" id="5_c53o5"]
 [ext_resource type="Texture2D" uid="uid://bm2d1xb8oxby3" path="res://Sprites/FgTrees/tree3.png" id="6_58hsq"]
