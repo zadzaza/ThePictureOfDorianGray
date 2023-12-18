@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=79 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ctm37ukw5tlud" path="res://Sprites/FgTrees/brevno.png" id="9_k4mfr"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/water_reflection.gdshader" id="10_va8yl"]
 [ext_resource type="Texture2D" uid="uid://dvrfijm4kjin7" path="res://Scenes/Prologue/shaders/blue_noise.png" id="14_i6rbb"]
+[ext_resource type="Texture2D" uid="uid://bjoaepgvkxrql" path="res://гнездо.png" id="15_njglx"]
 [ext_resource type="Texture2D" uid="uid://dicuxiu1mirrh" path="res://Sprites/Sign Posts/03.png" id="16_y221d"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/wind_trees.gdshader" id="18_gprbo"]
 [ext_resource type="Shader" path="res://SDF_Lighting.gdshader" id="18_qjfat"]
@@ -786,7 +787,7 @@ z_index = 3
 material = SubResource("ShaderMaterial_n8c77")
 position = Vector2(-2885, 166)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("5_6484s")
+texture = ExtResource("15_njglx")
 
 [node name="Tree11" type="Sprite2D" parent="FgObjects/LeftSide"]
 material = SubResource("ShaderMaterial_dq0lj")
@@ -851,7 +852,7 @@ occluder = SubResource("OccluderPolygon2D_d77sk")
 [node name="PlayerScene" parent="." instance=ExtResource("4_rxhjn")]
 light_mask = 2
 texture_filter = 1
-position = Vector2(994, 438)
+position = Vector2(599, 438)
 
 [node name="Camera2D2" type="Camera2D" parent="PlayerScene"]
 offset = Vector2(0, -200)
@@ -912,6 +913,7 @@ metadata/_edit_use_anchors_ = true
 [node name="AnotherObjects" type="Node2D" parent="."]
 
 [node name="SignPost" type="StaticBody2D" parent="AnotherObjects"]
+position = Vector2(0, 1)
 
 [node name="02" type="Sprite2D" parent="AnotherObjects/SignPost"]
 position = Vector2(-109, 420)
@@ -951,7 +953,7 @@ flip_h = true
 [node name="Krona1" type="Sprite2D" parent="AnotherObjects/MainTree"]
 z_index = 1
 material = SubResource("ShaderMaterial_br8gu")
-position = Vector2(209, 68)
+position = Vector2(210, 68)
 texture = ExtResource("26_81bts")
 flip_h = true
 
@@ -1003,7 +1005,7 @@ texture = ExtResource("33_7xlbh")
 [node name="DerevoAndPni" type="StaticBody2D" parent="AnotherObjects"]
 
 [node name="DerevoSrubleno" type="Sprite2D" parent="AnotherObjects/DerevoAndPni"]
-position = Vector2(2955, 387)
+position = Vector2(2954, 387)
 rotation = -1.47644
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("35_kyrnm")
