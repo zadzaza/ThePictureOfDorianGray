@@ -849,6 +849,10 @@ offset = Vector2(0, -200)
 zoom = Vector2(0.4, 0.4)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+drag_right_margin = 0.0
+drag_bottom_margin = 1.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="PlayerScene"]
 occluder = SubResource("OccluderPolygon2D_ww266")
