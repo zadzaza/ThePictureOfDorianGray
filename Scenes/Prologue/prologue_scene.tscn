@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=74 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -28,13 +28,8 @@
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/rays.gdshader" id="25_dmjma"]
 [ext_resource type="Texture2D" uid="uid://cckhe3kiy1fn0" path="res://Sprites/FgTrees/krona1.png" id="26_81bts"]
 [ext_resource type="Texture2D" uid="uid://q0vjs7pcoqkq" path="res://Sprites/FgTrees/krona6.png" id="26_walee"]
-[ext_resource type="Texture2D" uid="uid://dlied2rjojstd" path="res://Sprites/Tilemap/smal_tree.png" id="28_y7rkh"]
 [ext_resource type="Texture2D" uid="uid://dbseq3l7kfxir" path="res://Sprites/Tilemap/brevno.png" id="29_wpii7"]
-[ext_resource type="Texture2D" uid="uid://bd3u1yp4f3aoo" path="res://Sprites/Tilemap/small_rock.png" id="30_cbh2f"]
-[ext_resource type="Texture2D" uid="uid://c3n0voxja4p75" path="res://Sprites/Tilemap/rock1.png" id="31_kscqv"]
-[ext_resource type="Texture2D" uid="uid://utubvirqoy76" path="res://Sprites/Tilemap/rock2.png" id="32_1imte"]
 [ext_resource type="Texture2D" uid="uid://bt3t7wsvdridf" path="res://Sprites/Tilemap/drova.png" id="33_7xlbh"]
-[ext_resource type="Texture2D" uid="uid://cwalv5v5dhwae" path="res://Sprites/Tilemap/very_small_rock.png" id="34_4h4da"]
 [ext_resource type="Texture2D" uid="uid://dhhwf5pxgrrs7" path="res://Sprites/Tilemap/derevo_srubleno.png" id="35_kyrnm"]
 [ext_resource type="Texture2D" uid="uid://ckejnyt3trtcq" path="res://Sprites/Tilemap/penek.png" id="36_jnxsn"]
 
@@ -397,7 +392,6 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrv2x"]
 texture = ExtResource("4_ut4is")
-texture_region_size = Vector2i(4, 4)
 89:39/size_in_atlas = Vector2i(17, 4)
 89:39/0 = 0
 89:39/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -406,6 +400,22 @@ texture_region_size = Vector2i(4, 4)
 61:0/0 = 0
 61:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 61:0/0/physics_layer_0/angular_velocity = 0.0
+204:47/size_in_atlas = Vector2i(13, 11)
+204:47/0 = 0
+204:47/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+204:47/0/physics_layer_0/angular_velocity = 0.0
+217:52/size_in_atlas = Vector2i(13, 6)
+217:52/0 = 0
+217:52/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+217:52/0/physics_layer_0/angular_velocity = 0.0
+239:55/size_in_atlas = Vector2i(5, 3)
+239:55/0 = 0
+239:55/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+239:55/0/physics_layer_0/angular_velocity = 0.0
+198:97/size_in_atlas = Vector2i(11, 6)
+198:97/0 = 0
+198:97/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+198:97/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_re4av"]
 texture = ExtResource("5_6484s")
@@ -830,6 +840,7 @@ flip_h = true
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 1
+position = Vector2(-1, 0)
 tile_set = SubResource("TileSet_0cnrr")
 format = 2
 layer_0/name = "ground"
@@ -843,6 +854,9 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array()
 layer_3/name = "buildings"
 layer_3/tile_data = PackedInt32Array(-1113295, 65538, 1)
+layer_4/name = "objects"
+layer_4/z_index = 1
+layer_4/tile_data = PackedInt32Array(15530388, 13369347, 47, 15071644, 13369347, 47, 15071645, 13369347, 47, 14481844, 13369347, 47, 16054729, 13369347, 47, 14678487, 13369347, 47, 16447983, 13369347, 47, 16710042, 13369347, 47, 15727893, 14221315, 52, 16448910, 15663107, 55, 15792390, 12976131, 268435553, 15792391, 12976131, 268435553, 14678824, 13369347, 47, 14744360, 13369347, 47, 14809896, 13369347, 47, 15203224, 13369347, 268435503, 16448562, 15663107, 55, 16774863, 15663107, 55, 16054054, 13369347, 268435503, 15464246, 13369347, 268435503, 15005516, 13369347, 268435503, 15464295, 13369347, 268435503, 15464296, 13369347, 268435503, 16775025, 13369347, 268435503, 16775026, 13369347, 268435503)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="TileMap"]
 visible = false
@@ -1039,52 +1053,7 @@ position = Vector2(1868, -470)
 scale = Vector2(0.611205, 0.266667)
 texture = ExtResource("2_q26pc")
 
-[node name="SmalTree" type="Sprite2D" parent="."]
-position = Vector2(-1686, 477)
-texture = ExtResource("28_y7rkh")
-
-[node name="SmalTree2" type="Sprite2D" parent="."]
-position = Vector2(-3126, 432)
-scale = Vector2(1.36, 1.36)
-texture = ExtResource("28_y7rkh")
-flip_h = true
-
 [node name="Brevno" type="Sprite2D" parent="."]
 z_index = 4
 position = Vector2(-4372, 485)
 texture = ExtResource("29_wpii7")
-
-[node name="SmallRock" type="Sprite2D" parent="."]
-position = Vector2(-2716, 502)
-texture = ExtResource("30_cbh2f")
-
-[node name="SmallRock2" type="Sprite2D" parent="."]
-position = Vector2(-3760, 501)
-texture = ExtResource("30_cbh2f")
-flip_h = true
-
-[node name="SmallRock3" type="Sprite2D" parent="."]
-position = Vector2(-4750, 502)
-texture = ExtResource("30_cbh2f")
-
-[node name="Rock1" type="Sprite2D" parent="."]
-position = Vector2(-1226, 476)
-texture = ExtResource("31_kscqv")
-
-[node name="Rock2" type="Sprite2D" parent="."]
-position = Vector2(-3564, 479)
-texture = ExtResource("32_1imte")
-flip_h = true
-
-[node name="VerySmallRock" type="Sprite2D" parent="."]
-position = Vector2(-2237, 503)
-texture = ExtResource("34_4h4da")
-
-[node name="VerySmallRock2" type="Sprite2D" parent="."]
-position = Vector2(-1983, 501)
-texture = ExtResource("34_4h4da")
-flip_h = true
-
-[node name="SmalTree3" type="Sprite2D" parent="."]
-position = Vector2(-4400, 467)
-texture = ExtResource("28_y7rkh")
