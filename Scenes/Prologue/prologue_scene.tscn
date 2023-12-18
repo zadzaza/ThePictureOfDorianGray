@@ -479,7 +479,7 @@ shader_parameter/reflection_Y_offset = 0.306
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1feey"]
 shader = ExtResource("9_cnwg4")
-shader_parameter/strength = 5.0
+shader_parameter/strength = 10.0
 shader_parameter/uv_scaling = 1.0
 shader_parameter/movement_direction = Vector2(-0.5, 0.5)
 shader_parameter/movement_speed = 0.01
@@ -951,7 +951,7 @@ flip_h = true
 [node name="Krona1" type="Sprite2D" parent="AnotherObjects/MainTree"]
 z_index = 1
 material = SubResource("ShaderMaterial_br8gu")
-position = Vector2(210, 68)
+position = Vector2(209, 68)
 texture = ExtResource("26_81bts")
 flip_h = true
 
