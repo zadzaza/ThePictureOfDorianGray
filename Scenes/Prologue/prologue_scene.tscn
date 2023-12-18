@@ -165,7 +165,18 @@ shader_parameter/heightOffset = null
 shader_parameter/offset = 0.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fy3ik"]
-load_path = "res://.godot/imported/tree1.png-590e6fd68266f59626c9723093afff9a.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8yrd"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.3
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.21
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ickf"]
 shader = ExtResource("18_gprbo")
@@ -179,35 +190,11 @@ shader_parameter/distortion = null
 shader_parameter/heightOffset = null
 shader_parameter/offset = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_712ll"]
-shader = ExtResource("18_gprbo")
-shader_parameter/speed = 1.11
-shader_parameter/minStrength = 0.11
-shader_parameter/maxStrength = 0.225
-shader_parameter/strengthScale = 100.0
-shader_parameter/interval = 3.5
-shader_parameter/detail = 1.0
-shader_parameter/distortion = null
-shader_parameter/heightOffset = null
-shader_parameter/offset = 0.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s55r6"]
 shader = ExtResource("18_gprbo")
 shader_parameter/speed = 1.25
 shader_parameter/minStrength = 0.05
 shader_parameter/maxStrength = 0.045
-shader_parameter/strengthScale = 100.0
-shader_parameter/interval = 3.5
-shader_parameter/detail = 1.0
-shader_parameter/distortion = null
-shader_parameter/heightOffset = null
-shader_parameter/offset = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8yrd"]
-shader = ExtResource("18_gprbo")
-shader_parameter/speed = 1.3
-shader_parameter/minStrength = 0.05
-shader_parameter/maxStrength = 0.21
 shader_parameter/strengthScale = 100.0
 shader_parameter/interval = 3.5
 shader_parameter/detail = 1.0
@@ -256,6 +243,30 @@ shader = ExtResource("18_gprbo")
 shader_parameter/speed = 1.02
 shader_parameter/minStrength = 0.05
 shader_parameter/maxStrength = 0.21
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cdnkg"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.115
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.305
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_712ll"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.11
+shader_parameter/minStrength = 0.11
+shader_parameter/maxStrength = 0.225
 shader_parameter/strengthScale = 100.0
 shader_parameter/interval = 3.5
 shader_parameter/detail = 1.0
@@ -511,7 +522,7 @@ shader_parameter/angle = -0.535
 shader_parameter/position = -1.0
 shader_parameter/spread = 0.485
 shader_parameter/cutoff = 0.1
-shader_parameter/falloff = 0.675
+shader_parameter/falloff = 1.0
 shader_parameter/edge_fade = 0.395
 shader_parameter/speed = 1.725
 shader_parameter/ray1_density = 7.925
@@ -532,18 +543,6 @@ shader_parameter/light_fan_ang = null
 shader_parameter/zoom = null
 shader_parameter/rotation = null
 shader_parameter/comp_mat = null
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cdnkg"]
-shader = ExtResource("18_gprbo")
-shader_parameter/speed = 1.115
-shader_parameter/minStrength = 0.05
-shader_parameter/maxStrength = 0.305
-shader_parameter/strengthScale = 100.0
-shader_parameter/interval = 3.5
-shader_parameter/detail = 1.0
-shader_parameter/distortion = null
-shader_parameter/heightOffset = null
-shader_parameter/offset = 0.0
 
 [node name="PrologueScene" type="Node2D"]
 position = Vector2(-1, 0)
@@ -700,6 +699,7 @@ position = Vector2(-6493, 71)
 texture = ExtResource("23_t8j8v")
 
 [node name="GodRays" type="Sprite2D" parent="."]
+visible = false
 z_index = 3
 material = SubResource("ShaderMaterial_d7vdo")
 position = Vector2(-4019, 92)
@@ -707,6 +707,7 @@ scale = Vector2(1.05451, 1)
 texture = ExtResource("2_q26pc")
 
 [node name="GodRays2" type="Sprite2D" parent="."]
+visible = false
 z_index = 3
 material = SubResource("ShaderMaterial_d7vdo")
 position = Vector2(-3410, -352)
@@ -716,91 +717,122 @@ texture = ExtResource("2_q26pc")
 [node name="FgTrees" type="Node2D" parent="."]
 z_index = 2
 
-[node name="Tree5" type="Sprite2D" parent="FgTrees"]
+[node name="LeftSide" type="Node2D" parent="FgTrees"]
+
+[node name="Tree5" type="Sprite2D" parent="FgTrees/LeftSide"]
+z_index = 3
 material = SubResource("ShaderMaterial_8pgps")
 position = Vector2(-3986, -106)
 scale = Vector2(2, 2)
 texture = ExtResource("8_pvnh8")
 flip_h = true
 
-[node name="Krona6" type="Sprite2D" parent="FgTrees/Tree5"]
+[node name="Krona6" type="Sprite2D" parent="FgTrees/LeftSide/Tree5"]
+visible = false
 z_index = 4
 material = SubResource("ShaderMaterial_82xyq")
 position = Vector2(2.5, 0)
 texture = ExtResource("26_walee")
 flip_h = true
 
-[node name="Tree1" type="Sprite2D" parent="FgTrees"]
+[node name="Tree1" type="Sprite2D" parent="FgTrees/LeftSide"]
 material = SubResource("ShaderMaterial_xxkr8")
 position = Vector2(-3286, -123)
 scale = Vector2(1.4, 1.4)
 texture = SubResource("CompressedTexture2D_fy3ik")
 
-[node name="Tree3" type="Sprite2D" parent="FgTrees"]
+[node name="Tree15" type="Sprite2D" parent="FgTrees/LeftSide"]
+material = SubResource("ShaderMaterial_q8yrd")
+position = Vector2(-3402, -127)
+scale = Vector2(1.38, 1.38)
+texture = ExtResource("9_11sxn")
+
+[node name="Tree3" type="Sprite2D" parent="FgTrees/LeftSide"]
+z_index = 3
 material = SubResource("ShaderMaterial_7ickf")
 position = Vector2(-3628, -4)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_58hsq")
 
-[node name="Tree7" type="Sprite2D" parent="FgTrees"]
+[node name="Tree7" type="Sprite2D" parent="FgTrees/LeftSide"]
 position = Vector2(-2371, 39)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("6_58hsq")
 
-[node name="Tree9" type="Sprite2D" parent="FgTrees"]
-material = SubResource("ShaderMaterial_712ll")
-position = Vector2(-1570, 161)
-texture = ExtResource("6_58hsq")
-
-[node name="Tree10" type="Sprite2D" parent="FgTrees"]
+[node name="Tree10" type="Sprite2D" parent="FgTrees/LeftSide"]
 material = SubResource("ShaderMaterial_s55r6")
 position = Vector2(-1804, 81)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("8_pvnh8")
 flip_h = true
 
-[node name="Tree8" type="Sprite2D" parent="FgTrees"]
-material = SubResource("ShaderMaterial_q8yrd")
-position = Vector2(-2111, 93)
-texture = ExtResource("9_11sxn")
-
-[node name="Tree6" type="Sprite2D" parent="FgTrees"]
+[node name="Tree6" type="Sprite2D" parent="FgTrees/LeftSide"]
 material = SubResource("ShaderMaterial_8k01u")
 position = Vector2(-2561, -90)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("7_c5f4i")
 
-[node name="Tree4" type="Sprite2D" parent="FgTrees"]
+[node name="Tree4" type="Sprite2D" parent="FgTrees/LeftSide"]
+z_index = 3
 material = SubResource("ShaderMaterial_n8c77")
 position = Vector2(-2885, 166)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("5_6484s")
 
-[node name="Tree11" type="Sprite2D" parent="FgTrees"]
+[node name="Tree11" type="Sprite2D" parent="FgTrees/LeftSide"]
 material = SubResource("ShaderMaterial_dq0lj")
 position = Vector2(-1396, 26)
 scale = Vector2(1.63, 1.63)
 texture = ExtResource("8_pvnh8")
 
-[node name="Tree12" type="Sprite2D" parent="FgTrees"]
+[node name="Tree12" type="Sprite2D" parent="FgTrees/LeftSide"]
+z_index = 3
 material = SubResource("ShaderMaterial_prp78")
 position = Vector2(-1113, 93)
 scale = Vector2(1.205, 1.205)
 texture = ExtResource("7_c5f4i")
+
+[node name="Tree13" type="Sprite2D" parent="FgTrees/LeftSide"]
+material = SubResource("ShaderMaterial_cdnkg")
+position = Vector2(-4278, -125)
+scale = Vector2(1.37, 1.37)
+texture = ExtResource("9_11sxn")
+flip_h = true
+
+[node name="Tree14" type="Sprite2D" parent="FgTrees/LeftSide"]
+position = Vector2(-4607, -149)
+scale = Vector2(1.72, 1.72)
+texture = ExtResource("7_c5f4i")
+flip_h = true
+
+[node name="Tree9" type="Sprite2D" parent="FgTrees/LeftSide"]
+z_index = 3
+material = SubResource("ShaderMaterial_712ll")
+position = Vector2(-1570, 161)
+texture = ExtResource("6_58hsq")
+
+[node name="Tree8" type="Sprite2D" parent="FgTrees/LeftSide"]
+z_index = 3
+material = SubResource("ShaderMaterial_q8yrd")
+position = Vector2(-2111, 93)
+texture = ExtResource("9_11sxn")
+flip_h = true
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 1
 tile_set = SubResource("TileSet_0cnrr")
 format = 2
 layer_0/name = "ground"
-layer_0/z_index = 2
-layer_0/tile_data = PackedInt32Array(19136585, 589824, 3, -1113296, 65538, 1, 19136733, 589824, 3, 19136883, 589824, 268435459, 19137030, 589824, 268435459, 19137176, 589824, 3, 19137323, 589824, 3, 19137472, 589824, 268435459, 19137617, 589824, 3, 19201976, 589824, 3, 19201829, 589824, 3, 19201683, 589824, 268435459, 19201537, 589824, 268435459, 19201387, 589824, 3, 19201246, 589824, 3, 19201104, 589824, 3, 19200964, 589824, 268435459, 19200815, 589824, 268435459, 19200669, 589824, 3, 19200520, 589824, 3, 19200372, 589824, 3, 19200223, 589824, 3, 19200074, 589824, 3, 19199928, 589824, 268435459, 19199780, 589824, 268435459, 19199631, 589824, 268435459, 19199480, 589824, 3, 19199331, 589824, 3, 19199183, 589824, 268435459, 19199034, 589824, 3, 19198885, 589824, 3)
+layer_0/z_index = 4
+layer_0/tile_data = PackedInt32Array(19136585, 589824, 3, 19136733, 589824, 3, 19136883, 589824, 268435459, 19137030, 589824, 268435459, 19137176, 589824, 3, 19137323, 589824, 3, 19137472, 589824, 268435459, 19137617, 589824, 3, 19201976, 589824, 3, 19201829, 589824, 3, 19201683, 589824, 268435459, 19201537, 589824, 268435459, 19201387, 589824, 3, 19201246, 589824, 3, 19201104, 589824, 3, 19200964, 589824, 268435459, 19200815, 589824, 268435459, 19200669, 589824, 3, 19200520, 589824, 3, 19200372, 589824, 3, 19200223, 589824, 3, 19200074, 589824, 3, 19199928, 589824, 268435459, 19199780, 589824, 268435459, 19199631, 589824, 268435459, 19199480, 589824, 3, 19199331, 589824, 3, 19199183, 589824, 268435459, 19199034, 589824, 3, 19198885, 589824, 3, 19137765, 589824, 3, 19137913, 589824, 3, 19138061, 589824, 3, 19138211, 589824, 268435459, 19138359, 589824, 268435459, 19138506, 589824, 3, 19138654, 589824, 3, 19138804, 589824, 268435459, 19138952, 589824, 268435459, 19139099, 589824, 3, 19139249, 589824, 268435459, 19139397, 589824, 268435459, 19139545, 589824, 268435459, 19139692, 589824, 3)
 layer_1/name = "grass"
-layer_1/z_index = 3
+layer_1/z_index = 5
 layer_1/tile_data = PackedInt32Array(16449733, 2031616, 9, 16711947, 2621440, 10, 16449973, 2031616, 9, 16449659, 2031616, 9, 16449580, 2031616, 9, 16449592, 2031616, 9, 16449614, 2228224, 10, 16449888, 3211264, 10, 16449850, 2228224, 10, 16449547, 2031616, 9, 16515041, 2228224, 10, 16776973, 2621440, 10, 16514977, 2424832, 10, 16514705, 2031616, 9, 16776783, 2228224, 10, 16776771, 2228224, 10, 16580098, 2424832, 10, 16252241, 2031616, 9, 16252098, 2031616, 9, 16514126, 2228224, 10, 16579595, 2424832, 10, 16579389, 2228224, 10, 16513836, 2031616, 9, 16775882, 2621440, 10, 16513700, 2424832, 10, 16513665, 2228224, 10, 16513586, 2031616, 9, 16513547, 2228224, 10, 16775662, 2621440, 10, 16513471, 2228224, 10, 16513911, 2818048, 10, 16251180, 2031616, 9, 16251189, 2031616, 9, 16513220, 2228224, 10, 16513171, 2031616, 9, 16250928, 2031616, 9, 16512985, 2424832, 10, 16512913, 2031616, 9, 16512875, 2228224, 10, 16512831, 2424832, 10, 16512805, 2424832, 10, 16774909, 2228224, 10, 16512728, 2031616, 9, 16512686, 2228224, 10, 16250510, 2031616, 9, 16578098, 2228224, 10, 16512509, 2031616, 9, 16512480, 2621440, 10, 16250254, 2031616, 9, 16512358, 2818048, 10, 16512290, 2818048, 10, 16512278, 2818048, 10, 16512237, 2031616, 9, 16512204, 2228224, 10, 16512138, 2424832, 10, 16512100, 2031616, 9, 16446526, 2228224, 10, 16249889, 2031616, 9, 16511980, 2818048, 10, 16511954, 2424832, 10, 16511913, 2031616, 9, 16511884, 2228224, 10, 16514101, 2031616, 9)
 layer_2/name = "threes"
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array()
+layer_3/name = "buildings"
+layer_3/tile_data = PackedInt32Array(-1113295, 65538, 1)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="TileMap"]
 visible = false
@@ -809,9 +841,8 @@ occluder = SubResource("OccluderPolygon2D_d77sk")
 
 [node name="PlayerScene" parent="." instance=ExtResource("4_rxhjn")]
 light_mask = 2
-z_index = 1
 texture_filter = 1
-position = Vector2(831, 397)
+position = Vector2(-3973, 426)
 
 [node name="Camera2D2" type="Camera2D" parent="PlayerScene"]
 offset = Vector2(0, -200)
@@ -938,19 +969,6 @@ offset_left = -5116.0
 offset_top = -1978.0
 offset_right = 6588.0
 offset_bottom = 2662.0
-
-[node name="Tree6" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_cdnkg")
-position = Vector2(-4278, -125)
-scale = Vector2(1.37, 1.37)
-texture = ExtResource("9_11sxn")
-flip_h = true
-
-[node name="Tree4" type="Sprite2D" parent="."]
-position = Vector2(-4540, -163)
-scale = Vector2(1.72, 1.72)
-texture = ExtResource("7_c5f4i")
-flip_h = true
 
 [node name="GodRays3" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_rlrvl")
