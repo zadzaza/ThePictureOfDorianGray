@@ -14,8 +14,8 @@ polygon = PackedVector2Array(-280, -10, -280, -11, -276, -11, -276, -12, -267, -
 cull_mode = 1
 polygon = PackedVector2Array(-286, -56, -286, -57, -266, -57, -266, -58, -220, -58, -220, -59, -175, -59, -175, -58, -149, -58, -149, -57, -218, -57, -218, -56)
 
-[node name="SkyBackground" type="Node2D"]
-z_index = -2
+[node name="SkyBackground" type="CanvasLayer"]
+layer = -1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1

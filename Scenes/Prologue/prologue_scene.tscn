@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=76 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -31,8 +31,41 @@
 [ext_resource type="Texture2D" uid="uid://dbseq3l7kfxir" path="res://Sprites/Tilemap/brevno.png" id="29_wpii7"]
 [ext_resource type="Texture2D" uid="uid://bt3t7wsvdridf" path="res://Sprites/Tilemap/drova.png" id="33_7xlbh"]
 [ext_resource type="Texture2D" uid="uid://cv8dyg174cxuv" path="res://Sprites/SkyBG/Clouds 6/Безымянный.png" id="33_p7vc3"]
+[ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="34_o7plm"]
 [ext_resource type="Texture2D" uid="uid://dhhwf5pxgrrs7" path="res://Sprites/Tilemap/derevo_srubleno.png" id="35_kyrnm"]
 [ext_resource type="Texture2D" uid="uid://ckejnyt3trtcq" path="res://Sprites/Tilemap/penek.png" id="36_jnxsn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
+shader = ExtResource("10_va8yl")
+shader_parameter/level = 0.522
+shader_parameter/water_albedo = Color(0.0745098, 0.356863, 0.478431, 1)
+shader_parameter/water_opacity = 0.124
+shader_parameter/water_speed = 0.05
+shader_parameter/wave_distortion = 0.0
+shader_parameter/wave_multiplyer = 7
+shader_parameter/water_texture_on = true
+shader_parameter/reflection_X_offset = 0.0
+shader_parameter/reflection_Y_offset = 0.306
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1feey"]
+shader = ExtResource("9_cnwg4")
+shader_parameter/strength = 10.0
+shader_parameter/uv_scaling = 1.4
+shader_parameter/movement_direction = Vector2(-0.5, 0.5)
+shader_parameter/movement_speed = 0.01
+shader_parameter/NOISE_TEXTURE = ExtResource("14_i6rbb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihg0g"]
+shader = ExtResource("18_qjfat")
+shader_parameter/light_n = 0
+shader_parameter/light_pos = null
+shader_parameter/light_col = null
+shader_parameter/light_rng = null
+shader_parameter/light_ang = null
+shader_parameter/light_fan_ang = null
+shader_parameter/zoom = null
+shader_parameter/rotation = null
+shader_parameter/comp_mat = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vrlnj"]
 shader = ExtResource("18_gprbo")
@@ -485,26 +518,6 @@ polygon = PackedVector2Array(1611.54, -552.334, 1611.52, -585.334, 1618.52, -585
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ww266"]
 polygon = PackedVector2Array(-44, 24, -44, -12, -50, -19, -42, -30, -34, -26, -25, -32, -25, -43, -12, -47, -8, -38, 2, -38, 7, -47, 19, -42, 19, -32, 27, -26, 35, -31, 44, -20, 38, -12, 38, 24, 37, 27, 34, 30, 31, 32, 27, 34, 22, 37, 16, 39, 8, 40, -2, 41, -9, 41, -23, 39, -31, 36, -35, 33, -40, 29)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
-shader = ExtResource("10_va8yl")
-shader_parameter/level = 0.522
-shader_parameter/water_albedo = Color(0.0745098, 0.356863, 0.478431, 1)
-shader_parameter/water_opacity = 0.124
-shader_parameter/water_speed = 0.05
-shader_parameter/wave_distortion = 0.0
-shader_parameter/wave_multiplyer = 7
-shader_parameter/water_texture_on = true
-shader_parameter/reflection_X_offset = 0.0
-shader_parameter/reflection_Y_offset = 0.306
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1feey"]
-shader = ExtResource("9_cnwg4")
-shader_parameter/strength = 10.0
-shader_parameter/uv_scaling = 1.4
-shader_parameter/movement_direction = Vector2(-0.5, 0.5)
-shader_parameter/movement_speed = 0.01
-shader_parameter/NOISE_TEXTURE = ExtResource("14_i6rbb")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8rg8p"]
 shader = ExtResource("18_gprbo")
 shader_parameter/speed = 1.0
@@ -561,21 +574,62 @@ shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/hdr = true
 shader_parameter/seed = 5.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihg0g"]
-shader = ExtResource("18_qjfat")
-shader_parameter/light_n = 0
-shader_parameter/light_pos = null
-shader_parameter/light_col = null
-shader_parameter/light_rng = null
-shader_parameter/light_ang = null
-shader_parameter/light_fan_ang = null
-shader_parameter/zoom = null
-shader_parameter/rotation = null
-shader_parameter/comp_mat = null
-
 [node name="PrologueScene" type="Node2D"]
 position = Vector2(-1, 0)
 script = ExtResource("1_kslhb")
+
+[node name="MainCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SkyBackground" parent="MainCanvasLayer" instance=ExtResource("5_c53o5")]
+scale = Vector2(0.86523, 3.63258)
+transform = Transform2D(0.86523, 0, 0, 3.63258, 0, 0)
+
+[node name="ReflectionCanvasLayer" type="CanvasLayer" parent="MainCanvasLayer"]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="Reflection" type="ColorRect" parent="MainCanvasLayer/ReflectionCanvasLayer"]
+material = SubResource("ShaderMaterial_7wql8")
+anchors_preset = -1
+anchor_left = -2.10469
+anchor_top = -2.82315
+anchor_right = 0.729688
+anchor_bottom = 2.42222
+offset_left = -3797.0
+offset_top = -86.0
+offset_right = 7639.0
+offset_bottom = 1384.0
+color = Color(0, 0.538855, 0.989114, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="NoiseCanvasLayer" type="CanvasLayer" parent="MainCanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="Noise" type="ColorRect" parent="MainCanvasLayer/NoiseCanvasLayer"]
+material = SubResource("ShaderMaterial_1feey")
+anchors_preset = -1
+anchor_left = -1.38646
+anchor_top = -0.0824074
+anchor_right = 0.508333
+anchor_bottom = 1.0
+offset_left = -3840.0
+offset_top = 679.0
+offset_right = 5693.0
+offset_bottom = 1088.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="MainCanvasLayer"]
+
+[node name="LightAndShadow" type="ColorRect" parent="MainCanvasLayer/CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_ihg0g")
+offset_left = -5116.0
+offset_top = -1978.0
+offset_right = 6588.0
+offset_bottom = 2662.0
 
 [node name="BgObjects" type="Node2D" parent="."]
 z_index = -3
@@ -966,47 +1020,6 @@ shadow_filter_smooth = 1.0
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.65098, 0.627451, 0.717647, 1)
 
-[node name="SkyBackground" parent="." instance=ExtResource("5_c53o5")]
-position = Vector2(1107, -1034)
-scale = Vector2(0.86523, 3.63258)
-
-[node name="ReflectionCanvasLayer" type="CanvasLayer" parent="."]
-layer = 0
-follow_viewport_enabled = true
-
-[node name="Reflection" type="ColorRect" parent="ReflectionCanvasLayer"]
-material = SubResource("ShaderMaterial_7wql8")
-anchors_preset = -1
-anchor_left = -2.10469
-anchor_top = -2.82315
-anchor_right = 0.729688
-anchor_bottom = 2.42222
-offset_left = -3797.0
-offset_top = -86.0
-offset_right = 7639.0
-offset_bottom = 1384.0
-color = Color(0, 0.538855, 0.989114, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="NoiseCanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="Noise" type="ColorRect" parent="NoiseCanvasLayer"]
-material = SubResource("ShaderMaterial_1feey")
-anchors_preset = -1
-anchor_left = -1.38646
-anchor_top = -0.0824074
-anchor_right = 0.508333
-anchor_bottom = 1.0
-offset_left = -3840.0
-offset_top = 679.0
-offset_right = 5693.0
-offset_bottom = 1088.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0)
-metadata/_edit_use_anchors_ = true
-
 [node name="AnotherObjects" type="Node2D" parent="."]
 
 [node name="SignPost" type="StaticBody2D" parent="AnotherObjects"]
@@ -1120,16 +1133,6 @@ texture = ExtResource("36_jnxsn")
 position = Vector2(3509, 481)
 texture = ExtResource("36_jnxsn")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="LightAndShadow" type="ColorRect" parent="CanvasLayer"]
-visible = false
-material = SubResource("ShaderMaterial_ihg0g")
-offset_left = -5116.0
-offset_top = -1978.0
-offset_right = 6588.0
-offset_bottom = 2662.0
-
 [node name="GodRays3" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_rlrvl")
 position = Vector2(1868, -470)
@@ -1140,3 +1143,5 @@ texture = ExtResource("2_q26pc")
 z_index = 4
 position = Vector2(-4372, 485)
 texture = ExtResource("29_wpii7")
+
+[node name="ExampleBalloon" parent="." instance=ExtResource("34_o7plm")]

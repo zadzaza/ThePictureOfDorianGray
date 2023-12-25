@@ -72,7 +72,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"move_side",
-"speed": 7.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
