@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dbseq3l7kfxir" path="res://Sprites/Tilemap/brevno.png" id="29_wpii7"]
 [ext_resource type="Texture2D" uid="uid://bt3t7wsvdridf" path="res://Sprites/Tilemap/drova.png" id="33_7xlbh"]
 [ext_resource type="Texture2D" uid="uid://cv8dyg174cxuv" path="res://Sprites/SkyBG/Clouds 6/Безымянный.png" id="33_p7vc3"]
-[ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="34_o7plm"]
+[ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://dialogue_balloon/balloon.tscn" id="34_o7plm"]
 [ext_resource type="Texture2D" uid="uid://dhhwf5pxgrrs7" path="res://Sprites/Tilemap/derevo_srubleno.png" id="35_kyrnm"]
 [ext_resource type="Texture2D" uid="uid://ckejnyt3trtcq" path="res://Sprites/Tilemap/penek.png" id="36_jnxsn"]
 
