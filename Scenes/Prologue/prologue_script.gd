@@ -5,6 +5,5 @@ func _process(delta):
 		$PlayerScene/Prizrak.enabled = true
 	else: $PlayerScene/Prizrak.enabled = false
 	
-func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/prologue.dialogue"), "start")
+func _ready():
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/prologue.dialogue"), "start")
