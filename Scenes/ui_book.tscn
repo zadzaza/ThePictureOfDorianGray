@@ -1,0 +1,218 @@
+[gd_scene load_steps=21 format=3 uid="uid://gspeugd1dcdn"]
+
+[ext_resource type="Script" path="res://Scripts/UIBook.gd" id="1_lq4qn"]
+[ext_resource type="Texture2D" uid="uid://h7knl6mbxqay" path="res://Sprites/UI/UIBook/book_closed.png" id="2_5ggk1"]
+[ext_resource type="Texture2D" uid="uid://6w5r2t5btttr" path="res://Sprites/UI/UIBook/book_open.png" id="3_qkaek"]
+[ext_resource type="Texture2D" uid="uid://mokfqo1aaanp" path="res://Sprites/UI/UIBook/zakladka_peoples.png" id="4_ldoum"]
+[ext_resource type="Texture2D" uid="uid://cdp83v00twwwc" path="res://Sprites/UI/UIBook/zakladka_inv.png" id="5_xym27"]
+[ext_resource type="Texture2D" uid="uid://by3lf875vy2fr" path="res://Sprites/UI/UIBook/zakladka_settings.png" id="6_iks3g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8c0bg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5ggk1")
+}],
+"loop": true,
+"name": &"book_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qkaek")
+}],
+"loop": true,
+"name": &"book_open",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr7g7"]
+atlas = ExtResource("4_ldoum")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de3jl"]
+atlas = ExtResource("4_ldoum")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rghmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr7g7")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de3jl")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_156yj"]
+size = Vector2(13.888, 14.9114)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uf67"]
+atlas = ExtResource("5_xym27")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08e6w"]
+atlas = ExtResource("5_xym27")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2evu4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uf67")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08e6w")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym7is"]
+atlas = ExtResource("6_iks3g")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q86dn"]
+atlas = ExtResource("6_iks3g")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43bpi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym7is")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q86dn")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_q6k6s"]
+resource_name = "appearance"
+length = 1.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.1, 0.1), Vector2(0.2, 0.2), Vector2(0.3, 0.3), Vector2(0.4, 0.4), Vector2(0.5, 0.5), Vector2(0.6, 0.6), Vector2(0.7, 0.7), Vector2(0.8, 0.8), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bohqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdcgv"]
+_data = {
+"RESET": SubResource("Animation_bohqc"),
+"appearance": SubResource("Animation_q6k6s")
+}
+
+[node name="UIBook" type="CanvasLayer"]
+script = ExtResource("1_lq4qn")
+
+[node name="Node2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(973, 516)
+offset = Vector2(-980, -527)
+
+[node name="Book" type="AnimatedSprite2D" parent="Node2D"]
+unique_name_in_owner = true
+scale = Vector2(6.84043, 6.84043)
+sprite_frames = SubResource("SpriteFrames_8c0bg")
+animation = &"book_open"
+
+[node name="Zakladki" type="Node2D" parent="Node2D/Book"]
+unique_name_in_owner = true
+
+[node name="ZakladkaPeoples" type="AnimatedSprite2D" parent="Node2D/Book/Zakladki"]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(-49.5583, -54.3826)
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_rghmv")
+animation = &"selected"
+
+[node name="ZakladkaPeoplesArea2D" type="Area2D" parent="Node2D/Book/Zakladki/ZakladkaPeoples"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Book/Zakladki/ZakladkaPeoples/ZakladkaPeoplesArea2D"]
+position = Vector2(0.511665, 0)
+shape = SubResource("RectangleShape2D_156yj")
+
+[node name="ZakladkaInv" type="AnimatedSprite2D" parent="Node2D/Book/Zakladki"]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(-32.3079, -54.3826)
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_2evu4")
+animation = &"none"
+
+[node name="ZakladkaInvArea2D" type="Area2D" parent="Node2D/Book/Zakladki/ZakladkaInv"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Book/Zakladki/ZakladkaInv/ZakladkaInvArea2D"]
+position = Vector2(0.511665, 0)
+shape = SubResource("RectangleShape2D_156yj")
+
+[node name="ZakladkaSettings" type="AnimatedSprite2D" parent="Node2D/Book/Zakladki"]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(39.4712, -54.3826)
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_43bpi")
+animation = &"selected"
+
+[node name="ZakladkaSettingsArea2D" type="Area2D" parent="Node2D/Book/Zakladki/ZakladkaSettings"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Book/Zakladki/ZakladkaSettings/ZakladkaSettingsArea2D"]
+position = Vector2(0.511673, 0)
+shape = SubResource("RectangleShape2D_156yj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_bdcgv")
+}
+
+[connection signal="input_event" from="Node2D/Book/Zakladki/ZakladkaPeoples/ZakladkaPeoplesArea2D" to="." method="_on_zakladka_peoples_area_2d_input_event"]
+[connection signal="input_event" from="Node2D/Book/Zakladki/ZakladkaInv/ZakladkaInvArea2D" to="." method="_on_zakladka_inv_area_2d_input_event"]
+[connection signal="input_event" from="Node2D/Book/Zakladki/ZakladkaSettings/ZakladkaSettingsArea2D" to="." method="_on_zakladka_settings_area_2d_input_event"]
+[connection signal="animation_finished" from="Node2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
