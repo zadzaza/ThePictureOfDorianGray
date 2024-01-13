@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdp83v00twwwc"
-path="res://.godot/imported/zakladka_inv.png-840e7d3b44426b485fca5de28365783e.ctex"
+uid="uid://3ryk6tsyn4ls"
+path="res://.godot/imported/settings_selected.png-a0ca395fc3e84d2dd1930644abdcb6bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/UIBook/zakladka_inv.png"
-dest_files=["res://.godot/imported/zakladka_inv.png-840e7d3b44426b485fca5de28365783e.ctex"]
+source_file="res://Sprites/UI/UIBook/settings_selected.png"
+dest_files=["res://.godot/imported/settings_selected.png-a0ca395fc3e84d2dd1930644abdcb6bb.ctex"]
 
 [params]
 

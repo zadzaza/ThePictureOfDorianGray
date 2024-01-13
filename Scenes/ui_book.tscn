@@ -1,11 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://gspeugd1dcdn"]
+[gd_scene load_steps=15 format=3 uid="uid://gspeugd1dcdn"]
 
 [ext_resource type="Script" path="res://Scripts/UIBook.gd" id="1_lq4qn"]
 [ext_resource type="Texture2D" uid="uid://h7knl6mbxqay" path="res://Sprites/UI/UIBook/book_closed.png" id="2_5ggk1"]
 [ext_resource type="Texture2D" uid="uid://6w5r2t5btttr" path="res://Sprites/UI/UIBook/book_open.png" id="3_qkaek"]
-[ext_resource type="Texture2D" uid="uid://mokfqo1aaanp" path="res://Sprites/UI/UIBook/zakladka_peoples.png" id="4_ldoum"]
-[ext_resource type="Texture2D" uid="uid://cdp83v00twwwc" path="res://Sprites/UI/UIBook/zakladka_inv.png" id="5_xym27"]
-[ext_resource type="Texture2D" uid="uid://by3lf875vy2fr" path="res://Sprites/UI/UIBook/zakladka_settings.png" id="6_iks3g"]
+[ext_resource type="Texture2D" uid="uid://dvexd1b0f0lai" path="res://Sprites/UI/UIBook/peoples_none.png" id="4_w44cr"]
+[ext_resource type="Texture2D" uid="uid://b03jyfbp3efrk" path="res://Sprites/UI/UIBook/inv_none.png" id="5_veb4m"]
+[ext_resource type="Texture2D" uid="uid://c7hsa1ahaexvl" path="res://Sprites/UI/UIBook/settings_none.png" id="6_scu8i"]
+[ext_resource type="Texture2D" uid="uid://s71kjmwm7wda" path="res://Sprites/UI/UIBook/peoples_img.png" id="7_5aiw7"]
+[ext_resource type="Texture2D" uid="uid://d0hdl2rm6j7vs" path="res://Sprites/UI/UIBook/peoples_stats.png" id="8_0wf8p"]
+[ext_resource type="Texture2D" uid="uid://dfk7qm3qokpe4" path="res://Sprites/UI/UIBook/inv_img.png" id="8_gy2s4"]
+[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="9_k5snl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8c0bg"]
 animations = [{
@@ -26,89 +30,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jr7g7"]
-atlas = ExtResource("4_ldoum")
-region = Rect2(15, 0, 15, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_de3jl"]
-atlas = ExtResource("4_ldoum")
-region = Rect2(0, 0, 15, 15)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rghmv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jr7g7")
-}],
-"loop": true,
-"name": &"none",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_de3jl")
-}],
-"loop": true,
-"name": &"selected",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_156yj"]
-size = Vector2(13.888, 14.9114)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5uf67"]
-atlas = ExtResource("5_xym27")
-region = Rect2(15, 0, 15, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_08e6w"]
-atlas = ExtResource("5_xym27")
-region = Rect2(0, 0, 15, 15)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2evu4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5uf67")
-}],
-"loop": true,
-"name": &"none",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_08e6w")
-}],
-"loop": true,
-"name": &"selected",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ym7is"]
-atlas = ExtResource("6_iks3g")
-region = Rect2(15, 0, 15, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q86dn"]
-atlas = ExtResource("6_iks3g")
-region = Rect2(0, 0, 15, 15)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_43bpi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ym7is")
-}],
-"loop": true,
-"name": &"none",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q86dn")
-}],
-"loop": true,
-"name": &"selected",
-"speed": 5.0
-}]
+[sub_resource type="Animation" id="Animation_bohqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_q6k6s"]
 resource_name = "appearance"
@@ -126,21 +61,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0.1, 0.1), Vector2(0.2, 0.2), Vector2(0.3, 0.3), Vector2(0.4, 0.4), Vector2(0.5, 0.5), Vector2(0.6, 0.6), Vector2(0.7, 0.7), Vector2(0.8, 0.8), Vector2(0.9, 0.9), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_bohqc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bdcgv"]
 _data = {
 "RESET": SubResource("Animation_bohqc"),
@@ -149,70 +69,179 @@ _data = {
 
 [node name="UIBook" type="CanvasLayer"]
 script = ExtResource("1_lq4qn")
+p_selected = true
 
-[node name="Node2D" type="Sprite2D" parent="."]
+[node name="Control" type="Control" parent="."]
 unique_name_in_owner = true
-position = Vector2(973, 516)
-offset = Vector2(-980, -527)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 973.0
+offset_top = 516.0
+offset_right = 973.0
+offset_bottom = 516.0
 
-[node name="Book" type="AnimatedSprite2D" parent="Node2D"]
+[node name="Book" type="AnimatedSprite2D" parent="Control"]
 unique_name_in_owner = true
 scale = Vector2(6.84043, 6.84043)
 sprite_frames = SubResource("SpriteFrames_8c0bg")
 animation = &"book_open"
 
-[node name="Zakladki" type="Node2D" parent="Node2D/Book"]
+[node name="Elements" type="Node2D" parent="Control/Book"]
 unique_name_in_owner = true
 
-[node name="ZakladkaPeoples" type="AnimatedSprite2D" parent="Node2D/Book/Zakladki"]
+[node name="Buttons" type="Control" parent="Control/Book/Elements"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Peoples" type="TextureButton" parent="Control/Book/Elements/Buttons"]
 unique_name_in_owner = true
-z_index = -1
-position = Vector2(-49.5583, -54.3826)
-scale = Vector2(1, 1)
-sprite_frames = SubResource("SpriteFrames_rghmv")
-animation = &"selected"
+offset_left = -57.1601
+offset_top = -61.692
+offset_right = -43.1601
+offset_bottom = -46.692
+texture_normal = ExtResource("4_w44cr")
 
-[node name="ZakladkaPeoplesArea2D" type="Area2D" parent="Node2D/Book/Zakladki/ZakladkaPeoples"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Book/Zakladki/ZakladkaPeoples/ZakladkaPeoplesArea2D"]
-position = Vector2(0.511665, 0)
-shape = SubResource("RectangleShape2D_156yj")
-
-[node name="ZakladkaInv" type="AnimatedSprite2D" parent="Node2D/Book/Zakladki"]
+[node name="Inv" type="TextureButton" parent="Control/Book/Elements/Buttons"]
 unique_name_in_owner = true
-z_index = -1
-position = Vector2(-32.3079, -54.3826)
-scale = Vector2(1, 1)
-sprite_frames = SubResource("SpriteFrames_2evu4")
-animation = &"none"
+offset_left = -38.3017
+offset_top = -62.1306
+offset_right = -24.3017
+offset_bottom = -47.1306
+texture_normal = ExtResource("5_veb4m")
 
-[node name="ZakladkaInvArea2D" type="Area2D" parent="Node2D/Book/Zakladki/ZakladkaInv"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Book/Zakladki/ZakladkaInv/ZakladkaInvArea2D"]
-position = Vector2(0.511665, 0)
-shape = SubResource("RectangleShape2D_156yj")
-
-[node name="ZakladkaSettings" type="AnimatedSprite2D" parent="Node2D/Book/Zakladki"]
+[node name="Settings" type="TextureButton" parent="Control/Book/Elements/Buttons"]
 unique_name_in_owner = true
-z_index = -1
-position = Vector2(39.4712, -54.3826)
-scale = Vector2(1, 1)
-sprite_frames = SubResource("SpriteFrames_43bpi")
-animation = &"selected"
+offset_left = 32.0155
+offset_top = -61.8382
+offset_right = 46.0155
+offset_bottom = -46.8382
+texture_normal = ExtResource("6_scu8i")
 
-[node name="ZakladkaSettingsArea2D" type="Area2D" parent="Node2D/Book/Zakladki/ZakladkaSettings"]
+[node name="Pages" type="Control" parent="Control/Book/Elements"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Book/Zakladki/ZakladkaSettings/ZakladkaSettingsArea2D"]
-position = Vector2(0.511673, 0)
-shape = SubResource("RectangleShape2D_156yj")
+[node name="Page1" type="Control" parent="Control/Book/Elements/Pages"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+[node name="PeoplesImg" type="Sprite2D" parent="Control/Book/Elements/Pages/Page1"]
+position = Vector2(39.6174, -3.50854)
+scale = Vector2(1.19812, 1.19812)
+texture = ExtResource("7_5aiw7")
+
+[node name="PeoplesStats" type="Sprite2D" parent="Control/Book/Elements/Pages/Page1"]
+position = Vector2(-39.9098, -3.21617)
+scale = Vector2(1.22306, 1.22306)
+texture = ExtResource("8_0wf8p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Book/Elements/Pages/Page1"]
+layout_mode = 0
+offset_left = -61.692
+offset_top = -32.4541
+offset_right = 40.308
+offset_bottom = 68.5459
+scale = Vector2(0.365756, 0.365756)
+theme_override_constants/separation = 11
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Book/Elements/Pages/Page1/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="Basil" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "Бэзил Холлуорд"
+
+[node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "0"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Book/Elements/Pages/Page1/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="Sibilla" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "Сибилла Вейн"
+
+[node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "0"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/Book/Elements/Pages/Page1/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="James" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "Джеймс Вейн"
+
+[node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "0"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/Book/Elements/Pages/Page1/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 29
+
+[node name="Henry" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "Генри Уоттон"
+
+[node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "0"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Page2" type="Control" parent="Control/Book/Elements/Pages"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InvImg" type="Sprite2D" parent="Control/Book/Elements/Pages/Page2"]
+position = Vector2(39.6174, -2.33903)
+scale = Vector2(1.08076, 1.08076)
+texture = ExtResource("8_gy2s4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_bdcgv")
 }
+speed_scale = 1.7
 
-[connection signal="input_event" from="Node2D/Book/Zakladki/ZakladkaPeoples/ZakladkaPeoplesArea2D" to="." method="_on_zakladka_peoples_area_2d_input_event"]
-[connection signal="input_event" from="Node2D/Book/Zakladki/ZakladkaInv/ZakladkaInvArea2D" to="." method="_on_zakladka_inv_area_2d_input_event"]
-[connection signal="input_event" from="Node2D/Book/Zakladki/ZakladkaSettings/ZakladkaSettingsArea2D" to="." method="_on_zakladka_settings_area_2d_input_event"]
-[connection signal="animation_finished" from="Node2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Control/Book/Elements/Buttons/Peoples" to="." method="_on_peoples_pressed"]
+[connection signal="pressed" from="Control/Book/Elements/Buttons/Inv" to="." method="_on_inv_pressed"]
+[connection signal="pressed" from="Control/Book/Elements/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="animation_finished" from="Control/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
