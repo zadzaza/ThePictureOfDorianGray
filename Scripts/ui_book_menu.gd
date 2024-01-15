@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var page = "page"
+var count = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,7 +10,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	page = "page" + str(count)
+
+	if page == "page1":
+		%Page1.set_visible(true)
+		%Page2.set_visible(false)
+	if page == "page2":
+		%Page1.set_visible(false)
+		%Page2.set_visible(true)
+	print(page)
+
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		hide()
 
 
 func _on_continue_btn_pressed():
@@ -28,4 +43,8 @@ func _on_exit_btn_pressed():
 
 
 func _on_setting_btn_pressed():
-	pass # Replace with function body.
+	count += 1
+
+
+func _on_back_btn_pressed():
+	count -= 1

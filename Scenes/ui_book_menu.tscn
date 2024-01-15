@@ -24,7 +24,7 @@ scale = Vector2(5.06094, 5.06094)
 texture = ExtResource("2_ijh18")
 
 [node name="Page1" type="VBoxContainer" parent="."]
-visible = false
+unique_name_in_owner = true
 offset_left = 679.0
 offset_top = 339.0
 offset_right = 725.0
@@ -112,18 +112,20 @@ text = "Выйти"
 horizontal_alignment = 1
 
 [node name="Page2" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
 offset_left = 679.0
 offset_top = 369.0
 offset_right = 725.0
 offset_bottom = 455.0
 scale = Vector2(4.52085, 4.52085)
 
-[node name="ContinueBtn" type="TextureButton" parent="Page2"]
+[node name="SoundBtn" type="TextureButton" parent="Page2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
-[node name="Basil" type="Label" parent="Page2/ContinueBtn"]
+[node name="Basil" type="Label" parent="Page2/SoundBtn"]
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -134,12 +136,12 @@ theme_override_fonts/font = ExtResource("4_kfvpv")
 text = "Звук"
 horizontal_alignment = 1
 
-[node name="ContinueBtn2" type="TextureButton" parent="Page2"]
+[node name="GraphicsBtn" type="TextureButton" parent="Page2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
-[node name="Basil" type="Label" parent="Page2/ContinueBtn2"]
+[node name="Basil" type="Label" parent="Page2/GraphicsBtn"]
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -150,12 +152,12 @@ theme_override_fonts/font = ExtResource("4_kfvpv")
 text = "Графика"
 horizontal_alignment = 1
 
-[node name="ContinueBtn3" type="TextureButton" parent="Page2"]
+[node name="VideoBtn" type="TextureButton" parent="Page2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
-[node name="Basil" type="Label" parent="Page2/ContinueBtn3"]
+[node name="Basil" type="Label" parent="Page2/VideoBtn"]
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -166,12 +168,37 @@ theme_override_fonts/font = ExtResource("4_kfvpv")
 text = "Видео"
 horizontal_alignment = 1
 
-[node name="ContinueBtn4" type="TextureButton" parent="Page2"]
+[node name="BackBtn" type="TextureButton" parent="Page2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
-[node name="Basil" type="Label" parent="Page2/ContinueBtn4"]
+[node name="Basil" type="Label" parent="Page2/BackBtn"]
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Назад"
+horizontal_alignment = 1
+
+[node name="Page3" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 679.0
+offset_top = 369.0
+offset_right = 725.0
+offset_bottom = 455.0
+scale = Vector2(4.52085, 4.52085)
+
+[node name="BackBtn" type="TextureButton" parent="Page3"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_2tkni")
+
+[node name="Basil" type="Label" parent="Page3/BackBtn"]
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -255,3 +282,5 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 [connection signal="pressed" from="Page1/LoadBtn" to="." method="_on_load_btn_pressed"]
 [connection signal="pressed" from="Page1/SettingBtn" to="." method="_on_setting_btn_pressed"]
 [connection signal="pressed" from="Page1/ExitBtn" to="." method="_on_exit_btn_pressed"]
+[connection signal="pressed" from="Page2/BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="Page3/BackBtn" to="." method="_on_back_btn_pressed"]
