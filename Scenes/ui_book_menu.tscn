@@ -1,0 +1,177 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5oexq1eivnb0"]
+
+[ext_resource type="Texture2D" uid="uid://coakusgl1rkh4" path="res://Sprites/UI/UIBook2/7b8bbe7812c946cb35c6232434d6c6dd.jpg" id="1_lkcc7"]
+[ext_resource type="Texture2D" uid="uid://qw7wp456wphp" path="res://Sprites/UI/UIBook2/RADL_Book_blue.png" id="2_ijh18"]
+[ext_resource type="Texture2D" uid="uid://fn4742xjwx0t" path="res://Sprites/UI/UIBook2/button.png" id="3_2tkni"]
+[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="4_kfvpv"]
+[ext_resource type="Texture2D" uid="uid://b6j2bit8n8vpw" path="res://Sprites/UI/UIBook2/cell2.png" id="5_dk6bm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyyti"]
+texture = ExtResource("5_dk6bm")
+
+[node name="UIBookMenu" type="CanvasLayer"]
+
+[node name="7b8Bbe7812c946Cb35c6232434d6c6Dd" type="Sprite2D" parent="."]
+position = Vector2(962, 938)
+scale = Vector2(1.88086, 1.88086)
+texture = ExtResource("1_lkcc7")
+
+[node name="RadlBookBlue" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(5.06094, 5.06094)
+texture = ExtResource("2_ijh18")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 679.0
+offset_top = 339.0
+offset_right = 725.0
+offset_bottom = 425.0
+scale = Vector2(4.52085, 4.52085)
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_2tkni")
+
+[node name="Basil" type="Label" parent="VBoxContainer/TextureButton"]
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Продолжить"
+horizontal_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_2tkni")
+
+[node name="Basil" type="Label" parent="VBoxContainer/TextureButton2"]
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Сохранить"
+horizontal_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_2tkni")
+
+[node name="Basil" type="Label" parent="VBoxContainer/TextureButton3"]
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Загрузить"
+horizontal_alignment = 1
+
+[node name="TextureButton4" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_2tkni")
+
+[node name="Basil" type="Label" parent="VBoxContainer/TextureButton4"]
+offset_left = 5.30875
+offset_top = 3.53915
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Настройки"
+horizontal_alignment = 1
+
+[node name="TextureButton5" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_2tkni")
+
+[node name="Basil" type="Label" parent="VBoxContainer/TextureButton5"]
+offset_left = 5.30875
+offset_top = 3.53915
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Выйти"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 1024.0
+offset_top = 329.0
+offset_right = 1064.0
+offset_bottom = 369.0
+scale = Vector2(6.48846, 10.7621)
+columns = 3
+
+[node name="Panel" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Panel2" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Panel3" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Panel4" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Panel5" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Panel6" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Panel7" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Panel8" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Panel9" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Panel10" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Panel11" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Panel12" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")

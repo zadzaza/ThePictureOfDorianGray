@@ -97,6 +97,7 @@ offset_bottom = 40.0
 
 [node name="Peoples" type="TextureButton" parent="Control/Book/Elements/Buttons"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = -57.1601
 offset_top = -61.692
 offset_right = -43.1601
@@ -105,6 +106,7 @@ texture_normal = ExtResource("4_w44cr")
 
 [node name="Inv" type="TextureButton" parent="Control/Book/Elements/Buttons"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = -38.3017
 offset_top = -62.1306
 offset_right = -24.3017
@@ -113,6 +115,7 @@ texture_normal = ExtResource("5_veb4m")
 
 [node name="Settings" type="TextureButton" parent="Control/Book/Elements/Buttons"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 32.0155
 offset_top = -61.8382
 offset_right = 46.0155
