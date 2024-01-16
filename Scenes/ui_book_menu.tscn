@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5oexq1eivnb0"]
+[gd_scene load_steps=9 format=3 uid="uid://b5oexq1eivnb0"]
 
 [ext_resource type="Script" path="res://Scripts/ui_book_menu.gd" id="1_2lddj"]
 [ext_resource type="Texture2D" uid="uid://coakusgl1rkh4" path="res://Sprites/UI/UIBook2/7b8bbe7812c946cb35c6232434d6c6dd.jpg" id="1_lkcc7"]
@@ -6,11 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://fn4742xjwx0t" path="res://Sprites/UI/UIBook2/button.png" id="3_2tkni"]
 [ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="4_kfvpv"]
 [ext_resource type="Texture2D" uid="uid://b6j2bit8n8vpw" path="res://Sprites/UI/UIBook2/cell2.png" id="5_dk6bm"]
+[ext_resource type="Script" path="res://addons/pause-manager/scripts/pause_manager.gd" id="7_4ll02"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyyti"]
 texture = ExtResource("5_dk6bm")
 
 [node name="UIBookMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_2lddj")
 
 [node name="7b8Bbe7812c946Cb35c6232434d6c6Dd" type="Sprite2D" parent="."]
@@ -37,6 +39,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
 [node name="Basil" type="Label" parent="Page1/ContinueBtn"]
+layout_mode = 0
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -53,6 +56,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
 [node name="Basil" type="Label" parent="Page1/SaveBtn"]
+layout_mode = 0
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -69,6 +73,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
 [node name="Basil" type="Label" parent="Page1/LoadBtn"]
+layout_mode = 0
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -85,6 +90,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
 [node name="Basil" type="Label" parent="Page1/SettingBtn"]
+layout_mode = 0
 offset_left = 5.30875
 offset_top = 3.53915
 offset_right = 107.309
@@ -101,6 +107,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
 [node name="Basil" type="Label" parent="Page1/ExitBtn"]
+layout_mode = 0
 offset_left = 5.30875
 offset_top = 3.53915
 offset_right = 107.309
@@ -126,6 +133,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
 [node name="Basil" type="Label" parent="Page2/SoundBtn"]
+layout_mode = 0
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -142,6 +150,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
 [node name="Basil" type="Label" parent="Page2/GraphicsBtn"]
+layout_mode = 0
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -158,6 +167,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
 [node name="Basil" type="Label" parent="Page2/VideoBtn"]
+layout_mode = 0
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -174,6 +184,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
 [node name="Basil" type="Label" parent="Page2/BackBtn"]
+layout_mode = 0
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -199,6 +210,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_2tkni")
 
 [node name="Basil" type="Label" parent="Page3/BackBtn"]
+layout_mode = 0
 offset_left = 5.30875
 offset_top = 3.53917
 offset_right = 107.309
@@ -276,6 +288,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="PauseManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_4ll02")
 
 [connection signal="pressed" from="Page1/ContinueBtn" to="." method="_on_continue_btn_pressed"]
 [connection signal="pressed" from="Page1/SaveBtn" to="." method="_on_save_btn_pressed"]

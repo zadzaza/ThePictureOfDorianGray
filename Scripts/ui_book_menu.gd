@@ -28,6 +28,7 @@ func _input(event):
 
 func _on_continue_btn_pressed():
 	hide()
+	%PauseManager._resume()
 
 
 func _on_save_btn_pressed():
