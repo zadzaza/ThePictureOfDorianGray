@@ -23,6 +23,7 @@ func _process(delta):
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
+		count = 1
 		hide()
 
 
