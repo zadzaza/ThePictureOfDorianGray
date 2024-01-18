@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://2vbnuuaqbe4"]
+
+[ext_resource type="Texture2D" uid="uid://cds5k8d0cg8u1" path="res://Sprites/UI/dialogue_menu.png" id="1_nestt"]
+[ext_resource type="Texture2D" uid="uid://km61bvbml21l" path="res://Sprites/UI/a.png" id="2_el0s1"]
+
+[node name="SpeechBallon" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 328.0
+offset_bottom = 221.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+offset_right = 304.0
+offset_bottom = 186.0
+texture = ExtResource("1_nestt")
+patch_margin_left = 35
+patch_margin_top = 35
+patch_margin_right = 35
+patch_margin_bottom = 35
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 173.0
+offset_right = 89.0
+offset_bottom = 213.0
+texture = ExtResource("2_el0s1")
