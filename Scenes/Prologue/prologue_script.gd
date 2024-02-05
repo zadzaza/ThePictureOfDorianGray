@@ -10,7 +10,7 @@ var reflection_original = 0.306
 var material1 = load("res://Scenes/Prologue/shaders/water_reflection.gdshader")
 
 func _ready():
-	pass
+	$AnimationPlayer.play("light_up")
 	#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/prologue.dialogue"), "start")
 
 func _input(event):

@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_start_button_pressed():
-	$Dissolve.set_visible(true)
+	$Transition.set_visible(true)
 	$AnimationPlayer.play('dissolve')
 	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://Scenes/UI/load_screen.tscn")

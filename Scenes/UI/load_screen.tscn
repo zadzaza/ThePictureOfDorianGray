@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://byjvls0j15cmo"]
+[gd_scene load_steps=7 format=3 uid="uid://byjvls0j15cmo"]
 
 [ext_resource type="Texture2D" uid="uid://2iclincjj7ps" path="res://Sprites/load screen.png" id="1_ir1b7"]
 [ext_resource type="Script" path="res://Scripts/load_screen.gd" id="1_wc0cb"]
@@ -9,7 +9,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("LightUp:modulate")
+tracks/0/path = NodePath("Transition:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -21,22 +21,27 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_u18g3"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_yba4o"]
+resource_name = "dissolve"
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("LightUp:modulate")
+tracks/0/path = NodePath("Transition:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3e8ea"]
 _data = {
 "RESET": SubResource("Animation_u18g3"),
+"dissolve": SubResource("Animation_yba4o"),
 "light_up": SubResource("Animation_dxbue")
 }
 
@@ -63,7 +68,8 @@ offset_top = 928.0
 offset_right = 1181.0
 offset_bottom = 955.0
 
-[node name="LightUp" type="ColorRect" parent="."]
+[node name="Transition" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
 offset_left = -106.0
 offset_top = -78.0
 offset_right = 1973.0
@@ -74,3 +80,5 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_3e8ea")
 }
+
+[connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
