@@ -11,6 +11,8 @@ var material1 = load("res://Scenes/Prologue/shaders/water_reflection.gdshader")
 
 func _ready():
 	$AnimationPlayer.play("light_up")
+	await $AnimationPlayer.animation_finished
+	$MainCanvasLayer/Transition.set_visible(false)
 	#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/prologue.dialogue"), "start")
 
 func _input(event):

@@ -6,7 +6,7 @@ var elapsed_time = 0.0   # Время, прошедшее с начала заг
 func _ready():
 	$AnimationPlayer.play("light_up")
 	randomize()
-	time_to_fill = randf_range(0.02, 0.03)
+	time_to_fill = randf_range(0.02, 0.05)
 
 func _process(delta):
 	await get_tree().create_timer(randf_range(0.5, 2)).timeout
