@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=74 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cn6wcrssspc1h" path="res://Scenes/Prologue/sky_background.tscn" id="5_c53o5"]
 [ext_resource type="Texture2D" uid="uid://bm2d1xb8oxby3" path="res://Sprites/FgTrees/tree3.png" id="6_58hsq"]
 [ext_resource type="Texture2D" uid="uid://b5xjo0j7tu6ed" path="res://Sprites/FgTrees/tree4.png" id="7_c5f4i"]
-[ext_resource type="PackedScene" uid="uid://b5oexq1eivnb0" path="res://Scenes/ui_book_menu.tscn" id="7_w5l42"]
+[ext_resource type="PackedScene" uid="uid://b5oexq1eivnb0" path="res://Scenes/UI/ui_book_menu.tscn" id="7_w5l42"]
 [ext_resource type="Texture2D" uid="uid://px4caxjnm0oj" path="res://Sprites/FgTrees/tree5.png" id="8_pvnh8"]
 [ext_resource type="Texture2D" uid="uid://b870tnlh8q6kk" path="res://Sprites/FgTrees/tree6.png" id="9_11sxn"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/noise-overlay.gdshader" id="9_cnwg4"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://bjoaepgvkxrql" path="res://гнездо.png" id="15_njglx"]
 [ext_resource type="Texture2D" uid="uid://dicuxiu1mirrh" path="res://Sprites/Sign Posts/03.png" id="16_y221d"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/wind_trees.gdshader" id="18_gprbo"]
-[ext_resource type="Shader" path="res://SDF_Lighting.gdshader" id="18_qjfat"]
 [ext_resource type="Texture2D" uid="uid://calhdko37321t" path="res://molbert.png" id="20_7echu"]
 [ext_resource type="Texture2D" uid="uid://ce02nb7pw5jya" path="res://Sprites/BgTrees/shadow4.png" id="21_75e5f"]
 [ext_resource type="Texture2D" uid="uid://bwc65qsr3opmt" path="res://Sprites/BgTrees/shadow2.png" id="23_t8j8v"]
@@ -39,7 +38,7 @@
 shader = ExtResource("10_va8yl")
 shader_parameter/level = 0.522
 shader_parameter/water_albedo = Color(0.0745098, 0.356863, 0.478431, 1)
-shader_parameter/water_opacity = 0.124
+shader_parameter/water_opacity = 0.191
 shader_parameter/water_speed = 0.05
 shader_parameter/wave_distortion = 0.0
 shader_parameter/wave_multiplyer = 7
@@ -54,18 +53,6 @@ shader_parameter/uv_scaling = 1.4
 shader_parameter/movement_direction = Vector2(-0.5, 0.5)
 shader_parameter/movement_speed = 0.01
 shader_parameter/NOISE_TEXTURE = ExtResource("14_i6rbb")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihg0g"]
-shader = ExtResource("18_qjfat")
-shader_parameter/light_n = 0
-shader_parameter/light_pos = null
-shader_parameter/light_col = null
-shader_parameter/light_rng = null
-shader_parameter/light_ang = null
-shader_parameter/light_fan_ang = null
-shader_parameter/zoom = null
-shader_parameter/rotation = null
-shader_parameter/comp_mat = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vrlnj"]
 shader = ExtResource("18_gprbo")
@@ -621,19 +608,11 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0)
 metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="MainCanvasLayer"]
-
-[node name="LightAndShadow" type="ColorRect" parent="MainCanvasLayer/CanvasLayer"]
-visible = false
-material = SubResource("ShaderMaterial_ihg0g")
-offset_left = -5116.0
-offset_top = -1978.0
-offset_right = 6588.0
-offset_bottom = 2662.0
-
 [node name="UIBookMenu" parent="MainCanvasLayer" instance=ExtResource("7_w5l42")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Check" type="Node" parent="MainCanvasLayer/UIBookMenu"]
 
 [node name="BgObjects" type="Node2D" parent="."]
 z_index = -3
@@ -1007,6 +986,7 @@ drag_bottom_margin = 1.0
 occluder = SubResource("OccluderPolygon2D_ww266")
 
 [node name="Prizrak" type="PointLight2D" parent="PlayerScene"]
+visible = false
 position = Vector2(56, 625)
 enabled = false
 energy = 0.8

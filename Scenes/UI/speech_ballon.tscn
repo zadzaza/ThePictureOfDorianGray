@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://2vbnuuaqbe4"]
+
+[ext_resource type="Texture2D" uid="uid://cds5k8d0cg8u1" path="res://Sprites/UI/dialogue_menu.png" id="1_nestt"]
+[ext_resource type="Texture2D" uid="uid://km61bvbml21l" path="res://Sprites/UI/a.png" id="2_el0s1"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="3_odvwo"]
+
+[sub_resource type="Animation" id="Animation_sa22q"]
+resource_name = "appearance"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Balloon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.33, 0.33), Vector2(0.66, 0.66), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Balloon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3cdap"]
+_data = {
+"appearance": SubResource("Animation_sa22q")
+}
+
+[node name="SpeechBallon" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3cdap")
+}
+
+[node name="Balloon" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 328.0
+offset_bottom = 221.0
+pivot_offset = Vector2(52, 210)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Balloon"]
+layout_mode = 0
+offset_right = 304.0
+offset_bottom = 186.0
+scale = Vector2(1.3517, 1.31397)
+texture = ExtResource("1_nestt")
+patch_margin_left = 35
+patch_margin_top = 35
+patch_margin_right = 35
+patch_margin_bottom = 35
+
+[node name="TextureRect" type="TextureRect" parent="Balloon/NinePatchRect"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 173.0
+offset_right = 89.0
+offset_bottom = 213.0
+texture = ExtResource("2_el0s1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 11.0
+offset_right = 302.0
+offset_bottom = 61.0
+scale = Vector2(1.63832, 1.63832)
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/VBoxContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+
+[node name="DialogueLabel" parent="Balloon/VBoxContainer" instance=ExtResource("3_odvwo")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Dialogue..."
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")

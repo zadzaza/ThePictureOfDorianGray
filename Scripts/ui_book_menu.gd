@@ -10,15 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	page = "page" + str(count)
-
-	if page == "page1":
-		%Page1.set_visible(true)
-		%Page2.set_visible(false)
-	if page == "page2":
-		%Page1.set_visible(false)
-		%Page2.set_visible(true)
-	print(page)
+	switch_main_menu_buttons()
 
 
 func _input(event):
@@ -31,6 +23,16 @@ func _on_continue_btn_pressed():
 	hide()
 	%PauseManager._resume()
 
+func switch_main_menu_buttons():
+	page = "page" + str(count)
+
+	if page == "page1":
+		%Page1.set_visible(true)
+		%Page2.set_visible(false)
+	if page == "page2":
+		%Page1.set_visible(false)
+		%Page2.set_visible(true)
+	print(page)
 
 func _on_save_btn_pressed():
 	pass # Replace with function body.
