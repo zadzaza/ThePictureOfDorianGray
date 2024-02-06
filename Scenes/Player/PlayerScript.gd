@@ -12,18 +12,21 @@ func _physics_process(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
-		set_anim(MOVE_STATE.MOVE_SIDE)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		set_anim(MOVE_STATE.IDLE_SIDE)
 	
-	if direction > 0:
+	if velocity.x > 0:
 		pl_flip_h.flip_h = false
-	if direction < 0:
+	if velocity.x < 0:
 		pl_flip_h.flip_h = true
+	
+	if velocity.x:
+		set_anim(MOVE_STATE.MOVE_SIDE)
+	else: set_anim(MOVE_STATE.IDLE_SIDE)
 
 	move_and_slide()
 	print(MOVE_STATE)
+	print(global_position)
 
 
 func set_anim(new_state: MOVE_STATE):
