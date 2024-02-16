@@ -15,4 +15,5 @@ func _input(event):
 		%UIBookMenu.show()
 
 func _process(delta):
-	path_follow.progress_ratio += delta * 0.1
+	pass
+	#path_follow.progress_ratio += delta * 0.1
