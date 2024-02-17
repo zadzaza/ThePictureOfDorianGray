@@ -32,7 +32,6 @@ func switch_main_menu_buttons():
 	if page == "page2":
 		%Page1.set_visible(false)
 		%Page2.set_visible(true)
-	print(page)
 
 func _on_save_btn_pressed():
 	pass # Replace with function body.
