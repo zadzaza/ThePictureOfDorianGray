@@ -505,7 +505,7 @@ polygon = PackedVector2Array(1611.54, -552.334, 1611.52, -585.334, 1618.52, -585
 
 [sub_resource type="Curve2D" id="Curve2D_1bi7h"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -3994, 438, 0, 0, 0, 0, -2901, 454)
+"points": PackedVector2Array(0, 0, 0, 0, -5657, 407, 0, 0, 0, 0, -3488, 415)
 }
 point_count = 2
 
@@ -640,7 +640,7 @@ follow_viewport_enabled = true
 material = SubResource("ShaderMaterial_7wql8")
 anchors_preset = -1
 anchor_left = -2.10469
-anchor_top = -2.82315
+anchor_top = -2.81296
 anchor_right = 0.729688
 anchor_bottom = 2.42222
 offset_left = -3797.0
@@ -967,8 +967,8 @@ texture = ExtResource("7_c5f4i")
 [node name="Tree20" type="Sprite2D" parent="FgObjects/LeftSide"]
 z_index = 3
 material = SubResource("ShaderMaterial_prp78")
-position = Vector2(-5693, 75)
-scale = Vector2(1.205, 1.205)
+position = Vector2(-5648, -163)
+scale = Vector2(1.76383, 1.76383)
 texture = ExtResource("7_c5f4i")
 
 [node name="Tree13" type="Sprite2D" parent="FgObjects/LeftSide"]
@@ -1039,25 +1039,15 @@ occluder = SubResource("OccluderPolygon2D_d77sk")
 curve = SubResource("Curve2D_1bi7h")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-3994, 438)
-rotation = 0.0146376
+position = Vector2(-5657, 407)
+rotation = 0.00368832
 loop = false
 
 [node name="PlayerScene" parent="Path2D/PathFollow2D" instance=ExtResource("4_rxhjn")]
 light_mask = 2
 texture_filter = 1
-position = Vector2(11.7102, -88.1808)
+position = Vector2(-10.0146, -3.96309)
 move_state = 3
-
-[node name="Camera2D2" type="Camera2D" parent="Path2D/PathFollow2D/PlayerScene"]
-offset = Vector2(0, -200)
-zoom = Vector2(0.4, 0.4)
-position_smoothing_enabled = true
-position_smoothing_speed = 2.0
-drag_vertical_enabled = true
-drag_top_margin = 1.0
-drag_right_margin = 0.0
-drag_bottom_margin = 1.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Path2D/PathFollow2D/PlayerScene"]
 occluder = SubResource("OccluderPolygon2D_ww266")
@@ -1070,6 +1060,17 @@ color = Color(0.862745, 0.862745, 0.862745, 1)
 energy = 0.8
 texture = ExtResource("33_p7vc3")
 texture_scale = 2.8
+
+[node name="PlCamera" type="Camera2D" parent="Path2D/PathFollow2D/PlayerScene"]
+position = Vector2(0, -8.033)
+offset = Vector2(0, -200)
+zoom = Vector2(0.4, 0.4)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+drag_right_margin = 0.0
+drag_bottom_margin = 1.0
 
 [node name="SunLight" type="DirectionalLight2D" parent="."]
 position = Vector2(2282, -1073)
@@ -1224,3 +1225,14 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_focn8")
 }
+
+[node name="WorldCamera" type="Camera2D" parent="."]
+position = Vector2(-3488, 407)
+offset = Vector2(0, -200)
+zoom = Vector2(0.4, 0.4)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+drag_right_margin = 0.0
+drag_bottom_margin = 1.0
