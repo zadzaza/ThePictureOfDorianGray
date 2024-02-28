@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mvsn10b6ocim"
-path="res://.godot/imported/birds.png-d5f3c3b0c5cda4a4967ac42d794714c3.ctex"
+uid="uid://et5d5eqi1642"
+path="res://.godot/imported/sit.png-f5d8f445961e3cdc9cc37398f37a6b83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/birds.png"
-dest_files=["res://.godot/imported/birds.png-d5f3c3b0c5cda4a4967ac42d794714c3.ctex"]
+source_file="res://NPC/sit.png"
+dest_files=["res://.godot/imported/sit.png-f5d8f445961e3cdc9cc37398f37a6b83.ctex"]
 
 [params]
 
