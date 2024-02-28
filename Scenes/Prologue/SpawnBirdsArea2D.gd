@@ -1,7 +1,7 @@
 extends Area2D
 
 # Укажите здесь путь до сцены объекта, который вы хотите спаунить
-var spawn_scene = load("res://Scenes/Prologue/fly_bird.tscn")
+
 #@onready var timer = $Timer
 
 # Настройки таймера для спауна

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcvb38k01mgv7"]
+[gd_scene load_steps=13 format=3 uid="uid://dcvb38k01mgv7"]
 
 [ext_resource type="Texture2D" uid="uid://dmqo14pm0r0bw" path="res://Sprites/birds/BirdSprite.png" id="1_1lxxa"]
 [ext_resource type="Script" path="res://Scenes/Prologue/fly_bird.gd" id="1_nbdak"]
@@ -67,8 +67,12 @@ animations = [{
 "speed": 11.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1onsf"]
+
 [node name="FlyBird" type="CharacterBody2D"]
 scale = Vector2(2.2, 2.2)
+collision_layer = 4
+collision_mask = 8
 script = ExtResource("1_nbdak")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -76,3 +80,6 @@ sprite_frames = SubResource("SpriteFrames_q6fnx")
 autoplay = "default"
 frame_progress = 0.143521
 flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1onsf")
