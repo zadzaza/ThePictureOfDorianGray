@@ -797,6 +797,7 @@ offset_right = 1982.0
 offset_bottom = 1134.0
 
 [node name="Prizrak" type="PointLight2D" parent="MainCanvasLayer"]
+visible = false
 position = Vector2(-5614.31, 1028.2)
 rotation = 0.00368832
 color = Color(0.862745, 0.862745, 0.862745, 1)
