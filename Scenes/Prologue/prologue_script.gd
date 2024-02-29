@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var path_follow = $Path2D/PathFollow2D
-@onready var bird_text = $BirdDialogue.text
+@onready var bird_text = %BirdDialogue.text
 
 var bird = load("res://Scenes/Prologue/fly_bird.tscn")
 
@@ -10,7 +10,7 @@ var text_bird_count_line = 0
 var speed = 0.0
 
 func _ready():
-	$BirdDialogue.set_text("С некоторыми объектами можно взаимодействовать. \nДля этого нажмите E")
+	%BirdDialogue.set_text("С некоторыми объектами можно взаимодействовать. \nДля этого нажмите E")
 	
 	$MainCanvasLayer/Transition.set_visible(true)
 	$AnimationTree/TransitionAnimation.play("light_up")

@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://brrjowxtot0sl"]
+[gd_scene load_steps=9 format=3 uid="uid://brrjowxtot0sl"]
 
 [ext_resource type="Script" path="res://Scenes/basil.gd" id="1_wvhdo"]
+[ext_resource type="Shader" path="res://no_jittering.gdshader" id="2_ns6kb"]
 [ext_resource type="Texture2D" uid="uid://k1xh0fj006ox" path="res://NPC/NPC_2.png" id="2_uqegq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cb14j"]
+shader = ExtResource("2_ns6kb")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pjxdp"]
 animations = [{
@@ -43,6 +47,7 @@ _data = {
 script = ExtResource("1_wvhdo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_cb14j")
 scale = Vector2(1.01783, 1.01783)
 sprite_frames = SubResource("SpriteFrames_pjxdp")
 

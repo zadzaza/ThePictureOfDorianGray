@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=91 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -18,7 +18,9 @@
 [ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="9_akb36"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/noise-overlay.gdshader" id="9_cnwg4"]
 [ext_resource type="Texture2D" uid="uid://ctm37ukw5tlud" path="res://Sprites/FgTrees/brevno.png" id="9_k4mfr"]
+[ext_resource type="Texture2D" uid="uid://dahk0fytho5et" path="res://Sprites/Keys/left.png" id="10_u4lkg"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/water_reflection.gdshader" id="10_va8yl"]
+[ext_resource type="Texture2D" uid="uid://ccumdx51v3u0u" path="res://Sprites/Keys/right.png" id="11_v5230"]
 [ext_resource type="Texture2D" uid="uid://dvrfijm4kjin7" path="res://Scenes/Prologue/shaders/blue_noise.png" id="14_i6rbb"]
 [ext_resource type="Texture2D" uid="uid://bjoaepgvkxrql" path="res://гнездо.png" id="15_njglx"]
 [ext_resource type="Texture2D" uid="uid://dicuxiu1mirrh" path="res://Sprites/Sign Posts/03.png" id="16_y221d"]
@@ -1151,7 +1153,7 @@ offset = Vector2(0, -200)
 zoom = Vector2(0.4, 0.4)
 limit_left = -5900
 position_smoothing_enabled = true
-position_smoothing_speed = 2.0
+position_smoothing_speed = 3.5
 drag_vertical_enabled = true
 drag_top_margin = 1.0
 drag_right_margin = 0.0
@@ -1344,7 +1346,12 @@ z_index = 10
 position = Vector2(-2791, 416)
 shape = SubResource("RectangleShape2D_5b0f1")
 
+[node name="Basil" parent="." instance=ExtResource("39_6hgm2")]
+position = Vector2(979, 400)
+scale = Vector2(0.509894, 0.509894)
+
 [node name="BirdDialogue" type="Label" parent="."]
+unique_name_in_owner = true
 visible = false
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
@@ -1357,9 +1364,28 @@ theme_override_fonts/font = ExtResource("9_akb36")
 text = "Подобрать птенца?"
 horizontal_alignment = 1
 
-[node name="Basil" parent="." instance=ExtResource("39_6hgm2")]
-position = Vector2(979, 400)
-scale = Vector2(0.509894, 0.509894)
+[node name="BirdDialogue2" type="Label" parent="."]
+z_index = 4096
+material = SubResource("ShaderMaterial_07cvs")
+offset_left = -4474.0
+offset_top = 100.0
+offset_right = -3978.0
+offset_bottom = 141.999
+scale = Vector2(3.971, 3.971)
+theme_override_fonts/font = ExtResource("9_akb36")
+text = "Для передвижения используйте кнопки
+Или"
+horizontal_alignment = 1
+
+[node name="Left" type="Sprite2D" parent="BirdDialogue2"]
+position = Vector2(385.377, 10.1635)
+scale = Vector2(0.58758, 0.58758)
+texture = ExtResource("10_u4lkg")
+
+[node name="Right" type="Sprite2D" parent="BirdDialogue2"]
+position = Vector2(406.027, 10.1635)
+scale = Vector2(0.588, 0.588)
+texture = ExtResource("11_v5230")
 
 [connection signal="animation_finished" from="AnimationTree/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
 [connection signal="timeout" from="BirdTimer" to="." method="_on_bird_timer_timeout"]
