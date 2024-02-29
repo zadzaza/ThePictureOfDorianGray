@@ -3,6 +3,7 @@ extends CharacterBody2D
 # Инициализируем анимированный спрайт и его поведение при повороте
 @onready var animation = $AnimatedSprite2D
 @onready var pl_flip_h = $AnimatedSprite2D
+var show_btn = false
 
 var path_going = true
 
@@ -18,6 +19,10 @@ enum MOVE_STATE {IDLE_SIDE, IDLE_UP, IDLE_DOWN, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
 
 
 func _physics_process(delta):
+	#if show_btn: 
+		#$Control/CanvasLayer/Button.show()
+		#print("work")
+	#else: $Control/CanvasLayer/Button.hide()
 	# Получаем направление движения из пользовательского ввода
 	var direction = Input.get_axis("ui_left", "ui_right")
 	

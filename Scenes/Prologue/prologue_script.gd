@@ -55,3 +55,20 @@ func _on_animation_bird_animation_finished(anim_name):
 	if text_bird_count_line == 1:
 		$BirdDialogue.set_text("Ваши поступки влияют на характер главного героя")
 		$AnimationTree/AnimationBird.play("fade_in_take_bird")
+
+
+func _on_buttons_help_area_body_entered(body):
+	$AnimationTree/AnimationButtons.play("fade_in")
+	print("buttons")
+
+
+func _on_buttons_help_area_body_exited(body):
+	$AnimationTree/AnimationButtons.play("fade_out")
+	await $AnimationTree/AnimationButtons.animation_finished
+	%ButtonsHelp.set_text("")
+	%ButtonsHelp.queue_free()
+	%ButtonsHelpArea.queue_free()
+
+
+func _on_area_bird_take_body_entered(body):
+	%Player.show_btn = true

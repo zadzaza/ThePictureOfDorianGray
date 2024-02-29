@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=98 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -41,6 +41,8 @@
 [ext_resource type="PackedScene" uid="uid://dbasef84pjwvt" path="res://Scenes/Prologue/chick.tscn" id="35_uuudl"]
 [ext_resource type="Texture2D" uid="uid://ckejnyt3trtcq" path="res://Sprites/Tilemap/penek.png" id="36_jnxsn"]
 [ext_resource type="PackedScene" uid="uid://brrjowxtot0sl" path="res://Scenes/basil.tscn" id="39_6hgm2"]
+[ext_resource type="Texture2D" uid="uid://c5kg3qmsf64jv" path="res://Sprites/Keys/a.png" id="42_hc2ml"]
+[ext_resource type="Texture2D" uid="uid://4nkes5rrmmad" path="res://Sprites/Keys/d.png" id="43_q2bil"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
 shader = ExtResource("10_va8yl")
@@ -639,6 +641,78 @@ _data = {
 "fade_in_take_bird": SubResource("Animation_84jhy")
 }
 
+[sub_resource type="Animation" id="Animation_jmwnx"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ButtonsHelp:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ButtonsHelp:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.392292, 1),
+"update": 0,
+"values": [Vector2(-4474, 120), Vector2(-4474, 100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ButtonsHelp:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_frm3n"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ButtonsHelp:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ButtonsHelp:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.41421, 1),
+"update": 0,
+"values": [Vector2(-4474, 100), Vector2(-4474, 120)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fl4ir"]
+_data = {
+"fade_in": SubResource("Animation_jmwnx"),
+"fade_out": SubResource("Animation_frm3n")
+}
+
 [sub_resource type="Curve2D" id="Curve2D_wdyfy"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -7986, -1152, 0, 0, 0, 0, -7984, -868)
@@ -651,11 +725,17 @@ size = Vector2(3357, 2814)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5b0f1"]
 size = Vector2(990, 172.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02pux"]
+size = Vector2(168, 38)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_07cvs"]
 shader = ExtResource("8_sqb6b")
 shader_parameter/height = 3.0
 shader_parameter/curve = 0.02
 shader_parameter/speed = 2.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81rpt"]
+size = Vector2(67, 55)
 
 [node name="PrologueScene" type="Node2D"]
 position = Vector2(-1, 0)
@@ -717,17 +797,12 @@ offset_right = 1982.0
 offset_bottom = 1134.0
 
 [node name="Prizrak" type="PointLight2D" parent="MainCanvasLayer"]
-visible = false
 position = Vector2(-5614.31, 1028.2)
 rotation = 0.00368832
-enabled = false
 color = Color(0.862745, 0.862745, 0.862745, 1)
 energy = 0.8
 texture = ExtResource("33_p7vc3")
 texture_scale = 2.8
-
-[node name="CanvasLayer" type="CanvasLayer" parent="MainCanvasLayer"]
-layer = 128
 
 [node name="BgObjects" type="Node2D" parent="."]
 z_index = -3
@@ -1138,16 +1213,17 @@ position = Vector2(-5657, 407)
 rotation = 0.00368832
 loop = false
 
-[node name="PlayerScene" parent="Path2D/PathFollow2D" instance=ExtResource("4_rxhjn")]
+[node name="Player" parent="Path2D/PathFollow2D" instance=ExtResource("4_rxhjn")]
+unique_name_in_owner = true
 light_mask = 2
 texture_filter = 1
 position = Vector2(-10.0146, -3.96309)
 move_state = 3
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Path2D/PathFollow2D/PlayerScene"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Path2D/PathFollow2D/Player"]
 occluder = SubResource("OccluderPolygon2D_ww266")
 
-[node name="PlCamera" type="Camera2D" parent="Path2D/PathFollow2D/PlayerScene"]
+[node name="PlCamera" type="Camera2D" parent="Path2D/PathFollow2D/Player"]
 position = Vector2(0, -8.033)
 offset = Vector2(0, -200)
 zoom = Vector2(0.4, 0.4)
@@ -1315,6 +1391,11 @@ libraries = {
 "": SubResource("AnimationLibrary_lejqg")
 }
 
+[node name="AnimationButtons" type="AnimationPlayer" parent="AnimationTree"]
+libraries = {
+"": SubResource("AnimationLibrary_fl4ir")
+}
+
 [node name="Chick" parent="." instance=ExtResource("35_uuudl")]
 position = Vector2(-2639, 488)
 scale = Vector2(3.05, 3.05)
@@ -1346,6 +1427,13 @@ z_index = 10
 position = Vector2(-2791, 416)
 shape = SubResource("RectangleShape2D_5b0f1")
 
+[node name="AreaBirdTake" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBirdTake"]
+z_index = 1000
+position = Vector2(-2637, 483)
+shape = SubResource("RectangleShape2D_02pux")
+
 [node name="Basil" parent="." instance=ExtResource("39_6hgm2")]
 position = Vector2(979, 400)
 scale = Vector2(0.509894, 0.509894)
@@ -1364,30 +1452,52 @@ theme_override_fonts/font = ExtResource("9_akb36")
 text = "Подобрать птенца?"
 horizontal_alignment = 1
 
-[node name="BirdDialogue2" type="Label" parent="."]
+[node name="ButtonsHelp" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
 offset_left = -4474.0
 offset_top = 100.0
 offset_right = -3978.0
-offset_bottom = 141.999
+offset_bottom = 141.996
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
-text = "Для передвижения используйте кнопки
-Или"
+text = "Для передвижения используйте кнопки"
 horizontal_alignment = 1
 
-[node name="Left" type="Sprite2D" parent="BirdDialogue2"]
-position = Vector2(385.377, 10.1635)
+[node name="Left" type="Sprite2D" parent="ButtonsHelp"]
+position = Vector2(203.307, 34.5906)
 scale = Vector2(0.58758, 0.58758)
 texture = ExtResource("10_u4lkg")
 
-[node name="Right" type="Sprite2D" parent="BirdDialogue2"]
-position = Vector2(406.027, 10.1635)
+[node name="Right" type="Sprite2D" parent="ButtonsHelp"]
+position = Vector2(223.957, 34.5906)
 scale = Vector2(0.588, 0.588)
 texture = ExtResource("11_v5230")
+
+[node name="Left2" type="Sprite2D" parent="ButtonsHelp"]
+position = Vector2(265.256, 34.5906)
+scale = Vector2(0.58758, 0.58758)
+texture = ExtResource("42_hc2ml")
+
+[node name="Right2" type="Sprite2D" parent="ButtonsHelp"]
+position = Vector2(285.906, 34.5906)
+scale = Vector2(0.588, 0.588)
+texture = ExtResource("43_q2bil")
+
+[node name="ButtonsHelpArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonsHelpArea"]
+z_index = 1000
+position = Vector2(-3492, 473)
+shape = SubResource("RectangleShape2D_81rpt")
 
 [connection signal="animation_finished" from="AnimationTree/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
 [connection signal="timeout" from="BirdTimer" to="." method="_on_bird_timer_timeout"]
 [connection signal="body_entered" from="BirdsRemoveArea" to="." method="_on_birds_remove_area_body_entered"]
 [connection signal="body_entered" from="BirdArea" to="." method="_on_bird_area_body_entered"]
+[connection signal="body_entered" from="AreaBirdTake" to="." method="_on_area_bird_take_body_entered"]
+[connection signal="body_entered" from="ButtonsHelpArea" to="." method="_on_buttons_help_area_body_entered"]
+[connection signal="body_exited" from="ButtonsHelpArea" to="." method="_on_buttons_help_area_body_exited"]
