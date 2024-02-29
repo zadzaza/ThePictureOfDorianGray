@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=89 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://dcvb38k01mgv7" path="res://Scenes/Prologue/fly_bird.tscn" id="35_rw2vx"]
 [ext_resource type="PackedScene" uid="uid://dbasef84pjwvt" path="res://Scenes/Prologue/chick.tscn" id="35_uuudl"]
 [ext_resource type="Texture2D" uid="uid://ckejnyt3trtcq" path="res://Sprites/Tilemap/penek.png" id="36_jnxsn"]
+[ext_resource type="Texture2D" uid="uid://k1xh0fj006ox" path="res://NPC_2.png" id="39_n464b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
 shader = ExtResource("10_va8yl")
@@ -556,6 +557,8 @@ shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/hdr = true
 shader_parameter/seed = 5.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sskg6"]
+
 [sub_resource type="Animation" id="Animation_hxgen"]
 resource_name = "light_up"
 length = 2.8
@@ -589,52 +592,49 @@ _data = {
 "light_up": SubResource("Animation_hxgen")
 }
 
-[sub_resource type="Animation" id="Animation_kiksa"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Basil:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_84jhy"]
-resource_name = "fade_in2"
+resource_name = "fade_in_take_bird"
+length = 7.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Basil:modulate")
+tracks/0/path = NodePath("../BirdDialogue:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Basil:position")
+tracks/1/path = NodePath("../BirdDialogue:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.392292, 1),
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(0.392292, 1, 1.41421, 1),
 "update": 0,
-"values": [Vector2(-3142, 150), Vector2(-3142, 128)]
+"values": [Vector2(-3861, 120), Vector2(-3861, 100), Vector2(-3861, 100), Vector2(-3861, 120)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BirdDialogue:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lejqg"]
 _data = {
-"fade_in": SubResource("Animation_kiksa"),
-"fade_in2": SubResource("Animation_84jhy")
+"fade_in_take_bird": SubResource("Animation_84jhy")
 }
 
 [sub_resource type="Curve2D" id="Curve2D_wdyfy"]
@@ -647,7 +647,7 @@ point_count = 2
 size = Vector2(3357, 2814)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5b0f1"]
-size = Vector2(522, 172.5)
+size = Vector2(990, 172.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_07cvs"]
 shader = ExtResource("8_sqb6b")
@@ -707,6 +707,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Transition" type="ColorRect" parent="MainCanvasLayer"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 z_index = 4096
 offset_left = -24.0
@@ -1293,6 +1294,7 @@ position = Vector2(-4372, 485)
 texture = ExtResource("29_wpii7")
 
 [node name="IdleDown" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_sskg6")
 position = Vector2(818.625, 399.727)
 scale = Vector2(0.700413, 0.700413)
 texture = ExtResource("34_eem1q")
@@ -1339,21 +1341,30 @@ shape = SubResource("RectangleShape2D_5unei")
 [node name="BirdArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BirdArea"]
-position = Vector2(-2792, 421)
+z_index = 10
+position = Vector2(-2791, 416)
 shape = SubResource("RectangleShape2D_5b0f1")
 
-[node name="Basil" type="Label" parent="."]
+[node name="BirdDialogue" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
-offset_left = -3142.0
-offset_top = 128.0
-offset_right = -3018.0
-offset_bottom = 145.0
+offset_left = -3861.0
+offset_top = 120.0
+offset_right = -3365.0
+offset_bottom = 161.999
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "Подобрать птенца?"
 horizontal_alignment = 1
 
+[node name="Npc2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1557, 304)
+scale = Vector2(0.536385, 0.536385)
+texture = ExtResource("39_n464b")
+
+[connection signal="animation_finished" from="AnimationTree/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
 [connection signal="timeout" from="BirdTimer" to="." method="_on_bird_timer_timeout"]
 [connection signal="body_entered" from="BirdsRemoveArea" to="." method="_on_birds_remove_area_body_entered"]
 [connection signal="body_entered" from="BirdArea" to="." method="_on_bird_area_body_entered"]
