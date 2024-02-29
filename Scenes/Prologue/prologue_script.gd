@@ -63,11 +63,10 @@ func _on_buttons_help_area_body_entered(body):
 
 
 func _on_buttons_help_area_body_exited(body):
+	%ButtonsHelpArea.queue_free()
 	$AnimationTree/AnimationButtons.play("fade_out")
 	await $AnimationTree/AnimationButtons.animation_finished
-	%ButtonsHelp.set_text("")
 	%ButtonsHelp.queue_free()
-	%ButtonsHelpArea.queue_free()
 
 
 func _on_area_bird_take_body_entered(body):
