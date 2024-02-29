@@ -38,7 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://dcvb38k01mgv7" path="res://Scenes/Prologue/fly_bird.tscn" id="35_rw2vx"]
 [ext_resource type="PackedScene" uid="uid://dbasef84pjwvt" path="res://Scenes/Prologue/chick.tscn" id="35_uuudl"]
 [ext_resource type="Texture2D" uid="uid://ckejnyt3trtcq" path="res://Sprites/Tilemap/penek.png" id="36_jnxsn"]
-[ext_resource type="Texture2D" uid="uid://k1xh0fj006ox" path="res://NPC_2.png" id="39_n464b"]
+[ext_resource type="PackedScene" uid="uid://brrjowxtot0sl" path="res://Scenes/basil.tscn" id="39_6hgm2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
 shader = ExtResource("10_va8yl")
@@ -707,7 +707,6 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Transition" type="ColorRect" parent="MainCanvasLayer"]
-visible = false
 modulate = Color(0, 0, 0, 1)
 z_index = 4096
 offset_left = -24.0
@@ -1295,7 +1294,7 @@ texture = ExtResource("29_wpii7")
 
 [node name="IdleDown" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_sskg6")
-position = Vector2(818.625, 399.727)
+position = Vector2(821, 392)
 scale = Vector2(0.700413, 0.700413)
 texture = ExtResource("34_eem1q")
 
@@ -1315,7 +1314,7 @@ libraries = {
 }
 
 [node name="Chick" parent="." instance=ExtResource("35_uuudl")]
-position = Vector2(-2790, 488)
+position = Vector2(-2639, 488)
 scale = Vector2(3.05, 3.05)
 
 [node name="BirdTimer" type="Timer" parent="."]
@@ -1346,23 +1345,21 @@ position = Vector2(-2791, 416)
 shape = SubResource("RectangleShape2D_5b0f1")
 
 [node name="BirdDialogue" type="Label" parent="."]
-modulate = Color(1, 1, 1, 0)
+visible = false
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
 offset_left = -3861.0
-offset_top = 120.0
+offset_top = 100.0
 offset_right = -3365.0
-offset_bottom = 161.999
+offset_bottom = 141.999
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "Подобрать птенца?"
 horizontal_alignment = 1
 
-[node name="Npc2" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(1557, 304)
-scale = Vector2(0.536385, 0.536385)
-texture = ExtResource("39_n464b")
+[node name="Basil" parent="." instance=ExtResource("39_6hgm2")]
+position = Vector2(979, 400)
+scale = Vector2(0.509894, 0.509894)
 
 [connection signal="animation_finished" from="AnimationTree/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
 [connection signal="timeout" from="BirdTimer" to="." method="_on_bird_timer_timeout"]

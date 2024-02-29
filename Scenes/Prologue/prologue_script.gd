@@ -53,6 +53,5 @@ func _on_bird_area_body_entered(body):
 func _on_animation_bird_animation_finished(anim_name):
 	text_bird_count_line += 1
 	if text_bird_count_line == 1:
-		bird_text = "Ваши поступки влияют на характер главного героя"
 		$BirdDialogue.set_text("Ваши поступки влияют на характер главного героя")
 		$AnimationTree/AnimationBird.play("fade_in_take_bird")
