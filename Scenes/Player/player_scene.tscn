@@ -11,9 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://3c0n3rueuabq" path="res://Scenes/Player/Sprites/move_up2.png" id="10_dn2ob"]
 [ext_resource type="Texture2D" uid="uid://2s5ch2xolbmt" path="res://Scenes/Player/Sprites/move_up.png" id="11_ujw8r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8pur"]
-size = Vector2(126, 128)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_4p1tp"]
 animations = [{
 "frames": [{
@@ -92,13 +89,12 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8pur"]
+size = Vector2(94, 11)
+
 [node name="PlayerScene" type="CharacterBody2D"]
 z_index = 2
 script = ExtResource("1_bpb1l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 53)
-shape = SubResource("RectangleShape2D_u8pur")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -200)
@@ -113,3 +109,7 @@ sprite_frames = SubResource("SpriteFrames_4p1tp")
 animation = &"move_side"
 autoplay = "idle_side"
 frame_progress = 0.178016
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 111.5)
+shape = SubResource("RectangleShape2D_u8pur")
