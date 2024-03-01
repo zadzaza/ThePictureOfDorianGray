@@ -22,6 +22,10 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		%UIBookMenu.show()
+	
+	if event.is_action_pressed("[") and event.is_action_pressed("e") and event.is_action_pressed("q"):
+		%Prizrak.set_visible(true)
+	else: %Prizrak.set_visible(false)
 
 func _process(delta):
 	path_follow.progress_ratio += delta * speed
@@ -50,11 +54,16 @@ func _on_bird_area_body_entered(body):
 	$AnimationTree/AnimationBird.play("fade_in_take_bird")
 
 
+func _on_bird_area_body_exited(body):
+	%BirdArea.queue_free()
+
+
 func _on_animation_bird_animation_finished(anim_name):
 	text_bird_count_line += 1
 	if text_bird_count_line == 1:
 		$BirdDialogue.set_text("Ваши поступки влияют на характер главного героя")
 		$AnimationTree/AnimationBird.play("fade_in_take_bird")
+		await $AnimationTree/AnimationBird.animation_finished
 
 
 func _on_buttons_help_area_body_entered(body):
@@ -67,7 +76,12 @@ func _on_buttons_help_area_body_exited(body):
 	$AnimationTree/AnimationButtons.play("fade_out")
 	await $AnimationTree/AnimationButtons.animation_finished
 	%ButtonsHelp.queue_free()
+	%AnimationButtons.queue_free()
 
 
 func _on_area_bird_take_body_entered(body):
 	%Player.show_btn = true
+
+
+func _on_area_bird_take_body_exited(body):
+	%Player.show_btn = false

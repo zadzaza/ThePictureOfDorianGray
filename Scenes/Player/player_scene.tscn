@@ -136,12 +136,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Button" type="AnimatedSprite2D" parent="Control/CanvasLayer"]
+[node name="Button" type="AnimatedSprite2D" parent="CanvasLayer"]
 z_index = 4096
-position = Vector2(2236, 985)
-scale = Vector2(4.38642, 4.38642)
+position = Vector2(1776, 949)
+scale = Vector2(2.90144, 2.90144)
 sprite_frames = SubResource("SpriteFrames_kh37t")
 autoplay = "default"
-frame_progress = 0.403184
+frame_progress = 0.0659745

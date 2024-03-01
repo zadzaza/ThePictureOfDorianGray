@@ -19,10 +19,10 @@ enum MOVE_STATE {IDLE_SIDE, IDLE_UP, IDLE_DOWN, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
 
 
 func _physics_process(delta):
-	#if show_btn: 
-		#$Control/CanvasLayer/Button.show()
-		#print("work")
-	#else: $Control/CanvasLayer/Button.hide()
+	if show_btn: 
+		$CanvasLayer/Button.show()
+		print("work")
+	else: $CanvasLayer/Button.hide()
 	# Получаем направление движения из пользовательского ввода
 	var direction = Input.get_axis("ui_left", "ui_right")
 	

@@ -726,7 +726,7 @@ size = Vector2(3357, 2814)
 size = Vector2(990, 172.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02pux"]
-size = Vector2(168, 38)
+size = Vector2(250, 38)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_07cvs"]
 shader = ExtResource("8_sqb6b")
@@ -789,6 +789,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Transition" type="ColorRect" parent="MainCanvasLayer"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 z_index = 4096
 offset_left = -24.0
@@ -797,9 +798,11 @@ offset_right = 1982.0
 offset_bottom = 1134.0
 
 [node name="Prizrak" type="PointLight2D" parent="MainCanvasLayer"]
+unique_name_in_owner = true
 visible = false
-position = Vector2(-5614.31, 1028.2)
+position = Vector2(761, 904)
 rotation = 0.00368832
+scale = Vector2(0.486925, 0.486925)
 color = Color(0.862745, 0.862745, 0.862745, 1)
 energy = 0.8
 texture = ExtResource("33_p7vc3")
@@ -1393,6 +1396,7 @@ libraries = {
 }
 
 [node name="AnimationButtons" type="AnimationPlayer" parent="AnimationTree"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_fl4ir")
 }
@@ -1420,20 +1424,24 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BirdsRemoveArea"]
 position = Vector2(5527, -902)
 shape = SubResource("RectangleShape2D_5unei")
+debug_color = Color(0.92549, 0, 0, 0.419608)
 
 [node name="BirdArea" type="Area2D" parent="."]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BirdArea"]
 z_index = 10
 position = Vector2(-2791, 416)
 shape = SubResource("RectangleShape2D_5b0f1")
+debug_color = Color(0.607843, 0.513726, 0.458824, 0.419608)
 
 [node name="AreaBirdTake" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBirdTake"]
 z_index = 1000
-position = Vector2(-2637, 483)
+position = Vector2(-2640, 483)
 shape = SubResource("RectangleShape2D_02pux")
+debug_color = Color(0.94902, 0.0509804, 0.541176, 0.419608)
 
 [node name="Basil" parent="." instance=ExtResource("39_6hgm2")]
 position = Vector2(979, 400)
@@ -1455,13 +1463,13 @@ horizontal_alignment = 1
 
 [node name="ButtonsHelp" type="Label" parent="."]
 unique_name_in_owner = true
-visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
 offset_left = -4474.0
-offset_top = 100.0
+offset_top = 120.0
 offset_right = -3978.0
-offset_bottom = 141.996
+offset_bottom = 161.996
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "Для передвижения используйте кнопки"
@@ -1499,6 +1507,8 @@ shape = SubResource("RectangleShape2D_81rpt")
 [connection signal="timeout" from="BirdTimer" to="." method="_on_bird_timer_timeout"]
 [connection signal="body_entered" from="BirdsRemoveArea" to="." method="_on_birds_remove_area_body_entered"]
 [connection signal="body_entered" from="BirdArea" to="." method="_on_bird_area_body_entered"]
+[connection signal="body_exited" from="BirdArea" to="." method="_on_bird_area_body_exited"]
 [connection signal="body_entered" from="AreaBirdTake" to="." method="_on_area_bird_take_body_entered"]
+[connection signal="body_exited" from="AreaBirdTake" to="." method="_on_area_bird_take_body_exited"]
 [connection signal="body_entered" from="ButtonsHelpArea" to="." method="_on_buttons_help_area_body_entered"]
 [connection signal="body_exited" from="ButtonsHelpArea" to="." method="_on_buttons_help_area_body_exited"]
