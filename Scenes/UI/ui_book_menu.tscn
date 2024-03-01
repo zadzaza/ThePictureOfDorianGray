@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5oexq1eivnb0"]
+[gd_scene load_steps=11 format=3 uid="uid://b5oexq1eivnb0"]
 
 [ext_resource type="Script" path="res://Scripts/ui_book_menu.gd" id="1_2lddj"]
 [ext_resource type="Texture2D" uid="uid://coakusgl1rkh4" path="res://Sprites/UI/UIBook2/7b8bbe7812c946cb35c6232434d6c6dd.jpg" id="1_lkcc7"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://fn4742xjwx0t" path="res://Sprites/UI/UIBook2/button.png" id="3_2tkni"]
 [ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="4_kfvpv"]
 [ext_resource type="Texture2D" uid="uid://b6j2bit8n8vpw" path="res://Sprites/UI/UIBook2/cell2.png" id="5_dk6bm"]
+[ext_resource type="PackedScene" uid="uid://ew6vk4ou6dfw" path="res://Scenes/UI/slot.tscn" id="6_706g4"]
+[ext_resource type="Texture2D" uid="uid://b6gdotv2rqjp2" path="res://Sprites/birds/just_bird.png" id="7_4hdpb"]
 [ext_resource type="Script" path="res://addons/pause-manager/scripts/pause_manager.gd" id="7_4ll02"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyyti"]
@@ -229,62 +231,69 @@ offset_bottom = 369.0
 scale = Vector2(6.48846, 10.7621)
 columns = 3
 
-[node name="Panel" type="Panel" parent="GridContainer"]
+[node name="Slot1" parent="GridContainer" instance=ExtResource("6_706g4")]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/Slot1"]
+layout_mode = 0
+offset_left = 1.07884
+offset_top = 0.185837
+offset_right = 41.0788
+offset_bottom = 40.1858
+scale = Vector2(0.208074, 0.123347)
+texture = ExtResource("7_4hdpb")
+
+[node name="Slot2" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 
-[node name="Panel2" type="Panel" parent="GridContainer"]
+[node name="Slot3" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 
-[node name="Panel3" type="Panel" parent="GridContainer"]
+[node name="Slot4" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 
-[node name="Panel4" type="Panel" parent="GridContainer"]
+[node name="Slot5" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 
-[node name="Panel5" type="Panel" parent="GridContainer"]
+[node name="Slot6" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 
-[node name="Panel6" type="Panel" parent="GridContainer"]
+[node name="Slot7" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 
-[node name="Panel7" type="Panel" parent="GridContainer"]
+[node name="Slot8" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 
-[node name="Panel8" type="Panel" parent="GridContainer"]
+[node name="Slot9" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 
-[node name="Panel9" type="Panel" parent="GridContainer"]
+[node name="Slot10" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 
-[node name="Panel10" type="Panel" parent="GridContainer"]
+[node name="Slot11" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 
-[node name="Panel11" type="Panel" parent="GridContainer"]
-custom_minimum_size = Vector2(10, 6)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
-
-[node name="Panel12" type="Panel" parent="GridContainer"]
+[node name="Slot12" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(10, 6)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")

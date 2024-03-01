@@ -144,4 +144,4 @@ position = Vector2(1776, 949)
 scale = Vector2(2.90144, 2.90144)
 sprite_frames = SubResource("SpriteFrames_kh37t")
 autoplay = "default"
-frame_progress = 0.0659745
+frame_progress = 0.200102

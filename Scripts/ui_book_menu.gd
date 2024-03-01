@@ -3,6 +3,8 @@ extends CanvasLayer
 var page = "page"
 var count = 1
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -32,6 +34,11 @@ func switch_main_menu_buttons():
 	if page == "page2":
 		%Page1.set_visible(false)
 		%Page2.set_visible(true)
+
+
+func put_in_slots():
+	pass
+
 
 func _on_save_btn_pressed():
 	pass # Replace with function body.
