@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ew6vk4ou6dfw"]
+[gd_scene load_steps=4 format=3 uid="uid://ew6vk4ou6dfw"]
 
 [ext_resource type="Texture2D" uid="uid://b6j2bit8n8vpw" path="res://Sprites/UI/UIBook2/cell2.png" id="1_ysret"]
 [ext_resource type="Script" path="res://Scenes/UI/slot.gd" id="2_0fkip"]
-[ext_resource type="Texture2D" uid="uid://b6gdotv2rqjp2" path="res://Sprites/birds/just_bird.png" id="2_1nnwg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyyti"]
 texture = ExtResource("1_ysret")
@@ -11,11 +10,3 @@ texture = ExtResource("1_ysret")
 custom_minimum_size = Vector2(6, 6)
 theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
 script = ExtResource("2_0fkip")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 35.0
-offset_bottom = 34.0
-scale = Vector2(0.237117, 0.146972)
-texture = ExtResource("2_1nnwg")

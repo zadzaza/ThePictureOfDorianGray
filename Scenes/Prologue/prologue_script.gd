@@ -1,87 +1,122 @@
 extends Node2D
 
+# Variables
 @onready var path_follow = $Path2D/PathFollow2D
 @onready var bird_text = %BirdDialogue.text
-
-var bird = load("res://Scenes/Prologue/fly_bird.tscn")
-
+var in_bird_area = false # Если true и нажимается клавиша E, птица добавляется в инвентарь и удаляется со сцены (строка 79)
+var bird = load("res://Scenes/Prologue/fly_bird.tscn") # Экспорт птицы
 var text_bird_count_line = 0
-
-var speed = 0.0
+var speed = 0.0 # Начальная скорость ГГ. Когда она равна 0.1, начинается движение (строка 66)
 
 func _ready():
-	%BirdDialogue.set_text("С некоторыми объектами можно взаимодействовать. \nДля этого нажмите E")
+	show_transition_animation()
+	hide_lables()
+
+func _input(event):
+	handle_cancel_input(event)
+	handle_prizrak_visibility(event)
+	handle_bird_interaction(event)
+
+func _process(delta):
+	path_follow.progress_ratio += delta * speed
+
+#Скрыть надписи вначале игры
+func hide_lables():
+	%BirdDialogue.hide()
+	%ButtonsHelp.hide()
 	
+# Таймер появления птиц
+func _on_bird_timer_timeout():
+	spawn_bird()
+
+# При попадании в зону птицы удаляются
+func _on_birds_remove_area_body_entered(body):
+	body.queue_free()
+
+func _on_bird_area_body_entered(body):
+	animate_bird_appearance()
+
+func _on_bird_area_body_exited(body):
+	%BirdArea.queue_free()
+
+func _on_animation_bird_animation_finished(anim_name):
+	update_bird_dialogue()
+
+func _on_buttons_help_area_body_entered(body):
+	animate_buttons_help_appearance()
+	print("buttons")
+
+func _on_buttons_help_area_body_exited(body):
+	remove_buttons_help()
+	remove_animation_buttons()
+
+func _on_area_bird_take_body_entered(body):
+	handle_area_bird_take_entered(body)
+
+func _on_area_bird_take_body_exited(body):
+	handle_area_bird_take_exited(body)
+
+# Начальный переход
+func show_transition_animation():
 	$MainCanvasLayer/Transition.set_visible(true)
 	$AnimationTree/TransitionAnimation.play("light_up")
 	await $AnimationTree/TransitionAnimation.animation_finished
 	$MainCanvasLayer/Transition.set_visible(false)
 	speed = 0.1
-	#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/prologue.dialogue"), "start")
 
-func _input(event):
+func handle_cancel_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		%UIBookMenu.show()
-	
+
+func handle_prizrak_visibility(event):
 	if event.is_action_pressed("[") and event.is_action_pressed("e") and event.is_action_pressed("q"):
 		%Prizrak.set_visible(true)
-	else: %Prizrak.set_visible(false)
+	else:
+		%Prizrak.set_visible(false)
 
-func _process(delta):
-	path_follow.progress_ratio += delta * speed
+func handle_bird_interaction(event):
+	if in_bird_area == true and event.is_action_pressed("e"):
+		%UIBookMenu.show_item(true)
+		%Chick.hide()
+		%AreaBirdTake.queue_free()
 
-
-func _on_bird_timer_timeout():
-	# Create a new instance of the Mob scene.
-	var bird = bird.instantiate()
-
-	# Choose a random location on Path2D.
+func spawn_bird():
+	var new_bird_instance = bird.instantiate()
 	var bird_spawn_location = $BirdPath/BirdSpawnLocation
 	bird_spawn_location.progress_ratio = randf()
+	new_bird_instance.position = bird_spawn_location.position
+	add_child(new_bird_instance)
 
-	# Set the mob's position to a random location.
-	bird.position = bird_spawn_location.position
-
-	# Spawn the mob by adding it to the Main scene.
-	add_child(bird)
-
-
-func _on_birds_remove_area_body_entered(body):
-	body.queue_free()
-
-
-func _on_bird_area_body_entered(body):
+func animate_bird_appearance():
 	$AnimationTree/AnimationBird.play("fade_in_take_bird")
 
-
-func _on_bird_area_body_exited(body):
-	%BirdArea.queue_free()
-
-
-func _on_animation_bird_animation_finished(anim_name):
+func update_bird_dialogue():
 	text_bird_count_line += 1
 	if text_bird_count_line == 1:
 		$BirdDialogue.set_text("Ваши поступки влияют на характер главного героя")
 		$AnimationTree/AnimationBird.play("fade_in_take_bird")
 		await $AnimationTree/AnimationBird.animation_finished
 
-
-func _on_buttons_help_area_body_entered(body):
+# Анимация подсказки об управлении
+func animate_buttons_help_appearance():
 	$AnimationTree/AnimationButtons.play("fade_in")
-	print("buttons")
 
-
-func _on_buttons_help_area_body_exited(body):
+# Удаление зоны с подсказкой об управлении
+func remove_buttons_help():
 	%ButtonsHelpArea.queue_free()
+
+# Удаление подсказки об управлении
+func remove_animation_buttons():
 	$AnimationTree/AnimationButtons.play("fade_out")
 	await $AnimationTree/AnimationButtons.animation_finished
 	%ButtonsHelp.queue_free()
 	%AnimationButtons.queue_free()
 
-
-func _on_area_bird_take_body_entered(body):
+# Показ кнопки и изменение in_bird_area на true
+func handle_area_bird_take_entered(body):
 	%Player.show_btn = true
-
-
-func _on_area_bird_take_body_exited(body):
+	in_bird_area = true
+# Скрытие кнопки изменение in_bird_area на false
+func handle_area_bird_take_exited(body):
 	%Player.show_btn = false
+	in_bird_area = false

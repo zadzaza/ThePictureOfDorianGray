@@ -21,7 +21,6 @@ enum MOVE_STATE {IDLE_SIDE, IDLE_UP, IDLE_DOWN, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
 func _physics_process(delta):
 	if show_btn: 
 		$CanvasLayer/Button.show()
-		print("work")
 	else: $CanvasLayer/Button.hide()
 	# Получаем направление движения из пользовательского ввода
 	var direction = Input.get_axis("ui_left", "ui_right")
@@ -59,7 +58,6 @@ func _physics_process(delta):
 	
 	# Перемещаем персонажа и выводим текущее состояние и позицию в консоль
 	move_and_slide()
-	print(velocity.x)
 
 # Устанавливаем новое состояние анимации персонажа
 func set_anim(new_state: MOVE_STATE):

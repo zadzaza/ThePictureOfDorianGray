@@ -7,7 +7,7 @@ var count = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Slots/Slot1/TextureRect2.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,6 +34,11 @@ func switch_main_menu_buttons():
 	if page == "page2":
 		%Page1.set_visible(false)
 		%Page2.set_visible(true)
+
+
+func show_item(is_show_item: bool):
+	if is_show_item:
+		$Slots/Slot1/TextureRect2.show()
 
 
 func put_in_slots():

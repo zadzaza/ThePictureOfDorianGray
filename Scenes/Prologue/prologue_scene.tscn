@@ -1402,6 +1402,7 @@ libraries = {
 }
 
 [node name="Chick" parent="." instance=ExtResource("35_uuudl")]
+unique_name_in_owner = true
 position = Vector2(-2639, 488)
 scale = Vector2(3.05, 3.05)
 
@@ -1436,6 +1437,7 @@ shape = SubResource("RectangleShape2D_5b0f1")
 debug_color = Color(0.607843, 0.513726, 0.458824, 0.419608)
 
 [node name="AreaBirdTake" type="Area2D" parent="."]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBirdTake"]
 z_index = 1000
@@ -1449,16 +1451,17 @@ scale = Vector2(0.509894, 0.509894)
 
 [node name="BirdDialogue" type="Label" parent="."]
 unique_name_in_owner = true
-visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
 offset_left = -3861.0
-offset_top = 100.0
+offset_top = 120.0
 offset_right = -3365.0
-offset_bottom = 141.999
+offset_bottom = 161.999
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
-text = "Подобрать птенца?"
+text = "С некоторыми объектами можно взаимодействовать.
+Для этого нажмите E"
 horizontal_alignment = 1
 
 [node name="ButtonsHelp" type="Label" parent="."]
@@ -1504,7 +1507,7 @@ position = Vector2(-3492, 473)
 shape = SubResource("RectangleShape2D_81rpt")
 
 [connection signal="animation_finished" from="AnimationTree/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
-[connection signal="timeout" from="BirdTimer" to="." method="_on_bird_timer_timeout"]
+[connection signal="timeout" from="BirdTimer" to="." method="spawn_bird"]
 [connection signal="body_entered" from="BirdsRemoveArea" to="." method="_on_birds_remove_area_body_entered"]
 [connection signal="body_entered" from="BirdArea" to="." method="_on_bird_area_body_entered"]
 [connection signal="body_exited" from="BirdArea" to="." method="_on_bird_area_body_exited"]
