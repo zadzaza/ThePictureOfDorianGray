@@ -625,7 +625,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1, 5, 6),
 "transitions": PackedFloat32Array(0.392292, 1, 1.41421, 1),
 "update": 0,
-"values": [Vector2(-3861, 120), Vector2(-3861, 100), Vector2(-3861, 100), Vector2(-3861, 120)]
+"values": [Vector2(-1468, 120), Vector2(-1468, 100), Vector2(-1468, 100), Vector2(-1468, 120)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1365,10 +1365,12 @@ position = Vector2(-4372, 485)
 texture = ExtResource("29_wpii7")
 
 [node name="IdleDown" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_sskg6")
-position = Vector2(821, 392)
+position = Vector2(1783, 392)
 scale = Vector2(0.700413, 0.700413)
 texture = ExtResource("34_eem1q")
+flip_h = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 
@@ -1393,7 +1395,7 @@ libraries = {
 
 [node name="Chick" parent="." instance=ExtResource("35_uuudl")]
 unique_name_in_owner = true
-position = Vector2(-2639, 488)
+position = Vector2(-574, 488)
 scale = Vector2(3.05, 3.05)
 
 [node name="BirdTimer" type="Timer" parent="."]
@@ -1422,7 +1424,7 @@ unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BirdArea"]
 z_index = 10
-position = Vector2(-2791, 416)
+position = Vector2(-577, 416)
 shape = SubResource("RectangleShape2D_5b0f1")
 debug_color = Color(0.607843, 0.513726, 0.458824, 0.419608)
 
@@ -1431,7 +1433,7 @@ unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBirdTake"]
 z_index = 1000
-position = Vector2(-2640, 483)
+position = Vector2(-576, 483)
 shape = SubResource("RectangleShape2D_02pux")
 debug_color = Color(0.94902, 0.0509804, 0.541176, 0.419608)
 
@@ -1446,18 +1448,19 @@ shape = SubResource("RectangleShape2D_bs307")
 debug_color = Color(0.94902, 0.0509804, 0.541176, 0.419608)
 
 [node name="Basil" parent="." instance=ExtResource("39_6hgm2")]
-position = Vector2(979, 400)
+z_index = -1
+position = Vector2(1582, 307)
 scale = Vector2(0.509894, 0.509894)
 
 [node name="BirdDialogue" type="Label" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.1)
+modulate = Color(1, 1, 1, 0)
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
-offset_left = -3861.0
-offset_top = 115.289
-offset_right = -3365.0
-offset_bottom = 157.288
+offset_left = 115.0
+offset_top = 120.0
+offset_right = 611.0
+offset_bottom = 161.999
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "С некоторыми объектами можно взаимодействовать.
