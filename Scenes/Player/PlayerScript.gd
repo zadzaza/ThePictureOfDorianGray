@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var pl_flip_h = $AnimatedSprite2D
 var show_btn = false
+var block_movement = false
 
 var path_going = true
 
@@ -23,7 +24,7 @@ func _physics_process(delta):
 		$CanvasLayer/Button.show()
 	else: $CanvasLayer/Button.hide()
 	# Получаем направление движения из пользовательского ввода
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("ui_left", "ui_right") if !block_movement else 0.0
 	
 	# Устанавливаем горизонтальную скорость, если есть направление движения
 	if direction:
@@ -48,6 +49,10 @@ func _physics_process(delta):
 		if get_parent().progress_ratio == 1.0:
 			path_going = false
 			$AnimatedSprite2D.set_speed_scale(1.0)
+		
+		if get_parent().progress_ratio != 1.0:
+			block_movement = true
+		else: block_movement = false
   
 	# Установка анимации в зависимости от того, двигается ли персонаж
 	if !path_going:
