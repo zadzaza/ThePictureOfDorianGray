@@ -3,6 +3,7 @@ extends Node2D
 # Variables
 @onready var path_follow = $Path2D/PathFollow2D
 @onready var bird_text = %BirdDialogue.text
+
 var in_bird_area = false # Если true и нажимается клавиша E, птица добавляется в инвентарь и удаляется со сцены (строка 79)
 var bird = load("res://Scenes/Prologue/fly_bird.tscn") # Экспорт птицы
 var text_bird_count_line = 0
@@ -44,17 +45,21 @@ func _on_animation_bird_animation_finished(anim_name):
 
 func _on_buttons_help_area_body_entered(body):
 	animate_buttons_help_appearance()
-	print("buttons")
 
 func _on_buttons_help_area_body_exited(body):
 	remove_buttons_help()
 	remove_animation_buttons()
 
 func _on_area_bird_take_body_entered(body):
-	handle_area_bird_take_entered(body)
+	show_btn()
+	in_bird_area = true
 
 func _on_area_bird_take_body_exited(body):
-	handle_area_bird_take_exited(body)
+	hide_btn()
+	in_bird_area = false
+	
+func _on_area_bird_put_body_entered(body):
+	show_btn()
 
 # Начальный переход
 func show_transition_animation():
@@ -79,6 +84,7 @@ func handle_bird_interaction(event):
 		%UIBookMenu.show_item(true)
 		%Chick.hide()
 		%AreaBirdTake.queue_free()
+		%AreaBirdPut.set_monitoring(true)
 
 func spawn_bird():
 	var new_bird_instance = bird.instantiate()
@@ -112,11 +118,11 @@ func remove_animation_buttons():
 	%ButtonsHelp.queue_free()
 	%AnimationButtons.queue_free()
 
-# Показ кнопки и изменение in_bird_area на true
-func handle_area_bird_take_entered(body):
+# Показ кнопки
+func show_btn():
 	%Player.show_btn = true
-	in_bird_area = true
-# Скрытие кнопки изменение in_bird_area на false
-func handle_area_bird_take_exited(body):
+
+
+# Скрытие кнопки
+func hide_btn():
 	%Player.show_btn = false
-	in_bird_area = false

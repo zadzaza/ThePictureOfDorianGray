@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=99 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -728,6 +728,9 @@ size = Vector2(990, 172.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02pux"]
 size = Vector2(250, 38)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs307"]
+size = Vector2(244, 108)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_07cvs"]
 shader = ExtResource("8_sqb6b")
 shader_parameter/height = 3.0
@@ -1445,6 +1448,16 @@ position = Vector2(-2640, 483)
 shape = SubResource("RectangleShape2D_02pux")
 debug_color = Color(0.94902, 0.0509804, 0.541176, 0.419608)
 
+[node name="AreaBirdPut" type="Area2D" parent="."]
+unique_name_in_owner = true
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBirdPut"]
+z_index = 4096
+position = Vector2(-2899, 448)
+shape = SubResource("RectangleShape2D_bs307")
+debug_color = Color(0.94902, 0.0509804, 0.541176, 0.419608)
+
 [node name="Basil" parent="." instance=ExtResource("39_6hgm2")]
 position = Vector2(979, 400)
 scale = Vector2(0.509894, 0.509894)
@@ -1513,5 +1526,6 @@ shape = SubResource("RectangleShape2D_81rpt")
 [connection signal="body_exited" from="BirdArea" to="." method="_on_bird_area_body_exited"]
 [connection signal="body_entered" from="AreaBirdTake" to="." method="_on_area_bird_take_body_entered"]
 [connection signal="body_exited" from="AreaBirdTake" to="." method="_on_area_bird_take_body_exited"]
+[connection signal="body_entered" from="AreaBirdPut" to="." method="_on_area_bird_put_body_entered"]
 [connection signal="body_entered" from="ButtonsHelpArea" to="." method="_on_buttons_help_area_body_entered"]
 [connection signal="body_exited" from="ButtonsHelpArea" to="." method="_on_buttons_help_area_body_exited"]
