@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=101 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -22,9 +22,10 @@
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/water_reflection.gdshader" id="10_va8yl"]
 [ext_resource type="Texture2D" uid="uid://ccumdx51v3u0u" path="res://Sprites/Keys/right.png" id="11_v5230"]
 [ext_resource type="Texture2D" uid="uid://dvrfijm4kjin7" path="res://Scenes/Prologue/shaders/blue_noise.png" id="14_i6rbb"]
-[ext_resource type="Texture2D" uid="uid://bjoaepgvkxrql" path="res://гнездо.png" id="15_njglx"]
+[ext_resource type="Texture2D" uid="uid://bjoaepgvkxrql" path="res://Sprites/FgTrees/гнездо.png" id="15_njglx"]
 [ext_resource type="Texture2D" uid="uid://dicuxiu1mirrh" path="res://Sprites/Sign Posts/03.png" id="16_y221d"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/wind_trees.gdshader" id="18_gprbo"]
+[ext_resource type="Texture2D" uid="uid://dspcnyfows2r" path="res://Sprites/FgTrees/гнездо2.png" id="20_3kdtb"]
 [ext_resource type="Texture2D" uid="uid://calhdko37321t" path="res://molbert.png" id="20_7echu"]
 [ext_resource type="Texture2D" uid="uid://ce02nb7pw5jya" path="res://Sprites/BgTrees/shadow4.png" id="21_75e5f"]
 [ext_resource type="Texture2D" uid="uid://bwc65qsr3opmt" path="res://Sprites/BgTrees/shadow2.png" id="23_t8j8v"]
@@ -245,6 +246,25 @@ shader_parameter/detail = 1.0
 shader_parameter/distortion = null
 shader_parameter/heightOffset = null
 shader_parameter/offset = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lceo8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_3kdtb")
+}],
+"loop": true,
+"name": &"bird_put",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_njglx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dq0lj"]
 shader = ExtResource("18_gprbo")
@@ -602,14 +622,14 @@ length = 7.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../BirdDialogue:modulate")
+tracks/0/path = NodePath("../BirdDialogue:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -626,14 +646,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../BirdDialogue:visible")
+tracks/2/path = NodePath("../BirdDialogue:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lejqg"]
@@ -1110,11 +1130,12 @@ scale = Vector2(1.6, 1.6)
 texture = ExtResource("7_c5f4i")
 flip_h = true
 
-[node name="Tree4" type="Sprite2D" parent="FgObjects/LeftSide"]
+[node name="TreeWithBird" type="AnimatedSprite2D" parent="FgObjects/LeftSide"]
+unique_name_in_owner = true
 material = SubResource("ShaderMaterial_n8c77")
 position = Vector2(-2885, 166)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("15_njglx")
+sprite_frames = SubResource("SpriteFrames_lceo8")
 
 [node name="Tree11" type="Sprite2D" parent="FgObjects/LeftSide"]
 material = SubResource("ShaderMaterial_dq0lj")
@@ -1464,13 +1485,13 @@ scale = Vector2(0.509894, 0.509894)
 
 [node name="BirdDialogue" type="Label" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, 0.1)
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
 offset_left = -3861.0
-offset_top = 120.0
+offset_top = 115.289
 offset_right = -3365.0
-offset_bottom = 161.999
+offset_bottom = 157.288
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "С некоторыми объектами можно взаимодействовать.
@@ -1527,5 +1548,6 @@ shape = SubResource("RectangleShape2D_81rpt")
 [connection signal="body_entered" from="AreaBirdTake" to="." method="_on_area_bird_take_body_entered"]
 [connection signal="body_exited" from="AreaBirdTake" to="." method="_on_area_bird_take_body_exited"]
 [connection signal="body_entered" from="AreaBirdPut" to="." method="_on_area_bird_put_body_entered"]
+[connection signal="body_exited" from="AreaBirdPut" to="." method="_on_area_bird_put_body_exited"]
 [connection signal="body_entered" from="ButtonsHelpArea" to="." method="_on_buttons_help_area_body_entered"]
 [connection signal="body_exited" from="ButtonsHelpArea" to="." method="_on_buttons_help_area_body_exited"]

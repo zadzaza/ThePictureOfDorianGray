@@ -1,13 +1,15 @@
 extends Node2D
 
-# Variables
+# Переменные
 @onready var path_follow = $Path2D/PathFollow2D
 @onready var bird_text = %BirdDialogue.text
 
 var in_bird_area = false # Если true и нажимается клавиша E, птица добавляется в инвентарь и удаляется со сцены (строка 79)
+var in_put_area = false
 var bird = load("res://Scenes/Prologue/fly_bird.tscn") # Экспорт птицы
 var text_bird_count_line = 0
 var speed = 0.0 # Начальная скорость ГГ. Когда она равна 0.1, начинается движение (строка 66)
+
 
 func _ready():
 	show_transition_animation()
@@ -16,7 +18,7 @@ func _ready():
 func _input(event):
 	handle_cancel_input(event)
 	handle_prizrak_visibility(event)
-	handle_bird_interaction(event)
+	handle_interaction(event)
 
 func _process(delta):
 	path_follow.progress_ratio += delta * speed
@@ -60,13 +62,17 @@ func _on_area_bird_take_body_exited(body):
 	
 func _on_area_bird_put_body_entered(body):
 	show_btn()
+	in_put_area = true
+	
+func _on_area_bird_put_body_exited(body):
+	in_put_area = false
 
 # Начальный переход
 func show_transition_animation():
-	$MainCanvasLayer/Transition.set_visible(true)
+	$MainCanvasLayer/Transition.show()
 	$AnimationTree/TransitionAnimation.play("light_up")
 	await $AnimationTree/TransitionAnimation.animation_finished
-	$MainCanvasLayer/Transition.set_visible(false)
+	$MainCanvasLayer/Transition.hide()
 	speed = 0.1
 
 func handle_cancel_input(event):
@@ -75,16 +81,20 @@ func handle_cancel_input(event):
 
 func handle_prizrak_visibility(event):
 	if event.is_action_pressed("[") and event.is_action_pressed("e") and event.is_action_pressed("q"):
-		%Prizrak.set_visible(true)
+		%Prizrak.show()
 	else:
-		%Prizrak.set_visible(false)
+		%Prizrak.hide()
 
-func handle_bird_interaction(event):
-	if in_bird_area == true and event.is_action_pressed("e"):
-		%UIBookMenu.show_item(true)
-		%Chick.hide()
-		%AreaBirdTake.queue_free()
-		%AreaBirdPut.set_monitoring(true)
+func handle_interaction(event):
+	if event.is_action_pressed("e"):
+		if in_bird_area:
+			%UIBookMenu.show_item(true)
+			%Chick.hide()
+			%AreaBirdTake.queue_free()
+			%AreaBirdPut.set_monitoring(true)
+		if in_put_area:
+			%UIBookMenu.show_item(false)
+			%TreeWithBird.set_animation("bird_put")
 
 func spawn_bird():
 	var new_bird_instance = bird.instantiate()
@@ -121,7 +131,6 @@ func remove_animation_buttons():
 # Показ кнопки
 func show_btn():
 	%Player.show_btn = true
-
 
 # Скрытие кнопки
 func hide_btn():
