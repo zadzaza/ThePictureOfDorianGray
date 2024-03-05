@@ -1133,8 +1133,8 @@ flip_h = true
 [node name="TreeWithBird" type="AnimatedSprite2D" parent="FgObjects/LeftSide"]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_n8c77")
-position = Vector2(-2885, 166)
-scale = Vector2(1.3, 1.3)
+position = Vector2(-2885, 83)
+scale = Vector2(1.62643, 1.62643)
 sprite_frames = SubResource("SpriteFrames_lceo8")
 
 [node name="Tree11" type="Sprite2D" parent="FgObjects/LeftSide"]

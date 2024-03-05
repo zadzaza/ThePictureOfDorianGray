@@ -65,6 +65,7 @@ func _on_area_bird_put_body_entered(body):
 	in_put_area = true
 	
 func _on_area_bird_put_body_exited(body):
+	hide_btn()
 	in_put_area = false
 
 # Начальный переход
@@ -92,9 +93,12 @@ func handle_interaction(event):
 			%Chick.hide()
 			%AreaBirdTake.queue_free()
 			%AreaBirdPut.set_monitoring(true)
+			hide_btn()
 		if in_put_area:
 			%UIBookMenu.show_item(false)
 			%TreeWithBird.set_animation("bird_put")
+			%AreaBirdPut.queue_free()
+			hide_btn()
 
 func spawn_bird():
 	var new_bird_instance = bird.instantiate()

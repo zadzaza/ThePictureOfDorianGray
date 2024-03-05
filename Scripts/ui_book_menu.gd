@@ -39,6 +39,7 @@ func switch_main_menu_buttons():
 func show_item(is_show_item: bool):
 	if is_show_item:
 		$Slots/Slot1/TextureRect2.show()
+	else: $Slots/Slot1/TextureRect2.hide()
 
 
 func put_in_slots():
