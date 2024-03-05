@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=100 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -548,22 +548,6 @@ shader_parameter/detail = 1.0
 shader_parameter/distortion = null
 shader_parameter/heightOffset = null
 shader_parameter/offset = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vpccn"]
-shader = ExtResource("25_dmjma")
-shader_parameter/angle = -0.3
-shader_parameter/position = -0.295
-shader_parameter/spread = 0.01
-shader_parameter/cutoff = -0.305
-shader_parameter/falloff = 1.0
-shader_parameter/edge_fade = 1.0
-shader_parameter/speed = 3.82
-shader_parameter/ray1_density = 8.0
-shader_parameter/ray2_density = 30.0
-shader_parameter/ray2_intensity = 0.3
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/hdr = true
-shader_parameter/seed = 8.295
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rlrvl"]
 shader = ExtResource("25_dmjma")
@@ -1320,24 +1304,6 @@ material = SubResource("ShaderMaterial_br8gu")
 position = Vector2(210, 68)
 texture = ExtResource("26_81bts")
 flip_h = true
-
-[node name="GodRays" type="Sprite2D" parent="AnotherObjects/MainTree"]
-visible = false
-material = SubResource("ShaderMaterial_vpccn")
-position = Vector2(757, 10)
-texture = ExtResource("9_11sxn")
-
-[node name="GodRays3" type="Sprite2D" parent="AnotherObjects/MainTree"]
-material = SubResource("ShaderMaterial_rlrvl")
-position = Vector2(577, -239)
-scale = Vector2(0.611205, 0.266667)
-texture = ExtResource("2_q26pc")
-
-[node name="GodRays4" type="Sprite2D" parent="AnotherObjects/MainTree"]
-material = SubResource("ShaderMaterial_rlrvl")
-position = Vector2(577, -239)
-scale = Vector2(0.611205, 0.266667)
-texture = ExtResource("2_q26pc")
 
 [node name="Drova" type="StaticBody2D" parent="AnotherObjects"]
 position = Vector2(-85, 1)
