@@ -10,6 +10,7 @@ var bird = load("res://Scenes/Prologue/fly_bird.tscn") # Экспорт птиц
 var text_bird_count_line = 0
 var speed = 0.0 # Начальная скорость ГГ. Когда она равна 0.1, начинается движение (строка 66)
 
+enum CAMERA_STATE {SIDE_LEFT, SIDE_TOP, SIDE_RIGHT, SIDE_BOTTOM}
 
 func _ready():
 	show_transition_animation()

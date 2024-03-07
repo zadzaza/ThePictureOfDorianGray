@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=101 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -744,6 +744,9 @@ shader_parameter/speed = 2.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81rpt"]
 size = Vector2(67, 55)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xeb2h"]
+size = Vector2(108, 889)
+
 [node name="PrologueScene" type="Node2D"]
 position = Vector2(-1, 0)
 script = ExtResource("1_kslhb")
@@ -796,7 +799,6 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Transition" type="ColorRect" parent="MainCanvasLayer"]
-visible = false
 modulate = Color(0, 0, 0, 1)
 z_index = 4096
 offset_left = -24.0
@@ -819,216 +821,180 @@ texture_scale = 2.8
 z_index = -3
 position = Vector2(-16, 16)
 
-[node name="Shadow1" type="Sprite2D" parent="BgObjects"]
+[node name="LeftSide" type="Node2D" parent="BgObjects"]
+
+[node name="Shadow1" type="Sprite2D" parent="BgObjects/LeftSide"]
 material = SubResource("ShaderMaterial_vrlnj")
 position = Vector2(-4146, -178)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_kalkm")
 
-[node name="Shadow4" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow4" type="Sprite2D" parent="BgObjects/LeftSide"]
 material = SubResource("ShaderMaterial_1i7sv")
 position = Vector2(-3867, -32)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("21_75e5f")
 
-[node name="Shadow2" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow2" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-2747, 46)
 texture = ExtResource("2_kalkm")
 
-[node name="BhTree" type="Sprite2D" parent="BgObjects"]
+[node name="BhTree" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-3257, -110)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_rq0tm")
 
-[node name="BhTree2" type="Sprite2D" parent="BgObjects"]
+[node name="BhTree2" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-2234, 174)
 texture = ExtResource("4_rq0tm")
 
-[node name="Shadow5" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow5" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-2018, 20)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("21_75e5f")
 
-[node name="Shadow3" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow3" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-1630, 56)
 texture = ExtResource("2_kalkm")
 flip_h = true
 
-[node name="BhTree6" type="Sprite2D" parent="BgObjects"]
+[node name="BhTree6" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-3843, 112.5)
 scale = Vector2(1.216, 1.003)
 texture = ExtResource("4_rq0tm")
 
-[node name="Shadow6" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow6" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-1511, 89)
 texture = ExtResource("2_kalkm")
 
-[node name="Shadow7" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow7" type="Sprite2D" parent="BgObjects/LeftSide"]
 material = SubResource("ShaderMaterial_ecd28")
 position = Vector2(-1212, 66)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("21_75e5f")
 flip_h = true
 
-[node name="Shadow8" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow8" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-2425, -140)
 texture = ExtResource("2_kalkm")
 
-[node name="BhTree3" type="Sprite2D" parent="BgObjects"]
+[node name="BhTree3" type="Sprite2D" parent="BgObjects/LeftSide"]
 material = SubResource("ShaderMaterial_w7pns")
 position = Vector2(-2915, -412)
 texture = ExtResource("4_rq0tm")
 
-[node name="BhTree7" type="Sprite2D" parent="BgObjects"]
+[node name="BhTree7" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-2410, 167)
 scale = Vector2(3.878, 1.014)
 texture = ExtResource("4_rq0tm")
 
-[node name="Shadow9" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow9" type="Sprite2D" parent="BgObjects/LeftSide"]
 material = SubResource("ShaderMaterial_4t4be")
 position = Vector2(-1713, -58)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("21_75e5f")
 flip_h = true
 
-[node name="Shadow10" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow10" type="Sprite2D" parent="BgObjects/LeftSide"]
 material = SubResource("ShaderMaterial_dkefy")
 position = Vector2(-1390, -170)
 texture = ExtResource("2_kalkm")
 
-[node name="BhTree4" type="Sprite2D" parent="BgObjects"]
+[node name="BhTree4" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-3512, -322)
 texture = ExtResource("4_rq0tm")
 flip_h = true
 
-[node name="Shadow11" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow11" type="Sprite2D" parent="BgObjects/LeftSide"]
 material = SubResource("ShaderMaterial_jd0eg")
 position = Vector2(-2353, -197)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("21_75e5f")
 flip_h = true
 
-[node name="BhTree5" type="Sprite2D" parent="BgObjects"]
+[node name="BhTree5" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-2635, -318)
 texture = ExtResource("4_rq0tm")
 
-[node name="Shadow12" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow12" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-4724, 53)
 scale = Vector2(1.775, 1.775)
 texture = ExtResource("23_t8j8v")
 
-[node name="Shadow13" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow13" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-4534.62, 343)
 scale = Vector2(2.1022, 1)
 texture = ExtResource("23_t8j8v")
 flip_v = true
 
-[node name="BhTree8" type="Sprite2D" parent="BgObjects"]
+[node name="BhTree8" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-4874, 151)
 texture = ExtResource("4_rq0tm")
 
-[node name="Shadow14" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow14" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-5256, -132)
 scale = Vector2(2.005, 2.005)
 texture = ExtResource("24_3ye0t")
 
-[node name="Shadow15" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow15" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-5408, -156)
 scale = Vector2(1.51, 1.51)
 texture = ExtResource("2_kalkm")
 
-[node name="BhTree9" type="Sprite2D" parent="BgObjects"]
+[node name="BhTree9" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-5114, 159)
 texture = ExtResource("4_rq0tm")
 
-[node name="BhTree10" type="Sprite2D" parent="BgObjects"]
+[node name="BhTree10" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-5676, 121)
 texture = ExtResource("4_rq0tm")
 
-[node name="Shadow16" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow16" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-5924, 143)
 texture = ExtResource("2_kalkm")
 
-[node name="BhTree11" type="Sprite2D" parent="BgObjects"]
+[node name="BhTree11" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-6058, 115)
 texture = ExtResource("4_rq0tm")
 
-[node name="Shadow17" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow17" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-5919, -354)
 texture = ExtResource("2_kalkm")
 
-[node name="Shadow18" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow18" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-6411, -171)
 texture = ExtResource("21_75e5f")
 
-[node name="Shadow19" type="Sprite2D" parent="BgObjects"]
+[node name="Shadow19" type="Sprite2D" parent="BgObjects/LeftSide"]
 position = Vector2(-6493, 71)
 texture = ExtResource("23_t8j8v")
 
-[node name="Birds" type="Node2D" parent="."]
+[node name="RightSide" type="Node2D" parent="BgObjects"]
 
-[node name="FlyBird" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-6997, -908)
+[node name="Shadow4" type="Sprite2D" parent="BgObjects/RightSide"]
+material = SubResource("ShaderMaterial_1i7sv")
+position = Vector2(3754, 247.5)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("21_75e5f")
 
-[node name="FlyBird2" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-6890, -825)
+[node name="Shadow7" type="Sprite2D" parent="BgObjects/RightSide"]
+material = SubResource("ShaderMaterial_ecd28")
+position = Vector2(4178, -153.5)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("21_75e5f")
+flip_h = true
 
-[node name="FlyBird3" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-7152, -860)
+[node name="BhTree10" type="Sprite2D" parent="BgObjects/RightSide"]
+position = Vector2(4428.5, 121)
+texture = ExtResource("4_rq0tm")
 
-[node name="FlyBird4" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-6759, -953)
+[node name="Shadow16" type="Sprite2D" parent="BgObjects/RightSide"]
+position = Vector2(4180.5, 143)
+texture = ExtResource("2_kalkm")
 
-[node name="FlyBird5" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-7301, -989)
-
-[node name="FlyBird6" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-7661, -1012)
-
-[node name="FlyBird7" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-7554, -929)
-
-[node name="FlyBird8" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-7816, -964)
-
-[node name="FlyBird9" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-7423, -1057)
-
-[node name="FlyBird10" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-7965, -1093)
-
-[node name="FlyBird11" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-6449, -1004)
-
-[node name="FlyBird12" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-6342, -921)
-
-[node name="FlyBird13" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-6604, -956)
-
-[node name="FlyBird14" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-6211, -1049)
-
-[node name="FlyBird15" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-6753, -1085)
-
-[node name="FlyBird16" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-8269, -924)
-
-[node name="FlyBird17" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-8162, -841)
-
-[node name="FlyBird18" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-8424, -876)
-
-[node name="FlyBird19" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-8031, -969)
-
-[node name="FlyBird20" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-8573, -1005)
-
-[node name="FlyBird21" parent="Birds" instance=ExtResource("35_rw2vx")]
-position = Vector2(-6705, -1150)
+[node name="BhTree11" type="Sprite2D" parent="BgObjects/RightSide"]
+position = Vector2(4046.5, 115)
+texture = ExtResource("4_rq0tm")
 
 [node name="FgObjects" type="Node2D" parent="."]
 z_index = 2
@@ -1186,11 +1152,100 @@ position = Vector2(-4797, 235)
 texture = ExtResource("6_58hsq")
 
 [node name="Tree8" type="Sprite2D" parent="FgObjects/LeftSide"]
-z_index = 3
 material = SubResource("ShaderMaterial_q8yrd")
 position = Vector2(-2111, 93)
 texture = ExtResource("9_11sxn")
 flip_h = true
+
+[node name="LeftSide2" type="Node2D" parent="FgObjects"]
+
+[node name="Tree5" type="Sprite2D" parent="FgObjects/LeftSide2"]
+z_index = 3
+material = SubResource("ShaderMaterial_8pgps")
+position = Vector2(3710, -106)
+scale = Vector2(2, 2)
+texture = ExtResource("8_pvnh8")
+flip_h = true
+
+[node name="Krona6" type="Sprite2D" parent="FgObjects/LeftSide2/Tree5"]
+visible = false
+z_index = 4
+material = SubResource("ShaderMaterial_82xyq")
+position = Vector2(2.5, 0)
+texture = ExtResource("26_walee")
+flip_h = true
+
+[node name="Tree16" type="Sprite2D" parent="FgObjects/LeftSide2"]
+material = SubResource("ShaderMaterial_cdnkg")
+position = Vector2(3846, 129)
+scale = Vector2(0.96, 0.96)
+texture = ExtResource("9_11sxn")
+flip_h = true
+
+[node name="Birds" type="Node2D" parent="."]
+
+[node name="FlyBird" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6997, -908)
+
+[node name="FlyBird2" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6890, -825)
+
+[node name="FlyBird3" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7152, -860)
+
+[node name="FlyBird4" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6759, -953)
+
+[node name="FlyBird5" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7301, -989)
+
+[node name="FlyBird6" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7661, -1012)
+
+[node name="FlyBird7" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7554, -929)
+
+[node name="FlyBird8" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7816, -964)
+
+[node name="FlyBird9" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7423, -1057)
+
+[node name="FlyBird10" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7965, -1093)
+
+[node name="FlyBird11" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6449, -1004)
+
+[node name="FlyBird12" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6342, -921)
+
+[node name="FlyBird13" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6604, -956)
+
+[node name="FlyBird14" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6211, -1049)
+
+[node name="FlyBird15" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6753, -1085)
+
+[node name="FlyBird16" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-8269, -924)
+
+[node name="FlyBird17" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-8162, -841)
+
+[node name="FlyBird18" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-8424, -876)
+
+[node name="FlyBird19" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-8031, -969)
+
+[node name="FlyBird20" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-8573, -1005)
+
+[node name="FlyBird21" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6705, -1150)
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 1
@@ -1236,10 +1291,13 @@ move_state = 3
 occluder = SubResource("OccluderPolygon2D_ww266")
 
 [node name="PlCamera" type="Camera2D" parent="Path2D/PathFollow2D/Player"]
+unique_name_in_owner = true
 position = Vector2(0, -8.033)
 offset = Vector2(0, -200)
 zoom = Vector2(0.4, 0.4)
 limit_left = -5900
+limit_right = 3300
+limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.5
 drag_vertical_enabled = true
@@ -1379,6 +1437,7 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_focn8")
 }
+speed_scale = 0.265
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree"]
 
@@ -1415,7 +1474,7 @@ collision_layer = 8
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BirdsRemoveArea"]
-position = Vector2(5527, -902)
+position = Vector2(9155, -2411)
 shape = SubResource("RectangleShape2D_5unei")
 debug_color = Color(0.92549, 0, 0, 0.419608)
 
@@ -1426,7 +1485,7 @@ unique_name_in_owner = true
 z_index = 10
 position = Vector2(-577, 416)
 shape = SubResource("RectangleShape2D_5b0f1")
-debug_color = Color(0.607843, 0.513726, 0.458824, 0.419608)
+debug_color = Color(0.607843, 0.513726, 0.458824, 0.223529)
 
 [node name="AreaBirdTake" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -1435,7 +1494,7 @@ unique_name_in_owner = true
 z_index = 1000
 position = Vector2(-576, 483)
 shape = SubResource("RectangleShape2D_02pux")
-debug_color = Color(0.94902, 0.0509804, 0.541176, 0.419608)
+debug_color = Color(0.94902, 0.0509804, 0.541176, 0.0901961)
 
 [node name="AreaBirdPut" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -1445,7 +1504,7 @@ monitoring = false
 z_index = 4096
 position = Vector2(-2899, 448)
 shape = SubResource("RectangleShape2D_bs307")
-debug_color = Color(0.94902, 0.0509804, 0.541176, 0.419608)
+debug_color = Color(0.94902, 0.0509804, 0.541176, 0.0901961)
 
 [node name="Basil" parent="." instance=ExtResource("39_6hgm2")]
 z_index = -1
@@ -1457,9 +1516,9 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
-offset_left = 115.0
+offset_left = -1468.0
 offset_top = 120.0
-offset_right = 611.0
+offset_right = -972.0
 offset_bottom = 161.999
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
@@ -1508,6 +1567,19 @@ unique_name_in_owner = true
 z_index = 1000
 position = Vector2(-3492, 473)
 shape = SubResource("RectangleShape2D_81rpt")
+debug_color = Color(0.372549, 0.4, 0.811765, 0.168627)
+
+[node name="WorldBorder" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder"]
+z_index = 4096
+position = Vector2(-6414, 61.5)
+shape = SubResource("RectangleShape2D_xeb2h")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBorder"]
+z_index = 4096
+position = Vector2(2370, 62)
+shape = SubResource("RectangleShape2D_xeb2h")
 
 [connection signal="animation_finished" from="AnimationTree/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
 [connection signal="timeout" from="BirdTimer" to="." method="spawn_bird"]

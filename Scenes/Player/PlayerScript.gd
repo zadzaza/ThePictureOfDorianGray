@@ -43,16 +43,18 @@ func _physics_process(delta):
 		pl_flip_h.flip_h = true
 	
 	if path_going:
-		if get_parent().progress_ratio > 0.0:
-			set_anim(MOVE_STATE.MOVE_SIDE)
-			$AnimatedSprite2D.set_speed_scale(0.77)
-		if get_parent().progress_ratio == 1.0:
-			path_going = false
-			$AnimatedSprite2D.set_speed_scale(1.0)
+		var parent = get_parent()
+		if parent != null:
+			if parent.progress_ratio > 0.0:
+				set_anim(MOVE_STATE.MOVE_SIDE)
+				$AnimatedSprite2D.set_speed_scale(0.77)
+			if parent.progress_ratio == 1.0:
+				path_going = false
+				$AnimatedSprite2D.set_speed_scale(1.0)
 		
-		if get_parent().progress_ratio != 1.0:
-			block_movement = true
-		else: block_movement = false
+			if parent.progress_ratio != 1.0:
+				block_movement = true
+			else: block_movement = false
   
 	# Установка анимации в зависимости от того, двигается ли персонаж
 	if !path_going:

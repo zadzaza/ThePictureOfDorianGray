@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://byjvls0j15cmo"]
 
 [ext_resource type="Texture2D" uid="uid://2iclincjj7ps" path="res://Sprites/load screen.png" id="1_ir1b7"]
-[ext_resource type="Script" path="res://Scripts/load_screen.gd" id="1_wc0cb"]
+[ext_resource type="Script" path="res://Scenes/UI/Scripts/load_screen.gd" id="1_wc0cb"]
 [ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="3_mrgem"]
 
 [sub_resource type="Theme" id="Theme_64qxu"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://gspeugd1dcdn"]
 
-[ext_resource type="Script" path="res://Scripts/UIBook.gd" id="1_lq4qn"]
+[ext_resource type="Script" path="res://Scenes/UI/Scripts/UIBook.gd" id="1_lq4qn"]
 [ext_resource type="Texture2D" uid="uid://h7knl6mbxqay" path="res://Sprites/UI/UIBook/book_closed.png" id="2_5ggk1"]
 [ext_resource type="Texture2D" uid="uid://6w5r2t5btttr" path="res://Sprites/UI/UIBook/book_open.png" id="3_qkaek"]
 [ext_resource type="Texture2D" uid="uid://dvexd1b0f0lai" path="res://Sprites/UI/UIBook/peoples_none.png" id="4_w44cr"]

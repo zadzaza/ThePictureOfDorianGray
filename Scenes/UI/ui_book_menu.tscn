@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://b5oexq1eivnb0"]
 
-[ext_resource type="Script" path="res://Scripts/ui_book_menu.gd" id="1_2lddj"]
+[ext_resource type="Script" path="res://Scenes/UI/Scripts/ui_book_menu.gd" id="1_ek3k6"]
 [ext_resource type="Texture2D" uid="uid://coakusgl1rkh4" path="res://Sprites/UI/UIBook2/7b8bbe7812c946cb35c6232434d6c6dd.jpg" id="1_lkcc7"]
 [ext_resource type="Texture2D" uid="uid://qw7wp456wphp" path="res://Sprites/UI/UIBook2/RADL_Book_blue.png" id="2_ijh18"]
 [ext_resource type="Texture2D" uid="uid://fn4742xjwx0t" path="res://Sprites/UI/UIBook2/button.png" id="3_2tkni"]
@@ -15,7 +15,7 @@ texture = ExtResource("5_dk6bm")
 
 [node name="UIBookMenu" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_2lddj")
+script = ExtResource("1_ek3k6")
 
 [node name="7b8Bbe7812c946Cb35c6232434d6c6Dd" type="Sprite2D" parent="."]
 position = Vector2(962, 938)

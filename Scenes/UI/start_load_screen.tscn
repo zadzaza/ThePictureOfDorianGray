@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c02rcfw873wft"]
+
+[ext_resource type="Texture2D" uid="uid://bkv2t5l0re0am" path="res://Sprites/UI/asset_YHgAw7dnMDNCGidd6nuwzooD.png" id="1_0pn8d"]
+[ext_resource type="Script" path="res://Scenes/UI/Scripts/start_load_screen.gd" id="1_cxeur"]
+
+[node name="StartLoadScreen" type="CanvasLayer"]
+script = ExtResource("1_cxeur")
+
+[node name="AssetYHgAw7DnMdncGidd6NuwzooD" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_0pn8d")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
