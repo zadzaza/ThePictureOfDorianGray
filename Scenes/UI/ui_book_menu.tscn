@@ -15,6 +15,7 @@ texture = ExtResource("5_dk6bm")
 
 [node name="UIBookMenu" type="CanvasLayer"]
 process_mode = 3
+layer = 128
 script = ExtResource("1_ek3k6")
 
 [node name="7b8Bbe7812c946Cb35c6232434d6c6Dd" type="Sprite2D" parent="."]
