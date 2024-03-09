@@ -1522,8 +1522,8 @@ offset_right = -972.0
 offset_bottom = 161.999
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
-text = "С НЕКОТОРЫМИ ОБЪЕКТАМИ МОЖНО ВЗАИМОДЕЙСТВОВАТЬ.
-ДЛЯ ЭТОГО НАЖМИТЕ E"
+text = "С некоторыми объектами можно взаимодействовать.
+для этого нажмите E"
 horizontal_alignment = 1
 
 [node name="ButtonsHelp" type="Label" parent="."]
@@ -1537,7 +1537,7 @@ offset_right = -3978.0
 offset_bottom = 161.996
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
-text = "ДЛЯ ПЕРЕДВИЖЕНИЯ ИСПОЛЬЗУЙТЕ КНОПКИ"
+text = "Для передвижения используйте кнопки"
 horizontal_alignment = 1
 
 [node name="Left" type="Sprite2D" parent="ButtonsHelp"]
