@@ -61,6 +61,7 @@ _data = {
 }
 
 [node name="Basil" type="CharacterBody2D"]
+collision_layer = 8
 script = ExtResource("1_wvhdo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

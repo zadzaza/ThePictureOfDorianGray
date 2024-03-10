@@ -6,6 +6,7 @@ extends Node2D
 
 var in_bird_area = false # Если true и нажимается клавиша E, птица добавляется в инвентарь и удаляется со сцены (строка 79)
 var in_put_area = false
+var in_besedka_area = false
 var bird = load("res://Scenes/Prologue/fly_bird.tscn") # Экспорт птицы
 var text_bird_count_line = 0
 var speed = 0.0 # Начальная скорость ГГ. Когда она равна 0.1, начинается движение (строка 66)
@@ -53,21 +54,35 @@ func _on_buttons_help_area_body_exited(body):
 	remove_buttons_help()
 	remove_animation_buttons()
 
+# Подошел к птице
 func _on_area_bird_take_body_entered(body):
-	show_btn()
+	set_btn_visible(true)
 	in_bird_area = true
 
+# Отошел от птицы
 func _on_area_bird_take_body_exited(body):
-	hide_btn()
+	set_btn_visible(false)
 	in_bird_area = false
-	
+
+# Подошел к гнезду
 func _on_area_bird_put_body_entered(body):
-	show_btn()
+	set_btn_visible(true)
 	in_put_area = true
-	
+
+# Отошел от гнезда
 func _on_area_bird_put_body_exited(body):
-	hide_btn()
+	set_btn_visible(false)
 	in_put_area = false
+
+# Подошел к беседке
+func _on_start_besedka_dialogue_body_entered(body):
+	set_btn_visible(true)
+	in_besedka_area = true
+
+# Отошел от беседки
+func _on_start_besedka_dialogue_body_exited(body):
+	set_btn_visible(false)
+	in_besedka_area = false
 
 # Начальный переход
 func show_transition_animation():
@@ -89,17 +104,20 @@ func handle_prizrak_visibility(event):
 
 func handle_interaction(event):
 	if event.is_action_pressed("e"):
-		if in_bird_area:
+		if in_bird_area: # В зоне взаимодействия с птицей
 			%UIBookMenu.show_item(true)
 			%Chick.hide()
 			%AreaBirdTake.queue_free()
 			%AreaBirdPut.set_monitoring(true)
-			hide_btn()
-		if in_put_area:
+			set_btn_visible(false)
+		if in_put_area: # В зоне взаимодействия с гнездом
 			%UIBookMenu.show_item(false)
 			%TreeWithBird.set_animation("bird_put")
 			%AreaBirdPut.queue_free()
-			hide_btn()
+			set_btn_visible(false)
+		if in_besedka_area: # В зоне взаимодействия с беседкой
+			%PauseManager._pause()
+			Dialogic.start("PrologueTimeline")
 
 func spawn_bird():
 	var new_bird_instance = bird.instantiate()
@@ -133,10 +151,6 @@ func remove_animation_buttons():
 	%ButtonsHelp.queue_free()
 	%AnimationButtons.queue_free()
 
-# Показ кнопки
-func show_btn():
-	%Player.show_btn = true
-
-# Скрытие кнопки
-func hide_btn():
-	%Player.show_btn = false
+# Настройка видимости кнопки
+func set_btn_visible(visible: bool):
+	%Player.show_btn = visible

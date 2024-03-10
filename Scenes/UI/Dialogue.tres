@@ -22,10 +22,12 @@ scene = ExtResource("4_cv2rl")
 overrides = {
 "bold_font": "\"res://Fonts/Comic Sans MS Pixel.ttf\"",
 "bold_italics_font": "\"res://Fonts/Comic Sans MS Pixel.ttf\"",
+"box_color_use_global": "false",
 "italics_font": "\"res://Fonts/Comic Sans MS Pixel.ttf\"",
 "name_label_font": "\"res://Fonts/Comic Sans MS Pixel.ttf\"",
 "normal_font": "\"res://Fonts/Comic Sans MS Pixel.ttf\"",
 "text_size": "22.0",
+"text_use_global_color": "false",
 "text_use_global_font": "false",
 "text_use_global_size": "false"
 }
