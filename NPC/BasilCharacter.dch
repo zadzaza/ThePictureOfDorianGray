@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(1, 1, 1, 1),
+"color": Color(0.870588, 0.490196, 0.0431373, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
@@ -10,7 +10,7 @@
 },
 "default_portrait": "idle_down",
 "description": "",
-"display_name": "BasilCharacter",
+"display_name": "Бэзил Холлуорд",
 "mirror": false,
 "nicknames": ["Basil"],
 "offset": Vector2(0, 0),

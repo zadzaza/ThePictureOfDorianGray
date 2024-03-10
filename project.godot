@@ -29,8 +29,8 @@ directories/dtl_directory={
 "PrologueTimeline": "res://Scenes/Prologue/PrologueTimeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Scenes/UI/Balloon.tres"]
-layout/default_style="res://Scenes/UI/Balloon.tres"
+layout/style_list=["res://Scenes/UI/Dialogue.tres"]
+layout/default_style="res://Scenes/UI/Dialogue.tres"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
