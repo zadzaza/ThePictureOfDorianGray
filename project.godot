@@ -24,7 +24,10 @@ PauseManagerr="*res://addons/pause-manager/scripts/pause_manager.gd"
 [dialogic]
 
 directories/dch_directory={
-"BasilCharacter": "res://NPC/BasilCharacter.dch"
+"BasilCharacter": "res://Scenes/UI/DialogueSystem/Characters/BasilCharacter.dch",
+"Characters/BasilCharacter": "res://Scenes/UI/DialogueSystem/Characters/BasilCharacter.dch",
+"DorianCharacter": "res://Scenes/UI/DialogueSystem/Characters/DorianCharacter.dch",
+"HenryCharacter": "res://Scenes/UI/DialogueSystem/Characters/HenryCharacter.dch"
 }
 directories/dtl_directory={
 "PrologueTimeline": "res://Scenes/Prologue/PrologueTimeline.dtl"

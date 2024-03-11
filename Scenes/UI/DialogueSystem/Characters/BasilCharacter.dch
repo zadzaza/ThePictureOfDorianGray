@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.870588, 0.490196, 0.0431373, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "NPC_2",
+"description": "Бэз",
+"display_name": "Бэзил Холлуорд",
+"mirror": false,
+"nicknames": ["Basil"],
+"offset": Vector2(0, 0),
+"portraits": {
+"NPC_2": {
+"export_overrides": {
+"image": "\"res://NPC/NPC_2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 0.54
+}
