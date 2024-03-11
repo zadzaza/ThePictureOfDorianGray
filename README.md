@@ -1,22 +1,19 @@
-# Pause Manager
+# The Picture of Dorian Gray
 
-A simple asset for managing pause/resume using Signals.
+Вертикальный срез игры, подготовленный для диплома. Не является коммерческим продуктом.
 
-Created with [Godot v4.0](https://godotengine.org/download/archive/4.0-stable/).
+Создано с помощью [Godot 4.2.1](https://godotengine.org/).
 
-## Authors
+## Авторы
 
-Gabriel Pereira
-- GitHub: [gabrielgp0811](https://www.github.com/gabrielgp0811)
-- E-mail: [gabrielgp0811@gmail.com](mailto://gabrielgp0811@gmail.com)
-- Discord: [gabrielgp0811 | ggpereira#6599](https://discord.com/users/454070648797659138)
+Максим Авилов
+- GitHub: [zadzaza](https://github.com/zadzaza)
+- E-mail: [maxawilow@gmail.com]
+- Discord: [zadzaza | zadzaza#2198]
 
-## Contributing
+Алиса Корякина
+- GitHub: [stayseena](https://github.com/stayseena)
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
+## Лицензия
 
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
