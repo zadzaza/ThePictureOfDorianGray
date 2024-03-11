@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsbwnp5hegnu3"]
+[gd_scene load_steps=4 format=3 uid="uid://dsbwnp5hegnu3"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.gd" id="1_3nmfj"]
+[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="2_y2t8u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3cyk"]
 bg_color = Color(0.12549, 0.12549, 0.12549, 1)
@@ -51,6 +52,7 @@ theme_override_constants/separation = 0
 [node name="Title" type="Label" parent="Pointer/Panel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y2t8u")
 
 [node name="HSeparator" type="HSeparator" parent="Pointer/Panel/VBox"]
 layout_mode = 2
@@ -58,6 +60,11 @@ layout_mode = 2
 [node name="Text" type="RichTextLabel" parent="Pointer/Panel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_y2t8u")
+theme_override_fonts/bold_font = ExtResource("2_y2t8u")
+theme_override_fonts/italics_font = ExtResource("2_y2t8u")
+theme_override_fonts/bold_italics_font = ExtResource("2_y2t8u")
+theme_override_fonts/mono_font = ExtResource("2_y2t8u")
 bbcode_enabled = true
 fit_content = true
 

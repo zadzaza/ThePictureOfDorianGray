@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=102 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -44,7 +44,6 @@
 [ext_resource type="PackedScene" uid="uid://brrjowxtot0sl" path="res://Scenes/basil.tscn" id="39_6hgm2"]
 [ext_resource type="Texture2D" uid="uid://c5kg3qmsf64jv" path="res://Sprites/Keys/a.png" id="42_hc2ml"]
 [ext_resource type="Texture2D" uid="uid://4nkes5rrmmad" path="res://Sprites/Keys/d.png" id="43_q2bil"]
-[ext_resource type="Script" path="res://addons/pause-manager/scripts/pause_manager.gd" id="45_2ktpp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
 shader = ExtResource("10_va8yl")
@@ -740,7 +739,7 @@ size = Vector2(244, 108)
 size = Vector2(67, 55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpfcy"]
-size = Vector2(179.5, 112)
+size = Vector2(87, 112)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_07cvs"]
 shader = ExtResource("8_sqb6b")
@@ -1535,7 +1534,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartBesedkaDialogue"]
 z_index = 4096
-position = Vector2(1578.75, 447)
+position = Vector2(1581.5, 447)
 shape = SubResource("RectangleShape2D_mpfcy")
 debug_color = Color(0.803922, 0.415686, 0.00392157, 0.619608)
 
@@ -1604,10 +1603,6 @@ shape = SubResource("RectangleShape2D_xeb2h")
 z_index = 4096
 position = Vector2(2370, 60)
 shape = SubResource("RectangleShape2D_xeb2h")
-
-[node name="PauseManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("45_2ktpp")
 
 [connection signal="animation_finished" from="AnimationTree/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
 [connection signal="timeout" from="BirdTimer" to="." method="spawn_bird"]

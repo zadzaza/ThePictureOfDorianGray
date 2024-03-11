@@ -53,11 +53,12 @@ func _physics_process(delta):
 				$AnimatedSprite2D.set_speed_scale(1.0)
 		
 			if parent.progress_ratio != 1.0:
-				block_movement = true
-			else: block_movement = false
+				set_block_movement(true)
+			else: 
+				set_block_movement(false)
   
-	# Установка анимации в зависимости от того, двигается ли персонаж
-	if !path_going:
+	# Установка анимации в условием того, что персонаж двигается
+	if !path_going and !block_movement:
 		if velocity.x:
 			set_anim(MOVE_STATE.MOVE_SIDE)
 		else:
@@ -73,6 +74,11 @@ func set_anim(new_state: MOVE_STATE):
 	# Выбираем анимацию на основе состояния персонажа
 	match move_state:
 		MOVE_STATE.IDLE_SIDE:
-			animation.animation = "idle_side"
+			animation.set_animation("idle_side")
 		MOVE_STATE.MOVE_SIDE:
-			animation.animation = "move_side"
+			animation.set_animation("move_side")
+		MOVE_STATE.IDLE_UP:
+			animation.set_animation("idle_up")
+
+func set_block_movement(block: bool):
+	block_movement = block

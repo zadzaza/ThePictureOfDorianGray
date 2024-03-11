@@ -124,9 +124,8 @@ drag_horizontal_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4p1tp")
-animation = &"move_side"
+animation = &"idle_up"
 autoplay = "idle_side"
-frame_progress = 0.178016
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 105.5)

@@ -116,7 +116,9 @@ func handle_interaction(event):
 			%AreaBirdPut.queue_free()
 			set_btn_visible(false)
 		if in_besedka_area: # В зоне взаимодействия с беседкой
-			%PauseManager._pause()
+			%Player.set_block_movement(true)
+			%Player.set_anim(%Player.MOVE_STATE.IDLE_UP)
+			%Player.animation.set_animation("idle_up")
 			Dialogic.start("PrologueTimeline")
 
 func spawn_bird():

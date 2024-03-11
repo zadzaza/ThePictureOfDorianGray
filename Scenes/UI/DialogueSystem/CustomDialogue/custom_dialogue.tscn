@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://cqpb3ie51rwl5"]
+
+[ext_resource type="Script" path="res://Scenes/UI/DialogueSystem/CustomDialogue/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_inbgu"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="4_uvgo8"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="6_dnfmm"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="8_odpam"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="10_f21vn"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="12_j84qm"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="14_p27cg"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_d4p3o"]
+
+[node name="Custom" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ifsho")
+
+[node name="BackgroundLayer" parent="." instance=ExtResource("2_inbgu")]
+process_mode = 3
+apply_overrides_on_ready = true
+
+[node name="VN_PortraitLayer" parent="." instance=ExtResource("4_uvgo8")]
+process_mode = 3
+apply_overrides_on_ready = true
+
+[node name="VN_TextboxLayer" parent="." instance=ExtResource("6_dnfmm")]
+process_mode = 3
+text_use_global_size = false
+text_size = 22
+text_use_global_font = false
+normal_font = "res://Fonts/Comic Sans MS Pixel.ttf"
+bold_font = "res://Fonts/Comic Sans MS Pixel.ttf"
+italics_font = "res://Fonts/Comic Sans MS Pixel.ttf"
+bold_italics_font = "res://Fonts/Comic Sans MS Pixel.ttf"
+name_label_use_global_font = false
+name_label_font = "res://Fonts/Comic Sans MS Pixel.ttf"
+name_label_custom_font_size = 22
+apply_overrides_on_ready = true
+
+[node name="FullAdvanceInputLayer" parent="." instance=ExtResource("8_odpam")]
+process_mode = 3
+apply_overrides_on_ready = true
+
+[node name="Glossary" parent="." instance=ExtResource("10_f21vn")]
+process_mode = 3
+font_use_global = false
+font_custom = "res://Fonts/Comic Sans MS Pixel.ttf"
+apply_overrides_on_ready = true
+
+[node name="VN_ChoiceLayer" parent="." instance=ExtResource("12_j84qm")]
+visible = true
+font_use_global = false
+font_custom = "res://Fonts/Comic Sans MS Pixel.ttf"
+font_size_use_global = false
+font_size_custom = 23
+apply_overrides_on_ready = true
+
+[node name="TextInputLayer" parent="." instance=ExtResource("14_p27cg")]
+process_mode = 3
+apply_overrides_on_ready = true
+
+[node name="ExampleHistoryScene" parent="." instance=ExtResource("16_d4p3o")]
+process_mode = 3
+font_use_global_size = false
+font_custom_size = 22
+font_use_global_fonts = false
+font_custom_normal = "res://Fonts/Comic Sans MS Pixel.ttf"
+font_custom_bold = "res://Fonts/Comic Sans MS Pixel.ttf"
+font_custom_italics = "res://Fonts/Comic Sans MS Pixel.ttf"
+show_all_choices = false
+apply_overrides_on_ready = true
