@@ -12,7 +12,7 @@
 - Discord: [zadzaza | zadzaza#2198]
 
 Алиса Корякина
-- Github: [stayseena](https://github.com/stayseena)
+- GitHub: [stayseena](https://github.com/stayseena)
 
 ## Лицензия
 
