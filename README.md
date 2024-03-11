@@ -10,7 +10,8 @@
 - GitHub: [zadzaza](https://github.com/zadzaza)
 - E-mail: [maxawilow@gmail.com]
 - Discord: [zadzaza | zadzaza#2198]
-Максим Авилов
+
+Алиса Корякина
 - Github: [stayseena](https://github.com/stayseena)
 
 ## Лицензия
