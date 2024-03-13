@@ -9,7 +9,7 @@
 Максим Авилов
 - GitHub: [zadzaza](https://github.com/zadzaza)
 - E-mail: maxawilow@gmail.com
-- Discord: [zadzaza | zadzaza#2198]
+- Discord: zadzaza | zadzaza#2198
 
 Алиса Корякина
 - GitHub: [stayseena](https://github.com/stayseena)
