@@ -80,10 +80,6 @@ func set_anim(new_state: MOVE_STATE):
 func set_block_movement(block: bool):
 	block_movement = block
 
-func set_btn_visible(visible: bool, btn_animation: String):
-	show_btn = visible
+func set_btn_visible(btn_visible: bool, btn_animation: String):
+	%Button.set_visible(btn_visible)
 	%Button.set_animation(btn_animation)
-	
-	if show_btn: 
-		$CanvasLayer/Button.show()
-	else: $CanvasLayer/Button.hide()
