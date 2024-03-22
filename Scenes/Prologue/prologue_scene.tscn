@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=106 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://brrjowxtot0sl" path="res://Scenes/basil.tscn" id="39_6hgm2"]
 [ext_resource type="Texture2D" uid="uid://c5kg3qmsf64jv" path="res://Sprites/Keys/a.png" id="42_hc2ml"]
 [ext_resource type="Texture2D" uid="uid://4nkes5rrmmad" path="res://Sprites/Keys/d.png" id="43_q2bil"]
+[ext_resource type="Texture2D" uid="uid://dhjtqi4b37caq" path="res://besedka3.png" id="45_qi34x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
 shader = ExtResource("10_va8yl")
@@ -715,6 +716,57 @@ tracks/1/keys = {
 _data = {
 "fade_in": SubResource("Animation_jmwnx"),
 "fade_out": SubResource("Animation_frm3n")
+}
+
+[sub_resource type="Animation" id="Animation_xn5mj"]
+resource_name = "typing_qte"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BasilQTEDialogue:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BasilQTEDialogue:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_165v8"]
+resource_name = "wait_for_input"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BasilQTEDialogue:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(2, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.176471), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gt7v7"]
+_data = {
+"typing_qte": SubResource("Animation_xn5mj"),
+"wait_for_input": SubResource("Animation_165v8")
 }
 
 [sub_resource type="Curve2D" id="Curve2D_wdyfy"]
@@ -1427,33 +1479,44 @@ position = Vector2(-4372, 485)
 texture = ExtResource("29_wpii7")
 
 [node name="IdleDown" type="Sprite2D" parent="."]
-z_index = 1
+z_index = 3
 material = SubResource("ShaderMaterial_sskg6")
-position = Vector2(1817, 392)
+position = Vector2(2026, 393)
 scale = Vector2(0.700413, 0.700413)
 texture = ExtResource("34_eem1q")
 flip_h = true
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationHelpers" type="AnimationTree" parent="."]
 
-[node name="TransitionAnimation" type="AnimationPlayer" parent="AnimationTree"]
+[node name="TransitionAnimation" type="AnimationPlayer" parent="AnimationHelpers"]
+unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_focn8")
 }
 speed_scale = 0.265
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationHelpers"]
+unique_name_in_owner = true
 
-[node name="AnimationBird" type="AnimationPlayer" parent="AnimationTree"]
+[node name="AnimationBird" type="AnimationPlayer" parent="AnimationHelpers"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_lejqg")
 }
 
-[node name="AnimationButtons" type="AnimationPlayer" parent="AnimationTree"]
+[node name="AnimationButtons" type="AnimationPlayer" parent="AnimationHelpers"]
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_fl4ir")
+}
+
+[node name="AnimationDialogLines" type="AnimationTree" parent="."]
+
+[node name="AnimationBasilQTE" type="AnimationPlayer" parent="AnimationDialogLines"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_gt7v7")
 }
 
 [node name="Chick" parent="." instance=ExtResource("35_uuudl")]
@@ -1544,15 +1607,25 @@ z_index = -1
 position = Vector2(1582, 307)
 scale = Vector2(0.509894, 0.509894)
 
+[node name="BasilQTEDialogue" type="Label" parent="."]
+visible = false
+z_index = 4096
+offset_left = 1117.0
+offset_top = 91.0
+offset_right = 1371.0
+offset_bottom = 108.0
+scale = Vector2(3.96649, 3.96649)
+theme_override_fonts/font = ExtResource("9_akb36")
+text = "Поверни голову немного вправо, Дориан."
+
 [node name="BirdDialogue" type="Label" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0)
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
 offset_left = -1468.0
-offset_top = 120.0
+offset_top = 100.0
 offset_right = -972.0
-offset_bottom = 161.999
+offset_bottom = 141.999
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "С некоторыми объектами можно взаимодействовать.
@@ -1561,13 +1634,12 @@ horizontal_alignment = 1
 
 [node name="ButtonsHelp" type="Label" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0)
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
 offset_left = -4474.0
-offset_top = 120.0
+offset_top = 100.0
 offset_right = -3978.0
-offset_bottom = 161.996
+offset_bottom = 141.996
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "Для передвижения используйте кнопки"
@@ -1605,7 +1677,16 @@ z_index = 4096
 position = Vector2(2370, 60)
 shape = SubResource("RectangleShape2D_xeb2h")
 
-[connection signal="animation_finished" from="AnimationTree/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
+[node name="Besedka" type="Node2D" parent="."]
+
+[node name="Besedka3" type="Sprite2D" parent="Besedka"]
+z_index = 3
+position = Vector2(1618, -55)
+texture = ExtResource("45_qi34x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Besedka"]
+
+[connection signal="animation_finished" from="AnimationHelpers/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
 [connection signal="timeout" from="BirdTimer" to="." method="spawn_bird"]
 [connection signal="body_entered" from="BirdsRemoveArea" to="." method="_on_birds_remove_area_body_entered"]
 [connection signal="body_entered" from="BirdArea" to="." method="_on_bird_area_body_entered"]

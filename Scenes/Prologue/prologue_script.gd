@@ -23,6 +23,15 @@ func _input(event):
 	handle_interaction(event)
 
 func _process(delta):
+	start_follow_path(delta)
+	if Dialogic.VAR.qte == true: # После завершения первого диалога появляется qte повернуть голову вправо
+		Dialogic.VAR.qte = false
+		%AnimationBasilQTE.play("typing_qte")
+		await %AnimationBasilQTE.animation_finished
+		%AnimationBasilQTE.play("wait_for_input")
+		%Player.set_btn_visible(true, "right")
+
+func start_follow_path(delta):
 	path_follow.progress_ratio += delta * speed
 
 #Скрыть надписи вначале игры
@@ -56,39 +65,39 @@ func _on_buttons_help_area_body_exited(body):
 
 # Подошел к птице
 func _on_area_bird_take_body_entered(body):
-	set_btn_visible(true)
+	%Player.set_btn_visible(true, "e")
 	in_bird_area = true
 
 # Отошел от птицы
 func _on_area_bird_take_body_exited(body):
-	set_btn_visible(false)
+	%Player.set_btn_visible(false, "e")
 	in_bird_area = false
 
 # Подошел к гнезду
 func _on_area_bird_put_body_entered(body):
-	set_btn_visible(true)
+	%Player.set_btn_visible(true, "e")
 	in_put_area = true
 
 # Отошел от гнезда
 func _on_area_bird_put_body_exited(body):
-	set_btn_visible(false)
+	%Player.set_btn_visible(false, "e")
 	in_put_area = false
 
 # Подошел к беседке
 func _on_start_besedka_dialogue_body_entered(body):
-	set_btn_visible(true)
+	%Player.set_btn_visible(true, "e")
 	in_besedka_area = true
 
 # Отошел от беседки
 func _on_start_besedka_dialogue_body_exited(body):
-	set_btn_visible(false)
+	%Player.set_btn_visible(false, "e")
 	in_besedka_area = false
 
 # Начальный переход
 func show_transition_animation():
 	$MainCanvasLayer/Transition.show()
-	$AnimationTree/TransitionAnimation.play("light_up")
-	await $AnimationTree/TransitionAnimation.animation_finished
+	%TransitionAnimation.play("light_up")
+	await %TransitionAnimation.animation_finished
 	$MainCanvasLayer/Transition.hide()
 	speed = 0.1
 
@@ -109,14 +118,14 @@ func handle_interaction(event):
 			%Chick.hide()
 			%AreaBirdTake.queue_free()
 			%AreaBirdPut.set_monitoring(true)
-			set_btn_visible(false)
+			%Player.set_btn_visible(false, "e")
 		if in_put_area: # В зоне взаимодействия с гнездом
 			%UIBookMenu.show_item(false)
 			%TreeWithBird.set_animation("bird_put")
 			%AreaBirdPut.queue_free()
-			set_btn_visible(false)
+			%Player.set_btn_visible(false, "e")
 		if in_besedka_area: # В зоне взаимодействия с беседкой
-			set_btn_visible(false)
+			%Player.set_btn_visible(false, "e")
 			%Player.set_block_movement(true)
 			%Player.set_anim(%Player.MOVE_STATE.IDLE_UP)
 			%StartBesedkaDialogue.queue_free()
@@ -130,18 +139,18 @@ func spawn_bird():
 	add_child(new_bird_instance)
 
 func animate_bird_appearance():
-	$AnimationTree/AnimationBird.play("fade_in_take_bird")
+	%AnimationBird.play("fade_in_take_bird")
 
 func update_bird_dialogue():
 	text_bird_count_line += 1
 	if text_bird_count_line == 1:
 		$BirdDialogue.set_text("Ваши поступки влияют на характер главного героя")
-		$AnimationTree/AnimationBird.play("fade_in_take_bird")
-		await $AnimationTree/AnimationBird.animation_finished
+		%AnimationBird.play("fade_in_take_bird")
+		await %AnimationBird.animation_finished
 
 # Анимация подсказки об управлении
 func animate_buttons_help_appearance():
-	$AnimationTree/AnimationButtons.play("fade_in")
+	%AnimationButtons.play("fade_in")
 
 # Удаление зоны с подсказкой об управлении
 func remove_buttons_help():
@@ -149,11 +158,9 @@ func remove_buttons_help():
 
 # Удаление подсказки об управлении
 func remove_animation_buttons():
-	$AnimationTree/AnimationButtons.play("fade_out")
-	await $AnimationTree/AnimationButtons.animation_finished
+	%AnimationButtons.play("fade_out")
+	await %AnimationButtons.animation_finished
 	%ButtonsHelp.queue_free()
 	%AnimationButtons.queue_free()
 
 # Настройка видимости кнопки
-func set_btn_visible(visible: bool):
-	%Player.show_btn = visible

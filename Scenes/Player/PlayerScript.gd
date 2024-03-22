@@ -20,9 +20,6 @@ enum MOVE_STATE {IDLE_SIDE, IDLE_UP, IDLE_DOWN, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
 
 
 func _physics_process(delta):
-	if show_btn: 
-		$CanvasLayer/Button.show()
-	else: $CanvasLayer/Button.hide()
 	# Получаем направление движения из пользовательского ввода
 	var direction = Input.get_axis("ui_left", "ui_right") if !block_movement else 0.0
 	
@@ -82,3 +79,11 @@ func set_anim(new_state: MOVE_STATE):
 
 func set_block_movement(block: bool):
 	block_movement = block
+
+func set_btn_visible(visible: bool, btn_animation: String):
+	show_btn = visible
+	%Button.set_animation(btn_animation)
+	
+	if show_btn: 
+		$CanvasLayer/Button.show()
+	else: $CanvasLayer/Button.hide()
