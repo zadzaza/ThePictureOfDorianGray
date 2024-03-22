@@ -745,11 +745,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BasilQTEDialogue:pivot_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(40, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_165v8"]
-resource_name = "wait_for_input"
-length = 2.0
-loop_mode = 1
+resource_name = "fade_out"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -757,16 +767,28 @@ tracks/0/path = NodePath("../BasilQTEDialogue:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(2, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.176471), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BasilQTEDialogue:pivot_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.10224, 1),
+"update": 0,
+"values": [Vector2(40, 0), Vector2(40, -3)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gt7v7"]
 _data = {
-"typing_qte": SubResource("Animation_xn5mj"),
-"wait_for_input": SubResource("Animation_165v8")
+"fade_out": SubResource("Animation_165v8"),
+"typing_qte": SubResource("Animation_xn5mj")
 }
 
 [sub_resource type="Curve2D" id="Curve2D_wdyfy"]
@@ -1610,13 +1632,14 @@ scale = Vector2(0.509894, 0.509894)
 [node name="BasilQTEDialogue" type="Label" parent="."]
 visible = false
 z_index = 4096
-offset_left = 1117.0
+offset_left = 1235.0
 offset_top = 91.0
-offset_right = 1371.0
+offset_right = 1489.0
 offset_bottom = 108.0
 scale = Vector2(3.96649, 3.96649)
+pivot_offset = Vector2(40, 0)
 theme_override_fonts/font = ExtResource("9_akb36")
-text = "Поверни голову немного вправо, Дориан."
+text = "Поверни голову немного вправо, Дориан"
 
 [node name="BirdDialogue" type="Label" parent="."]
 unique_name_in_owner = true

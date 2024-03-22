@@ -10,6 +10,7 @@ var in_besedka_area = false
 var bird = load("res://Scenes/Prologue/fly_bird.tscn") # Экспорт птицы
 var text_bird_count_line = 0
 var speed = 0.0 # Начальная скорость ГГ. Когда она равна 0.1, начинается движение (строка 66)
+var qte_activated = false
 
 enum CAMERA_STATE {SIDE_LEFT, SIDE_TOP, SIDE_RIGHT, SIDE_BOTTOM}
 
@@ -18,18 +19,21 @@ func _ready():
 	hide_lables()
 
 func _input(event):
+	handle_qte(event)
 	handle_cancel_input(event)
 	handle_prizrak_visibility(event)
 	handle_interaction(event)
 
 func _process(delta):
 	start_follow_path(delta)
-	if Dialogic.VAR.qte == true: # После завершения первого диалога появляется qte повернуть голову вправо
-		Dialogic.VAR.qte = false
+	if Dialogic.VAR.prologue_timeline_finish == true: # После завершения первого диалога появляется qte повернуть голову вправо
+		Dialogic.VAR.prologue_timeline_finish = false
+		await get_tree().create_timer(5.0)
 		%AnimationBasilQTE.play("typing_qte")
 		await %AnimationBasilQTE.animation_finished
-		%AnimationBasilQTE.play("wait_for_input")
+		%AnimationBasilQTE.play("fade_out")
 		%Player.set_btn_visible(true, "right")
+		qte_activated = true
 
 func start_follow_path(delta):
 	path_follow.progress_ratio += delta * speed
@@ -100,6 +104,11 @@ func show_transition_animation():
 	await %TransitionAnimation.animation_finished
 	$MainCanvasLayer/Transition.hide()
 	speed = 0.1
+
+func handle_qte(event):
+	if event.is_action_pressed("ui_right"):
+		%Player.set_anim(%Player.MOVE_STATE.IDLE_SIDE)
+		%Player.set_btn_visible(false, "e")
 
 func handle_cancel_input(event):
 	if event.is_action_pressed("ui_cancel"):
