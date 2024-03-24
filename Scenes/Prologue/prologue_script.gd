@@ -17,6 +17,7 @@ enum CAMERA_STATE {SIDE_LEFT, SIDE_TOP, SIDE_RIGHT, SIDE_BOTTOM}
 func _ready():
 	show_transition_animation()
 	hide_lables()
+	
 
 func _input(event):
 	handle_qte(event)
@@ -106,7 +107,7 @@ func show_transition_animation():
 	speed = 0.1
 
 func handle_qte(event):
-	if event.is_action_pressed("ui_right"):
+	if event.is_action_pressed("ui_right") and qte_activated:
 		%Player.set_anim(%Player.MOVE_STATE.IDLE_SIDE)
 		%Player.set_btn_visible(false, "e")
 

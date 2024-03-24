@@ -720,7 +720,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_xn5mj"]
 resource_name = "typing_qte"
-length = 4.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -728,7 +728,7 @@ tracks/0/path = NodePath("../BasilQTEDialogue:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(4.5, 6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -740,7 +740,7 @@ tracks/1/path = NodePath("../BasilQTEDialogue:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(4.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -748,6 +748,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_165v8"]
 resource_name = "fade_out"
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -755,7 +756,7 @@ tracks/0/path = NodePath("../BasilQTEDialogue:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(5, 6),
 "transitions": PackedFloat32Array(2, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -767,7 +768,7 @@ tracks/1/path = NodePath("../BasilQTEDialogue:pivot_offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(5, 6),
 "transitions": PackedFloat32Array(2.10224, 1),
 "update": 0,
 "values": [Vector2(40, 0), Vector2(40, -3)]
@@ -1627,6 +1628,8 @@ scale = Vector2(3.96649, 3.96649)
 pivot_offset = Vector2(40, 0)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "Поверни голову немного вправо, Дориан"
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="BirdDialogue" type="Label" parent="."]
 unique_name_in_owner = true
