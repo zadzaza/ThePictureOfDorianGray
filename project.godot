@@ -30,7 +30,7 @@ directories/dch_directory={
 "HenryCharacter": "res://Scenes/UI/DialogueSystem/Characters/HenryCharacter.dch"
 }
 directories/dtl_directory={
-"PenekDialog": "res://Scenes/UI/DialogueSystem/PenekDialog.dtl",
+"GoToPenekDialog": "res://Scenes/UI/DialogueSystem/GoToPenekDialog.dtl",
 "PrologueTimeline": "res://Scenes/Prologue/PrologueTimeline.dtl"
 }
 glossary/default_case_sensitive=true

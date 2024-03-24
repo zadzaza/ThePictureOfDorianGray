@@ -29,10 +29,8 @@ func _process(delta):
 	start_follow_path(delta)
 	if Dialogic.VAR.prologue_timeline_finish == true: # После завершения первого диалога появляется qte повернуть голову вправо
 		Dialogic.VAR.prologue_timeline_finish = false
-		await get_tree().create_timer(5.0)
 		%AnimationBasilQTE.play("typing_qte")
 		await %AnimationBasilQTE.animation_finished
-		%AnimationBasilQTE.play("fade_out")
 		%Player.set_btn_visible(true, "right")
 		qte_activated = true
 
@@ -109,7 +107,11 @@ func show_transition_animation():
 func handle_qte(event):
 	if event.is_action_pressed("ui_right") and qte_activated:
 		%Player.set_anim(%Player.MOVE_STATE.IDLE_SIDE)
+		await get_tree().create_timer(0.5).timeout
+		%AnimationBasilQTE.play("fade_out")
 		%Player.set_btn_visible(false, "e")
+		await get_tree().create_timer(6.5).timeout
+		Dialogic.start("GoToPenekDialog")
 
 func handle_cancel_input(event):
 	if event.is_action_pressed("ui_cancel"):
