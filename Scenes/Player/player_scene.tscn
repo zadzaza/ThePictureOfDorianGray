@@ -93,8 +93,9 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8pur"]
-size = Vector2(45, 23)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6oehn"]
+radius = 11.5
+height = 61.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kh37t"]
 animations = [{
@@ -137,12 +138,13 @@ drag_horizontal_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4p1tp")
-animation = &"idle_up"
+animation = &"move_side"
 autoplay = "idle_side"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 105.5)
-shape = SubResource("RectangleShape2D_u8pur")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6oehn")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=108 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -36,7 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://dbseq3l7kfxir" path="res://Sprites/Tilemap/brevno.png" id="29_wpii7"]
 [ext_resource type="Texture2D" uid="uid://bt3t7wsvdridf" path="res://Sprites/Tilemap/drova.png" id="33_7xlbh"]
 [ext_resource type="Texture2D" uid="uid://cv8dyg174cxuv" path="res://Sprites/SkyBG/Clouds 6/Безымянный.png" id="33_p7vc3"]
-[ext_resource type="Texture2D" uid="uid://cbgkic775x77n" path="res://NPC/idle_down.png" id="34_eem1q"]
 [ext_resource type="Texture2D" uid="uid://dhhwf5pxgrrs7" path="res://Sprites/Tilemap/derevo_srubleno.png" id="35_kyrnm"]
 [ext_resource type="PackedScene" uid="uid://dcvb38k01mgv7" path="res://Scenes/Prologue/fly_bird.tscn" id="35_rw2vx"]
 [ext_resource type="PackedScene" uid="uid://dbasef84pjwvt" path="res://Scenes/Prologue/chick.tscn" id="35_uuudl"]
@@ -44,7 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://brrjowxtot0sl" path="res://Scenes/basil.tscn" id="39_6hgm2"]
 [ext_resource type="Texture2D" uid="uid://c5kg3qmsf64jv" path="res://Sprites/Keys/a.png" id="42_hc2ml"]
 [ext_resource type="Texture2D" uid="uid://4nkes5rrmmad" path="res://Sprites/Keys/d.png" id="43_q2bil"]
-[ext_resource type="Texture2D" uid="uid://dhjtqi4b37caq" path="res://besedka3.png" id="45_qi34x"]
+[ext_resource type="PackedScene" uid="uid://icnif8bfje6l" path="res://Scenes/Prologue/henry.tscn" id="44_03f8y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
 shader = ExtResource("10_va8yl")
@@ -566,8 +565,6 @@ shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/hdr = true
 shader_parameter/seed = 5.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sskg6"]
-
 [sub_resource type="Animation" id="Animation_hxgen"]
 resource_name = "light_up"
 length = 2.8
@@ -718,6 +715,33 @@ _data = {
 "fade_out": SubResource("Animation_frm3n")
 }
 
+[sub_resource type="Animation" id="Animation_165v8"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BasilQTEDialogue:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BasilQTEDialogue:pivot_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.10224, 1),
+"update": 0,
+"values": [Vector2(40, 0), Vector2(40, -4)]
+}
+
 [sub_resource type="Animation" id="Animation_xn5mj"]
 resource_name = "typing_qte"
 length = 6.0
@@ -758,33 +782,6 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_165v8"]
-resource_name = "fade_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../BasilQTEDialogue:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(2, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../BasilQTEDialogue:pivot_offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(2.10224, 1),
-"update": 0,
-"values": [Vector2(40, 0), Vector2(40, -4)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gt7v7"]
 _data = {
 "fade_out": SubResource("Animation_165v8"),
@@ -823,6 +820,17 @@ shader_parameter/speed = 2.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xeb2h"]
 size = Vector2(108, 889)
+
+[sub_resource type="Curve2D" id="Curve2D_7ada2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7q7tg"]
+height = 187.175
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wlds2"]
+height = 776.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_us7g3"]
+size = Vector2(20, 406)
 
 [node name="PrologueScene" type="Node2D"]
 position = Vector2(-1, 0)
@@ -1500,14 +1508,6 @@ z_index = 4
 position = Vector2(-4372, 485)
 texture = ExtResource("29_wpii7")
 
-[node name="IdleDown" type="Sprite2D" parent="."]
-z_index = 3
-material = SubResource("ShaderMaterial_sskg6")
-position = Vector2(2026, 393)
-scale = Vector2(0.700413, 0.700413)
-texture = ExtResource("34_eem1q")
-flip_h = true
-
 [node name="AnimationHelpers" type="AnimationTree" parent="."]
 
 [node name="TransitionAnimation" type="AnimationPlayer" parent="AnimationHelpers"]
@@ -1620,7 +1620,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartBesedkaDialogue"]
 z_index = 4096
-position = Vector2(1581.5, 447)
+position = Vector2(1761, 358)
 shape = SubResource("RectangleShape2D_mpfcy")
 debug_color = Color(0.803922, 0.415686, 0.00392157, 0.619608)
 
@@ -1637,7 +1637,7 @@ offset_top = 91.0
 offset_right = 1489.0
 offset_bottom = 108.0
 scale = Vector2(3.96649, 3.96649)
-pivot_offset = Vector2(40, -4)
+pivot_offset = Vector2(40, 0)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "Поверни голову немного вправо, Дориан"
 
@@ -1702,12 +1702,36 @@ shape = SubResource("RectangleShape2D_xeb2h")
 
 [node name="Besedka" type="Node2D" parent="."]
 
-[node name="Besedka3" type="Sprite2D" parent="Besedka"]
-z_index = 3
-position = Vector2(1618, -55)
-texture = ExtResource("45_qi34x")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="Besedka"]
+
+[node name="PathBasil" type="Path2D" parent="."]
+curve = SubResource("Curve2D_7ada2")
+
+[node name="PathFollowBasil" type="PathFollow2D" parent="PathBasil"]
+
+[node name="BesedkaCollision" type="StaticBody2D" parent="."]
+position = Vector2(1818, 395)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BesedkaCollision"]
+z_index = 4096
+position = Vector2(-497, 89)
+rotation = 0.853426
+shape = SubResource("CapsuleShape2D_7q7tg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BesedkaCollision"]
+z_index = 4096
+position = Vector2(-55, 34)
+rotation = 4.71239
+shape = SubResource("CapsuleShape2D_wlds2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BesedkaCollision"]
+z_index = 4096
+position = Vector2(223, -179)
+shape = SubResource("RectangleShape2D_us7g3")
+
+[node name="Henry" parent="." instance=ExtResource("44_03f8y")]
+z_index = 1
+position = Vector2(1818, 395)
 
 [connection signal="animation_finished" from="AnimationHelpers/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
 [connection signal="timeout" from="BirdTimer" to="." method="spawn_bird"]

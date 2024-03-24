@@ -31,7 +31,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Для размещения персонажа используется упрощённая гравитация.
-	velocity.y += GRAVITY
+	if not is_on_floor():
+		velocity.y += GRAVITY
   
 	# Определяем, нужно ли отразить спрайт по горизонтали, исходя из направления движения
 	if velocity.x > 0:
