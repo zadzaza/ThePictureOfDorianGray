@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=106 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -812,6 +812,9 @@ size = Vector2(67, 55)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpfcy"]
 size = Vector2(87, 112)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xoty"]
+size = Vector2(94, 80)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_07cvs"]
 shader = ExtResource("8_sqb6b")
 shader_parameter/height = 3.0
@@ -1620,6 +1623,16 @@ position = Vector2(1576, 458)
 shape = SubResource("RectangleShape2D_mpfcy")
 debug_color = Color(0.803922, 0.415686, 0.00392157, 0.619608)
 
+[node name="PenekArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PenekArea"]
+position = Vector2(590, 468)
+shape = SubResource("RectangleShape2D_7xoty")
+debug_color = Color(0.537255, 0.537255, 0.529412, 0.419608)
+
 [node name="Basil" parent="." instance=ExtResource("39_6hgm2")]
 z_index = -1
 position = Vector2(1582, 307)
@@ -1649,7 +1662,7 @@ offset_bottom = 141.999
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "С некоторыми объектами можно взаимодействовать.
-для этого нажмите E"
+Для этого нажмите E"
 horizontal_alignment = 1
 
 [node name="ButtonsHelp" type="Label" parent="."]
@@ -1730,3 +1743,5 @@ position = Vector2(1818, 395)
 [connection signal="body_exited" from="ButtonsHelpArea" to="." method="_on_buttons_help_area_body_exited"]
 [connection signal="body_entered" from="StartBesedkaDialogue" to="." method="_on_start_besedka_dialogue_body_entered"]
 [connection signal="body_exited" from="StartBesedkaDialogue" to="." method="_on_start_besedka_dialogue_body_exited"]
+[connection signal="body_entered" from="PenekArea" to="." method="_on_penek_area_body_entered"]
+[connection signal="body_exited" from="PenekArea" to="." method="_on_penek_area_body_exited"]

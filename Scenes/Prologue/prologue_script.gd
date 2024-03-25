@@ -8,6 +8,8 @@ extends Node2D
 var in_bird_area = false # Если true и нажимается клавиша E, птица добавляется в инвентарь и удаляется со сцены (строка 79)
 var in_put_area = false
 var in_besedka_area = false
+var in_penek_area = false
+
 var bird = load("res://Scenes/Prologue/fly_bird.tscn") # Экспорт птицы
 var text_bird_count_line = 0
 var speed_pl_follow = 0.0 # Начальная скорость. Когда  равна 0.1, начинается движение (строка 66)
@@ -38,7 +40,7 @@ func _process(delta):
 		qte_activated = true
 	
 	if Dialogic.VAR.go_to_penek_timeline_finish == true:
-		speed_hr_follow = 0.12
+		speed_hr_follow = 0.15
 		Dialogic.VAR.go_to_penek_timeline_finish = false
 
 func start_follow_path(delta):
@@ -104,6 +106,14 @@ func _on_start_besedka_dialogue_body_exited(body):
 	%Player.set_btn_visible(false, "e")
 	in_besedka_area = false
 
+func _on_penek_area_body_entered(body):
+	%Player.set_btn_visible(true, "e")
+	in_penek_area = true
+
+func _on_penek_area_body_exited(body):
+	%Player.set_btn_visible(false, "e")
+	in_penek_area = false
+
 # Начальный переход
 func show_transition_animation():
 	$MainCanvasLayer/Transition.show()
@@ -155,6 +165,10 @@ func handle_interaction(event):
 			%Player.set_anim(%Player.MOVE_STATE.IDLE_UP)
 			%StartBesedkaDialogue.queue_free()
 			Dialogic.start("PrologueTimeline")
+		if in_penek_area:
+			%Player.set_btn_visible(false, "e")
+			%Player.set_block_movement(true)
+			Dialogic.start("PenekDialogWithoutBird")
 
 func spawn_bird():
 	var new_bird_instance = bird.instantiate()

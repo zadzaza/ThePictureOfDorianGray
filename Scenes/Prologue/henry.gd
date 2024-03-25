@@ -3,14 +3,20 @@ extends CharacterBody2D
 const GRAVITY = 1000.0
 var kak_vse_zaebalo = false
 
+var path_node: PathFollow2D
+var player_node: CharacterBody2D
+var main_node: Node2D
+
+func _ready():
+	if is_inside_tree():
+		path_node = get_parent()
+		player_node = get_parent().get_parent().get_parent().get_node("Path2D/PathFollow2D/Player")
+		main_node = get_parent().get_parent().get_parent()
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += GRAVITY
-	
-	if is_inside_tree():
-		var path_node = get_parent()
-		var player_node = get_parent().get_parent().get_parent().get_node("Path2D/PathFollow2D/Player")
 	
 		if !kak_vse_zaebalo:
 			if path_node != null:
@@ -25,3 +31,4 @@ func _physics_process(delta):
 					$AnimatedSprite2D.play("sit")
 					kak_vse_zaebalo = true
 					player_node.set_block_movement(false)
+					main_node.get_node("PenekArea").set_monitoring(true)
