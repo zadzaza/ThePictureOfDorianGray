@@ -38,7 +38,7 @@ func _process(delta):
 		qte_activated = true
 	
 	if Dialogic.VAR.go_to_penek_timeline_finish == true:
-		speed_hr_follow = 0.11
+		speed_hr_follow = 0.12
 		Dialogic.VAR.go_to_penek_timeline_finish = false
 
 func start_follow_path(delta):
