@@ -2,14 +2,15 @@ extends CharacterBody2D
 
 # Инициализируем анимированный спрайт и его поведение при повороте
 @onready var animation = $AnimatedSprite2D
-@onready var pl_flip_h = $AnimatedSprite2D
+@onready var pl_flip_h: bool
 var show_btn = false
 var block_movement = false
+@export var pepe = true
 
 var path_going = true
 
 # Константы для скорости и гравитации
-const SPEED = 300.0
+const SPEED = 1500.0
 const GRAVITY = 1000.0
 
 # Перечисление состояний движения персонажа
@@ -36,11 +37,13 @@ func _physics_process(delta):
   
 	# Определяем, нужно ли отразить спрайт по горизонтали, исходя из направления движения
 	if velocity.x > 0:
-		pl_flip_h.flip_h = false
+		pl_flip_h = false
 	if velocity.x < 0:
-		pl_flip_h.flip_h = true
+		pl_flip_h = true
 	
-	if path_going:
+	$AnimatedSprite2D.flip_h = pl_flip_h
+	
+	if path_going and !pepe:
 		var parent = get_parent()
 		if parent != null:
 			if parent.progress_ratio > 0.0:

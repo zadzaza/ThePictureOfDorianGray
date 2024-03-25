@@ -1,7 +1,8 @@
 extends Node2D
 
 # Переменные
-@onready var path_follow = $Path2D/PathFollow2D
+@onready var player_path_follow = $Path2D/PathFollow2D
+@onready var henry_path_follow = $PathHenry/PathFollowHenry
 @onready var bird_text = %BirdDialogue.text
 
 var in_bird_area = false # Если true и нажимается клавиша E, птица добавляется в инвентарь и удаляется со сцены (строка 79)
@@ -9,7 +10,8 @@ var in_put_area = false
 var in_besedka_area = false
 var bird = load("res://Scenes/Prologue/fly_bird.tscn") # Экспорт птицы
 var text_bird_count_line = 0
-var speed = 0.0 # Начальная скорость ГГ. Когда она равна 0.1, начинается движение (строка 66)
+var speed_pl_follow = 0.0 # Начальная скорость. Когда  равна 0.1, начинается движение (строка 66)
+var speed_hr_follow = 0.0
 var qte_activated = false
 
 enum CAMERA_STATE {SIDE_LEFT, SIDE_TOP, SIDE_RIGHT, SIDE_BOTTOM}
@@ -27,15 +29,21 @@ func _input(event):
 
 func _process(delta):
 	start_follow_path(delta)
+	
 	if Dialogic.VAR.prologue_timeline_finish == true: # После завершения первого диалога появляется qte повернуть голову вправо
 		Dialogic.VAR.prologue_timeline_finish = false
 		%AnimationBasilQTE.play("typing_qte")
 		await %AnimationBasilQTE.animation_finished
 		%Player.set_btn_visible(true, "right")
 		qte_activated = true
+	
+	if Dialogic.VAR.go_to_penek_timeline_finish == true:
+		speed_hr_follow = 0.11
+		Dialogic.VAR.go_to_penek_timeline_finish = false
 
 func start_follow_path(delta):
-	path_follow.progress_ratio += delta * speed
+	player_path_follow.progress_ratio += delta * speed_pl_follow
+	henry_path_follow.progress_ratio += delta * speed_hr_follow
 
 #Скрыть надписи вначале игры
 func hide_lables():
@@ -102,14 +110,19 @@ func show_transition_animation():
 	%TransitionAnimation.play("light_up")
 	await %TransitionAnimation.animation_finished
 	$MainCanvasLayer/Transition.hide()
-	speed = 0.1
+	speed_pl_follow = 0.1
 
 func handle_qte(event):
 	if event.is_action_pressed("ui_right") and qte_activated:
+		qte_activated = false
+		%Player.pl_flip_h = false
+		%Player.set_btn_visible(false, "e")
 		%Player.set_anim(%Player.MOVE_STATE.IDLE_SIDE)
 		await get_tree().create_timer(0.5).timeout
 		%AnimationBasilQTE.play("fade_out")
-		%Player.set_btn_visible(false, "e")
+		await %AnimationBasilQTE.animation_finished
+		%AnimationBasilQTE.queue_free()
+		%BasilQTEDialogue.queue_free()
 		await get_tree().create_timer(6.5).timeout
 		Dialogic.start("GoToPenekDialog")
 
@@ -174,5 +187,3 @@ func remove_animation_buttons():
 	await %AnimationButtons.animation_finished
 	%ButtonsHelp.queue_free()
 	%AnimationButtons.queue_free()
-
-# Настройка видимости кнопки

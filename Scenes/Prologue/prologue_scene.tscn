@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=105 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -822,15 +822,10 @@ shader_parameter/speed = 2.0
 size = Vector2(108, 889)
 
 [sub_resource type="Curve2D" id="Curve2D_7ada2"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7q7tg"]
-height = 187.175
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wlds2"]
-height = 776.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_us7g3"]
-size = Vector2(20, 406)
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1818, 399, 0, 0, 0, 0, 407, 399)
+}
+point_count = 2
 
 [node name="PrologueScene" type="Node2D"]
 position = Vector2(-1, 0)
@@ -1359,6 +1354,7 @@ rotation = 0.000827819
 occluder = SubResource("OccluderPolygon2D_d77sk")
 
 [node name="Path2D" type="Path2D" parent="."]
+z_as_relative = false
 curve = SubResource("Curve2D_1bi7h")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -1620,7 +1616,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartBesedkaDialogue"]
 z_index = 4096
-position = Vector2(1761, 358)
+position = Vector2(1576, 458)
 shape = SubResource("RectangleShape2D_mpfcy")
 debug_color = Color(0.803922, 0.415686, 0.00392157, 0.619608)
 
@@ -1630,6 +1626,7 @@ position = Vector2(1582, 307)
 scale = Vector2(0.509894, 0.509894)
 
 [node name="BasilQTEDialogue" type="Label" parent="."]
+unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 z_index = 4096
 offset_left = 1235.0
@@ -1704,33 +1701,20 @@ shape = SubResource("RectangleShape2D_xeb2h")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Besedka"]
 
-[node name="PathBasil" type="Path2D" parent="."]
+[node name="PathHenry" type="Path2D" parent="."]
 curve = SubResource("Curve2D_7ada2")
 
-[node name="PathFollowBasil" type="PathFollow2D" parent="PathBasil"]
+[node name="PathFollowHenry" type="PathFollow2D" parent="PathHenry"]
+position = Vector2(1818, 399)
+rotation = 3.14159
+loop = false
+
+[node name="Henry" parent="PathHenry/PathFollowHenry" instance=ExtResource("44_03f8y")]
+z_index = 1
+position = Vector2(0, 4)
+rotation = 3.14159
 
 [node name="BesedkaCollision" type="StaticBody2D" parent="."]
-position = Vector2(1818, 395)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BesedkaCollision"]
-z_index = 4096
-position = Vector2(-497, 89)
-rotation = 0.853426
-shape = SubResource("CapsuleShape2D_7q7tg")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="BesedkaCollision"]
-z_index = 4096
-position = Vector2(-55, 34)
-rotation = 4.71239
-shape = SubResource("CapsuleShape2D_wlds2")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="BesedkaCollision"]
-z_index = 4096
-position = Vector2(223, -179)
-shape = SubResource("RectangleShape2D_us7g3")
-
-[node name="Henry" parent="." instance=ExtResource("44_03f8y")]
-z_index = 1
 position = Vector2(1818, 395)
 
 [connection signal="animation_finished" from="AnimationHelpers/AnimationBird" to="." method="_on_animation_bird_animation_finished"]

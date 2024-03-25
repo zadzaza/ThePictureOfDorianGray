@@ -39,7 +39,7 @@ animations = [{
 "texture": ExtResource("2_hjlto")
 }],
 "loop": true,
-"name": &"move_side",
+"name": &"move",
 "speed": 5.0
 }, {
 "frames": [{
@@ -63,5 +63,5 @@ scale = Vector2(0.681818, 0.681818)
 sprite_frames = SubResource("SpriteFrames_ggurl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 106)
+position = Vector2(-2, 103)
 shape = SubResource("RectangleShape2D_aok7y")
