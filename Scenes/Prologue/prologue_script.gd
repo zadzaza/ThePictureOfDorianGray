@@ -16,8 +16,10 @@ var speed_pl_follow = 0.0 # Начальная скорость. Когда  р�
 var speed_hr_follow = 0.0
 var qte_activated = false
 
-var shot1 = true
-var shot2 = true
+var shot_penek1 = true
+var shot_penek2 = true
+
+var besedka_dialog_state = "first"
 
 enum CAMERA_STATE {SIDE_LEFT, SIDE_TOP, SIDE_RIGHT, SIDE_BOTTOM}
 
@@ -33,7 +35,7 @@ func _input(event):
 	handle_interaction(event)
 
 func _process(delta):
-	print(Dialogic.VAR.have_bird)
+	print(besedka_dialog_state)
 	start_follow_path(delta)
 	
 	if Dialogic.VAR.prologue_timeline_finish == true: # После завершения первого диалога появляется qte повернуть голову вправо
@@ -46,6 +48,10 @@ func _process(delta):
 	if Dialogic.VAR.go_to_penek_timeline_finish == true:
 		speed_hr_follow = 0.15
 		Dialogic.VAR.go_to_penek_timeline_finish = false
+	
+	if Dialogic.VAR.finish_prolog == true:
+		%TransitionAnimation.play("fade_out")
+		Dialogic.VAR.finish_prolog = false
 
 func start_follow_path(delta):
 	player_path_follow.progress_ratio += delta * speed_pl_follow
@@ -164,19 +170,25 @@ func handle_interaction(event):
 			%AreaBirdPut.queue_free()
 			%Player.set_btn_visible(false, "e")
 		if in_besedka_area: # В зоне взаимодействия с беседкой
-			%Player.set_btn_visible(false, "e")
-			%Player.set_anim(%Player.MOVE_STATE.IDLE_UP)
-			%StartBesedkaDialogue.queue_free()
-			Dialogic.start("PrologueTimeline")
+			if besedka_dialog_state == "first":
+				%StartBesedkaDialogue.set_monitoring(false)
+				%Player.set_btn_visible(false, "e")
+				%Player.set_anim(%Player.MOVE_STATE.IDLE_UP)
+				besedka_dialog_state = "second"
+				Dialogic.start("PrologueTimeline")
+			if besedka_dialog_state == "second":
+				%StartBesedkaDialogue.set_monitoring(false)
+				Dialogic.start("LastDialog")
 		if in_penek_area:
-			if Dialogic.VAR.penek_dialog_state == "none" and shot1:
+			if Dialogic.VAR.penek_dialog_state == "none" and shot_penek1:
 				%Player.set_btn_visible(false, "e")
 				Dialogic.start("PenekDialogWithoutBird")
-				shot1 = false
-			if Dialogic.VAR.penek_dialog_state == "first_finish" and shot2 and Dialogic.VAR.have_bird:
+				shot_penek1 = false
+				%StartBesedkaDialogue.set_monitoring(true)
+			if Dialogic.VAR.penek_dialog_state == "first_finish" and shot_penek2 and Dialogic.VAR.have_bird:
 				%Player.set_btn_visible(false, "e")
 				Dialogic.start("PenekDialogWithBird")
-				shot2 = false
+				shot_penek2 = false
 			if Dialogic.VAR.penek_dialog_state == "second_finish":
 				Dialogic.start("NoQuestion")
 

@@ -31,6 +31,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "GoToPenekDialog": "res://Scenes/UI/DialogueSystem/GoToPenekDialog.dtl",
+"LastDialog": "res://Scenes/UI/DialogueSystem/LastDialog.dtl",
 "NoQuestion": "res://Scenes/UI/DialogueSystem/NoQuestion.dtl",
 "PenekDialogWithBird": "res://Scenes/UI/DialogueSystem/PenekDialogWithBird.dtl",
 "PenekDialogWithoutBird": "res://Scenes/UI/DialogueSystem/PenekDialogWithoutBird.dtl",
@@ -57,6 +58,7 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
 "block_movement": false,
+"finish_prolog": false,
 "go_to_penek_timeline_finish": false,
 "have_bird": false,
 "penek_dialog_state": "none",
