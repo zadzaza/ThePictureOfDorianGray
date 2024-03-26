@@ -22,7 +22,7 @@ enum MOVE_STATE {IDLE_SIDE, IDLE_UP, IDLE_DOWN, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
 
 func _physics_process(delta):
 	# Получаем направление движения из пользовательского ввода
-	var direction = Input.get_axis("ui_left", "ui_right") if !block_movement else 0.0
+	var direction = Input.get_axis("ui_left", "ui_right") if !Dialogic.VAR.block_movement else 0.0
 	
 	# Устанавливаем горизонтальную скорость, если есть направление движения
 	if direction:
@@ -43,7 +43,7 @@ func _physics_process(delta):
 	
 	$AnimatedSprite2D.flip_h = pl_flip_h
 	
-	if path_going and !pepe:
+	if path_going:
 		var parent = get_parent()
 		if parent != null:
 			if parent.progress_ratio > 0.0:

@@ -1,0 +1,17 @@
+set {block_movement} = true
+HenryCharacter: Вы решили стать орнитологом? На кой вы носите с собой птенца?
+- А что мне делать с ним?
+	HenryCharacter: Ну вы как маленький. Я видел недалеко отсюда пустое гнездо. Верните его домой, что-ли.
+	set {penek_dialog_state} = "second_finish"
+	set {block_movement} = false
+	[end_timeline]
+- Собираю для личной коллекции
+	HenryCharacter: Странные у вас увлечения.
+	set {penek_dialog_state} = "second_finish"
+	set {block_movement} = false
+	[end_timeline]
+- (Промолчать)
+	HenryCharacter: Что ж, храните свои тайны.
+	set {penek_dialog_state} = "second_finish"
+	set {block_movement} = false
+	[end_timeline]

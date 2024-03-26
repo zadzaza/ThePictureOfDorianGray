@@ -2,7 +2,7 @@ extends CanvasLayer
 
 var page = "page"
 var count = 1
-
+var is_show_bird_item: bool
 
 
 # Called when the node enters the scene tree for the first time.
@@ -36,11 +36,13 @@ func switch_main_menu_buttons():
 		%Page2.set_visible(true)
 
 
-func show_item(is_show_item: bool):
-	if is_show_item:
+func show_item(show_item: bool):
+	if show_item:
 		$Slots/Slot1/TextureRect2.show()
-	else: $Slots/Slot1/TextureRect2.hide()
-
+		Dialogic.VAR.have_bird = true
+	else: 
+		$Slots/Slot1/TextureRect2.hide()
+		Dialogic.VAR.have_bird = false
 
 func put_in_slots():
 	pass

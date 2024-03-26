@@ -1,3 +1,5 @@
+set {block_movement} = true
 DorianCharacter: Мне уже надоело позировать, я уже не хочу иметь собственный портрет, на написание которого уйдет целая жизнь.
 HenryCharacter: Давайте пойдем присядем где-то в тени, Бэзил закончит сам. Вам следует избегать солнечных ожогов.
 set {go_to_penek_timeline_finish} = true
+set {block_movement} = false
