@@ -55,7 +55,7 @@ func _physics_process(delta):
 		
 			if parent.progress_ratio != 1.0:
 				set_block_movement(true)
-			else: 
+			else:
 				set_block_movement(false)
   
 	# Установка анимации в условием того, что персонаж двигается
@@ -80,9 +80,11 @@ func set_anim(new_state: MOVE_STATE):
 			animation.set_animation("move_side")
 		MOVE_STATE.IDLE_UP:
 			animation.set_animation("idle_up")
+			
+	print(move_state, Dialogic.VAR.block_movement)
 
 func set_block_movement(block: bool):
-	block_movement = block
+	Dialogic.VAR.block_movement = block
 
 func set_btn_visible(btn_visible: bool, btn_animation: String):
 	%Button.set_visible(btn_visible)

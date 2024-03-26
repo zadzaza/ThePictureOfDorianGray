@@ -35,7 +35,6 @@ func _input(event):
 	handle_interaction(event)
 
 func _process(delta):
-	print(besedka_dialog_state)
 	start_follow_path(delta)
 	
 	if Dialogic.VAR.prologue_timeline_finish == true: # После завершения первого диалога появляется qte повернуть голову вправо
@@ -173,25 +172,31 @@ func handle_interaction(event):
 		if in_besedka_area: # В зоне взаимодействия с беседкой
 			if besedka_dialog_state == "first":
 				%StartBesedkaDialogue.set_monitoring(false)
-				%Player.set_btn_visible(false, "e")
+				%Player.set_block_movement(true)
 				%Player.set_anim(%Player.MOVE_STATE.IDLE_UP)
+				%Player.set_btn_visible(false, "e")
 				besedka_dialog_state = "second"
 				Dialogic.start("PrologueTimeline")
 			if besedka_dialog_state == "second":
 				%StartBesedkaDialogue.set_monitoring(false)
 				Dialogic.start("LastDialog")
+				%Player.set_block_movement(true)
 		if in_penek_area:
 			if Dialogic.VAR.penek_dialog_state == "none" and shot_penek1:
 				%Player.set_btn_visible(false, "e")
 				Dialogic.start("PenekDialogWithoutBird")
 				shot_penek1 = false
 				%StartBesedkaDialogue.set_monitoring(true)
+				%Player.set_block_movement(true)
 			if Dialogic.VAR.penek_dialog_state == "first_finish" and shot_penek2 and Dialogic.VAR.have_bird:
 				%Player.set_btn_visible(false, "e")
 				Dialogic.start("PenekDialogWithBird")
 				shot_penek2 = false
+				%Player.set_block_movement(true)
 			if Dialogic.VAR.penek_dialog_state == "second_finish":
 				Dialogic.start("NoQuestion")
+				%Player.set_anim(%Player.MOVE_STATE.IDLE_UP)
+				%Player.set_block_movement(true)
 
 func spawn_bird():
 	var new_bird_instance = bird.instantiate()

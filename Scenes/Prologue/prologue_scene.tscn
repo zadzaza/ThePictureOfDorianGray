@@ -936,7 +936,6 @@ script = ExtResource("1_kslhb")
 [node name="MainCanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SkyBackground" parent="MainCanvasLayer" instance=ExtResource("5_c53o5")]
-visible = false
 scale = Vector2(0.86523, 3.63258)
 transform = Transform2D(0.86523, 0, 0, 3.63258, 0, 0)
 
@@ -982,6 +981,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Transition" type="ColorRect" parent="MainCanvasLayer"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 z_index = 4096
 offset_left = -24.0
