@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=116 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Sprites/Tilemap/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Scenes/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -14,13 +14,18 @@
 [ext_resource type="PackedScene" uid="uid://b5oexq1eivnb0" path="res://Scenes/UI/ui_book_menu.tscn" id="7_w5l42"]
 [ext_resource type="Texture2D" uid="uid://px4caxjnm0oj" path="res://Sprites/FgTrees/tree5.png" id="8_pvnh8"]
 [ext_resource type="Shader" path="res://wave.gdshader" id="8_sqb6b"]
+[ext_resource type="Texture2D" uid="uid://b0o1fno3s6py2" path="res://Sprites/SkyBG/Clouds 5/1.png" id="8_wtlxm"]
 [ext_resource type="Texture2D" uid="uid://b870tnlh8q6kk" path="res://Sprites/FgTrees/tree6.png" id="9_11sxn"]
 [ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="9_akb36"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/noise-overlay.gdshader" id="9_cnwg4"]
+[ext_resource type="Script" path="res://Scripts/cloud_movement.gd" id="9_gl53f"]
 [ext_resource type="Texture2D" uid="uid://ctm37ukw5tlud" path="res://Sprites/FgTrees/brevno.png" id="9_k4mfr"]
+[ext_resource type="Texture2D" uid="uid://bnak2nhqgj2l0" path="res://Sprites/SkyBG/Clouds 5/3.png" id="10_jo734"]
 [ext_resource type="Texture2D" uid="uid://dahk0fytho5et" path="res://Sprites/Keys/left.png" id="10_u4lkg"]
 [ext_resource type="Shader" path="res://Scenes/Prologue/shaders/water_reflection.gdshader" id="10_va8yl"]
+[ext_resource type="Texture2D" uid="uid://dadtpou2yi3vo" path="res://Sprites/SkyBG/Clouds 5/4.png" id="11_7yrgj"]
 [ext_resource type="Texture2D" uid="uid://ccumdx51v3u0u" path="res://Sprites/Keys/right.png" id="11_v5230"]
+[ext_resource type="Texture2D" uid="uid://dxr1r2wfjmx0m" path="res://Sprites/SkyBG/Clouds 5/5.png" id="12_sk8wh"]
 [ext_resource type="Texture2D" uid="uid://dvrfijm4kjin7" path="res://Scenes/Prologue/shaders/blue_noise.png" id="14_i6rbb"]
 [ext_resource type="Texture2D" uid="uid://bjoaepgvkxrql" path="res://Sprites/FgTrees/гнездо.png" id="15_njglx"]
 [ext_resource type="Texture2D" uid="uid://dicuxiu1mirrh" path="res://Sprites/Sign Posts/03.png" id="16_y221d"]
@@ -64,6 +69,14 @@ shader_parameter/uv_scaling = 1.4
 shader_parameter/movement_direction = Vector2(-0.5, 0.5)
 shader_parameter/movement_speed = 0.01
 shader_parameter/NOISE_TEXTURE = ExtResource("14_i6rbb")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_36v1p"]
+cull_mode = 1
+polygon = PackedVector2Array(-280, -10, -280, -11, -276, -11, -276, -12, -267, -12, -267, -14, -266, -14, -266, -15, -263, -15, -263, -14, -262, -14, -262, -16, -261, -16, -261, -17, -259, -17, -259, -16, -257, -16, -257, -17, -256, -17, -256, -18, -257, -18, -257, -19, -258, -19, -258, -21, -257, -21, -257, -22, -256, -22, -256, -23, -254, -23, -254, -22, -251, -22, -251, -23, -250, -23, -250, -26, -251, -26, -251, -31, -250, -31, -250, -32, -249, -32, -249, -33, -248, -33, -248, -34, -243, -34, -243, -33, -242, -33, -242, -32, -241, -32, -241, -33, -240, -33, -240, -34, -235, -34, -235, -33, -234, -33, -234, -32, -233, -32, -233, -31, -232, -31, -232, -30, -231, -30, -231, -26, -229, -26, -229, -25, -228, -25, -228, -24, -227, -24, -227, -23, -226, -23, -226, -24, -225, -24, -225, -25, -221, -25, -221, -24, -220, -24, -220, -23, -219, -23, -219, -22, -218, -22, -218, -18, -216, -18, -216, -17, -215, -17, -215, -16, -214, -16, -214, -15, -213, -15, -213, -14, -211, -14, -211, -13, -210, -13, -210, -12, -208, -12, -208, -11, -205, -11, -205, -10, -199, -10, -199, -9, -220, -9, -220, -8, -258, -8, -258, -9, -263, -9, -263, -10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5ce1w"]
+cull_mode = 1
+polygon = PackedVector2Array(-286, -56, -286, -57, -266, -57, -266, -58, -220, -58, -220, -59, -175, -59, -175, -58, -149, -58, -149, -57, -218, -57, -218, -56)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vrlnj"]
 shader = ExtResource("18_gprbo")
@@ -565,32 +578,61 @@ shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/hdr = true
 shader_parameter/seed = 5.0
 
-[sub_resource type="Animation" id="Animation_hxgen"]
-resource_name = "light_up"
-length = 2.8
+[sub_resource type="Animation" id="Animation_mdhjs"]
+resource_name = "sunset_anim"
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MainCanvasLayer/Transition:modulate")
+tracks/0/path = NodePath("CanvasModulate:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 2.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(0.65098, 0.627451, 0.717647, 1), Color(0.788235, 0.545098, 0.796078, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MainCanvasLayer/Transition:visible")
+tracks/1/path = NodePath("GodRays3:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.7),
+"times": PackedFloat32Array(0, 10),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [0.0, -0.280998]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GodRays3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1868, -470), Vector2(1884, -535)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainCanvasLayer/ParallaxBackground/CanvasModulate:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.937255, 0.886275, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7fesg"]
+_data = {
+"sunset_anim": SubResource("Animation_mdhjs")
 }
 
 [sub_resource type="Animation" id="Animation_21fpn"]
@@ -619,6 +661,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_hxgen"]
+resource_name = "light_up"
+length = 2.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainCanvasLayer/Transition:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainCanvasLayer/Transition:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_focn8"]
@@ -866,6 +936,7 @@ script = ExtResource("1_kslhb")
 [node name="MainCanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SkyBackground" parent="MainCanvasLayer" instance=ExtResource("5_c53o5")]
+visible = false
 scale = Vector2(0.86523, 3.63258)
 transform = Transform2D(0.86523, 0, 0, 3.63258, 0, 0)
 
@@ -928,6 +999,84 @@ color = Color(0.862745, 0.862745, 0.862745, 1)
 energy = 0.8
 texture = ExtResource("33_p7vc3")
 texture_scale = 2.8
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="MainCanvasLayer"]
+layer = -1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="MainCanvasLayer/ParallaxBackground"]
+texture_filter = 1
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(2304, 0)
+
+[node name="1" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(1189.5, -851)
+scale = Vector2(16.3385, 11.321)
+texture = ExtResource("8_wtlxm")
+flip_h = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="MainCanvasLayer/ParallaxBackground"]
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(6912, 0)
+script = ExtResource("9_gl53f")
+CLOUD_SPEED = 90
+
+[node name="3" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1158, 13)
+scale = Vector2(6, 6)
+texture = ExtResource("10_jo734")
+flip_h = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer2/3"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_36v1p")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer2/3"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_5ce1w")
+
+[node name="4" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(4616, 13)
+scale = Vector2(6, 6)
+texture = ExtResource("10_jo734")
+flip_h = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="MainCanvasLayer/ParallaxBackground"]
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(6912, 0)
+script = ExtResource("9_gl53f")
+CLOUD_SPEED = 70
+
+[node name="4" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer3"]
+position = Vector2(1158, 9)
+scale = Vector2(6, 6)
+texture = ExtResource("11_7yrgj")
+flip_h = true
+
+[node name="5" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer3"]
+position = Vector2(4614, 9)
+scale = Vector2(6, 6)
+texture = ExtResource("11_7yrgj")
+flip_h = true
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="MainCanvasLayer/ParallaxBackground"]
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(6912, 0)
+script = ExtResource("9_gl53f")
+CLOUD_SPEED = 40
+
+[node name="5" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer4"]
+position = Vector2(1160, 11)
+scale = Vector2(6, 6)
+texture = ExtResource("12_sk8wh")
+flip_h = true
+
+[node name="6" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer4"]
+position = Vector2(4616, 11)
+scale = Vector2(6, 6)
+texture = ExtResource("12_sk8wh")
+flip_h = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="MainCanvasLayer/ParallaxBackground"]
 
 [node name="BgObjects" type="Node2D" parent="."]
 z_index = -3
@@ -1535,15 +1684,20 @@ z_index = 4
 position = Vector2(-4372, 485)
 texture = ExtResource("29_wpii7")
 
-[node name="AnimationHelpers" type="AnimationTree" parent="."]
-
-[node name="TransitionAnimation" type="AnimationPlayer" parent="AnimationHelpers"]
+[node name="AnimationSunset" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
-root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_7fesg")
+}
+
+[node name="TransitionAnimation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_focn8")
 }
 speed_scale = 0.265
+
+[node name="AnimationHelpers" type="AnimationTree" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationHelpers"]
 unique_name_in_owner = true

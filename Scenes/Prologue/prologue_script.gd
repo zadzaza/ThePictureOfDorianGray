@@ -41,6 +41,7 @@ func _process(delta):
 	if Dialogic.VAR.prologue_timeline_finish == true: # После завершения первого диалога появляется qte повернуть голову вправо
 		Dialogic.VAR.prologue_timeline_finish = false
 		%AnimationBasilQTE.play("typing_qte")
+		%AnimationSunset.play("sunset_anim")
 		await %AnimationBasilQTE.animation_finished
 		%Player.set_btn_visible(true, "right")
 		qte_activated = true

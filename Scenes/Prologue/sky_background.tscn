@@ -16,9 +16,11 @@ polygon = PackedVector2Array(-286, -56, -286, -57, -266, -57, -266, -58, -220, -
 
 [node name="SkyBackground" type="CanvasLayer"]
 layer = -1
+visible = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 texture_filter = 1
@@ -96,3 +98,6 @@ flip_h = true
 [node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground"]
 visible = false
 color = Color(0.52549, 0.498039, 0.447059, 0.266667)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.262745, 1, 1, 1)
