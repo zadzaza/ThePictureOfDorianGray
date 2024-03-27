@@ -4,13 +4,14 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var pl_flip_h: bool
 var show_btn = false
-var block_movement = false
 @export var pepe = true
+
+var a = 0
 
 var path_going = true
 
 # Константы для скорости и гравитации
-const SPEED = 1500.0
+const SPEED = 300.0
 const GRAVITY = 1000.0
 
 # Перечисление состояний движения персонажа
@@ -21,6 +22,8 @@ enum MOVE_STATE {IDLE_SIDE, IDLE_UP, IDLE_DOWN, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
 
 
 func _physics_process(delta):
+	if a > 11:
+		a = 0
 	# Получаем направление движения из пользовательского ввода
 	var direction = Input.get_axis("ui_left", "ui_right") if !Dialogic.VAR.block_movement else 0.0
 	
@@ -59,11 +62,15 @@ func _physics_process(delta):
 				set_block_movement(false)
   
 	# Установка анимации в условием того, что персонаж двигается
-	if !path_going and !block_movement:
+	if !path_going and !Dialogic.VAR.block_movement:
 		if velocity.x:
 			set_anim(MOVE_STATE.MOVE_SIDE)
+			print(" ИДИ НАХУЙ MOVE_SIDE ", a)
+			a += 1
 		else:
+			print(" ИДИ НАХУЙ IDLE_SIDE ", a)
 			set_anim(MOVE_STATE.IDLE_SIDE)
+			a += 1
 	
 	# Перемещаем персонажа и выводим текущее состояние и позицию в консоль
 	move_and_slide()
@@ -81,7 +88,7 @@ func set_anim(new_state: MOVE_STATE):
 		MOVE_STATE.IDLE_UP:
 			animation.set_animation("idle_up")
 			
-	print(move_state, Dialogic.VAR.block_movement)
+	print(move_state, ", block_movement: ", Dialogic.VAR.block_movement, "\npath_going: ", path_going)
 
 func set_block_movement(block: bool):
 	Dialogic.VAR.block_movement = block

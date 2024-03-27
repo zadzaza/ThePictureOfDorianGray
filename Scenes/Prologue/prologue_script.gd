@@ -184,10 +184,10 @@ func handle_interaction(event):
 		if in_penek_area:
 			if Dialogic.VAR.penek_dialog_state == "none" and shot_penek1:
 				%Player.set_btn_visible(false, "e")
+				%Player.set_block_movement(true)
 				Dialogic.start("PenekDialogWithoutBird")
 				shot_penek1 = false
 				%StartBesedkaDialogue.set_monitoring(true)
-				%Player.set_block_movement(true)
 			if Dialogic.VAR.penek_dialog_state == "first_finish" and shot_penek2 and Dialogic.VAR.have_bird:
 				%Player.set_btn_visible(false, "e")
 				Dialogic.start("PenekDialogWithBird")
