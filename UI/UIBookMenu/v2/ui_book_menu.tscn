@@ -1,0 +1,312 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5oexq1eivnb0"]
+
+[ext_resource type="Script" path="res://UI/UIBookMenu/v2/ui_book_menu.gd" id="1_gelpy"]
+[ext_resource type="Texture2D" uid="uid://coakusgl1rkh4" path="res://UI/UIBookMenu/v2/Sprites/7b8bbe7812c946cb35c6232434d6c6dd.jpg" id="2_rh6xt"]
+[ext_resource type="Texture2D" uid="uid://qw7wp456wphp" path="res://UI/UIBookMenu/v2/Sprites/RADL_Book_blue.png" id="3_wqcq1"]
+[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="4_kfvpv"]
+[ext_resource type="Texture2D" uid="uid://fn4742xjwx0t" path="res://UI/UIBookMenu/v2/Sprites/button.png" id="4_p1ipg"]
+[ext_resource type="PackedScene" uid="uid://ew6vk4ou6dfw" path="res://UI/UIBookMenu/v2/slot.tscn" id="6_706g4"]
+[ext_resource type="Texture2D" uid="uid://b6gdotv2rqjp2" path="res://Levels/Prologue/Birds/Sprites/just_bird.png" id="7_4hdpb"]
+[ext_resource type="Script" path="res://addons/pause-manager/scripts/pause_manager.gd" id="7_4ll02"]
+[ext_resource type="Texture2D" uid="uid://b6j2bit8n8vpw" path="res://UI/UIBookMenu/v2/Sprites/cell2.png" id="8_fut78"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyyti"]
+texture = ExtResource("8_fut78")
+
+[node name="UIBookMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 128
+script = ExtResource("1_gelpy")
+
+[node name="7b8Bbe7812c946Cb35c6232434d6c6Dd" type="Sprite2D" parent="."]
+position = Vector2(962, 938)
+scale = Vector2(1.88086, 1.88086)
+texture = ExtResource("2_rh6xt")
+
+[node name="RadlBookBlue" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(5.06094, 5.06094)
+texture = ExtResource("3_wqcq1")
+
+[node name="Page1" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 679.0
+offset_top = 339.0
+offset_right = 725.0
+offset_bottom = 425.0
+scale = Vector2(4.52085, 4.52085)
+
+[node name="ContinueBtn" type="TextureButton" parent="Page1"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_p1ipg")
+
+[node name="Basil" type="Label" parent="Page1/ContinueBtn"]
+layout_mode = 0
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Продолжить"
+horizontal_alignment = 1
+
+[node name="SaveBtn" type="TextureButton" parent="Page1"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_p1ipg")
+
+[node name="Basil" type="Label" parent="Page1/SaveBtn"]
+layout_mode = 0
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Сохранить"
+horizontal_alignment = 1
+
+[node name="LoadBtn" type="TextureButton" parent="Page1"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_p1ipg")
+
+[node name="Basil" type="Label" parent="Page1/LoadBtn"]
+layout_mode = 0
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Загрузить"
+horizontal_alignment = 1
+
+[node name="SettingBtn" type="TextureButton" parent="Page1"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_p1ipg")
+
+[node name="Basil" type="Label" parent="Page1/SettingBtn"]
+layout_mode = 0
+offset_left = 5.30875
+offset_top = 3.53915
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Настройки"
+horizontal_alignment = 1
+
+[node name="ExitBtn" type="TextureButton" parent="Page1"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_p1ipg")
+
+[node name="Basil" type="Label" parent="Page1/ExitBtn"]
+layout_mode = 0
+offset_left = 5.30875
+offset_top = 3.53915
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Выйти"
+horizontal_alignment = 1
+
+[node name="Page2" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 679.0
+offset_top = 369.0
+offset_right = 725.0
+offset_bottom = 455.0
+scale = Vector2(4.52085, 4.52085)
+
+[node name="SoundBtn" type="TextureButton" parent="Page2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_p1ipg")
+
+[node name="Basil" type="Label" parent="Page2/SoundBtn"]
+layout_mode = 0
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Звук"
+horizontal_alignment = 1
+
+[node name="GraphicsBtn" type="TextureButton" parent="Page2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_p1ipg")
+
+[node name="Basil" type="Label" parent="Page2/GraphicsBtn"]
+layout_mode = 0
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Графика"
+horizontal_alignment = 1
+
+[node name="VideoBtn" type="TextureButton" parent="Page2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_p1ipg")
+
+[node name="Basil" type="Label" parent="Page2/VideoBtn"]
+layout_mode = 0
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Видео"
+horizontal_alignment = 1
+
+[node name="BackBtn" type="TextureButton" parent="Page2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_p1ipg")
+
+[node name="Basil" type="Label" parent="Page2/BackBtn"]
+layout_mode = 0
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Назад"
+horizontal_alignment = 1
+
+[node name="Page3" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 679.0
+offset_top = 369.0
+offset_right = 725.0
+offset_bottom = 455.0
+scale = Vector2(4.52085, 4.52085)
+
+[node name="BackBtn" type="TextureButton" parent="Page3"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_p1ipg")
+
+[node name="Basil" type="Label" parent="Page3/BackBtn"]
+layout_mode = 0
+offset_left = 5.30875
+offset_top = 3.53917
+offset_right = 107.309
+offset_bottom = 20.5392
+scale = Vector2(0.353915, 0.353915)
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_kfvpv")
+text = "Назад"
+horizontal_alignment = 1
+
+[node name="Slots" type="GridContainer" parent="."]
+offset_left = 1024.0
+offset_top = 329.0
+offset_right = 1064.0
+offset_bottom = 369.0
+scale = Vector2(6.48846, 10.7621)
+columns = 3
+
+[node name="Slot1" parent="Slots" instance=ExtResource("6_706g4")]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Slots/Slot1"]
+layout_mode = 0
+offset_left = 1.07884
+offset_top = 0.185837
+offset_right = 41.0788
+offset_bottom = 40.1858
+scale = Vector2(0.208074, 0.123347)
+texture = ExtResource("7_4hdpb")
+
+[node name="Slot2" type="Panel" parent="Slots"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Slot3" type="Panel" parent="Slots"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Slot4" type="Panel" parent="Slots"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Slot5" type="Panel" parent="Slots"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Slot6" type="Panel" parent="Slots"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Slot7" type="Panel" parent="Slots"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Slot8" type="Panel" parent="Slots"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Slot9" type="Panel" parent="Slots"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Slot10" type="Panel" parent="Slots"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Slot11" type="Panel" parent="Slots"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="Slot12" type="Panel" parent="Slots"]
+custom_minimum_size = Vector2(10, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+
+[node name="PauseManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_4ll02")
+
+[connection signal="pressed" from="Page1/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="Page1/SaveBtn" to="." method="_on_save_btn_pressed"]
+[connection signal="pressed" from="Page1/LoadBtn" to="." method="_on_load_btn_pressed"]
+[connection signal="pressed" from="Page1/SettingBtn" to="." method="_on_setting_btn_pressed"]
+[connection signal="pressed" from="Page1/ExitBtn" to="." method="_on_exit_btn_pressed"]
+[connection signal="pressed" from="Page2/BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="Page3/BackBtn" to="." method="_on_back_btn_pressed"]

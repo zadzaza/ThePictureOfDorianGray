@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://icnif8bfje6l"]
+
+[ext_resource type="Texture2D" uid="uid://cbgkic775x77n" path="res://Levels/Prologue/NPC/Henry/Sprites/idle_down.png" id="1_4wcx5"]
+[ext_resource type="Script" path="res://Levels/Prologue/NPC/Henry/henry.gd" id="1_4ygut"]
+[ext_resource type="Texture2D" uid="uid://5xfmbxx0rfiu" path="res://Levels/Prologue/NPC/Henry/Sprites/idle_side.png" id="2_hjlto"]
+[ext_resource type="Texture2D" uid="uid://bno16261ugkqm" path="res://Levels/Prologue/NPC/Henry/Sprites/move_side.png" id="3_8l64v"]
+[ext_resource type="Texture2D" uid="uid://31tl2t65ykfv" path="res://Levels/Prologue/NPC/Henry/Sprites/move_side2.png" id="4_vyinn"]
+[ext_resource type="Texture2D" uid="uid://et5d5eqi1642" path="res://Levels/Prologue/NPC/Henry/Sprites/sit.png" id="5_7ir3k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggurl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4wcx5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hjlto")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8l64v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hjlto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vyinn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hjlto")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7ir3k")
+}],
+"loop": true,
+"name": &"sit",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aok7y"]
+size = Vector2(34.5, 20)
+
+[node name="Henry" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_4ygut")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.681818, 0.681818)
+sprite_frames = SubResource("SpriteFrames_ggurl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 103)
+shape = SubResource("RectangleShape2D_aok7y")

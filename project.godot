@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="ThePictureOfDorianGray"
-run/main_scene="res://Scenes/UI/main_menu.tscn"
+run/main_scene="res://UI/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-boot_splash/image="res://Sprites/UI/asset_YHgAw7dnMDNCGidd6nuwzooD.png"
+boot_splash/image="res://UI/LoadScreen/asset_YHgAw7dnMDNCGidd6nuwzooD.png"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -24,21 +24,21 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"BasilCharacter": "res://Scenes/UI/DialogueSystem/Characters/BasilCharacter.dch",
-"Characters/BasilCharacter": "res://Scenes/UI/DialogueSystem/Characters/BasilCharacter.dch",
-"DorianCharacter": "res://Scenes/UI/DialogueSystem/Characters/DorianCharacter.dch",
-"HenryCharacter": "res://Scenes/UI/DialogueSystem/Characters/HenryCharacter.dch"
+"BasilCharacter": "res://UI/DialogueSystem/Characters/BasilCharacter.dch",
+"Characters/BasilCharacter": "res://UI/DialogueSystem/Characters/BasilCharacter.dch",
+"DorianCharacter": "res://UI/DialogueSystem/Characters/DorianCharacter.dch",
+"HenryCharacter": "res://UI/DialogueSystem/Characters/HenryCharacter.dch"
 }
 directories/dtl_directory={
-"GoToPenekDialog": "res://Scenes/UI/DialogueSystem/GoToPenekDialog.dtl",
-"LastDialog": "res://Scenes/UI/DialogueSystem/LastDialog.dtl",
-"NoQuestion": "res://Scenes/UI/DialogueSystem/NoQuestion.dtl",
-"PenekDialogWithBird": "res://Scenes/UI/DialogueSystem/PenekDialogWithBird.dtl",
-"PenekDialogWithoutBird": "res://Scenes/UI/DialogueSystem/PenekDialogWithoutBird.dtl",
-"PrologueTimeline": "res://Scenes/Prologue/PrologueTimeline.dtl"
+"GoToPenekDialog": "res://UI/DialogueSystem/GoToPenekDialog.dtl",
+"LastDialog": "res://UI/DialogueSystem/LastDialog.dtl",
+"NoQuestion": "res://UI/DialogueSystem/NoQuestion.dtl",
+"PenekDialogWithBird": "res://UI/DialogueSystem/PenekDialogWithBird.dtl",
+"PenekDialogWithoutBird": "res://UI/DialogueSystem/PenekDialogWithoutBird.dtl",
+"PrologueTimeline": "res://Levels/Prologue/PrologueTimeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Scenes/UI/DialogueSystem/Dialogue.tres"]
+layout/style_list=[]
 layout/default_style="res://Scenes/UI/DialogueSystem/Dialogue.tres"
 text/letter_speed=0.02
 text/initial_text_reveal_skippable=true

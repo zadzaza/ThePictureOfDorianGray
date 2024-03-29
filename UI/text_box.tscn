@@ -1,0 +1,134 @@
+[gd_scene load_steps=6 format=3 uid="uid://5b0y02x5mj68"]
+
+[ext_resource type="Texture2D" uid="uid://cds5k8d0cg8u1" path="res://Sprites/UI/dialogue_menu.png" id="2_3fh35"]
+[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="3_26srf"]
+
+[sub_resource type="GDScript" id="GDScript_8bvqs"]
+script/source = "extends MarginContainer
+
+
+@onready var dialogue_label = $MarginContainer/DialogueLabel
+@onready var timer = $LetterDisplayTimer
+
+
+const MAX_WIDTH = 256
+
+var text = \"\"
+var letter_index = 0
+
+var letter_time = 0.03
+var space_time = 0.06
+var punctuatuion_time = 0.02
+
+signal finished_displaying()
+
+func _process(delta):
+	set_pivot_offset(Vector2(0, 0))
+	
+func display_text(text_to_display: String):
+	text = text_to_display
+	dialogue_label.text = text_to_display
+	
+	await resized
+	custom_minimum_size.x = min(size.x, MAX_WIDTH)
+	
+	if size.x > MAX_WIDTH:
+		dialogue_label.autowrap_mode = TextServer.AUTOWRAP_WORD
+		await resized
+		custom_minimum_size.y = size.y
+	
+	global_position.x -= size.x / 2
+	global_position.y -= size.y + 24
+	
+	dialogue_label.text = \"\"
+	display_letter()
+
+func display_letter():
+	dialogue_label.text = text[letter_index]
+	
+	letter_index += 1
+	if letter_index >= text.length():
+		finished_displaying.emit()
+		return
+	
+	match text[letter_index]:
+		\"!\", \".\", \",\", \"?\":
+			timer.start(punctuatuion_time)
+		\" \":
+			timer.start(space_time)
+		_:
+			timer.start(letter_time)
+
+func _on_letter_display_timer_timeout():
+	display_letter()
+"
+
+[sub_resource type="Animation" id="Animation_e6qjo"]
+resource_name = "appearance"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1dvi4"]
+_data = {
+"appearance": SubResource("Animation_e6qjo")
+}
+
+[node name="TextBox" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = -1895.0
+offset_bottom = -1048.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(25, 25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = SubResource("GDScript_8bvqs")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_3fh35")
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 24
+
+[node name="DialogueLabel" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+z_index = 4096
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_26srf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1dvi4")
+}
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

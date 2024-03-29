@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://cn6wcrssspc1h"]
+
+[ext_resource type="Texture2D" uid="uid://b0o1fno3s6py2" path="res://Levels/Prologue/SkyBG/Sprites/Clouds 5/1.png" id="1_rj5xv"]
+[ext_resource type="Script" path="res://Levels/Prologue/SkyBG/cloud_movement.gd" id="2_ywsdl"]
+[ext_resource type="Texture2D" uid="uid://bnak2nhqgj2l0" path="res://Levels/Prologue/SkyBG/Sprites/Clouds 5/3.png" id="3_ygr01"]
+[ext_resource type="Texture2D" uid="uid://dadtpou2yi3vo" path="res://Levels/Prologue/SkyBG/Sprites/Clouds 5/4.png" id="4_a7vb0"]
+[ext_resource type="Texture2D" uid="uid://dxr1r2wfjmx0m" path="res://Levels/Prologue/SkyBG/Sprites/Clouds 5/5.png" id="5_1nul8"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_khrwq"]
+cull_mode = 1
+polygon = PackedVector2Array(-280, -10, -280, -11, -276, -11, -276, -12, -267, -12, -267, -14, -266, -14, -266, -15, -263, -15, -263, -14, -262, -14, -262, -16, -261, -16, -261, -17, -259, -17, -259, -16, -257, -16, -257, -17, -256, -17, -256, -18, -257, -18, -257, -19, -258, -19, -258, -21, -257, -21, -257, -22, -256, -22, -256, -23, -254, -23, -254, -22, -251, -22, -251, -23, -250, -23, -250, -26, -251, -26, -251, -31, -250, -31, -250, -32, -249, -32, -249, -33, -248, -33, -248, -34, -243, -34, -243, -33, -242, -33, -242, -32, -241, -32, -241, -33, -240, -33, -240, -34, -235, -34, -235, -33, -234, -33, -234, -32, -233, -32, -233, -31, -232, -31, -232, -30, -231, -30, -231, -26, -229, -26, -229, -25, -228, -25, -228, -24, -227, -24, -227, -23, -226, -23, -226, -24, -225, -24, -225, -25, -221, -25, -221, -24, -220, -24, -220, -23, -219, -23, -219, -22, -218, -22, -218, -18, -216, -18, -216, -17, -215, -17, -215, -16, -214, -16, -214, -15, -213, -15, -213, -14, -211, -14, -211, -13, -210, -13, -210, -12, -208, -12, -208, -11, -205, -11, -205, -10, -199, -10, -199, -9, -220, -9, -220, -8, -258, -8, -258, -9, -263, -9, -263, -10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gpok1"]
+cull_mode = 1
+polygon = PackedVector2Array(-286, -56, -286, -57, -266, -57, -266, -58, -220, -58, -220, -59, -175, -59, -175, -58, -149, -58, -149, -57, -218, -57, -218, -56)
+
+[node name="SkyBackground" type="CanvasLayer"]
+layer = -1
+visible = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -1
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(2304, 0)
+
+[node name="1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1189.5, -851)
+scale = Vector2(16.3385, 11.321)
+texture = ExtResource("1_rj5xv")
+flip_h = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(6912, 0)
+script = ExtResource("2_ywsdl")
+CLOUD_SPEED = 90
+
+[node name="3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1158, 13)
+scale = Vector2(6, 6)
+texture = ExtResource("3_ygr01")
+flip_h = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="ParallaxBackground/ParallaxLayer2/3"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_khrwq")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="ParallaxBackground/ParallaxLayer2/3"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_gpok1")
+
+[node name="4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(4616, 13)
+scale = Vector2(6, 6)
+texture = ExtResource("3_ygr01")
+flip_h = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(6912, 0)
+script = ExtResource("2_ywsdl")
+CLOUD_SPEED = 70
+
+[node name="4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(1158, 9)
+scale = Vector2(6, 6)
+texture = ExtResource("4_a7vb0")
+flip_h = true
+
+[node name="5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(4614, 9)
+scale = Vector2(6, 6)
+texture = ExtResource("4_a7vb0")
+flip_h = true
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(6912, 0)
+script = ExtResource("2_ywsdl")
+CLOUD_SPEED = 40
+
+[node name="5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(1160, 11)
+scale = Vector2(6, 6)
+texture = ExtResource("5_1nul8")
+flip_h = true
+
+[node name="6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(4616, 11)
+scale = Vector2(6, 6)
+texture = ExtResource("5_1nul8")
+flip_h = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground"]
+visible = false
+color = Color(0.52549, 0.498039, 0.447059, 0.266667)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.262745, 1, 1, 1)

@@ -1,0 +1,250 @@
+[gd_scene load_steps=15 format=3 uid="uid://gspeugd1dcdn"]
+
+[ext_resource type="Script" path="res://UI/UIBookMenu/v1/UIBook.gd" id="1_lq4qn"]
+[ext_resource type="Texture2D" uid="uid://h7knl6mbxqay" path="res://UI/UIBookMenu/v1/Sprites/book_closed.png" id="2_5ggk1"]
+[ext_resource type="Texture2D" uid="uid://6w5r2t5btttr" path="res://UI/UIBookMenu/v1/Sprites/book_open.png" id="3_qkaek"]
+[ext_resource type="Texture2D" uid="uid://dvexd1b0f0lai" path="res://UI/UIBookMenu/v1/Sprites/peoples_none.png" id="4_w44cr"]
+[ext_resource type="Texture2D" uid="uid://b03jyfbp3efrk" path="res://UI/UIBookMenu/v1/Sprites/inv_none.png" id="5_veb4m"]
+[ext_resource type="Texture2D" uid="uid://c7hsa1ahaexvl" path="res://UI/UIBookMenu/v1/Sprites/settings_none.png" id="6_scu8i"]
+[ext_resource type="Texture2D" uid="uid://s71kjmwm7wda" path="res://UI/UIBookMenu/v1/Sprites/peoples_img.png" id="7_5aiw7"]
+[ext_resource type="Texture2D" uid="uid://d0hdl2rm6j7vs" path="res://UI/UIBookMenu/v1/Sprites/peoples_stats.png" id="8_0wf8p"]
+[ext_resource type="Texture2D" uid="uid://dfk7qm3qokpe4" path="res://UI/UIBookMenu/v1/Sprites/inv_img.png" id="8_gy2s4"]
+[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="9_k5snl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8c0bg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5ggk1")
+}],
+"loop": true,
+"name": &"book_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qkaek")
+}],
+"loop": true,
+"name": &"book_open",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_bohqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q6k6s"]
+resource_name = "appearance"
+length = 1.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.1, 0.1), Vector2(0.2, 0.2), Vector2(0.3, 0.3), Vector2(0.4, 0.4), Vector2(0.5, 0.5), Vector2(0.6, 0.6), Vector2(0.7, 0.7), Vector2(0.8, 0.8), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdcgv"]
+_data = {
+"RESET": SubResource("Animation_bohqc"),
+"appearance": SubResource("Animation_q6k6s")
+}
+
+[node name="UIBook" type="CanvasLayer"]
+script = ExtResource("1_lq4qn")
+p_selected = true
+
+[node name="Control" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 973.0
+offset_top = 516.0
+offset_right = 973.0
+offset_bottom = 516.0
+
+[node name="Book" type="AnimatedSprite2D" parent="Control"]
+unique_name_in_owner = true
+scale = Vector2(6.84043, 6.84043)
+sprite_frames = SubResource("SpriteFrames_8c0bg")
+animation = &"book_open"
+
+[node name="Elements" type="Node2D" parent="Control/Book"]
+unique_name_in_owner = true
+
+[node name="Buttons" type="Control" parent="Control/Book/Elements"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Peoples" type="TextureButton" parent="Control/Book/Elements/Buttons"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -57.1601
+offset_top = -61.692
+offset_right = -43.1601
+offset_bottom = -46.692
+texture_normal = ExtResource("4_w44cr")
+
+[node name="Inv" type="TextureButton" parent="Control/Book/Elements/Buttons"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -38.3017
+offset_top = -62.1306
+offset_right = -24.3017
+offset_bottom = -47.1306
+texture_normal = ExtResource("5_veb4m")
+
+[node name="Settings" type="TextureButton" parent="Control/Book/Elements/Buttons"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 32.0155
+offset_top = -61.8382
+offset_right = 46.0155
+offset_bottom = -46.8382
+texture_normal = ExtResource("6_scu8i")
+
+[node name="Pages" type="Control" parent="Control/Book/Elements"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page1" type="Control" parent="Control/Book/Elements/Pages"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PeoplesImg" type="Sprite2D" parent="Control/Book/Elements/Pages/Page1"]
+position = Vector2(39.6174, -3.50854)
+scale = Vector2(1.19812, 1.19812)
+texture = ExtResource("7_5aiw7")
+
+[node name="PeoplesStats" type="Sprite2D" parent="Control/Book/Elements/Pages/Page1"]
+position = Vector2(-39.9098, -3.21617)
+scale = Vector2(1.22306, 1.22306)
+texture = ExtResource("8_0wf8p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Book/Elements/Pages/Page1"]
+layout_mode = 0
+offset_left = -61.692
+offset_top = -32.4541
+offset_right = 40.308
+offset_bottom = 68.5459
+scale = Vector2(0.365756, 0.365756)
+theme_override_constants/separation = 11
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Book/Elements/Pages/Page1/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="Basil" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "Бэзил Холлуорд"
+
+[node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "0"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Book/Elements/Pages/Page1/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="Sibilla" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "Сибилла Вейн"
+
+[node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "0"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/Book/Elements/Pages/Page1/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="James" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "Джеймс Вейн"
+
+[node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "0"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/Book/Elements/Pages/Page1/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 29
+
+[node name="Henry" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "Генри Уоттон"
+
+[node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
+theme_override_fonts/font = ExtResource("9_k5snl")
+text = "0"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Page2" type="Control" parent="Control/Book/Elements/Pages"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InvImg" type="Sprite2D" parent="Control/Book/Elements/Pages/Page2"]
+position = Vector2(39.6174, -2.33903)
+scale = Vector2(1.08076, 1.08076)
+texture = ExtResource("8_gy2s4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_bdcgv")
+}
+speed_scale = 1.7
+
+[connection signal="pressed" from="Control/Book/Elements/Buttons/Peoples" to="." method="_on_peoples_pressed"]
+[connection signal="pressed" from="Control/Book/Elements/Buttons/Inv" to="." method="_on_inv_pressed"]
+[connection signal="pressed" from="Control/Book/Elements/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="animation_finished" from="Control/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

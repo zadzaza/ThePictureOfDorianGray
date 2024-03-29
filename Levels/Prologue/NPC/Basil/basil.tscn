@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://brrjowxtot0sl"]
+
+[ext_resource type="Script" path="res://Levels/Prologue/NPC/Basil/basil.gd" id="1_wvhdo"]
+[ext_resource type="Shader" path="res://no_jittering.gdshader" id="2_ns6kb"]
+[ext_resource type="Texture2D" uid="uid://k1xh0fj006ox" path="res://Levels/Prologue/NPC/Basil/NPC_2.png" id="2_uqegq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cb14j"]
+shader = ExtResource("2_ns6kb")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjxdp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uqegq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a41o0"]
+size = Vector2(140, 16)
+
+[sub_resource type="Animation" id="Animation_1a3hv"]
+resource_name = "breath"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.035), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bk8or"]
+resource_name = "breath2"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0, 1.03), Vector2(0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w78r5"]
+_data = {
+"breath": SubResource("Animation_1a3hv"),
+"breath2": SubResource("Animation_bk8or")
+}
+
+[node name="Basil" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_wvhdo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_cb14j")
+scale = Vector2(1, 1.01824)
+sprite_frames = SubResource("SpriteFrames_pjxdp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-30, 211)
+shape = SubResource("RectangleShape2D_a41o0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w78r5")
+}

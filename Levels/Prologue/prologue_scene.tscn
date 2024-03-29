@@ -1,0 +1,1924 @@
+[gd_scene load_steps=115 format=3 uid="uid://bj3yd1r0x5mwj"]
+
+[ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Levels/Prologue/Environment/tilemap.png" id="1_7idll"]
+[ext_resource type="Script" path="res://Levels/Prologue/prologue_script.gd" id="1_kslhb"]
+[ext_resource type="Texture2D" uid="uid://qqlk04uxx8ui" path="res://Levels/Prologue/BgTrees/shadow1.png" id="2_kalkm"]
+[ext_resource type="Texture2D" uid="uid://bkk3y0gpyo00e" path="res://Levels/Prologue/FgTrees/tree1.png" id="2_q26pc"]
+[ext_resource type="Texture2D" uid="uid://c5j86ho5yfxaa" path="res://Levels/Prologue/BgTrees/bh_tree.png" id="4_rq0tm"]
+[ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Player/player_scene.tscn" id="4_rxhjn"]
+[ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Levels/Prologue/Environment/survival.png" id="4_ut4is"]
+[ext_resource type="Texture2D" uid="uid://d0jlfh78hn17w" path="res://Levels/Prologue/FgTrees/tree2.png" id="5_6484s"]
+[ext_resource type="Texture2D" uid="uid://bm2d1xb8oxby3" path="res://Levels/Prologue/FgTrees/tree3.png" id="6_58hsq"]
+[ext_resource type="Texture2D" uid="uid://b5xjo0j7tu6ed" path="res://Levels/Prologue/FgTrees/tree4.png" id="7_c5f4i"]
+[ext_resource type="PackedScene" uid="uid://b5oexq1eivnb0" path="res://UI/UIBookMenu/v2/ui_book_menu.tscn" id="7_w5l42"]
+[ext_resource type="Texture2D" uid="uid://px4caxjnm0oj" path="res://Levels/Prologue/FgTrees/tree5.png" id="8_pvnh8"]
+[ext_resource type="Shader" path="res://wave.gdshader" id="8_sqb6b"]
+[ext_resource type="Texture2D" uid="uid://b0o1fno3s6py2" path="res://Levels/Prologue/SkyBG/Sprites/Clouds 5/1.png" id="8_wtlxm"]
+[ext_resource type="Texture2D" uid="uid://b870tnlh8q6kk" path="res://Levels/Prologue/FgTrees/tree6.png" id="9_11sxn"]
+[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="9_akb36"]
+[ext_resource type="Shader" path="res://Levels/Prologue/shaders/noise-overlay.gdshader" id="9_cnwg4"]
+[ext_resource type="Script" path="res://Levels/Prologue/SkyBG/cloud_movement.gd" id="9_gl53f"]
+[ext_resource type="Texture2D" uid="uid://ctm37ukw5tlud" path="res://Levels/Prologue/FgTrees/brevno.png" id="9_k4mfr"]
+[ext_resource type="Texture2D" uid="uid://bnak2nhqgj2l0" path="res://Levels/Prologue/SkyBG/Sprites/Clouds 5/3.png" id="10_jo734"]
+[ext_resource type="Texture2D" uid="uid://dahk0fytho5et" path="res://UI/Keys/left.png" id="10_u4lkg"]
+[ext_resource type="Shader" path="res://Levels/Prologue/shaders/water_reflection.gdshader" id="10_va8yl"]
+[ext_resource type="Texture2D" uid="uid://dadtpou2yi3vo" path="res://Levels/Prologue/SkyBG/Sprites/Clouds 5/4.png" id="11_7yrgj"]
+[ext_resource type="Texture2D" uid="uid://ccumdx51v3u0u" path="res://UI/Keys/right.png" id="11_v5230"]
+[ext_resource type="Texture2D" uid="uid://dxr1r2wfjmx0m" path="res://Levels/Prologue/SkyBG/Sprites/Clouds 5/5.png" id="12_sk8wh"]
+[ext_resource type="Texture2D" uid="uid://dvrfijm4kjin7" path="res://Levels/Prologue/shaders/blue_noise.png" id="14_i6rbb"]
+[ext_resource type="Texture2D" uid="uid://bjoaepgvkxrql" path="res://Levels/Prologue/FgTrees/гнездо.png" id="15_njglx"]
+[ext_resource type="Texture2D" uid="uid://dicuxiu1mirrh" path="res://Levels/Prologue/Sign Posts/03.png" id="16_y221d"]
+[ext_resource type="Shader" path="res://Levels/Prologue/shaders/wind_trees.gdshader" id="18_gprbo"]
+[ext_resource type="Texture2D" uid="uid://dspcnyfows2r" path="res://Levels/Prologue/FgTrees/гнездо2.png" id="20_3kdtb"]
+[ext_resource type="Texture2D" uid="uid://calhdko37321t" path="res://Levels/Prologue/Environment/molbert.png" id="20_7echu"]
+[ext_resource type="Texture2D" uid="uid://ce02nb7pw5jya" path="res://Levels/Prologue/BgTrees/shadow4.png" id="21_75e5f"]
+[ext_resource type="Texture2D" uid="uid://bwc65qsr3opmt" path="res://Levels/Prologue/BgTrees/shadow2.png" id="23_t8j8v"]
+[ext_resource type="Texture2D" uid="uid://bqfp6x2uynmqk" path="res://Levels/Prologue/BgTrees/shadow5.png" id="24_3ye0t"]
+[ext_resource type="Shader" path="res://Levels/Prologue/shaders/rays.gdshader" id="25_dmjma"]
+[ext_resource type="Texture2D" uid="uid://cckhe3kiy1fn0" path="res://Levels/Prologue/FgTrees/krona1.png" id="26_81bts"]
+[ext_resource type="Texture2D" uid="uid://q0vjs7pcoqkq" path="res://Levels/Prologue/FgTrees/krona6.png" id="26_walee"]
+[ext_resource type="Texture2D" uid="uid://dbseq3l7kfxir" path="res://Levels/Prologue/Environment/brevno.png" id="29_wpii7"]
+[ext_resource type="Texture2D" uid="uid://bt3t7wsvdridf" path="res://Levels/Prologue/Environment/drova.png" id="33_7xlbh"]
+[ext_resource type="Texture2D" uid="uid://cv8dyg174cxuv" path="res://Levels/Prologue/SkyBG/Sprites/Clouds 6/Безымянный.png" id="33_p7vc3"]
+[ext_resource type="Texture2D" uid="uid://dhhwf5pxgrrs7" path="res://Levels/Prologue/Environment/derevo_srubleno.png" id="35_kyrnm"]
+[ext_resource type="PackedScene" uid="uid://dcvb38k01mgv7" path="res://Levels/Prologue/Birds/fly_bird.tscn" id="35_rw2vx"]
+[ext_resource type="PackedScene" uid="uid://dbasef84pjwvt" path="res://Levels/Prologue/Birds/chick.tscn" id="35_uuudl"]
+[ext_resource type="Texture2D" uid="uid://ckejnyt3trtcq" path="res://Levels/Prologue/Environment/penek.png" id="36_jnxsn"]
+[ext_resource type="PackedScene" uid="uid://brrjowxtot0sl" path="res://Levels/Prologue/NPC/Basil/basil.tscn" id="39_6hgm2"]
+[ext_resource type="Texture2D" uid="uid://c5kg3qmsf64jv" path="res://UI/Keys/a.png" id="42_hc2ml"]
+[ext_resource type="Texture2D" uid="uid://4nkes5rrmmad" path="res://UI/Keys/d.png" id="43_q2bil"]
+[ext_resource type="PackedScene" uid="uid://icnif8bfje6l" path="res://Levels/Prologue/NPC/Henry/henry.tscn" id="44_03f8y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
+shader = ExtResource("10_va8yl")
+shader_parameter/level = 0.522
+shader_parameter/water_albedo = Color(0.0745098, 0.356863, 0.478431, 1)
+shader_parameter/water_opacity = 0.191
+shader_parameter/water_speed = 0.05
+shader_parameter/wave_distortion = 0.0
+shader_parameter/wave_multiplyer = 7
+shader_parameter/water_texture_on = true
+shader_parameter/reflection_X_offset = 0.0
+shader_parameter/reflection_Y_offset = 0.306
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1feey"]
+shader = ExtResource("9_cnwg4")
+shader_parameter/strength = 10.0
+shader_parameter/uv_scaling = 1.4
+shader_parameter/movement_direction = Vector2(-0.5, 0.5)
+shader_parameter/movement_speed = 0.01
+shader_parameter/NOISE_TEXTURE = ExtResource("14_i6rbb")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_36v1p"]
+cull_mode = 1
+polygon = PackedVector2Array(-280, -10, -280, -11, -276, -11, -276, -12, -267, -12, -267, -14, -266, -14, -266, -15, -263, -15, -263, -14, -262, -14, -262, -16, -261, -16, -261, -17, -259, -17, -259, -16, -257, -16, -257, -17, -256, -17, -256, -18, -257, -18, -257, -19, -258, -19, -258, -21, -257, -21, -257, -22, -256, -22, -256, -23, -254, -23, -254, -22, -251, -22, -251, -23, -250, -23, -250, -26, -251, -26, -251, -31, -250, -31, -250, -32, -249, -32, -249, -33, -248, -33, -248, -34, -243, -34, -243, -33, -242, -33, -242, -32, -241, -32, -241, -33, -240, -33, -240, -34, -235, -34, -235, -33, -234, -33, -234, -32, -233, -32, -233, -31, -232, -31, -232, -30, -231, -30, -231, -26, -229, -26, -229, -25, -228, -25, -228, -24, -227, -24, -227, -23, -226, -23, -226, -24, -225, -24, -225, -25, -221, -25, -221, -24, -220, -24, -220, -23, -219, -23, -219, -22, -218, -22, -218, -18, -216, -18, -216, -17, -215, -17, -215, -16, -214, -16, -214, -15, -213, -15, -213, -14, -211, -14, -211, -13, -210, -13, -210, -12, -208, -12, -208, -11, -205, -11, -205, -10, -199, -10, -199, -9, -220, -9, -220, -8, -258, -8, -258, -9, -263, -9, -263, -10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5ce1w"]
+cull_mode = 1
+polygon = PackedVector2Array(-286, -56, -286, -57, -266, -57, -266, -58, -220, -58, -220, -59, -175, -59, -175, -58, -149, -58, -149, -57, -218, -57, -218, -56)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vrlnj"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.04
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.105
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1i7sv"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.235
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ecd28"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.115
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.22
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7pns"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.14
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.23
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4t4be"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.12
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.135
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkefy"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.205
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jd0eg"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.06
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.125
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8pgps"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.125
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_82xyq"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.125
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xxkr8"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.16
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.08
+shader_parameter/strengthScale = 109.62
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fy3ik"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8yrd"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.3
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.21
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ickf"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 0.9
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.08
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s55r6"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.25
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.045
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8k01u"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.23
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.17
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8c77"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.15
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lceo8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_3kdtb")
+}],
+"loop": true,
+"name": &"bird_put",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_njglx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dq0lj"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.045
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_prp78"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.02
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.21
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cdnkg"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.115
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.305
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_712ll"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.11
+shader_parameter/minStrength = 0.11
+shader_parameter/maxStrength = 0.225
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6jye"]
+texture = ExtResource("1_7idll")
+9:3/size_in_atlas = Vector2i(20, 10)
+9:3/0 = 0
+9:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:3/0/physics_layer_0/angular_velocity = 0.0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-147.938, -72.9062, 151.062, -72.9062, 151.062, -64.9062, -147.938, -64.9062)
+31:9/size_in_atlas = Vector2i(2, 4)
+31:9/0 = 0
+31:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+31:9/0/physics_layer_0/angular_velocity = 0.0
+34:10/size_in_atlas = Vector2i(2, 3)
+34:10/0 = 0
+34:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+34:10/0/physics_layer_0/angular_velocity = 0.0
+37:10/size_in_atlas = Vector2i(3, 3)
+37:10/0 = 0
+37:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+37:10/0/physics_layer_0/angular_velocity = 0.0
+40:10/size_in_atlas = Vector2i(3, 3)
+40:10/0 = 0
+40:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+40:10/0/physics_layer_0/angular_velocity = 0.0
+43:10/size_in_atlas = Vector2i(3, 3)
+43:10/0 = 0
+43:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+43:10/0/physics_layer_0/angular_velocity = 0.0
+46:10/size_in_atlas = Vector2i(2, 3)
+46:10/0 = 0
+46:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+46:10/0/physics_layer_0/angular_velocity = 0.0
+49:10/size_in_atlas = Vector2i(3, 3)
+49:10/0 = 0
+49:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+49:10/0/physics_layer_0/angular_velocity = 0.0
+52:10/size_in_atlas = Vector2i(2, 3)
+52:10/0 = 0
+52:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+52:10/0/physics_layer_0/angular_velocity = 0.0
+9:17/size_in_atlas = Vector2i(14, 9)
+9:17/0 = 0
+9:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:17/0/physics_layer_0/angular_velocity = 0.0
+9:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-96.9745, -66.9727, 99.0219, -66.9727, 98.9826, -58.9407, -96.9745, -58.9407)
+31:23/size_in_atlas = Vector2i(2, 3)
+31:23/0 = 0
+31:23/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+31:23/0/physics_layer_0/angular_velocity = 0.0
+34:24/size_in_atlas = Vector2i(2, 2)
+34:24/0 = 0
+34:24/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+34:24/0/physics_layer_0/angular_velocity = 0.0
+37:24/size_in_atlas = Vector2i(2, 2)
+37:24/0 = 0
+37:24/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+37:24/0/physics_layer_0/angular_velocity = 0.0
+40:23/size_in_atlas = Vector2i(3, 3)
+40:23/0 = 0
+40:23/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+40:23/0/physics_layer_0/angular_velocity = 0.0
+43:24/size_in_atlas = Vector2i(3, 2)
+43:24/0 = 0
+43:24/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+43:24/0/physics_layer_0/angular_velocity = 0.0
+46:24/size_in_atlas = Vector2i(2, 2)
+46:24/0 = 0
+46:24/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+46:24/0/physics_layer_0/angular_velocity = 0.0
+49:24/size_in_atlas = Vector2i(3, 2)
+49:24/0 = 0
+49:24/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+49:24/0/physics_layer_0/angular_velocity = 0.0
+52:24/size_in_atlas = Vector2i(2, 2)
+52:24/0 = 0
+52:24/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+52:24/0/physics_layer_0/angular_velocity = 0.0
+10:31/0 = 0
+10:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:31/0/physics_layer_0/angular_velocity = 0.0
+12:31/size_in_atlas = Vector2i(2, 1)
+12:31/0 = 0
+12:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:31/0/physics_layer_0/angular_velocity = 0.0
+15:31/0 = 0
+15:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:31/0/physics_layer_0/angular_velocity = 0.0
+18:31/0 = 0
+18:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+18:31/0/physics_layer_0/angular_velocity = 0.0
+22:31/0 = 0
+22:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+22:31/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k40nw"]
+texture = ExtResource("2_q26pc")
+0:0/size_in_atlas = Vector2i(46, 60)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yxmb4"]
+load_path = "res://.godot/imported/besedka2.png-d293ecbaf01effc8d94664c24db745b3.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nm2k"]
+texture = SubResource("CompressedTexture2D_yxmb4")
+texture_region_size = Vector2i(64, 64)
+1:1/size_in_atlas = Vector2i(21, 19)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrv2x"]
+texture = ExtResource("4_ut4is")
+89:39/size_in_atlas = Vector2i(17, 4)
+89:39/0 = 0
+89:39/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+89:39/0/physics_layer_0/angular_velocity = 0.0
+61:0/size_in_atlas = Vector2i(21, 30)
+61:0/0 = 0
+61:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+61:0/0/physics_layer_0/angular_velocity = 0.0
+204:47/size_in_atlas = Vector2i(13, 11)
+204:47/0 = 0
+204:47/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+204:47/0/physics_layer_0/angular_velocity = 0.0
+217:52/size_in_atlas = Vector2i(13, 6)
+217:52/0 = 0
+217:52/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+217:52/0/physics_layer_0/angular_velocity = 0.0
+239:55/size_in_atlas = Vector2i(5, 3)
+239:55/0 = 0
+239:55/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+239:55/0/physics_layer_0/angular_velocity = 0.0
+198:97/size_in_atlas = Vector2i(11, 6)
+198:97/0 = 0
+198:97/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+198:97/0/physics_layer_0/angular_velocity = 0.0
+0:95/size_in_atlas = Vector2i(54, 17)
+0:95/0 = 0
+0:95/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:95/0/physics_layer_0/angular_velocity = 0.0
+55:97/size_in_atlas = Vector2i(46, 14)
+55:97/0 = 0
+55:97/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+55:97/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_re4av"]
+texture = ExtResource("5_6484s")
+texture_region_size = Vector2i(2, 16)
+0:0/size_in_atlas = Vector2i(375, 33)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cicdd"]
+texture = ExtResource("6_58hsq")
+texture_region_size = Vector2i(8, 8)
+0:0/size_in_atlas = Vector2i(19, 94)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_woj4j"]
+texture = ExtResource("7_c5f4i")
+texture_region_size = Vector2i(8, 8)
+0:0/size_in_atlas = Vector2i(56, 101)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2tl33"]
+texture = ExtResource("8_pvnh8")
+texture_region_size = Vector2i(4, 4)
+0:0/size_in_atlas = Vector2i(131, 169)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4er8"]
+texture = ExtResource("9_11sxn")
+0:0/size_in_atlas = Vector2i(46, 60)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_0cnrr"]
+tile_size = Vector2i(2, 2)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_j6jye")
+sources/1 = SubResource("TileSetAtlasSource_k40nw")
+sources/2 = SubResource("TileSetAtlasSource_8nm2k")
+sources/3 = SubResource("TileSetAtlasSource_mrv2x")
+sources/4 = SubResource("TileSetAtlasSource_re4av")
+sources/5 = SubResource("TileSetAtlasSource_cicdd")
+sources/6 = SubResource("TileSetAtlasSource_woj4j")
+sources/7 = SubResource("TileSetAtlasSource_2tl33")
+sources/8 = SubResource("TileSetAtlasSource_n4er8")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d77sk"]
+cull_mode = 1
+polygon = PackedVector2Array(1611.54, -552.334, 1611.52, -585.334, 1618.52, -585.34, 1618.51, -594.34, 1626.51, -594.347, 1626.5, -602.347, 1660.5, -602.375, 1660.51, -594.375, 1669.51, -594.382, 1669.52, -586.382, 1678.52, -586.39, 1678.54, -552.39, 1669.54, -552.382, 1669.55, -543.382, 1618.55, -543.34, 1618.54, -552.34)
+
+[sub_resource type="Curve2D" id="Curve2D_1bi7h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -5657, 407, 0, 0, 0, 0, -3488, 415)
+}
+point_count = 2
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ww266"]
+polygon = PackedVector2Array(-44, 24, -44, -12, -50, -19, -42, -30, -34, -26, -25, -32, -25, -43, -12, -47, -8, -38, 2, -38, 7, -47, 19, -42, 19, -32, 27, -26, 35, -31, 44, -20, 38, -12, 38, 24, 37, 27, 34, 30, 31, 32, 27, 34, 22, 37, 16, 39, 8, 40, -2, 41, -9, 41, -23, 39, -31, 36, -35, 33, -40, 29)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rg8p"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.125
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = 0.0
+shader_parameter/heightOffset = 0.0
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_br8gu"]
+shader = ExtResource("18_gprbo")
+shader_parameter/speed = 0.86
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.125
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rlrvl"]
+shader = ExtResource("25_dmjma")
+shader_parameter/angle = -0.535
+shader_parameter/position = -1.0
+shader_parameter/spread = 0.485
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 1.0
+shader_parameter/edge_fade = 0.395
+shader_parameter/speed = 1.725
+shader_parameter/ray1_density = 7.925
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.3
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/hdr = true
+shader_parameter/seed = 5.0
+
+[sub_resource type="Animation" id="Animation_mdhjs"]
+resource_name = "sunset_anim"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.65098, 0.627451, 0.717647, 1), Color(0.788235, 0.545098, 0.796078, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GodRays3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.280998]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GodRays3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1868, -470), Vector2(1884, -535)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainCanvasLayer/ParallaxBackground/CanvasModulate:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.847059, 0.882353, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7fesg"]
+_data = {
+"sunset_anim": SubResource("Animation_mdhjs")
+}
+
+[sub_resource type="Animation" id="Animation_21fpn"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainCanvasLayer/Transition:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainCanvasLayer/Transition:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_hxgen"]
+resource_name = "light_up"
+length = 2.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainCanvasLayer/Transition:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainCanvasLayer/Transition:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_focn8"]
+_data = {
+"fade_out": SubResource("Animation_21fpn"),
+"light_up": SubResource("Animation_hxgen")
+}
+
+[sub_resource type="Animation" id="Animation_84jhy"]
+resource_name = "fade_in_take_bird"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BirdDialogue:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BirdDialogue:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(0.392292, 1, 1.41421, 1),
+"update": 0,
+"values": [Vector2(-1468, 120), Vector2(-1468, 100), Vector2(-1468, 100), Vector2(-1468, 120)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BirdDialogue:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lejqg"]
+_data = {
+"fade_in_take_bird": SubResource("Animation_84jhy")
+}
+
+[sub_resource type="Animation" id="Animation_jmwnx"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ButtonsHelp:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ButtonsHelp:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.392292, 1),
+"update": 0,
+"values": [Vector2(-4474, 120), Vector2(-4474, 100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ButtonsHelp:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_frm3n"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ButtonsHelp:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ButtonsHelp:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.41421, 1),
+"update": 0,
+"values": [Vector2(-4474, 100), Vector2(-4474, 120)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fl4ir"]
+_data = {
+"fade_in": SubResource("Animation_jmwnx"),
+"fade_out": SubResource("Animation_frm3n")
+}
+
+[sub_resource type="Animation" id="Animation_165v8"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BasilQTEDialogue:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BasilQTEDialogue:pivot_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.10224, 1),
+"update": 0,
+"values": [Vector2(40, 0), Vector2(40, -4)]
+}
+
+[sub_resource type="Animation" id="Animation_xn5mj"]
+resource_name = "typing_qte"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BasilQTEDialogue:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.5, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BasilQTEDialogue:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BasilQTEDialogue:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gt7v7"]
+_data = {
+"fade_out": SubResource("Animation_165v8"),
+"typing_qte": SubResource("Animation_xn5mj")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_wdyfy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -7986, -1152, 0, 0, 0, 0, -7984, -868)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5unei"]
+size = Vector2(3357, 4131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5b0f1"]
+size = Vector2(990, 172.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02pux"]
+size = Vector2(250, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs307"]
+size = Vector2(244, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81rpt"]
+size = Vector2(67, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpfcy"]
+size = Vector2(87, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xoty"]
+size = Vector2(94, 80)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_07cvs"]
+shader = ExtResource("8_sqb6b")
+shader_parameter/height = 3.0
+shader_parameter/curve = 0.02
+shader_parameter/speed = 2.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xeb2h"]
+size = Vector2(108, 889)
+
+[sub_resource type="Curve2D" id="Curve2D_7ada2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1818, 399, 0, 0, 0, 0, 407, 399)
+}
+point_count = 2
+
+[node name="PrologueScene" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_kslhb")
+
+[node name="MainCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ReflectionCanvasLayer" type="CanvasLayer" parent="MainCanvasLayer"]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="Reflection" type="ColorRect" parent="MainCanvasLayer/ReflectionCanvasLayer"]
+material = SubResource("ShaderMaterial_7wql8")
+anchors_preset = -1
+anchor_left = -2.10469
+anchor_top = -2.81296
+anchor_right = 0.729688
+anchor_bottom = 2.42222
+offset_left = -3797.0
+offset_top = -86.0
+offset_right = 7639.0
+offset_bottom = 1384.0
+color = Color(0, 0.538855, 0.989114, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="NoiseCanvasLayer" type="CanvasLayer" parent="MainCanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="Noise" type="ColorRect" parent="MainCanvasLayer/NoiseCanvasLayer"]
+material = SubResource("ShaderMaterial_1feey")
+anchors_preset = -1
+anchor_left = -1.38646
+anchor_top = -0.0824074
+anchor_right = 0.508333
+anchor_bottom = 1.0
+offset_left = -3840.0
+offset_top = 679.0
+offset_right = 5693.0
+offset_bottom = 1088.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="UIBookMenu" parent="MainCanvasLayer" instance=ExtResource("7_w5l42")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Transition" type="ColorRect" parent="MainCanvasLayer"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+z_index = 4096
+offset_left = -24.0
+offset_top = -54.0
+offset_right = 1982.0
+offset_bottom = 1134.0
+
+[node name="Prizrak" type="PointLight2D" parent="MainCanvasLayer"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(761, 904)
+rotation = 0.00368832
+scale = Vector2(0.486925, 0.486925)
+color = Color(0.862745, 0.862745, 0.862745, 1)
+energy = 0.8
+texture = ExtResource("33_p7vc3")
+texture_scale = 2.8
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="MainCanvasLayer"]
+layer = -1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="MainCanvasLayer/ParallaxBackground"]
+texture_filter = 1
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(2304, 0)
+
+[node name="1" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(1189.5, -851)
+scale = Vector2(16.3385, 11.321)
+texture = ExtResource("8_wtlxm")
+flip_h = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="MainCanvasLayer/ParallaxBackground"]
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(6912, 0)
+script = ExtResource("9_gl53f")
+CLOUD_SPEED = 90
+
+[node name="3" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1158, 13)
+scale = Vector2(6, 6)
+texture = ExtResource("10_jo734")
+flip_h = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer2/3"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_36v1p")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer2/3"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_5ce1w")
+
+[node name="4" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(4616, 13)
+scale = Vector2(6, 6)
+texture = ExtResource("10_jo734")
+flip_h = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="MainCanvasLayer/ParallaxBackground"]
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(6912, 0)
+script = ExtResource("9_gl53f")
+CLOUD_SPEED = 70
+
+[node name="4" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer3"]
+position = Vector2(1158, 9)
+scale = Vector2(6, 6)
+texture = ExtResource("11_7yrgj")
+flip_h = true
+
+[node name="5" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer3"]
+position = Vector2(4614, 9)
+scale = Vector2(6, 6)
+texture = ExtResource("11_7yrgj")
+flip_h = true
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="MainCanvasLayer/ParallaxBackground"]
+position = Vector2(-56, -377)
+motion_mirroring = Vector2(6912, 0)
+script = ExtResource("9_gl53f")
+CLOUD_SPEED = 40
+
+[node name="5" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer4"]
+position = Vector2(1160, 11)
+scale = Vector2(6, 6)
+texture = ExtResource("12_sk8wh")
+flip_h = true
+
+[node name="6" type="Sprite2D" parent="MainCanvasLayer/ParallaxBackground/ParallaxLayer4"]
+position = Vector2(4616, 11)
+scale = Vector2(6, 6)
+texture = ExtResource("12_sk8wh")
+flip_h = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="MainCanvasLayer/ParallaxBackground"]
+
+[node name="BgObjects" type="Node2D" parent="."]
+z_index = -3
+position = Vector2(-16, 16)
+
+[node name="LeftSide" type="Node2D" parent="BgObjects"]
+
+[node name="Shadow1" type="Sprite2D" parent="BgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_vrlnj")
+position = Vector2(-4146, -178)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_kalkm")
+
+[node name="Shadow4" type="Sprite2D" parent="BgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_1i7sv")
+position = Vector2(-3867, -32)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("21_75e5f")
+
+[node name="Shadow2" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-2747, 46)
+texture = ExtResource("2_kalkm")
+
+[node name="BhTree" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-3257, -110)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_rq0tm")
+
+[node name="BhTree2" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-2234, 174)
+texture = ExtResource("4_rq0tm")
+
+[node name="Shadow5" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-2018, 20)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("21_75e5f")
+
+[node name="Shadow3" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-1630, 56)
+texture = ExtResource("2_kalkm")
+flip_h = true
+
+[node name="BhTree6" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-3843, 112.5)
+scale = Vector2(1.216, 1.003)
+texture = ExtResource("4_rq0tm")
+
+[node name="Shadow6" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-1511, 89)
+texture = ExtResource("2_kalkm")
+
+[node name="Shadow7" type="Sprite2D" parent="BgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_ecd28")
+position = Vector2(-1212, 66)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("21_75e5f")
+flip_h = true
+
+[node name="Shadow8" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-2425, -140)
+texture = ExtResource("2_kalkm")
+
+[node name="BhTree3" type="Sprite2D" parent="BgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_w7pns")
+position = Vector2(-2915, -412)
+texture = ExtResource("4_rq0tm")
+
+[node name="BhTree7" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-2410, 167)
+scale = Vector2(3.878, 1.014)
+texture = ExtResource("4_rq0tm")
+
+[node name="Shadow9" type="Sprite2D" parent="BgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_4t4be")
+position = Vector2(-1713, -58)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("21_75e5f")
+flip_h = true
+
+[node name="Shadow10" type="Sprite2D" parent="BgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_dkefy")
+position = Vector2(-1390, -170)
+texture = ExtResource("2_kalkm")
+
+[node name="BhTree4" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-3512, -322)
+texture = ExtResource("4_rq0tm")
+flip_h = true
+
+[node name="Shadow11" type="Sprite2D" parent="BgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_jd0eg")
+position = Vector2(-2353, -197)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("21_75e5f")
+flip_h = true
+
+[node name="BhTree5" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-2635, -318)
+texture = ExtResource("4_rq0tm")
+
+[node name="Shadow12" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-4724, 53)
+scale = Vector2(1.775, 1.775)
+texture = ExtResource("23_t8j8v")
+
+[node name="Shadow13" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-4534.62, 343)
+scale = Vector2(2.1022, 1)
+texture = ExtResource("23_t8j8v")
+flip_v = true
+
+[node name="BhTree8" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-4874, 151)
+texture = ExtResource("4_rq0tm")
+
+[node name="Shadow14" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-5256, -132)
+scale = Vector2(2.005, 2.005)
+texture = ExtResource("24_3ye0t")
+
+[node name="Shadow15" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-5408, -156)
+scale = Vector2(1.51, 1.51)
+texture = ExtResource("2_kalkm")
+
+[node name="BhTree9" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-5114, 159)
+texture = ExtResource("4_rq0tm")
+
+[node name="BhTree10" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-5676, 121)
+texture = ExtResource("4_rq0tm")
+
+[node name="Shadow16" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-5924, 143)
+texture = ExtResource("2_kalkm")
+
+[node name="BhTree11" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-6058, 115)
+texture = ExtResource("4_rq0tm")
+
+[node name="Shadow17" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-5919, -354)
+texture = ExtResource("2_kalkm")
+
+[node name="Shadow18" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-6411, -171)
+texture = ExtResource("21_75e5f")
+
+[node name="Shadow19" type="Sprite2D" parent="BgObjects/LeftSide"]
+position = Vector2(-6493, 71)
+texture = ExtResource("23_t8j8v")
+
+[node name="RightSide" type="Node2D" parent="BgObjects"]
+
+[node name="Shadow4" type="Sprite2D" parent="BgObjects/RightSide"]
+material = SubResource("ShaderMaterial_1i7sv")
+position = Vector2(3754, 247.5)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("21_75e5f")
+
+[node name="Shadow7" type="Sprite2D" parent="BgObjects/RightSide"]
+material = SubResource("ShaderMaterial_ecd28")
+position = Vector2(4178, -153.5)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("21_75e5f")
+flip_h = true
+
+[node name="BhTree10" type="Sprite2D" parent="BgObjects/RightSide"]
+position = Vector2(4428.5, 121)
+texture = ExtResource("4_rq0tm")
+
+[node name="Shadow16" type="Sprite2D" parent="BgObjects/RightSide"]
+position = Vector2(4180.5, 143)
+texture = ExtResource("2_kalkm")
+
+[node name="BhTree11" type="Sprite2D" parent="BgObjects/RightSide"]
+position = Vector2(4046.5, 115)
+texture = ExtResource("4_rq0tm")
+
+[node name="FgObjects" type="Node2D" parent="."]
+z_index = 2
+
+[node name="LeftSide" type="Node2D" parent="FgObjects"]
+
+[node name="Tree5" type="Sprite2D" parent="FgObjects/LeftSide"]
+z_index = 3
+material = SubResource("ShaderMaterial_8pgps")
+position = Vector2(-3986, -106)
+scale = Vector2(2, 2)
+texture = ExtResource("8_pvnh8")
+flip_h = true
+
+[node name="Krona6" type="Sprite2D" parent="FgObjects/LeftSide/Tree5"]
+visible = false
+z_index = 4
+material = SubResource("ShaderMaterial_82xyq")
+position = Vector2(2.5, 0)
+texture = ExtResource("26_walee")
+flip_h = true
+
+[node name="Tree1" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_xxkr8")
+position = Vector2(-3286, -123)
+scale = Vector2(1.4, 1.4)
+texture = SubResource("CompressedTexture2D_fy3ik")
+
+[node name="Tree15" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_q8yrd")
+position = Vector2(-3402, -127)
+scale = Vector2(1.38, 1.38)
+texture = ExtResource("9_11sxn")
+
+[node name="Tree22" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_q8yrd")
+position = Vector2(-5901, -64)
+scale = Vector2(1.38, 1.38)
+texture = ExtResource("9_11sxn")
+flip_h = true
+
+[node name="Tree3" type="Sprite2D" parent="FgObjects/LeftSide"]
+z_index = 3
+material = SubResource("ShaderMaterial_7ickf")
+position = Vector2(-3628, -4)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_58hsq")
+
+[node name="Tree23" type="Sprite2D" parent="FgObjects/LeftSide"]
+z_index = 3
+material = SubResource("ShaderMaterial_7ickf")
+position = Vector2(-6108, 31)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_58hsq")
+
+[node name="Tree7" type="Sprite2D" parent="FgObjects/LeftSide"]
+position = Vector2(-2371, 39)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("6_58hsq")
+
+[node name="Tree19" type="Sprite2D" parent="FgObjects/LeftSide"]
+position = Vector2(-5428, 38)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("6_58hsq")
+
+[node name="Tree10" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_s55r6")
+position = Vector2(-1804, 81)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("8_pvnh8")
+flip_h = true
+
+[node name="Tree6" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_8k01u")
+position = Vector2(-2561, -90)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("7_c5f4i")
+
+[node name="Tree24" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_8k01u")
+position = Vector2(-6244, -56)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("7_c5f4i")
+flip_h = true
+
+[node name="TreeWithBird" type="AnimatedSprite2D" parent="FgObjects/LeftSide"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_n8c77")
+position = Vector2(-2885, 83)
+scale = Vector2(1.62643, 1.62643)
+sprite_frames = SubResource("SpriteFrames_lceo8")
+
+[node name="Tree11" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_dq0lj")
+position = Vector2(-1396, 26)
+scale = Vector2(1.63, 1.63)
+texture = ExtResource("8_pvnh8")
+
+[node name="Tree18" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_dq0lj")
+position = Vector2(-5188, 30)
+scale = Vector2(1.63, 1.63)
+texture = ExtResource("8_pvnh8")
+
+[node name="Tree21" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_dq0lj")
+position = Vector2(-5188, 30)
+scale = Vector2(1.63, 1.63)
+texture = ExtResource("8_pvnh8")
+
+[node name="Tree12" type="Sprite2D" parent="FgObjects/LeftSide"]
+z_index = 3
+material = SubResource("ShaderMaterial_prp78")
+position = Vector2(-1113, 93)
+scale = Vector2(1.205, 1.205)
+texture = ExtResource("7_c5f4i")
+
+[node name="Tree20" type="Sprite2D" parent="FgObjects/LeftSide"]
+z_index = 3
+material = SubResource("ShaderMaterial_prp78")
+position = Vector2(-5648, -163)
+scale = Vector2(1.76383, 1.76383)
+texture = ExtResource("7_c5f4i")
+
+[node name="Tree13" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_cdnkg")
+position = Vector2(-4278, -125)
+scale = Vector2(1.37, 1.37)
+texture = ExtResource("9_11sxn")
+flip_h = true
+
+[node name="Tree16" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_cdnkg")
+position = Vector2(-4994, 129)
+scale = Vector2(0.96, 0.96)
+texture = ExtResource("9_11sxn")
+flip_h = true
+
+[node name="Tree14" type="Sprite2D" parent="FgObjects/LeftSide"]
+position = Vector2(-4607, -149)
+scale = Vector2(1.72, 1.72)
+texture = ExtResource("7_c5f4i")
+flip_h = true
+
+[node name="Tree9" type="Sprite2D" parent="FgObjects/LeftSide"]
+z_index = 3
+material = SubResource("ShaderMaterial_712ll")
+position = Vector2(-1570, 161)
+texture = ExtResource("6_58hsq")
+
+[node name="Tree17" type="Sprite2D" parent="FgObjects/LeftSide"]
+z_index = 3
+material = SubResource("ShaderMaterial_712ll")
+position = Vector2(-4797, 235)
+texture = ExtResource("6_58hsq")
+
+[node name="Tree8" type="Sprite2D" parent="FgObjects/LeftSide"]
+material = SubResource("ShaderMaterial_q8yrd")
+position = Vector2(-2111, 93)
+texture = ExtResource("9_11sxn")
+flip_h = true
+
+[node name="LeftSide2" type="Node2D" parent="FgObjects"]
+
+[node name="Tree5" type="Sprite2D" parent="FgObjects/LeftSide2"]
+z_index = 3
+material = SubResource("ShaderMaterial_8pgps")
+position = Vector2(3710, -106)
+scale = Vector2(2, 2)
+texture = ExtResource("8_pvnh8")
+flip_h = true
+
+[node name="Krona6" type="Sprite2D" parent="FgObjects/LeftSide2/Tree5"]
+visible = false
+z_index = 4
+material = SubResource("ShaderMaterial_82xyq")
+position = Vector2(2.5, 0)
+texture = ExtResource("26_walee")
+flip_h = true
+
+[node name="Tree16" type="Sprite2D" parent="FgObjects/LeftSide2"]
+material = SubResource("ShaderMaterial_cdnkg")
+position = Vector2(3846, 129)
+scale = Vector2(0.96, 0.96)
+texture = ExtResource("9_11sxn")
+flip_h = true
+
+[node name="Birds" type="Node2D" parent="."]
+
+[node name="FlyBird" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6997, -908)
+
+[node name="FlyBird2" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6890, -825)
+
+[node name="FlyBird3" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7152, -860)
+
+[node name="FlyBird4" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6759, -953)
+
+[node name="FlyBird5" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7301, -989)
+
+[node name="FlyBird6" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7661, -1012)
+
+[node name="FlyBird7" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7554, -929)
+
+[node name="FlyBird8" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7816, -964)
+
+[node name="FlyBird9" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7423, -1057)
+
+[node name="FlyBird10" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-7965, -1093)
+
+[node name="FlyBird11" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6449, -1004)
+
+[node name="FlyBird12" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6342, -921)
+
+[node name="FlyBird13" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6604, -956)
+
+[node name="FlyBird14" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6211, -1049)
+
+[node name="FlyBird15" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6753, -1085)
+
+[node name="FlyBird16" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-8269, -924)
+
+[node name="FlyBird17" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-8162, -841)
+
+[node name="FlyBird18" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-8424, -876)
+
+[node name="FlyBird19" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-8031, -969)
+
+[node name="FlyBird20" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-8573, -1005)
+
+[node name="FlyBird21" parent="Birds" instance=ExtResource("35_rw2vx")]
+position = Vector2(-6705, -1150)
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = 1
+position = Vector2(-1, 0)
+tile_set = SubResource("TileSet_0cnrr")
+format = 2
+layer_0/name = "ground"
+layer_0/z_index = 4
+layer_0/tile_data = PackedInt32Array(19136585, 589824, 3, 19136733, 589824, 3, 19136883, 589824, 268435459, 19137030, 589824, 268435459, 19137176, 589824, 3, 19137323, 589824, 3, 19137472, 589824, 268435459, 19137617, 589824, 3, 19201976, 589824, 3, 19201829, 589824, 3, 19201683, 589824, 268435459, 19201537, 589824, 268435459, 19201387, 589824, 3, 19201246, 589824, 3, 19201104, 589824, 3, 19200964, 589824, 268435459, 19200815, 589824, 268435459, 19200669, 589824, 3, 19200520, 589824, 3, 19200372, 589824, 3, 19200223, 589824, 3, 19200074, 589824, 3, 19199928, 589824, 268435459, 19199780, 589824, 268435459, 19199631, 589824, 268435459, 19199480, 589824, 3, 19199331, 589824, 3, 19199183, 589824, 268435459, 19199034, 589824, 3, 19198885, 589824, 3, 19137765, 589824, 3, 19137913, 589824, 3, 19138061, 589824, 3, 19138211, 589824, 268435459, 19138359, 589824, 268435459, 19138506, 589824, 3, 19138654, 589824, 3, 19138804, 589824, 268435459, 19138952, 589824, 268435459, 19139099, 589824, 3, 19139249, 589824, 268435459, 19139397, 589824, 268435459, 19139545, 589824, 268435459, 19139692, 589824, 3, 14547098, 13369347, 268435503, 16448179, 15663107, 55, 17169552, 13369347, 47, 16514218, 13369347, 47, 17431751, 13369347, 47)
+layer_1/name = "grass"
+layer_1/z_index = 5
+layer_1/tile_data = PackedInt32Array(16449733, 2031616, 9, 16711947, 2621440, 10, 16449973, 2031616, 9, 16449659, 2031616, 9, 16449580, 2031616, 9, 16449592, 2031616, 9, 16449614, 2228224, 10, 16449888, 3211264, 10, 16449850, 2228224, 10, 16449547, 2031616, 9, 16515041, 2228224, 10, 16776973, 2621440, 10, 16514977, 2424832, 10, 16514705, 2031616, 9, 16776783, 2228224, 10, 16776771, 2228224, 10, 16580098, 2424832, 10, 16252241, 2031616, 9, 16252098, 2031616, 9, 16514126, 2228224, 10, 16579595, 2424832, 10, 16579389, 2228224, 10, 16513836, 2031616, 9, 16775882, 2621440, 10, 16513700, 2424832, 10, 16513665, 2228224, 10, 16513586, 2031616, 9, 16513547, 2228224, 10, 16775662, 2621440, 10, 16513471, 2228224, 10, 16513911, 2818048, 10, 16251180, 2031616, 9, 16251189, 2031616, 9, 16513220, 2228224, 10, 16513171, 2031616, 9, 16250928, 2031616, 9, 16512985, 2424832, 10, 16512913, 2031616, 9, 16512875, 2228224, 10, 16512831, 2424832, 10, 16512805, 2424832, 10, 16774909, 2228224, 10, 16512728, 2031616, 9, 16512686, 2228224, 10, 16250510, 2031616, 9, 16578098, 2228224, 10, 16512509, 2031616, 9, 16512480, 2621440, 10, 16250254, 2031616, 9, 16512358, 2818048, 10, 16512290, 2818048, 10, 16512278, 2818048, 10, 16512237, 2031616, 9, 16512204, 2228224, 10, 16512138, 2424832, 10, 16512100, 2031616, 9, 16446526, 2228224, 10, 16249889, 2031616, 9, 16511980, 2818048, 10, 16511954, 2424832, 10, 16511913, 2031616, 9, 16511884, 2228224, 10, 16514101, 2031616, 9)
+layer_2/name = "threes"
+layer_2/z_index = 1
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "buildings"
+layer_3/tile_data = PackedInt32Array(-1113295, 65538, 1)
+layer_4/name = "objects"
+layer_4/z_index = 1
+layer_4/tile_data = PackedInt32Array(15530388, 13369347, 47, 15071644, 13369347, 47, 15071645, 13369347, 47, 14481844, 13369347, 47, 16054729, 13369347, 47, 14678487, 13369347, 47, 16447983, 13369347, 47, 16710042, 13369347, 47, 15727893, 14221315, 52, 16448910, 15663107, 55, 15792390, 12976131, 268435553, 15792391, 12976131, 268435553, 14678824, 13369347, 47, 14744360, 13369347, 47, 14809896, 13369347, 47, 15203224, 13369347, 268435503, 16448562, 15663107, 55, 16774863, 15663107, 55, 16054054, 13369347, 268435503, 15464246, 13369347, 268435503, 15005516, 13369347, 268435503, 15464295, 13369347, 268435503, 15464296, 13369347, 268435503, 16775025, 13369347, 268435503, 16775026, 13369347, 268435503, 15791127, 14221315, 52, 15267340, 13369347, 47, 16118732, 13369347, 47, 15594413, 13369347, 47, 15201157, 13369347, 47, 16118653, 13369347, 47, 16905117, 13369347, 47, 16643481, 15663107, 55, 16643468, 15663107, 55, 16250261, 15663107, 55, 16514094, 15663107, 55, 16643239, 13369347, 47, 15725761, 13369347, 47, 16512215, 13369347, 47, 17757420, 13369347, 47)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="TileMap"]
+visible = false
+rotation = 0.000827819
+occluder = SubResource("OccluderPolygon2D_d77sk")
+
+[node name="Path2D" type="Path2D" parent="."]
+z_as_relative = false
+curve = SubResource("Curve2D_1bi7h")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-5657, 407)
+rotation = 0.00368832
+loop = false
+
+[node name="Player" parent="Path2D/PathFollow2D" instance=ExtResource("4_rxhjn")]
+unique_name_in_owner = true
+light_mask = 2
+texture_filter = 1
+position = Vector2(-10.0146, -3.96309)
+move_state = 3
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Path2D/PathFollow2D/Player"]
+occluder = SubResource("OccluderPolygon2D_ww266")
+
+[node name="PlCamera" type="Camera2D" parent="Path2D/PathFollow2D/Player"]
+unique_name_in_owner = true
+position = Vector2(0, -8.033)
+offset = Vector2(0, -200)
+zoom = Vector2(0.4, 0.4)
+limit_left = -5900
+limit_right = 3300
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.5
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+drag_right_margin = 0.0
+drag_bottom_margin = 1.0
+
+[node name="SunLight" type="DirectionalLight2D" parent="."]
+position = Vector2(2282, -1073)
+rotation = 0.988266
+energy = 0.45
+shadow_color = Color(0.603922, 0.603922, 0.603922, 1)
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.65098, 0.627451, 0.717647, 1)
+
+[node name="AnotherObjects" type="Node2D" parent="."]
+
+[node name="SignPost" type="StaticBody2D" parent="AnotherObjects"]
+position = Vector2(0, 1)
+
+[node name="02" type="Sprite2D" parent="AnotherObjects/SignPost"]
+position = Vector2(-109, 420)
+scale = Vector2(2, 2)
+texture = ExtResource("16_y221d")
+flip_h = true
+
+[node name="03" type="Sprite2D" parent="AnotherObjects/SignPost"]
+position = Vector2(-109, 464)
+scale = Vector2(2, 2)
+texture = ExtResource("16_y221d")
+
+[node name="Brevno пусть лежит" type="StaticBody2D" parent="AnotherObjects"]
+position = Vector2(-283, 0)
+
+[node name="Brevno" type="Sprite2D" parent="AnotherObjects/Brevno пусть лежит"]
+position = Vector2(779, 485)
+scale = Vector2(0.679435, 0.779661)
+texture = ExtResource("9_k4mfr")
+flip_h = true
+
+[node name="Molbert" type="StaticBody2D" parent="AnotherObjects"]
+
+[node name="Sprite-0004" type="Sprite2D" parent="AnotherObjects/Molbert"]
+position = Vector2(1637, 347)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("20_7echu")
+
+[node name="MainTree" type="StaticBody2D" parent="AnotherObjects"]
+
+[node name="MainTree" type="Sprite2D" parent="AnotherObjects/MainTree"]
+material = SubResource("ShaderMaterial_8rg8p")
+position = Vector2(204, 68)
+texture = ExtResource("2_q26pc")
+flip_h = true
+
+[node name="Krona1" type="Sprite2D" parent="AnotherObjects/MainTree"]
+z_index = 1
+material = SubResource("ShaderMaterial_br8gu")
+position = Vector2(210, 68)
+texture = ExtResource("26_81bts")
+flip_h = true
+
+[node name="Drova" type="StaticBody2D" parent="AnotherObjects"]
+position = Vector2(-85, 1)
+
+[node name="Drova2" type="Sprite2D" parent="AnotherObjects/Drova"]
+position = Vector2(2465, 485.5)
+texture = ExtResource("33_7xlbh")
+
+[node name="Drova3" type="Sprite2D" parent="AnotherObjects/Drova"]
+position = Vector2(2498, 431)
+texture = ExtResource("33_7xlbh")
+
+[node name="Drova4" type="Sprite2D" parent="AnotherObjects/Drova"]
+position = Vector2(2529, 485.5)
+texture = ExtResource("33_7xlbh")
+
+[node name="Drova7" type="Sprite2D" parent="AnotherObjects/Drova"]
+position = Vector2(2593, 485.5)
+texture = ExtResource("33_7xlbh")
+
+[node name="Drova5" type="Sprite2D" parent="AnotherObjects/Drova"]
+position = Vector2(2562, 431)
+texture = ExtResource("33_7xlbh")
+
+[node name="Drova6" type="Sprite2D" parent="AnotherObjects/Drova"]
+position = Vector2(2530, 376.5)
+texture = ExtResource("33_7xlbh")
+
+[node name="DerevoAndPni" type="StaticBody2D" parent="AnotherObjects"]
+
+[node name="DerevoSrubleno" type="Sprite2D" parent="AnotherObjects/DerevoAndPni"]
+position = Vector2(2954, 387)
+rotation = -1.47644
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("35_kyrnm")
+
+[node name="Penek" type="Sprite2D" parent="AnotherObjects/DerevoAndPni"]
+position = Vector2(3319, 488)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("36_jnxsn")
+
+[node name="Penek2" type="Sprite2D" parent="AnotherObjects/DerevoAndPni"]
+position = Vector2(3413, 493)
+texture = ExtResource("36_jnxsn")
+
+[node name="Penek3" type="Sprite2D" parent="AnotherObjects/DerevoAndPni"]
+position = Vector2(3509, 481)
+texture = ExtResource("36_jnxsn")
+
+[node name="GodRays3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_rlrvl")
+position = Vector2(1868, -470)
+scale = Vector2(0.611205, 0.266667)
+texture = ExtResource("2_q26pc")
+
+[node name="Brevno" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(-4372, 485)
+texture = ExtResource("29_wpii7")
+
+[node name="AnimationSunset" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_7fesg")
+}
+
+[node name="TransitionAnimation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_focn8")
+}
+speed_scale = 0.265
+
+[node name="AnimationHelpers" type="AnimationTree" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationHelpers"]
+unique_name_in_owner = true
+
+[node name="AnimationBird" type="AnimationPlayer" parent="AnimationHelpers"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_lejqg")
+}
+
+[node name="AnimationButtons" type="AnimationPlayer" parent="AnimationHelpers"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_fl4ir")
+}
+
+[node name="AnimationDialogLines" type="AnimationTree" parent="."]
+
+[node name="AnimationBasilQTE" type="AnimationPlayer" parent="AnimationDialogLines"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_gt7v7")
+}
+
+[node name="Chick" parent="." instance=ExtResource("35_uuudl")]
+unique_name_in_owner = true
+position = Vector2(-574, 488)
+scale = Vector2(3.05, 3.05)
+
+[node name="BirdTimer" type="Timer" parent="."]
+wait_time = 35.221
+autostart = true
+
+[node name="BirdPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_wdyfy")
+
+[node name="BirdSpawnLocation" type="PathFollow2D" parent="BirdPath"]
+unique_name_in_owner = true
+position = Vector2(-7986, -1152)
+rotation = 1.56375
+
+[node name="BirdsRemoveArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BirdsRemoveArea"]
+position = Vector2(5955, -1752.5)
+shape = SubResource("RectangleShape2D_5unei")
+debug_color = Color(0.92549, 0, 0, 0.419608)
+
+[node name="BirdArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BirdArea"]
+z_index = 10
+position = Vector2(-577, 416)
+shape = SubResource("RectangleShape2D_5b0f1")
+debug_color = Color(0.607843, 0.513726, 0.458824, 0.223529)
+
+[node name="AreaBirdTake" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBirdTake"]
+z_index = 1000
+position = Vector2(-576, 483)
+shape = SubResource("RectangleShape2D_02pux")
+debug_color = Color(0.94902, 0.0509804, 0.541176, 0.0901961)
+
+[node name="AreaBirdPut" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBirdPut"]
+z_index = 4096
+position = Vector2(-2899, 448)
+shape = SubResource("RectangleShape2D_bs307")
+debug_color = Color(0.94902, 0.0509804, 0.541176, 0.0901961)
+
+[node name="ButtonsHelpArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonsHelpArea"]
+z_index = 1000
+position = Vector2(-3492, 473)
+shape = SubResource("RectangleShape2D_81rpt")
+debug_color = Color(0.372549, 0.4, 0.811765, 0.168627)
+
+[node name="StartBesedkaDialogue" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-5, -5)
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartBesedkaDialogue"]
+z_index = 4096
+position = Vector2(1576, 458)
+shape = SubResource("RectangleShape2D_mpfcy")
+debug_color = Color(0.803922, 0.415686, 0.00392157, 0.619608)
+
+[node name="PenekArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PenekArea"]
+position = Vector2(590, 468)
+shape = SubResource("RectangleShape2D_7xoty")
+debug_color = Color(0.537255, 0.537255, 0.529412, 0.419608)
+
+[node name="Basil" parent="." instance=ExtResource("39_6hgm2")]
+z_index = -1
+position = Vector2(1582, 307)
+scale = Vector2(0.509894, 0.509894)
+
+[node name="BasilQTEDialogue" type="Label" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+z_index = 4096
+offset_left = 1235.0
+offset_top = 91.0
+offset_right = 1489.0
+offset_bottom = 108.0
+scale = Vector2(3.96649, 3.96649)
+pivot_offset = Vector2(40, 0)
+theme_override_fonts/font = ExtResource("9_akb36")
+text = "Поверни голову немного вправо, Дориан"
+
+[node name="BirdDialogue" type="Label" parent="."]
+unique_name_in_owner = true
+z_index = 4096
+material = SubResource("ShaderMaterial_07cvs")
+offset_left = -1468.0
+offset_top = 100.0
+offset_right = -972.0
+offset_bottom = 141.999
+scale = Vector2(3.971, 3.971)
+theme_override_fonts/font = ExtResource("9_akb36")
+text = "С некоторыми объектами можно взаимодействовать.
+Для этого нажмите E"
+horizontal_alignment = 1
+
+[node name="ButtonsHelp" type="Label" parent="."]
+unique_name_in_owner = true
+z_index = 4096
+material = SubResource("ShaderMaterial_07cvs")
+offset_left = -4474.0
+offset_top = 100.0
+offset_right = -3978.0
+offset_bottom = 141.996
+scale = Vector2(3.971, 3.971)
+theme_override_fonts/font = ExtResource("9_akb36")
+text = "Для передвижения используйте кнопки"
+horizontal_alignment = 1
+
+[node name="Left" type="Sprite2D" parent="ButtonsHelp"]
+position = Vector2(203.307, 34.5906)
+scale = Vector2(0.58758, 0.58758)
+texture = ExtResource("10_u4lkg")
+
+[node name="Right" type="Sprite2D" parent="ButtonsHelp"]
+position = Vector2(223.957, 34.5906)
+scale = Vector2(0.588, 0.588)
+texture = ExtResource("11_v5230")
+
+[node name="Left2" type="Sprite2D" parent="ButtonsHelp"]
+position = Vector2(265.256, 34.5906)
+scale = Vector2(0.58758, 0.58758)
+texture = ExtResource("42_hc2ml")
+
+[node name="Right2" type="Sprite2D" parent="ButtonsHelp"]
+position = Vector2(285.906, 34.5906)
+scale = Vector2(0.588, 0.588)
+texture = ExtResource("43_q2bil")
+
+[node name="WorldBorder" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder"]
+z_index = 4096
+position = Vector2(-6414, 61.5)
+shape = SubResource("RectangleShape2D_xeb2h")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBorder"]
+z_index = 4096
+position = Vector2(2370, 60)
+shape = SubResource("RectangleShape2D_xeb2h")
+
+[node name="Besedka" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Besedka"]
+
+[node name="PathHenry" type="Path2D" parent="."]
+curve = SubResource("Curve2D_7ada2")
+
+[node name="PathFollowHenry" type="PathFollow2D" parent="PathHenry"]
+position = Vector2(1818, 399)
+rotation = 3.14159
+loop = false
+
+[node name="Henry" parent="PathHenry/PathFollowHenry" instance=ExtResource("44_03f8y")]
+z_index = 1
+position = Vector2(0, 4)
+rotation = 3.14159
+
+[node name="BesedkaCollision" type="StaticBody2D" parent="."]
+position = Vector2(1818, 395)
+
+[connection signal="animation_finished" from="AnimationHelpers/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
+[connection signal="timeout" from="BirdTimer" to="." method="spawn_bird"]
+[connection signal="body_entered" from="BirdsRemoveArea" to="." method="_on_birds_remove_area_body_entered"]
+[connection signal="body_entered" from="BirdArea" to="." method="_on_bird_area_body_entered"]
+[connection signal="body_exited" from="BirdArea" to="." method="_on_bird_area_body_exited"]
+[connection signal="body_entered" from="AreaBirdTake" to="." method="_on_area_bird_take_body_entered"]
+[connection signal="body_exited" from="AreaBirdTake" to="." method="_on_area_bird_take_body_exited"]
+[connection signal="body_entered" from="AreaBirdPut" to="." method="_on_area_bird_put_body_entered"]
+[connection signal="body_exited" from="AreaBirdPut" to="." method="_on_area_bird_put_body_exited"]
+[connection signal="body_entered" from="ButtonsHelpArea" to="." method="_on_buttons_help_area_body_entered"]
+[connection signal="body_exited" from="ButtonsHelpArea" to="." method="_on_buttons_help_area_body_exited"]
+[connection signal="body_entered" from="StartBesedkaDialogue" to="." method="_on_start_besedka_dialogue_body_entered"]
+[connection signal="body_exited" from="StartBesedkaDialogue" to="." method="_on_start_besedka_dialogue_body_exited"]
+[connection signal="body_entered" from="PenekArea" to="." method="_on_penek_area_body_entered"]
+[connection signal="body_exited" from="PenekArea" to="." method="_on_penek_area_body_exited"]
