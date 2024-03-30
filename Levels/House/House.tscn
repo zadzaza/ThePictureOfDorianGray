@@ -1,3 +1,42 @@
-[gd_scene format=3 uid="uid://cmtd6n0jtced3"]
+[gd_scene load_steps=5 format=3 uid="uid://cmtd6n0jtced3"]
+
+[ext_resource type="Texture2D" uid="uid://bakljwj75slhy" path="res://Levels/House/Environment/O_o.png" id="1_33tlv"]
+[ext_resource type="Texture2D" uid="uid://dl1hmrx00afiw" path="res://kover_porvaniy.png" id="2_1w3t1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8y1vo"]
+texture = ExtResource("1_33tlv")
+4:13/size_in_atlas = Vector2i(67, 13)
+4:13/0 = 0
+4:1/size_in_atlas = Vector2i(67, 12)
+4:1/0 = 0
+9:26/size_in_atlas = Vector2i(16, 11)
+9:26/0 = 0
+71:3/size_in_atlas = Vector2i(3, 10)
+71:3/0 = 0
+71:13/size_in_atlas = Vector2i(3, 28)
+71:13/0 = 0
+72:41/size_in_atlas = Vector2i(2, 16)
+72:41/0 = 0
+20:54/size_in_atlas = Vector2i(51, 2)
+20:54/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f50hj"]
+tile_size = Vector2i(2, 2)
+sources/0 = SubResource("TileSetAtlasSource_8y1vo")
 
 [node name="House" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_f50hj")
+format = 2
+layer_0/name = "default"
+layer_0/tile_data = PackedInt32Array(-3276537, 262144, 13, -9436921, 262144, 1, 2424888, 589824, 26, 7667768, 589824, 26, 12910648, 589824, 26, 18153528, 589824, 26, 18153640, 589824, 26, 18153752, 589824, 26, 18153864, 589824, 26, 18153942, 589824, 26, 12910760, 589824, 26, 12910872, 589824, 26, 12910984, 589824, 26, 12911062, 589824, 26, 7667880, 589824, 26, 2425000, 589824, 26, 7667992, 589824, 26, 2425112, 589824, 26, 7668104, 589824, 26, 2425224, 589824, 26, 7668182, 589824, 26, 2425302, 589824, 26)
+layer_1/name = "walls"
+layer_1/z_index = 10
+layer_1/tile_data = PackedInt32Array(-9698798, 4653056, 3, -9633794, 4653056, 268435459, 262679, 4653056, 268435469, 8389143, 4653056, 268435469, 19005974, 4718592, 41, 327673, 4653056, 13, 19070973, 4718592, 41, 7536633, 4653056, 13, 21168330, 1310720, 54, 21168454, 1310720, 54)
+
+[node name="KoverPorvaniy" type="Sprite2D" parent="."]
+position = Vector2(449, 266)
+scale = Vector2(1.401, 1.64)
+texture = ExtResource("2_1w3t1")
+flip_h = true
