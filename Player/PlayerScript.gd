@@ -6,8 +6,6 @@ extends CharacterBody2D
 var show_btn = false
 @export var pepe = true
 
-var a = 0
-
 var path_going = true
 
 # Константы для скорости и гравитации
@@ -22,10 +20,8 @@ enum MOVE_STATE {IDLE_SIDE, IDLE_UP, IDLE_DOWN, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
 
 
 func _physics_process(delta):
-	if a > 11:
-		a = 0
 	# Получаем направление движения из пользовательского ввода
-	var direction = Input.get_axis("ui_left", "ui_right") if !Dialogic.VAR.block_movement else 0.0
+	var direction = Input.get_axis("ui_left", "ui_right") #if !Dialogic.VAR.block_movement else 0.0
 	
 	# Устанавливаем горизонтальную скорость, если есть направление движения
 	if direction:
@@ -35,8 +31,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Для размещения персонажа используется упрощённая гравитация.
-	if not is_on_floor():
-		velocity.y += GRAVITY
+	#if not is_on_floor():
+		#velocity.y += GRAVITY
   
 	# Определяем, нужно ли отразить спрайт по горизонтали, исходя из направления движения
 	if velocity.x > 0:
@@ -46,31 +42,28 @@ func _physics_process(delta):
 	
 	$AnimatedSprite2D.flip_h = pl_flip_h
 	
-	if path_going:
-		var parent = get_parent()
-		if parent != null:
-			if parent.progress_ratio > 0.0:
-				set_anim(MOVE_STATE.MOVE_SIDE)
-				$AnimatedSprite2D.set_speed_scale(0.77)
-			if parent.progress_ratio == 1.0:
-				path_going = false
-				$AnimatedSprite2D.set_speed_scale(1.0)
-		
-			if parent.progress_ratio != 1.0:
-				set_block_movement(true)
-			else:
-				set_block_movement(false)
+	#if path_going:
+		#var parent = get_parent()
+		#if parent != null:
+			#if parent.progress_ratio > 0.0:
+				#set_anim(MOVE_STATE.MOVE_SIDE)
+				#$AnimatedSprite2D.set_speed_scale(0.77)
+			#if parent.progress_ratio == 1.0:
+				#path_going = false
+				#$AnimatedSprite2D.set_speed_scale(1.0)
+		#
+			#if parent.progress_ratio != 1.0:
+				#set_block_movement(true)
+			#else:
+				#set_block_movement(false)
+		#else: pass
   
 	# Установка анимации в условием того, что персонаж двигается
 	if !path_going and !Dialogic.VAR.block_movement:
 		if velocity.x:
 			set_anim(MOVE_STATE.MOVE_SIDE)
-			print(" ИДИ НАХУЙ MOVE_SIDE ", a)
-			a += 1
 		else:
-			print(" ИДИ НАХУЙ IDLE_SIDE ", a)
 			set_anim(MOVE_STATE.IDLE_SIDE)
-			a += 1
 	
 	# Перемещаем персонажа и выводим текущее состояние и позицию в консоль
 	move_and_slide()

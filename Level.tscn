@@ -40,3 +40,4 @@ occluder = SubResource("OccluderPolygon2D_7fcgs")
 material = SubResource("ShaderMaterial_wuh2n")
 offset_right = 2191.0
 offset_bottom = 1362.0
+color = Color(1, 0, 1, 1)

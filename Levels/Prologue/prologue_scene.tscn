@@ -1830,12 +1830,13 @@ text = "Поверни голову немного вправо, Дориан"
 
 [node name="BirdDialogue" type="Label" parent="."]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
 offset_left = -1468.0
-offset_top = 100.0
+offset_top = 120.0
 offset_right = -972.0
-offset_bottom = 141.999
+offset_bottom = 161.999
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "С некоторыми объектами можно взаимодействовать.
@@ -1844,12 +1845,13 @@ horizontal_alignment = 1
 
 [node name="ButtonsHelp" type="Label" parent="."]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 z_index = 4096
 material = SubResource("ShaderMaterial_07cvs")
 offset_left = -4474.0
-offset_top = 100.0
+offset_top = 120.0
 offset_right = -3978.0
-offset_bottom = 141.996
+offset_bottom = 161.996
 scale = Vector2(3.971, 3.971)
 theme_override_fonts/font = ExtResource("9_akb36")
 text = "Для передвижения используйте кнопки"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bakljwj75slhy"
-path="res://.godot/imported/O_o.png-60a15cd3c76558849fce1d83d95baa87.ctex"
+uid="uid://b85mm8w7ae2il"
+path="res://.godot/imported/curtain_icon.png-8224b4cb0a8c124b5dbf77e461129c3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/House/Environment/O_o.png"
-dest_files=["res://.godot/imported/O_o.png-60a15cd3c76558849fce1d83d95baa87.ctex"]
+source_file="res://UI/UIBookMenu/v2/Sprites/icons/curtain_icon.png"
+dest_files=["res://.godot/imported/curtain_icon.png-8224b4cb0a8c124b5dbf77e461129c3b.ctex"]
 
 [params]
 

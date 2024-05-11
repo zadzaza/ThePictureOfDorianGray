@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ew6vk4ou6dfw"]
+
+[ext_resource type="Texture2D" uid="uid://b6j2bit8n8vpw" path="res://UI/UIBookMenu/v2/Sprites/cell2.png" id="1_ysret"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyyti"]
+texture = ExtResource("1_ysret")
+
+[node name="Slot" type="Panel"]
+custom_minimum_size = Vector2(6, 6)
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")

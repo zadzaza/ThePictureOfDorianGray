@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 PauseManagerr="*res://addons/pause-manager/scripts/pause_manager.gd"
+InventoryManagament="*res://managament/InventoryManagament.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -35,7 +36,8 @@ directories/dtl_directory={
 "NoQuestion": "res://UI/DialogueSystem/NoQuestion.dtl",
 "PenekDialogWithBird": "res://UI/DialogueSystem/PenekDialogWithBird.dtl",
 "PenekDialogWithoutBird": "res://UI/DialogueSystem/PenekDialogWithoutBird.dtl",
-"PrologueTimeline": "res://Levels/Prologue/PrologueTimeline.dtl"
+"PrologueTimeline": "res://Levels/Prologue/PrologueTimeline.dtl",
+"table_choice": "res://Levels/House/Dialogs/Timelines/table_choice.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
@@ -61,6 +63,11 @@ variables={
 "finish_prolog": false,
 "go_to_penek_timeline_finish": false,
 "have_bird": false,
+"house_vars": {
+"has_corpse": false,
+"has_lamp": false,
+"has_rag": false
+},
 "penek_dialog_state": "none",
 "prologue_timeline_finish": false
 }
@@ -131,12 +138,7 @@ common/physics_ticks_per_second=300
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-lights_and_shadows/directional_shadow/soft_shadow_filter_quality=5
-lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=5
-lights_and_shadows/positional_shadow/soft_shadow_filter_quality=5
-lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=5
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
 camera/depth_of_field/depth_of_field_use_jitter=true
-anti_aliasing/quality/msaa_2d=3
-anti_aliasing/quality/screen_space_aa=1
-anti_aliasing/quality/use_taa=true
 2d/sdf/oversize=2

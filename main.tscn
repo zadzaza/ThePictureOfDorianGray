@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2xjq61iw0eq1"]
+
+[ext_resource type="Texture2D" uid="uid://q8roql2rm75h" path="res://icon.png" id="1_8tkvu"]
+[ext_resource type="Texture2D" uid="uid://bk51g1dm5qsnp" path="res://light.png" id="2_ejw2x"]
+
+[sub_resource type="GDScript" id="GDScript_ajx0u"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$AnimationPlayer.play(\"new_animation\")
+	pass # Replace with function body.
+
+"
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_76kxo"]
+polygon = PackedVector2Array(37, 29, 39, 29, 39, 33, 37, 33)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ki4xg"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Animation" id="Animation_71cci"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/Sprite2D_A:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(30, 26), Vector2(36, 26)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ueivn"]
+_data = {
+"new_animation": SubResource("Animation_71cci")
+}
+
+[node name="main" type="Node2D"]
+script = SubResource("GDScript_ajx0u")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Sprite2D_A" type="Sprite2D" parent="SubViewport"]
+texture_filter = 1
+position = Vector2(32.8221, 26)
+texture = ExtResource("1_8tkvu")
+
+[node name="PointLight2D" type="PointLight2D" parent="SubViewport"]
+texture_filter = 1
+position = Vector2(41, 30)
+shadow_enabled = true
+shadow_filter_smooth = 7.6
+texture = ExtResource("2_ejw2x")
+
+[node name="Camera2D_A" type="Camera2D" parent="SubViewport"]
+texture_filter = 1
+position = Vector2(54.317, 31)
+offset = Vector2(-1.42035, 0)
+enabled = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="SubViewport"]
+texture_filter = 1
+color = Color(0.294118, 0.294118, 0.294118, 1)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewport"]
+occluder = SubResource("OccluderPolygon2D_76kxo")
+
+[node name="Polygon2D" type="Polygon2D" parent="SubViewport"]
+visible = false
+color = Color(0.94902, 0.152941, 0.223529, 1)
+polygon = PackedVector2Array(37, 29, 39, 29, 39, 34, 37, 34)
+
+[node name="Sprite2D_B" type="Sprite2D" parent="."]
+texture = SubResource("ViewportTexture_ki4xg")
+centered = false
+
+[node name="Camera2D_B" type="Camera2D" parent="."]
+position = Vector2(240, 256)
+offset = Vector2(0.383188, 0)
+zoom = Vector2(50, 50)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ueivn")
+}

@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://duw8cisfjnhec"]
+
+[ext_resource type="Script" path="res://UI/HintAnimation/hint_animation.gd" id="1_cu4gn"]
+[ext_resource type="PackedScene" uid="uid://jq6uivjivm4r" path="res://UI/FloatingText.tscn" id="1_v7vef"]
+
+[sub_resource type="Animation" id="Animation_tgvcl"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FloatingText:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FloatingText:pivot_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(258.908, 0.126833)]
+}
+
+[sub_resource type="Animation" id="Animation_cf1bl"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FloatingText:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FloatingText:pivot_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.392292, 1),
+"update": 0,
+"values": [Vector2(258.908, 0.126833), Vector2(258.908, 20.127)]
+}
+
+[sub_resource type="Animation" id="Animation_ue1xr"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FloatingText:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FloatingText:pivot_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.41421, 1),
+"update": 0,
+"values": [Vector2(258.908, 20.127), Vector2(258.908, 0.126833)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tqjyx"]
+_data = {
+"RESET": SubResource("Animation_tgvcl"),
+"fade_in": SubResource("Animation_cf1bl"),
+"fade_out": SubResource("Animation_ue1xr")
+}
+
+[node name="HintAnimation" type="Node2D"]
+script = ExtResource("1_cu4gn")
+
+[node name="FloatingText" parent="." instance=ExtResource("1_v7vef")]
+offset_top = -84.6219
+offset_bottom = -42.6229
+scale = Vector2(1.98074, 1.98074)
+pivot_offset = Vector2(258.908, 0.126833)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_tqjyx")
+}

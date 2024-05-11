@@ -17,7 +17,7 @@ const float HARD_LIMIT = 5.0;
 const float ANG_EDGE = 0.1;
 
 // Width of the light edge on the walls
-const float WALL_EDGE = 8.0;
+const float WALL_EDGE = 1000.0;
 
 // Number of currently active lights
 uniform int light_n = 0;

@@ -78,7 +78,6 @@ signal signal_event(argument:Variant)
 ## Emitted when `[signal]` effect was reached in text.
 signal text_signal(argument:String)
 
-
 # Careful, this section is repopulated automatically at certain moments
 #region SUBSYSTEMS
 
@@ -179,6 +178,7 @@ func start(timeline:Variant, label:Variant="") -> Node:
 ## Method to start a timeline without adding a layout scene.
 ## @timeline can be either a loaded timeline resource or a path to a timeline file.
 ## @label_or_idx can be a label (string) or index (int) to skip to immediatly.
+
 func start_timeline(timeline:Variant, label_or_idx:Variant = "") -> void:
 	# load the resource if only the path is given
 	if typeof(timeline) == TYPE_STRING:

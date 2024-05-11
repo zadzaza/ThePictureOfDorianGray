@@ -1,0 +1,6 @@
+- Взять лампу [if {house_vars.has_lamp} == false]
+	[signal arg="Лампа"]
+- Взять труп [if {house_vars.has_corpse} == false]
+	[signal arg="Труп"]
+- Вытереть стол [if {house_vars.has_rag} == true]
+	[signal]
