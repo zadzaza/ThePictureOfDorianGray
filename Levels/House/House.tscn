@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cmtd6n0jtced3"]
+[gd_scene load_steps=22 format=3 uid="uid://cmtd6n0jtced3"]
 
 [ext_resource type="Texture2D" uid="uid://bakljwj75slhy" path="res://Levels/House/Environment/Sprites/O_o.png" id="1_33tlv"]
 [ext_resource type="Texture2D" uid="uid://dl1hmrx00afiw" path="res://kover_porvaniy.png" id="2_1w3t1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Level.gd" id="9_7b74m"]
 [ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Player/player_scene.tscn" id="11_sksev"]
 [ext_resource type="PackedScene" uid="uid://8xn7b0f3qah1" path="res://Levels/House/Environment/Table/table_action.tscn" id="12_bkmsw"]
+[ext_resource type="PackedScene" uid="uid://dyuuu4neoawps" path="res://UI/foreground.tscn" id="13_j8pvo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8y1vo"]
 texture = ExtResource("1_33tlv")
@@ -233,3 +234,5 @@ position = Vector2(402, 125)
 
 [node name="TableChoice" parent="." instance=ExtResource("12_bkmsw")]
 position = Vector2(196, 183)
+
+[node name="Foreground" parent="." instance=ExtResource("13_j8pvo")]

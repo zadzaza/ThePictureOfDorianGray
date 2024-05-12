@@ -18,5 +18,5 @@ centered = false
 [node name="IconTexture" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(32, 32)
-scale = Vector2(0.560938, 0.560938)
+scale = Vector2(1.45273, 1.45273)
 texture = ExtResource("3_f4wu4")

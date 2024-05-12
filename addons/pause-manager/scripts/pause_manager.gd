@@ -45,6 +45,10 @@ const VERSION = "1.1.0"
 ## By default, there's only the 'Escape' key from keyboard.
 @export var keys: Array[Key] = [KEY_ESCAPE]
 
+@onready var ui_book_menu = preload("res://UI/UIBookMenu/v2/ui_book_menu.tscn")
+@onready var foreground = get_tree().get_first_node_in_group("foreground")
+
+
 # PRIVATE VARIABLES
 var _paused: bool = false
 var _input_event_pressed: bool = false
@@ -60,6 +64,7 @@ func _input(event):
 		if event.pressed:
 			if not _input_event_pressed:
 				_input_event_pressed = true
+				add_child(ui_book_menu)
 				_toggle_pause()
 		else:
 			_input_event_pressed = false
@@ -75,6 +80,9 @@ func _toggle_pause() -> void:
 		_resume()
 
 func _pause() -> void:
+	var ui_book_menu_instance = ui_book_menu.instantiate()
+	foreground.add_child(ui_book_menu_instance)
+	
 	if is_paused():
 		return
 	
