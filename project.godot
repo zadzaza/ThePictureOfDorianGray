@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-PauseManagerr="*res://addons/pause-manager/scripts/pause_manager.gd"
 InventoryManagament="*res://managament/InventoryManagament.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cd5tolsiqaeo7"]
 
-[ext_resource type="Script" path="res://addons/pause-manager/scripts/pause_manager.gd" id="1_wdn7o"]
+[ext_resource type="Script" path="res://pause-manager/scripts/pause_manager.gd" id="1_wdn7o"]
 
-[node name="PauseManager" type="Node"]
+[node name="PauseManager" type="Node2D"]
 process_mode = 3
 editor_description = "Pause Tree:
 	When 'true', the property 'get_tree().paused' will be changed to 'true' when paused and changed to 'false' when resumed.

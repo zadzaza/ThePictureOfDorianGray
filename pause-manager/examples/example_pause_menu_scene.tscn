@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://8wkkr3k8cxh6"]
 
-[ext_resource type="Script" path="res://addons/pause-manager/examples/scripts/example_pause_menu_scene.gd" id="1_5hwa6"]
-[ext_resource type="PackedScene" uid="uid://cd5tolsiqaeo7" path="res://addons/pause-manager/prefabs/pause_manager.tscn" id="2_a4sq0"]
+[ext_resource type="Script" path="res://pause-manager/examples/scripts/example_pause_menu_scene.gd" id="1_5hwa6"]
+[ext_resource type="PackedScene" uid="uid://cd5tolsiqaeo7" path="res://pause-manager/prefabs/pause_manager.tscn" id="2_a4sq0"]
 
 [node name="Example Pause Menu Scene" type="CanvasLayer"]
 script = ExtResource("1_5hwa6")

@@ -4,27 +4,26 @@ var page = "page"
 var count = 1
 var is_show_bird_item: bool
 
-@onready var pause_manager = preload("res://addons/pause-manager/prefabs/pause_manager.tscn")
+@onready var pause_manager = %PauseManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#pause_manager._pause()
 	pass
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	switch_main_menu_buttons()
 
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		count = 1
-		self.queue_free()
+	if event.is_action_pressed("e"):
+		pause_manager._resume()
+		queue_free()
 
 func _on_continue_btn_pressed():
-	var pause_manager_instance = pause_manager.instantiate()
-	$PauseManager._resume()
+	pause_manager._resume()
 	self.queue_free()
-	pause_manager_instance.queue_free()
 
 func switch_main_menu_buttons():
 	page = "page" + str(count)

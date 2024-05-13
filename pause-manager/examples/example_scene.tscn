@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://csiuol8oyqstt"]
 
-[ext_resource type="Script" path="res://addons/pause-manager/examples/scripts/example_scene.gd" id="1_aviqf"]
-[ext_resource type="PackedScene" uid="uid://cd5tolsiqaeo7" path="res://addons/pause-manager/prefabs/pause_manager.tscn" id="2_1fhy1"]
-[ext_resource type="Script" path="res://addons/pause-manager/examples/scripts/rotation.gd" id="2_5ace7"]
-[ext_resource type="PackedScene" uid="uid://dxyr3dofhsynm" path="res://addons/pause-manager/prefabs/pause_event_handler.tscn" id="4_7r1f8"]
+[ext_resource type="Script" path="res://pause-manager/examples/scripts/example_scene.gd" id="1_aviqf"]
+[ext_resource type="PackedScene" uid="uid://cd5tolsiqaeo7" path="res://pause-manager/prefabs/pause_manager.tscn" id="2_1fhy1"]
+[ext_resource type="Script" path="res://pause-manager/examples/scripts/rotation.gd" id="2_5ace7"]
+[ext_resource type="PackedScene" uid="uid://dxyr3dofhsynm" path="res://pause-manager/prefabs/pause_event_handler.tscn" id="4_7r1f8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4umw"]
 

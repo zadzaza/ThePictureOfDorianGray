@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="4_kfvpv"]
 [ext_resource type="Texture2D" uid="uid://fn4742xjwx0t" path="res://UI/UIBookMenu/v2/Sprites/button.png" id="4_p1ipg"]
 [ext_resource type="PackedScene" uid="uid://cagoe41f4s7us" path="res://UI/UIBookMenu/v2/inventory_slots.tscn" id="6_kl0xh"]
-[ext_resource type="PackedScene" uid="uid://cd5tolsiqaeo7" path="res://addons/pause-manager/prefabs/pause_manager.tscn" id="7_s0tyr"]
+[ext_resource type="Script" path="res://pause-manager/scripts/pause_manager.gd" id="7_flh0m"]
 
 [node name="UIBookMenu" type="CanvasLayer"]
 process_mode = 3
@@ -225,7 +225,10 @@ offset_top = 315.0
 offset_right = 1282.0
 offset_bottom = 750.0
 
-[node name="PauseManager" parent="." instance=ExtResource("7_s0tyr")]
+[node name="PauseManager" type="Node" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+script = ExtResource("7_flh0m")
 
 [connection signal="pressed" from="Page1/ContinueBtn" to="." method="_on_continue_btn_pressed"]
 [connection signal="pressed" from="Page1/SaveBtn" to="." method="_on_save_btn_pressed"]
