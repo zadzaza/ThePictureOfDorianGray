@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://qqlk04uxx8ui" path="res://Levels/Prologue/BgTrees/shadow1.png" id="2_kalkm"]
 [ext_resource type="Texture2D" uid="uid://bkk3y0gpyo00e" path="res://Levels/Prologue/FgTrees/tree1.png" id="2_q26pc"]
 [ext_resource type="Texture2D" uid="uid://c5j86ho5yfxaa" path="res://Levels/Prologue/BgTrees/bh_tree.png" id="4_rq0tm"]
-[ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Player/player_scene.tscn" id="4_rxhjn"]
+[ext_resource type="PackedScene" uid="uid://b8yomh5gw1ywf" path="res://Player/PlayerX/player_x.tscn" id="4_rxhjn"]
 [ext_resource type="Texture2D" uid="uid://cdkfb2gx4brxu" path="res://Levels/Prologue/Environment/survival.png" id="4_ut4is"]
 [ext_resource type="Texture2D" uid="uid://d0jlfh78hn17w" path="res://Levels/Prologue/FgTrees/tree2.png" id="5_6484s"]
 [ext_resource type="Texture2D" uid="uid://bm2d1xb8oxby3" path="res://Levels/Prologue/FgTrees/tree3.png" id="6_58hsq"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3bq3xulrp6ka"]
+
+[ext_resource type="Script" path="res://Levels/House/pick_area.gd" id="1_lvqy3"]
+
+[node name="PickArea" type="Area2D"]
+script = ExtResource("1_lvqy3")

@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://dxom45fc7gd8h"]
+
+[ext_resource type="Script" path="res://Levels/House/Environment/Door/Door.gd" id="1_061f6"]
+[ext_resource type="Texture2D" uid="uid://cvy7bkp6s1stg" path="res://Levels/House/Environment/Door/Sprites/side_door/door_knob.png" id="2_dy6t0"]
+[ext_resource type="Texture2D" uid="uid://dj22y5qy07iji" path="res://Levels/House/Environment/Door/Sprites/side_door/door_frame.png" id="3_m4gau"]
+[ext_resource type="Texture2D" uid="uid://co3dmip71qvew" path="res://Levels/House/Environment/Door/Sprites/side_door/door_open.png" id="4_wjldk"]
+[ext_resource type="Texture2D" uid="uid://cxygldiyx45mq" path="res://Levels/House/Environment/Door/Sprites/CloseDoor.png" id="5_nsjtx"]
+[ext_resource type="Texture2D" uid="uid://dnuj0mcwoy5fa" path="res://Levels/House/Environment/Door/Sprites/door_down/OpenDoorDown.png" id="6_onc6k"]
+[ext_resource type="Texture2D" uid="uid://c5r4081svue00" path="res://Levels/House/Environment/Door/Sprites/door_up/OpenDoorUp.png" id="7_2kyek"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7pis"]
+size = Vector2(180, 186)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jouk4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nsjtx")
+}],
+"loop": true,
+"name": &"door_down_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_onc6k")
+}],
+"loop": true,
+"name": &"door_down_opened",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nsjtx")
+}],
+"loop": true,
+"name": &"door_up_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2kyek")
+}],
+"loop": true,
+"name": &"door_up_opened",
+"speed": 5.0
+}]
+
+[node name="Door" type="StaticBody2D"]
+z_index = 2
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_061f6")
+
+[node name="DoorArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+position = Vector2(27, 27)
+shape = SubResource("RectangleShape2D_i7pis")
+debug_color = Color(0.675856, 0.506111, 0, 0.42)
+
+[node name="Doorway" type="Sprite2D" parent="."]
+position = Vector2(30, 115)
+scale = Vector2(1.8528, 0.95064)
+texture = ExtResource("3_m4gau")
+offset = Vector2(9.53674e-07, -120.971)
+flip_h = true
+
+[node name="Door" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-19, 47)
+scale = Vector2(1.23691, 1.01899)
+texture = ExtResource("4_wjldk")
+offset = Vector2(-2.86102e-06, -6.86952)
+flip_h = true
+
+[node name="DoorKnob" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="DoorKnob" type="Sprite2D" parent="DoorKnob"]
+position = Vector2(12, 40)
+scale = Vector2(1.59628, 1)
+texture = ExtResource("2_dy6t0")
+
+[node name="DoorKnob2" type="Sprite2D" parent="DoorKnob"]
+position = Vector2(40, 40)
+scale = Vector2(1.59628, 1)
+texture = ExtResource("2_dy6t0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(56, 28)
+sprite_frames = SubResource("SpriteFrames_jouk4")
+animation = &"door_up_closed"

@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://8xn7b0f3qah1"]
+
+[ext_resource type="Script" path="res://Levels/House/Environment/Table/table.gd" id="1_wpshr"]
+[ext_resource type="Texture2D" uid="uid://4steaxubym8e" path="res://Levels/House/Environment/Table/table_blood.png" id="2_mgvv8"]
+[ext_resource type="Texture2D" uid="uid://bpofoee4f6ltq" path="res://Levels/House/Environment/Table/table.png" id="3_8t3he"]
+[ext_resource type="Texture2D" uid="uid://ciqpx11d1y6rq" path="res://Levels/House/Environment/Sprites/Corpse.png" id="4_124mn"]
+[ext_resource type="Texture2D" uid="uid://c71chskf7avvd" path="res://Levels/House/Environment/Sprites/lamp.png" id="5_g042p"]
+[ext_resource type="Texture2D" uid="uid://c5nwqkfos7kak" path="res://Light/light.png" id="6_520j4"]
+[ext_resource type="Texture2D" uid="uid://bep8ln3knnoe1" path="res://Levels/House/Environment/Knife/knife.png" id="7_0kcnm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyanf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mgvv8")
+}],
+"loop": false,
+"name": &"blood",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8t3he")
+}],
+"loop": false,
+"name": &"clear",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqawr"]
+size = Vector2(146, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sbj8"]
+size = Vector2(201, 132)
+
+[node name="Table" type="StaticBody2D"]
+z_index = 2
+y_sort_enabled = true
+script = ExtResource("1_wpshr")
+
+[node name="TablleAnim" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_yyanf")
+animation = &"blood"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 46.5)
+shape = SubResource("RectangleShape2D_qqawr")
+
+[node name="TableArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TableArea"]
+position = Vector2(-7.5, 13)
+shape = SubResource("RectangleShape2D_2sbj8")
+debug_color = Color(0.560278, 0.49526, 0.69967, 0.42)
+
+[node name="Corpse" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CorpseSprite" type="Sprite2D" parent="Corpse"]
+unique_name_in_owner = true
+position = Vector2(-42, 16)
+texture = ExtResource("4_124mn")
+
+[node name="Lamp" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Lamp2" type="Sprite2D" parent="Lamp"]
+position = Vector2(17, -40)
+scale = Vector2(0.0473438, 0.0473438)
+texture = ExtResource("5_g042p")
+
+[node name="PointLight2D" type="PointLight2D" parent="Lamp"]
+position = Vector2(18, -35)
+color = Color(1, 1, 0.74902, 1)
+energy = 0.7
+texture = ExtResource("6_520j4")
+texture_scale = 1.1
+
+[node name="Knife" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Knife2" type="Sprite2D" parent="Knife"]
+position = Vector2(33.3558, -10.4375)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("7_0kcnm")

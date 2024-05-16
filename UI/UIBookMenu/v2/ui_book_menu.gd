@@ -23,7 +23,7 @@ func _input(event):
 
 func _on_continue_btn_pressed():
 	pause_manager._resume()
-	self.queue_free()
+	queue_free()
 
 func switch_main_menu_buttons():
 	page = "page" + str(count)

@@ -129,6 +129,9 @@ var TextInput := preload("res://addons/dialogic/Modules/TextInput/subsystem_text
 var VAR := preload("res://addons/dialogic/Modules/Variable/subsystem_variables.gd").new():
 	get: return get_subsystem("VAR")
 
+var house_vars := preload("res://addons/dialogic/Modules/Variable/subsystem_variables.gd").new():
+	get: return get_subsystem("house_vars")
+
 var Voice := preload("res://addons/dialogic/Modules/Voice/subsystem_voice.gd").new():
 	get: return get_subsystem("Voice")
 

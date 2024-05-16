@@ -2,12 +2,20 @@ extends GridContainer
 
 @onready var lamp_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/lamp_icon.png")
 @onready var corpse_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/corpse_icon.png")
+@onready var knife_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/knife_icon.png")
+@onready var rag_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/rag_icon.png")
 
-
-
-@onready var item_icons = {
-	"Лампа": lamp_icon,
-	"Труп": corpse_icon
+@onready var items_icons = {
+	"lamp": lamp_icon,
+	"corpse": corpse_icon,
+	"knife": knife_icon,
+	"rag": rag_icon
+}
+@onready var items_names = {
+	"lamp": "Лампа",
+	"corpse": "Труп",
+	"knife": "Нож",
+	"rag": "Тряпка"
 }
 
 func _ready():
@@ -18,15 +26,16 @@ func refresh_slots():
 	var slot_name = "Slot" + str(slot_number)
 	var current_slot = get_node_or_null(slot_name)
 	
-	var inventory = InventoryManagament.get_items()
+	var inventory = InventoryManager.get_items()
 	
 	for item in inventory:
 		if !current_slot:
 			return
 			
 		if !current_slot.is_using_slot():
-			var icon_to_set = item_icons.get(item)
+			var icon_to_set = items_icons.get(item)
 			current_slot.set_icon(icon_to_set)
+			current_slot.set_slot_name(items_names.get(item))
 	
 		slot_number += 1
 		slot_name = "Slot" + str(slot_number)

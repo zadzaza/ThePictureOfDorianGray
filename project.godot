@@ -18,8 +18,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-InventoryManagament="*res://managament/InventoryManagament.gd"
+InventoryManager="*res://managament/InventoryManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+ItemsManager="*res://managament/ItemsManager.gd"
 
 [dialogic]
 
@@ -36,6 +37,7 @@ directories/dtl_directory={
 "PenekDialogWithBird": "res://UI/DialogueSystem/PenekDialogWithBird.dtl",
 "PenekDialogWithoutBird": "res://UI/DialogueSystem/PenekDialogWithoutBird.dtl",
 "PrologueTimeline": "res://Levels/Prologue/PrologueTimeline.dtl",
+"rag_choice": "res://Levels/House/Dialogs/Timelines/rag_choice.dtl",
 "table_choice": "res://Levels/House/Dialogs/Timelines/table_choice.dtl"
 }
 glossary/default_case_sensitive=true
@@ -58,17 +60,18 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"bag_state": "not_has",
 "block_movement": false,
+"coat_state": "not_has",
+"corpse_state": "not_has",
 "finish_prolog": false,
 "go_to_penek_timeline_finish": false,
 "have_bird": false,
-"house_vars": {
-"has_corpse": false,
-"has_lamp": false,
-"has_rag": false
-},
+"knife_state": "not_has",
+"lamp_state": "not_has",
 "penek_dialog_state": "none",
-"prologue_timeline_finish": false
+"prologue_timeline_finish": false,
+"rag_state": "not_has"
 }
 
 [dialogue_manager]
@@ -129,6 +132,7 @@ locale/translations_pot_files=PackedStringArray("res://dialogue/prologue.dialogu
 2d_physics/layer_3="items"
 2d_physics/layer_4="npc"
 2d_physics/layer_5="actions"
+2d_physics/layer_6="environment"
 
 [physics]
 

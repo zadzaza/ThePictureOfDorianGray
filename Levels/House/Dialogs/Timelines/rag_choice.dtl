@@ -1,0 +1,2 @@
+- Взять тряпку [if {rag_state} == "not_has"]
+	[signal arg="rag"]

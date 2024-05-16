@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxu4hpm7e6ybh"]
+
+[ext_resource type="Texture2D" uid="uid://y3yjxqvdf401" path="res://Levels/House/Environment/Chest/chest-ss.png" id="1_mmxde"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyi7k"]
+atlas = ExtResource("1_mmxde")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on11y"]
+atlas = ExtResource("1_mmxde")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kglsn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyi7k")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on11y")
+}],
+"loop": true,
+"name": &"opened",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8hp6"]
+size = Vector2(96, 45)
+
+[node name="Chest" type="StaticBody2D"]
+z_index = 2
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -26)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_kglsn")
+animation = &"closed"
+offset = Vector2(0, 6.5)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_m8hp6")

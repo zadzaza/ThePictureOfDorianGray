@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bui07jpn4wnu6"]
+
+[ext_resource type="Texture2D" uid="uid://dy5ct7vrgs5rs" path="res://Levels/House/Environment/Bag/bag.png" id="1_xodhw"]
+
+[node name="Bag" type="StaticBody2D"]
+z_index = 2
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -56)
+texture = ExtResource("1_xodhw")
+offset = Vector2(0, 56)
