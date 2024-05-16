@@ -3,4 +3,6 @@
 [ext_resource type="Script" path="res://Levels/House/pick_area.gd" id="1_lvqy3"]
 
 [node name="PickArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_lvqy3")

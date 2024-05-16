@@ -19,8 +19,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 InventoryManager="*res://managament/InventoryManager.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ItemsManager="*res://managament/ItemsManager.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 

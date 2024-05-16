@@ -1,36 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://l8e5unmlyo0"]
+[gd_scene load_steps=2 format=3 uid="uid://l8e5unmlyo0"]
 
 [ext_resource type="Texture2D" uid="uid://cpd16j63hs5eb" path="res://UI/UIBookMenu/v2/Sprites/icons/rag_icon.png" id="1_jy0vo"]
-[ext_resource type="PackedScene" uid="uid://d3bq3xulrp6ka" path="res://Levels/House/pick_area.tscn" id="2_8yn4v"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jy0o"]
-size = Vector2(110, 132)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4no4"]
-size = Vector2(110, 132)
 
 [node name="Rag" type="Node2D"]
 z_index = 2
 
 [node name="Rag" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Rag"]
-scale = Vector2(1.2, 1.2)
+[node name="RagIcon" type="Sprite2D" parent="Rag"]
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_jy0vo")
-
-[node name="RagArea" type="Area2D" parent="."]
-unique_name_in_owner = true
-visible = false
-collision_layer = 0
-collision_mask = 2
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RagArea"]
-position = Vector2(0, 56)
-shape = SubResource("RectangleShape2D_1jy0o")
-
-[node name="PickArea" parent="." instance=ExtResource("2_8yn4v")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickArea"]
-position = Vector2(0, 56)
-shape = SubResource("RectangleShape2D_b4no4")

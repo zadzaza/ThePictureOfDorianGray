@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cmtd6n0jtced3"]
+[gd_scene load_steps=66 format=3 uid="uid://cmtd6n0jtced3"]
 
 [ext_resource type="Texture2D" uid="uid://bakljwj75slhy" path="res://Levels/House/Environment/Sprites/O_o.png" id="1_33tlv"]
 [ext_resource type="Texture2D" uid="uid://dl1hmrx00afiw" path="res://kover_porvaniy.png" id="2_1w3t1"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ccghv8qvi2vlq" path="res://Levels/House/Environment/Sprites/Bookshelves/polka_zad.png" id="5_8m14l"]
 [ext_resource type="Texture2D" uid="uid://ddsc3eyocdtd5" path="res://Levels/House/Environment/Sprites/Bookshelves/skaf_drugoi.png" id="6_0su1f"]
 [ext_resource type="Texture2D" uid="uid://b2pl0soi7f5a4" path="res://Levels/House/Environment/Sprites/Bookshelves/skaf_bok.png" id="6_jqotu"]
+[ext_resource type="Texture2D" uid="uid://bdrp3ah0xdnq1" path="res://Levels/Prologue/Birds/Sprites/new_animated_texture.tres" id="7_47db2"]
 [ext_resource type="Texture2D" uid="uid://o2yuy3j0nstd" path="res://Levels/House/Environment/Sprites/Portrait/portrait.png" id="7_d2sca"]
 [ext_resource type="Texture2D" uid="uid://cm6v2dpkyatjw" path="res://Levels/House/Environment/Sprites/stul.png" id="7_r8dnj"]
 [ext_resource type="Texture2D" uid="uid://c2aphjgl3wf55" path="res://Levels/House/Environment/Sprites/Bookshelves/polka_s_kniga.png" id="8_3ywu4"]
@@ -217,6 +218,14 @@ texture = ExtResource("6_jqotu")
 4:2/0/physics_layer_0/angular_velocity = 0.0
 4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(24.4997, 32.2951, 24.2535, 139.064, -29.2932, 139.064, -28.9782, 32.128)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gb7b5"]
+texture = ExtResource("7_47db2")
+texture_region_size = Vector2i(8, 8)
+0:0/size_in_atlas = Vector2i(12, 31)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qskyw"]
 texture = ExtResource("3_nxlaq")
 21:21/size_in_atlas = Vector2i(6, 2)
@@ -342,6 +351,7 @@ sources/10 = SubResource("TileSetAtlasSource_e8vnh")
 sources/11 = SubResource("TileSetAtlasSource_58fu7")
 sources/12 = SubResource("TileSetAtlasSource_u4pf0")
 sources/4 = SubResource("TileSetAtlasSource_n03k0")
+sources/18 = SubResource("TileSetAtlasSource_gb7b5")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fan4p"]
 cull_mode = 2
@@ -437,7 +447,7 @@ position = Vector2(0, 1)
 tile_set = SubResource("TileSet_f50hj")
 format = 2
 layer_0/name = "default"
-layer_0/tile_data = PackedInt32Array(-9436921, 262144, 1, 2424888, 589824, 26, 7667768, 589824, 26, 12910648, 589824, 26, 18153640, 589824, 26, 18153752, 589824, 26, 18153864, 589824, 26, 18153942, 589824, 26, 12910760, 589824, 26, 12910984, 589824, 26, 12911062, 589824, 26, 7667880, 589824, 26, 2425000, 589824, 26, 7667992, 589824, 26, 2425112, 589824, 26, 7668104, 589824, 26, 2425224, 589824, 26, 7668182, 589824, 26, 2425302, 589824, 26, -3538593, 1376257, 0, -3997541, 1376258, 21, -3276642, 1900546, 268435476, 12910872, 589824, 26, -3276473, 327680, 54, -2883210, 655360, 56, 18154065, 589824, 26, 18154177, 589824, 26, 18154289, 589824, 26, 18154401, 589824, 26, 12911521, 589824, 26, 12911409, 589824, 26, 12911297, 589824, 26, 12911185, 589824, 26, 2425425, 589824, 26, 7668305, 589824, 26, 7668417, 589824, 26, 7668529, 589824, 26, 7668641, 589824, 26, 2425761, 589824, 26, 2425649, 589824, 26, 2425537, 589824, 26, -3276000, 262144, 13, 21168867, 1310720, 54, 21168913, 1310720, 54, -9436384, 262144, 1, -3734789, 3014656, 26, 2884168, 2162688, 49, -3997670, 2555904, 26, -8585218, 131072, 3, -3276537, 262144, 13, 18153528, 589824, 26, -3735466, 3014656, 26)
+layer_0/tile_data = PackedInt32Array(-9436921, 262144, 1, 2424888, 589824, 26, 7667768, 589824, 26, 12910648, 589824, 26, 18153640, 589824, 26, 18153752, 589824, 26, 18153864, 589824, 26, 18153942, 589824, 26, 12910760, 589824, 26, 12910984, 589824, 26, 12911062, 589824, 26, 7667880, 589824, 26, 2425000, 589824, 26, 7667992, 589824, 26, 2425112, 589824, 26, 7668104, 589824, 26, 2425224, 589824, 26, 7668182, 589824, 26, 2425302, 589824, 26, -3538593, 1376257, 0, -3997541, 1376258, 21, -3276642, 1900546, 268435476, 12910872, 589824, 26, -3276473, 327680, 54, -2883210, 655360, 56, 18154065, 589824, 26, 18154177, 589824, 26, 18154289, 589824, 26, 18154401, 589824, 26, 12911521, 589824, 26, 12911409, 589824, 26, 12911297, 589824, 26, 12911185, 589824, 26, 2425425, 589824, 26, 7668305, 589824, 26, 7668417, 589824, 26, 7668529, 589824, 26, 7668641, 589824, 26, 2425761, 589824, 26, 2425649, 589824, 26, 2425537, 589824, 26, -3276000, 262144, 13, 21168867, 1310720, 54, 21168913, 1310720, 54, -9436384, 262144, 1, -3734789, 3014656, 26, 2884168, 2162688, 49, -3997670, 2555904, 26, -8585218, 131072, 3, -3276537, 262144, 13, 18153528, 589824, 26, -3735466, 3014656, 26, 4521650, 14, 65536, 20971441, 18, 0)
 layer_1/name = "walls"
 layer_1/z_index = 2
 layer_1/tile_data = PackedInt32Array(-9633794, 4653056, 268435459, 262679, 4653056, 268435469, 8389143, 4653056, 268435469, 19005974, 4718592, 41, 327673, 4653056, 13, 19070973, 4718592, 41, 7536633, 4653056, 13, 21168330, 1310720, 54, 21168454, 1310720, 54, 19006433, 4718592, 41, 7472093, 4653056, 13, -9698798, 4653056, 3, -8650217, 131072, 3, -3144739, 4653056, 13, -9698339, 4653056, 3, -6159734, 2359296, 27, -6225255, 2359296, 27, -6159704, 2359296, 27, -4258910, 2359296, 27)
@@ -503,6 +513,9 @@ libraries = {
 
 [node name="Table" parent="." instance=ExtResource("12_bkmsw")]
 position = Vector2(696, 171)
+
+[node name="Rag" parent="." instance=ExtResource("27_ohgs6")]
+position = Vector2(-102, -75)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
@@ -582,6 +595,3 @@ collision_mask = 2
 position = Vector2(124, -34.5)
 shape = SubResource("RectangleShape2D_jdy1q")
 debug_color = Color(0.988235, 0, 0.301961, 0.419608)
-
-[node name="Rag" parent="." instance=ExtResource("27_ohgs6")]
-position = Vector2(-102, -75)

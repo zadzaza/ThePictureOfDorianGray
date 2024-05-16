@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://8xn7b0f3qah1"]
+[gd_scene load_steps=9 format=3 uid="uid://8xn7b0f3qah1"]
 
-[ext_resource type="Script" path="res://Levels/House/Environment/Table/table.gd" id="1_wpshr"]
 [ext_resource type="Texture2D" uid="uid://4steaxubym8e" path="res://Levels/House/Environment/Table/table_blood.png" id="2_mgvv8"]
 [ext_resource type="Texture2D" uid="uid://bpofoee4f6ltq" path="res://Levels/House/Environment/Table/table.png" id="3_8t3he"]
 [ext_resource type="Texture2D" uid="uid://ciqpx11d1y6rq" path="res://Levels/House/Environment/Sprites/Corpse.png" id="4_124mn"]
@@ -30,13 +29,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqawr"]
 size = Vector2(146, 35)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sbj8"]
-size = Vector2(201, 132)
-
 [node name="Table" type="StaticBody2D"]
 z_index = 2
 y_sort_enabled = true
-script = ExtResource("1_wpshr")
 
 [node name="TablleAnim" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -46,16 +41,6 @@ animation = &"blood"
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-10, 46.5)
 shape = SubResource("RectangleShape2D_qqawr")
-
-[node name="TableArea" type="Area2D" parent="."]
-unique_name_in_owner = true
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TableArea"]
-position = Vector2(-7.5, 13)
-shape = SubResource("RectangleShape2D_2sbj8")
-debug_color = Color(0.560278, 0.49526, 0.69967, 0.42)
 
 [node name="Corpse" type="Node2D" parent="."]
 unique_name_in_owner = true

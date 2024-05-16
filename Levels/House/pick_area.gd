@@ -1,9 +1,8 @@
 extends Area2D
 
-
 @onready var hint_animation_scene = preload("res://UI/HintAnimation/hint_animation.tscn")
 
-@onready var parent = self.get_parent()
+@onready var parent = get_parent()
 
 @onready var table_parent = preload("res://Levels/House/Environment/Table/table.tscn").instantiate()
 @onready var rag_parent = preload("res://Levels/House/Environment/Rag/rag.tscn").instantiate()
@@ -25,49 +24,47 @@ extends Area2D
 }
 
 var player_in_pick_area: bool
-var timeline_to_start: String
+@onready var timeline_to_start: String
 
 func _ready():
-	self.body_entered.connect(_on_pick_area_body_entered)
-	self.body_exited.connect(_on_pick_area_body_exited)
-	Dialogic.signal_event.connect(_on_item_selected)
 	initialize_parent_node()
-
+	body_entered.connect(_on_pick_area_body_entered)
+	body_exited.connect(_on_pick_area_body_exited)
+	Dialogic.signal_event.connect(_on_item_selected)
+	print(timeline_to_start)
 func _input(event):
 	if event.is_action_pressed("e") and player_in_pick_area:
-		Dialogic.start(timeline_to_start, "_choice")
+		print(timeline_to_start)
+		Dialogic.start(timeline_to_start + "_choice")
 
 func initialize_parent_node():
-	if parent != null:
-		print("РАБОТАЕТ")
-		if parent == table_parent:
-			corpse_node = parent.get_node("Corpse")
-			lamp_node = parent.get_node("Lamp")
-			knife_node = parent.get_node("Knife")
-			parent_nodes["corpse"] = corpse_node
-			parent_nodes["lamp"] = lamp_node
-			parent_nodes["knife"] = knife_node
-			
-			timeline_to_start = "table"
-		elif parent == rag_parent:
-			rag_node = parent.get_node("Rag")
-			parent_nodes["rag"] = rag_node
-			
-			timeline_to_start = "rag"
+	if parent.name == table_parent.name:
+		corpse_node = parent.get_node("Corpse")
+		lamp_node = parent.get_node("Lamp")
+		knife_node = parent.get_node("Knife")
+		parent_nodes["corpse"] = corpse_node
+		parent_nodes["lamp"] = lamp_node
+		parent_nodes["knife"] = knife_node
+		timeline_to_start = "table"
+	elif parent.name == rag_parent.name:
+		rag_node = parent.get_node("Rag")
+		parent_nodes["rag"] = rag_node
+		timeline_to_start = "rag"
 
 func _on_pick_area_body_entered(body):
 	player_in_pick_area = true
+	print(timeline_to_start)
 	
 func _on_pick_area_body_exited(body):
 	player_in_pick_area = false
 	Dialogic.end_timeline()
 
 func _on_item_selected(selected_item: String):
-	create_item_description(selected_item)
+	manage_item(selected_item)
 
-func create_item_description(item_name: String):
+func manage_item(item_name: String):
 	
-	var hint_animation = hint_animation_scene.instantiate() as Node2D
+	var hint_animation = hint_animation_scene.instantiate()
 	add_child(hint_animation)
 	
 	var item_hint: String
