@@ -1,8 +1,12 @@
 - Взять лампу [if {lamp_state} == "not_has"]
-	[signal arg="lamp"]
+	[signal arg="lamp_has"]
+	set {lamp_state} = "has"
 - Взять труп [if {corpse_state} == "not_has"]
-	[signal arg="corpse"]
+	[signal arg="corpse_has"]
+	set {corpse_state} = "has"
 - Взять нож [if {knife_state} == "not_has"]
-	[signal arg="knife"]
+	[signal arg="knife_has"]
+	set {knife_state} = "has"
 - Вытереть стол [if {rag_state} == "has"]
-	[signal arg="rag"]
+	[signal arg="rag_done"]
+	set {rag_state} = "done"

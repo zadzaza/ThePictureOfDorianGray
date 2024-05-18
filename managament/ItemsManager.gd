@@ -13,3 +13,21 @@ func set_done(item_name):
 	# Точно такая же проверка, как в функции pick_item
 	if Dialogic.VAR.has(item_name + "_state"):
 		Dialogic.VAR[item_name + "_state"] = DONE
+
+func pick_item(item_name, parent_nodes):
+	InventoryManager.put_item(item_name)
+	InventoryManager.remove_item_node(item_name, parent_nodes.get(item_name))
+
+func done_item(item_name):
+	InventoryManager.erase_item(item_name)
+
+func are_all_items_complete(items):
+	for key in items.keys():
+		if items[key] == false:
+			return false
+	return true
+
+func start_hint_animation(item_comment: String, parent_position: Vector2):
+	var hint_animation = preload("res://UI/HintAnimation/hint_animation.tscn").instantiate()
+	add_child(hint_animation)
+	hint_animation.start_hint_animation.emit(item_comment, parent_position)

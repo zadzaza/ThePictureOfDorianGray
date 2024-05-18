@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://l8e5unmlyo0"]
+[gd_scene load_steps=3 format=3 uid="uid://l8e5unmlyo0"]
 
+[ext_resource type="Script" path="res://Levels/House/Environment/Rag/rag.gd" id="1_7wh4g"]
 [ext_resource type="Texture2D" uid="uid://cpd16j63hs5eb" path="res://UI/UIBookMenu/v2/Sprites/icons/rag_icon.png" id="1_jy0vo"]
 
 [node name="Rag" type="Node2D"]
 z_index = 2
+script = ExtResource("1_7wh4g")
 
 [node name="Rag" type="Node2D" parent="."]
 

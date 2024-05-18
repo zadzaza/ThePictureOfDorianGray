@@ -367,13 +367,13 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipe7l"]
-size = Vector2(156, 431)
+size = Vector2(163, 431)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5py8"]
 size = Vector2(221, 447)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qidns"]
-size = Vector2(179.75, 468)
+size = Vector2(183.875, 468)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdy1q"]
 size = Vector2(156.25, 451)
@@ -511,18 +511,18 @@ libraries = {
 "": SubResource("AnimationLibrary_5nb87")
 }
 
-[node name="Table" parent="." instance=ExtResource("12_bkmsw")]
-position = Vector2(696, 171)
-
 [node name="Rag" parent="." instance=ExtResource("27_ohgs6")]
 position = Vector2(-102, -75)
+
+[node name="Table" parent="." instance=ExtResource("12_bkmsw")]
+position = Vector2(696, 171)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(700, 175)
 
 [node name="PlayerXY" parent="." instance=ExtResource("12_hxfhw")]
-position = Vector2(-130, 34)
+position = Vector2(466, 90)
 
 [node name="Foreground" parent="." instance=ExtResource("13_j8pvo")]
 
@@ -557,7 +557,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PointPortraitRoom/PortraitRoomArea"]
-position = Vector2(237, 96.5)
+position = Vector2(240.5, 96.5)
 shape = SubResource("RectangleShape2D_ipe7l")
 debug_color = Color(0.988319, 0, 0.303321, 0.42)
 
@@ -577,7 +577,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PointLibrary/LibraryArea"]
-position = Vector2(-326, 123)
+position = Vector2(-328.063, 123)
 shape = SubResource("RectangleShape2D_qidns")
 debug_color = Color(0.988235, 0, 0.301961, 0.419608)
 

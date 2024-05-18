@@ -1,73 +1,83 @@
 extends StaticBody2D
 
-@onready var table_area = %TableArea
-@onready var table_anim = %TablleAnim
-@onready var corpse_sprite = %CorpseSprite
 
-@onready var hint_animation_scene = preload("res://UI/HintAnimation/hint_animation.tscn")
+@onready var corpse_node = $Corpse
+@onready var lamp_node = $Lamp
+@onready var knife_node = $Knife
 
-@onready var corpse = %Corpse
-@onready var lamp = %Lamp
-@onready var knife = %Knife
-
-@onready var item_nodes = {
-	"corpse": corpse,
-	"lamp": lamp,
-	"knife": knife
+@onready var nodes = {
+	"corpse": corpse_node,
+	"lamp": lamp_node,
+	"knife": knife_node
+}
+@onready var items_complete = {
+	"corpse": false,
+	"lamp": false,
+	"knife": false,
+	"rag": false
 }
 
-var player_in_table_area: bool
+var pick_area = preload("res://Levels/House/pick_area.tscn").instantiate()
 
 func _ready():
-	table_area.body_entered.connect(_on_table_body_entered)
-	table_area.body_exited.connect(_on_table_body_exited)
-	Dialogic.signal_event.connect(_on_item_selected)
+	add_child(pick_area)
 
-func _input(event):
-	if event.is_action_pressed("e") and player_in_table_area:
-		Dialogic.start("table_choice")
 
-func _on_table_body_entered(body):
-	player_in_table_area = true
-	
-func _on_table_body_exited(body):
-	player_in_table_area = false
-	Dialogic.end_timeline()
-
-func _on_item_selected(selected_item: String):
-	if item_nodes.has(selected_item):
-		InventoryManager.remove_item_node(selected_item, item_nodes.get(selected_item))
-	create_item_description(selected_item)
-
-func create_item_description(item_name: String):
-	
-	var hint_animation = hint_animation_scene.instantiate() as Node2D
-	add_child(hint_animation)
-	
-	var item_hint: String
+func collect_corpse(item_name):
 	var item_comment: String
 	
-	match item_name:
-		"lamp":
-			item_hint = "Когда со всем закончу, надо будет вернуть лампу на стол"
-			item_comment = "С лампой я не переломаю себе ноги"
-			InventoryManager.put_item(item_name)
-			ItemsManager.pick_item(item_name)
-		"corpse":
-			item_hint = "Надо бы сжечь Бэзила..."
-			item_comment = "Бедный Бэзил... Ну ничего не поделаешь"
-			InventoryManager.put_item(item_name)
-			ItemsManager.pick_item(item_name)
-		"knife":
-			item_comment = "Нож весь в крови..."
-			InventoryManager.put_item(item_name)
-			ItemsManager.pick_item(item_name)
-		"rag":
-			print("OK")
-			if Dialogic.VAR.rag_state == "has":
-				item_comment = "Теперь чисто"
-				InventoryManager.erase_item(item_name)
-				ItemsManager.done_item(item_name)
+	if Dialogic.VAR.corpse_state == "not_has":
+		item_comment = "Труп! Я должен превратить его в горсточку пепла, \nкоторую можно развеять по ветру"
+		ItemsManager.pick_item(item_name, nodes)
 		
+		ItemsManager.start_hint_animation(item_comment, self.global_position)
+		items_complete["corpse"] = true
+		
+		start_closing_phrase_or_no()
+
+func collect_lamp(item_name):
+	var item_comment: String
 	
-	hint_animation.start_hint_animation.emit(item_comment, self.global_position)
+	if Dialogic.VAR.knife_state == "not_has":
+		item_comment = "Лампа. Мавританская работа, из темного серебра.\n Ее исчезновение из библиотеки могло быть замечено прислугой, вызвать вопросы."
+		ItemsManager.pick_item(item_name, nodes)
+		
+		ItemsManager.start_hint_animation(item_comment, self.global_position)
+		items_complete["lamp"] = true
+		
+		start_closing_phrase_or_no()
+
+func collect_knife(item_name):
+	var item_comment: String
+	
+	if Dialogic.VAR.knife_state == "not_has":
+		item_comment = "Нельзя оставлять орудие убийства прямо тут…"
+		ItemsManager.pick_item(item_name, nodes)
+		
+		ItemsManager.start_hint_animation(item_comment, self.global_position)
+		items_complete["knife"] = true
+		
+		start_closing_phrase_or_no()
+
+func remove_rag(item_name):
+	var item_comment: String
+	
+	if Dialogic.VAR.rag_state == "has":
+		item_comment = "Теперь чисто"
+		ItemsManager.done_item(item_name)
+		
+		ItemsManager.start_hint_animation(item_comment, self.global_position)
+		$TablleAnim.set_animation("clear")
+		items_complete["rag"] = true
+	
+		start_closing_phrase_or_no()
+
+func start_closing_phrase_or_no():
+	var are_all_items_complete = ItemsManager.are_all_items_complete(items_complete)
+	var closing_phrase = "Мертвый человек, сидевший у стола, исчез"
+	
+	if are_all_items_complete:
+		pick_area.queue_free()
+		await get_tree().create_timer(3.0).timeout
+		ItemsManager.start_hint_animation(closing_phrase, self.global_position)
+	else: return
