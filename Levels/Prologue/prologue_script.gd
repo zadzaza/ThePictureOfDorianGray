@@ -4,6 +4,9 @@ extends Node2D
 @onready var player_path_follow = $Path2D/PathFollow2D
 @onready var henry_path_follow = $PathHenry/PathFollowHenry
 @onready var bird_text = %BirdDialogue.text
+@onready var foreground = get_tree().get_first_node_in_group("foreground")
+@onready var ui_book = preload("res://UI/UIBookMenu/v2/ui_book_menu.tscn")
+
 
 var in_bird_area = false # Если true и нажимается клавиша E, птица добавляется в инвентарь и удаляется со сцены (строка 79)
 var in_put_area = false
@@ -148,7 +151,8 @@ func handle_qte(event):
 
 func handle_cancel_input(event):
 	if event.is_action_pressed("ui_cancel"):
-		%UIBookMenu.show()
+		var ui_book_instance = ui_book.instantiate()
+		foreground.add_child(ui_book_instance)
 
 func handle_prizrak_visibility(event):
 	if event.is_action_pressed("[") and event.is_action_pressed("e") and event.is_action_pressed("q"):
@@ -159,13 +163,16 @@ func handle_prizrak_visibility(event):
 func handle_interaction(event):
 	if event.is_action_pressed("e"):
 		if in_bird_area: # В зоне взаимодействия с птицей
-			%UIBookMenu.show_item(true)
+			InventoryManager.put_item("bird")
+			Dialogic.VAR.have_bird = true
 			%Chick.hide()
 			%AreaBirdTake.queue_free()
 			%AreaBirdPut.set_monitoring(true)
 			%Player.set_btn_visible(false, "e")
+			
 		if in_put_area: # В зоне взаимодействия с гнездом
-			%UIBookMenu.show_item(false)
+			InventoryManager.erase_item("bird")
+			Dialogic.VAR.have_bird = false
 			%TreeWithBird.set_animation("bird_put")
 			%AreaBirdPut.queue_free()
 			%Player.set_btn_visible(false, "e")

@@ -62,5 +62,3 @@ func manage_choice(choice_name: String):
 			item_name = "rag"
 			if parent.name == table_parent.name:
 				parent.remove_rag(item_name)
-			
-	

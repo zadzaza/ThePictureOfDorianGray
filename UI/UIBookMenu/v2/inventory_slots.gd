@@ -4,18 +4,24 @@ extends GridContainer
 @onready var corpse_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/corpse_icon.png")
 @onready var knife_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/knife_icon.png")
 @onready var rag_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/rag_icon.png")
+@onready var bird_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/bird_icon.png")
+@onready var case_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/case_icon.png")
 
 @onready var items_icons = {
 	"lamp": lamp_icon,
 	"corpse": corpse_icon,
 	"knife": knife_icon,
-	"rag": rag_icon
+	"rag": rag_icon,
+	"bird": bird_icon,
+	"case": case_icon
 }
 @onready var items_names = {
 	"lamp": "Лампа",
 	"corpse": "Труп",
 	"knife": "Нож",
-	"rag": "Тряпка"
+	"rag": "Тряпка",
+	"bird": "Птица",
+	"case": "Сумка"
 }
 
 func _ready():

@@ -42,12 +42,19 @@ _data = {
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_28nyw")
 
-[node name="StartButton" type="Button" parent="."]
-offset_left = 445.0
-offset_top = 324.0
-offset_right = 1459.0
-offset_bottom = 738.0
-text = "НАЧАТЬ"
+[node name="StartButtonPrologue" type="Button" parent="."]
+offset_left = 358.0
+offset_top = 486.0
+offset_right = 897.0
+offset_bottom = 706.0
+text = "ЗАПУСК ПРОЛОГА"
+
+[node name="StartButtonHouse" type="Button" parent="."]
+offset_left = 1004.0
+offset_top = 486.0
+offset_right = 1543.0
+offset_bottom = 706.0
+text = "ЗАПУСК 2 ЭПИЗОДА"
 
 [node name="Transition" type="ColorRect" parent="."]
 visible = false
@@ -61,4 +68,5 @@ libraries = {
 "": SubResource("AnimationLibrary_j05ur")
 }
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartButtonPrologue" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartButtonHouse" to="." method="_on_start_button_house_pressed"]
