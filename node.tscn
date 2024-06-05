@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://62bt2j8xir"]
+
+[ext_resource type="Script" path="res://addons/postgresql/Helloworld.gd" id="1_a8fhg"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_a8fhg")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 814.0
+offset_top = 750.0
+offset_right = 1153.0
+offset_bottom = 875.0
+text = "СОЗДАТЬ"
+
+[node name="PasswordTxtBox" type="TextEdit" parent="."]
+offset_left = 843.0
+offset_top = 543.0
+offset_right = 1127.0
+offset_bottom = 604.0
+placeholder_text = "Пароль"
+
+[node name="LoginTxtBox" type="TextEdit" parent="."]
+offset_left = 842.0
+offset_top = 419.0
+offset_right = 1126.0
+offset_bottom = 480.0
+placeholder_text = "Логин"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

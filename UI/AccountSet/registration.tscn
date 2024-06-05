@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://0ri8p3yjkey8"]
+
+[ext_resource type="Texture2D" uid="uid://c71v3by3d0a80" path="res://dialogue_menu (1).png" id="1_b5pqu"]
+[ext_resource type="Script" path="res://UI/AccountSet/registration.gd" id="1_dtrvr"]
+
+[node name="Registration" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(983, 503)
+script = ExtResource("1_dtrvr")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 244.0
+offset_right = 1204.0
+offset_bottom = 766.0
+texture = ExtResource("1_b5pqu")
+region_rect = Rect2(0, 1, 56, 56)
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 76.0
+offset_right = 402.0
+offset_bottom = 283.0
+theme_override_font_sizes/font_size = 28
+text = "РЕГИСТРАЦИЯ"
+
+[node name="LoginTextEdit" type="TextEdit" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 172.0
+offset_right = 367.0
+offset_bottom = 213.0
+placeholder_text = "Логин"
+
+[node name="PasswordTextEdit" type="TextEdit" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 232.0
+offset_right = 367.0
+offset_bottom = 273.0
+placeholder_text = "Пароль"
+
+[node name="CreateAcc" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 334.0
+offset_right = 328.0
+offset_bottom = 410.0
+text = "СОЗДАТЬ АККАУНТ"
+
+[node name="Close" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 9.0
+offset_right = 426.0
+offset_bottom = 49.0
+text = "X"
+
+[connection signal="pressed" from="NinePatchRect/CreateAcc" to="." method="_on_create_acc_pressed"]
+[connection signal="pressed" from="NinePatchRect/Close" to="." method="_on_close_pressed"]

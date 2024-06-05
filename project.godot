@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 InventoryManager="*res://managament/InventoryManager.gd"
 ItemsManager="*res://managament/ItemsManager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+DbManager="*res://addons/postgresql/DBManager.gd"
 
 [dialogic]
 

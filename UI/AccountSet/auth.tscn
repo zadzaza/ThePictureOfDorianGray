@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddjk3owup75jv"]
+
+[ext_resource type="Script" path="res://UI/AccountSet/Auth.gd" id="1_uuhap"]
+[ext_resource type="Texture2D" uid="uid://c71v3by3d0a80" path="res://dialogue_menu (1).png" id="2_hvjm4"]
+
+[node name="Auth" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uuhap")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 246.0
+offset_right = 1203.0
+offset_bottom = 768.0
+texture = ExtResource("2_hvjm4")
+region_rect = Rect2(0, 1, 56, 56)
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 76.0
+offset_right = 360.0
+offset_bottom = 283.0
+theme_override_font_sizes/font_size = 28
+text = "АВТОРИЗАЦИЯ"
+horizontal_alignment = 1
+
+[node name="LoginTextEdit" type="TextEdit" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 172.0
+offset_right = 363.0
+offset_bottom = 213.0
+placeholder_text = "Логин"
+
+[node name="PasswordTextEdit" type="TextEdit" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 232.0
+offset_right = 363.0
+offset_bottom = 273.0
+placeholder_text = "Пароль"
+
+[node name="LoginBtn" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 327.0
+offset_right = 322.0
+offset_bottom = 403.0
+text = "ВОЙТИ"
+
+[node name="LinkButton" type="LinkButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 442.0
+offset_right = 278.0
+offset_bottom = 482.0
+theme_override_colors/font_color = Color(0.521141, 0.521141, 0.521141, 1)
+text = "Нет аккаунта?"
+
+[connection signal="pressed" from="NinePatchRect/LoginBtn" to="." method="_on_login_btn_pressed"]
+[connection signal="pressed" from="NinePatchRect/LinkButton" to="." method="_on_link_button_pressed"]

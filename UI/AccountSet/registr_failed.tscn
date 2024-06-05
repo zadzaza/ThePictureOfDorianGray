@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb2gmseigqkbl"]
+
+[ext_resource type="Texture2D" uid="uid://c71v3by3d0a80" path="res://dialogue_menu (1).png" id="1_77tb3"]
+[ext_resource type="Script" path="res://UI/AccountSet/registr_failed.gd" id="1_a65yn"]
+
+[node name="RegistrFailed" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(957, 548)
+script = ExtResource("1_a65yn")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 787.0
+offset_top = 466.0
+offset_right = 1181.0
+offset_bottom = 659.0
+texture = ExtResource("1_77tb3")
+region_rect = Rect2(0, 1, 56, 56)
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 45.0
+offset_right = 377.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 21
+text = "НЕ ОСТАВЛЯЙТЕ ПОЛЯ ПУСТЫМИ!"
+
+[node name="Button" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 115.0
+offset_right = 242.0
+offset_bottom = 153.0
+text = "ОК"
+
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_button_pressed"]
