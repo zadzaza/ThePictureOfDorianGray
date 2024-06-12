@@ -28,15 +28,11 @@ func _data_received(error_object: Dictionary, transaction_status: PostgreSQLClie
 	if self.name == "Auth":
 		for data in datas:
 			if data.data_row.size() > 0:
-				query_result = data.data_row
-				print(query_result, " data_row")
-				
-		if login == query_result[0][1] and password == query_result[0][2]:
-			var auth_done = load("res://UI/AccountSet/auth_done.tscn").instantiate()
-			add_child(auth_done)
-		else:
-			var auth_failed = load("res://UI/AccountSet/auth_failed.tscn").instantiate()
-			add_child(auth_failed)
+				var auth_done = load("res://UI/AccountSet/auth_done.tscn").instantiate()
+				add_child(auth_done)
+			else:
+				var auth_failed = load("res://UI/AccountSet/auth_failed.tscn").instantiate()
+				add_child(auth_failed)
 
 		print(login, " login")
 		print(password, " password")

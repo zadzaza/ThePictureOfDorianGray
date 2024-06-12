@@ -1,29 +1,52 @@
 extends Control
 
+var login = ""
+var password = ""
+var current_date = ""
+var is_signal_connected = false # Флаг для проверки однократности подключения сигнала
+
+var is_entry_exist = true
 
 func _ready():
 	open()
 
 func _on_close_pressed():
 	close()
-	
+
 func _on_create_acc_pressed():
-	print(self.name, " REGISTR")
-	var login = $NinePatchRect/LoginTextEdit.get_text()
-	var password = $NinePatchRect/PasswordTextEdit.get_text()
-	var current_date = Time.get_date_string_from_system()
-	
+	login = $NinePatchRect/LoginTextEdit.get_text()
+	password = $NinePatchRect/PasswordTextEdit.get_text()
+	current_date = Time.get_date_string_from_system()
+
 	login = DbManager.escape_string(login)
 	password = DbManager.escape_string(password)
-	
+
 	if login != "" and password != "":
-		var registr_done = load("res://UI/AccountSet/registr_done.tscn").instantiate()
-		add_child(registr_done)
-		var query = DbManager.execute_query("INSERT INTO users (login, password, registr_date) 
-						VALUES ('{login}', '{password}', '{registr_date}')".format({"login":login, "password":password, "registr_date":current_date}))
+		var check_query = "SELECT * FROM users WHERE login = '{login}'".format({"login":login})
+		DbManager.execute_query(check_query)
+		DbManager.database.data_received.connect(_data_received)
+		await get_tree().create_timer(0.1).timeout
+		
+		if is_entry_exist == false:
+			var registr_done = load("res://UI/AccountSet/registr_done.tscn").instantiate()
+			add_child(registr_done)
+			var insert_query = "INSERT INTO users (login, password, registr_date) VALUES ('{login}', '{password}', '{registr_date}')".format({"login":login, "password":password, "registr_date":current_date})
+			DbManager.execute_query(insert_query)
+		else:
+			var acc_exist = load("res://UI/AccountSet/acc_exist.tscn").instantiate()
+			add_child(acc_exist)
 	else:
 		var registr_failed = load("res://UI/AccountSet/registr_failed.tscn").instantiate()
 		add_child(registr_failed)
+
+func _data_received(error_object: Dictionary, transaction_status: PostgreSQLClient.TransactionStatus, datas: Array) -> void:
+	if self.name == "Registration":
+		for data in datas:
+			if data.command_tag == "SELECT 0":
+				is_entry_exist = false
+			else:
+				is_entry_exist = true
+		
 
 func open() -> void:
 	var tween = create_tween()

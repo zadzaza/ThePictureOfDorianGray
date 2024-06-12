@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://e5rnfulu4ret"]
+[gd_scene load_steps=3 format=3 uid="uid://b7c0mb6jaglt8"]
 
-[ext_resource type="Script" path="res://UI/AccountSet/AuthFailed.gd" id="1_yay4u"]
-[ext_resource type="Texture2D" uid="uid://c71v3by3d0a80" path="res://dialogue_menu (1).png" id="2_2o7js"]
+[ext_resource type="Texture2D" uid="uid://c71v3by3d0a80" path="res://dialogue_menu (1).png" id="1_4moca"]
+[ext_resource type="Script" path="res://UI/AccountSet/acc_exist.gd" id="1_too5g"]
 
-[node name="AuthFailed" type="Control"]
+[node name="AccExist" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(988, 552)
-script = ExtResource("1_yay4u")
+pivot_offset = Vector2(985, 551)
+script = ExtResource("1_too5g")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -19,7 +19,7 @@ offset_left = 787.0
 offset_top = 466.0
 offset_right = 1181.0
 offset_bottom = 659.0
-texture = ExtResource("2_2o7js")
+texture = ExtResource("1_4moca")
 region_rect = Rect2(0, 1, 56, 56)
 patch_margin_left = 25
 patch_margin_top = 25
@@ -33,7 +33,7 @@ offset_top = 45.0
 offset_right = 377.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 21
-text = "ВВЕДЕНЫ НЕВЕРНЫЕ ДАННЫЕ!"
+text = "АККАУНТ УЖЕ СУЩЕСТВУЕТ!"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="NinePatchRect"]

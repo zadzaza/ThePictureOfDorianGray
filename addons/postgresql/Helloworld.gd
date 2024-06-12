@@ -10,6 +10,9 @@ var database: PostgreSQLClient = PostgreSQLClient.new()
 
 var query_string: String
 
+func _ready():
+	execute_query("select * from users where login = '1'")
+
 func execute_query(query: String):
 	query_string = query
 	connect_db()
@@ -52,15 +55,15 @@ func _data_received(error_object: Dictionary, transaction_status: PostgreSQLClie
 			var login_name = data.data_row[0][0] # Извлекаем логин
 			print("Login name is: ", login_name)
 		#Specifies the number of fields in a row (can be zero).
-		print(data.number_of_fields_in_a_row)
+		print(data.number_of_fields_in_a_row, " number_of_fields_in_a_row")
 		
 		# This is usually a single word that identifies which SQL command was completed.
 		# note: the "BEGIN" and "COMMIT" commands return empty values
-		print(data.command_tag)
+		print(data.command_tag, " command_tag")
 		
-		print(data.row_description)
+		print(data.row_description, " row_description")
 		
-		print(data.data_row)
+		print(data.data_row, " data_row")
 		
 		prints("Notice:", data.notice)
 	
