@@ -25,14 +25,20 @@ func _on_create_acc_pressed():
 		var check_query = "SELECT * FROM users WHERE login = '{login}'".format({"login":login})
 		DbManager.execute_query(check_query)
 		DbManager.database.data_received.connect(_data_received)
-		await get_tree().create_timer(0.1).timeout
+		$NinePatchRect/CreateAcc.set_disabled(true)
+		#$NinePatchRect/Close.set_disabled(true)
+		await get_tree().create_timer(1.0).timeout
 		
 		if is_entry_exist == false:
+			$NinePatchRect/CreateAcc.set_disabled(false)
+			#$NinePatchRect/Close.set_disabled(false)
 			var registr_done = load("res://UI/AccountSet/registr_done.tscn").instantiate()
 			add_child(registr_done)
 			var insert_query = "INSERT INTO users (login, password, registr_date) VALUES ('{login}', '{password}', '{registr_date}')".format({"login":login, "password":password, "registr_date":current_date})
 			DbManager.execute_query(insert_query)
 		else:
+			$NinePatchRect/Close.set_disabled(false)
+			$NinePatchRect/CreateAcc.set_disabled(false)
 			var acc_exist = load("res://UI/AccountSet/acc_exist.tscn").instantiate()
 			add_child(acc_exist)
 	else:
