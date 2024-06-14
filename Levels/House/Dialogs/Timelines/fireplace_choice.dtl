@@ -1,0 +1,3 @@
+- Сжечь труп [if {corpse_state} == "has"]
+	[signal arg="corpse_done"]
+	set {corpse_state} = "done"

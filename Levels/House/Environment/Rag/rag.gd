@@ -8,7 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var pick_area = preload("res://Levels/House/pick_area.tscn").instantiate()
+	var pick_area = preload("res://Levels/House/pick_area2.tscn").instantiate()
 	add_child(pick_area)
 
 func collect_rag(item_name):

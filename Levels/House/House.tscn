@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cmtd6n0jtced3"]
+[gd_scene load_steps=69 format=3 uid="uid://fatfc3ebff0e"]
 
 [ext_resource type="Texture2D" uid="uid://bakljwj75slhy" path="res://Levels/House/Environment/Sprites/O_o.png" id="1_33tlv"]
 [ext_resource type="Texture2D" uid="uid://dl1hmrx00afiw" path="res://kover_porvaniy.png" id="2_1w3t1"]
@@ -25,9 +25,11 @@
 [ext_resource type="PackedScene" uid="uid://dxom45fc7gd8h" path="res://Levels/House/Environment/Door/door.tscn" id="13_prpnu"]
 [ext_resource type="PackedScene" uid="uid://byblo6yku2h26" path="res://Levels/House/Environment/window_light.tscn" id="18_i3nfk"]
 [ext_resource type="PackedScene" uid="uid://dxu4hpm7e6ybh" path="res://Levels/House/Environment/Chest/chest.tscn" id="20_jp8ri"]
-[ext_resource type="PackedScene" uid="uid://bfo4gebl87w34" path="res://Levels/House/Environment/Coat/coat_rack.tscn" id="23_imchg"]
+[ext_resource type="PackedScene" uid="uid://bxvv1pkbx6eqt" path="res://Levels/House/Environment/Coat/coat_rack.tscn" id="23_imchg"]
 [ext_resource type="Texture2D" uid="uid://c8i1x02lxjrtk" path="res://Levels/House/Environment/toilet_room.png" id="24_k1xoq"]
 [ext_resource type="PackedScene" uid="uid://l8e5unmlyo0" path="res://Levels/House/Environment/Rag/rag.tscn" id="27_ohgs6"]
+[ext_resource type="AudioStream" uid="uid://c1le5otd8wese" path="res://Music/house_music.wav" id="29_p2c78"]
+[ext_resource type="PackedScene" uid="uid://c4l4ygy6gnhp7" path="res://Levels/House/Fire/fireplace.tscn" id="29_xoccp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu60g"]
 size = Vector2(22, 492)
@@ -70,6 +72,9 @@ size = Vector2(102, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xel3"]
 size = Vector2(291, 221)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1w7f"]
+size = Vector2(139, 49)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8y1vo"]
 texture = ExtResource("1_33tlv")
@@ -355,7 +360,7 @@ sources/18 = SubResource("TileSetAtlasSource_gb7b5")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fan4p"]
 cull_mode = 2
-polygon = PackedVector2Array(673, 28, 642, 25, 642, -48, 780, -48, 780, 28, 754, 31, 754, -35, 673, -35)
+polygon = PackedVector2Array(642, 31, 642, -47, 780, -47, 780, 32, 754, -35, 672, -34)
 
 [sub_resource type="Animation" id="Animation_x4cmy"]
 resource_name = "new_animation"
@@ -441,6 +446,10 @@ shape = SubResource("RectangleShape2D_yhsd0")
 position = Vector2(-367.5, 350.5)
 shape = SubResource("RectangleShape2D_1xel3")
 
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Collision"]
+position = Vector2(711.5, 14.5)
+shape = SubResource("RectangleShape2D_d1w7f")
+
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 position = Vector2(0, 1)
@@ -512,7 +521,7 @@ libraries = {
 }
 
 [node name="Rag" parent="." instance=ExtResource("27_ohgs6")]
-position = Vector2(-102, -75)
+position = Vector2(-106, 2)
 
 [node name="Table" parent="." instance=ExtResource("12_bkmsw")]
 position = Vector2(696, 171)
@@ -522,7 +531,7 @@ unique_name_in_owner = true
 position = Vector2(700, 175)
 
 [node name="PlayerXY" parent="." instance=ExtResource("12_hxfhw")]
-position = Vector2(466, 90)
+position = Vector2(723, 80)
 
 [node name="Foreground" parent="." instance=ExtResource("13_j8pvo")]
 
@@ -538,9 +547,6 @@ current_door_state = 2
 
 [node name="Chest" parent="." instance=ExtResource("20_jp8ri")]
 position = Vector2(1526, -12)
-
-[node name="CoatRack" parent="." instance=ExtResource("23_imchg")]
-position = Vector2(1376, 564)
 
 [node name="ToiletRoom" type="Sprite2D" parent="."]
 position = Vector2(-271, 57)
@@ -611,3 +617,15 @@ offset_top = -397.0
 offset_right = 2179.0
 offset_bottom = 2.0
 color = Color(0, 0, 0, 1)
+
+[node name="Fireplace" parent="." instance=ExtResource("29_xoccp")]
+position = Vector2(711, -17)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_p2c78")
+volume_db = -16.343
+pitch_scale = 0.89
+autoplay = true
+
+[node name="CoatRack" parent="." instance=ExtResource("23_imchg")]
+position = Vector2(1353, 564)

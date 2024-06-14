@@ -1,37 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfo4gebl87w34"]
+[gd_scene load_steps=5 format=3 uid="uid://bxvv1pkbx6eqt"]
 
 [ext_resource type="Script" path="res://Levels/House/Environment/Coat/coat_rack.gd" id="1_nkb17"]
 [ext_resource type="Texture2D" uid="uid://b50vtskvk2n1e" path="res://Levels/House/Environment/Coat/Hanger.png" id="1_ss1my"]
 [ext_resource type="Texture2D" uid="uid://ck7lm3qk2qlvc" path="res://Levels/House/Environment/Coat/Hanger_Dressed.png" id="2_gtmcn"]
 [ext_resource type="PackedScene" uid="uid://bui07jpn4wnu6" path="res://Levels/House/Environment/Bag/bag.tscn" id="3_oqj42"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_svt3x"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_ss1my")
-}],
-"loop": true,
-"name": &"empty",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_gtmcn")
-}],
-"loop": true,
-"name": &"full",
-"speed": 5.0
-}]
-
 [node name="CoatRack" type="StaticBody2D"]
 z_index = 2
 y_sort_enabled = true
 script = ExtResource("1_nkb17")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_svt3x")
-animation = &"full"
-
 [node name="Bag" parent="." instance=ExtResource("3_oqj42")]
 position = Vector2(-19, 62)
+
+[node name="Rack" type="Node2D" parent="."]
+
+[node name="Hanger" type="Sprite2D" parent="Rack"]
+texture = ExtResource("1_ss1my")
+
+[node name="Coat" type="Node2D" parent="."]
+
+[node name="HangerDressed" type="Sprite2D" parent="Coat"]
+texture = ExtResource("2_gtmcn")

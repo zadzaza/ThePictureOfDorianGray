@@ -42,6 +42,11 @@ _data = {
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_28nyw")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 2189.0
+offset_bottom = 1203.0
+color = Color(0.848292, 0.729333, 0.573451, 1)
+
 [node name="StartButtonPrologue" type="Button" parent="."]
 offset_left = 358.0
 offset_top = 486.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bewnfv201u5y6"]
+[gd_scene load_steps=15 format=3 uid="uid://bewnfv201u5y6"]
 
 [ext_resource type="Script" path="res://Player/PlayerXY/player_scene_x_y.gd" id="1_wxuix"]
 [ext_resource type="Texture2D" uid="uid://b80j2mmb4w6jh" path="res://Player/PlayerX/Sprites/idle_down.png" id="2_2dy4b"]
@@ -10,10 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c76jdtpdqej8i" path="res://Player/PlayerX/Sprites/move_side2.png" id="8_v25tq"]
 [ext_resource type="Texture2D" uid="uid://3c0n3rueuabq" path="res://Player/PlayerX/Sprites/move_up2.png" id="9_05oy3"]
 [ext_resource type="Texture2D" uid="uid://2s5ch2xolbmt" path="res://Player/PlayerX/Sprites/move_up.png" id="10_tawxj"]
-[ext_resource type="Texture2D" uid="uid://bqoudsnt8c1c3" path="res://UI/Keys/e.png" id="11_g5kqs"]
-[ext_resource type="Texture2D" uid="uid://xrwms2oa2xnb" path="res://UI/Keys/e_pressed.png" id="12_0neok"]
-[ext_resource type="Texture2D" uid="uid://ccumdx51v3u0u" path="res://UI/Keys/right.png" id="13_vlxwr"]
-[ext_resource type="Texture2D" uid="uid://kwn1sjpniijj" path="res://UI/Keys/right_pressed.png" id="14_x4s62"]
+[ext_resource type="PackedScene" uid="uid://djte7bt7ri43o" path="res://UI/hint_button.tscn" id="11_26e00"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4p1tp"]
 animations = [{
@@ -97,35 +94,12 @@ animations = [{
 radius = 11.5
 height = 71.6981
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kh37t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_g5kqs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_0neok")
-}],
-"loop": true,
-"name": &"e",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_vlxwr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_x4s62")
-}],
-"loop": true,
-"name": &"right",
-"speed": 2.0
-}]
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r0bt6"]
 polygon = PackedVector2Array(-22.6415, 109.434, -22.6415, 124.528, 24.5283, 124.528, 24.5283, 109.434)
 
 [node name="PlayerXY" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 2
 z_index = 2
 y_sort_enabled = true
 scale = Vector2(0.53, 0.53)
@@ -142,6 +116,8 @@ position_smoothing_speed = 2.0
 drag_horizontal_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 sprite_frames = SubResource("SpriteFrames_4p1tp")
 animation = &"idle_side"
 autoplay = "idle_side"
@@ -151,17 +127,7 @@ position = Vector2(1.88679, 113.208)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6oehn")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Button" type="AnimatedSprite2D" parent="CanvasLayer"]
-unique_name_in_owner = true
-visible = false
-z_index = 4096
-position = Vector2(1776, 949)
-scale = Vector2(2.90144, 2.90144)
-sprite_frames = SubResource("SpriteFrames_kh37t")
-animation = &"right"
-autoplay = "e"
+[node name="Button" parent="." instance=ExtResource("11_26e00")]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_r0bt6")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxu4hpm7e6ybh"]
+[gd_scene load_steps=8 format=3 uid="uid://dxu4hpm7e6ybh"]
 
+[ext_resource type="Script" path="res://Levels/House/Environment/Chest/chest.gd" id="1_7ty8e"]
 [ext_resource type="Texture2D" uid="uid://y3yjxqvdf401" path="res://Levels/House/Environment/Chest/chest-ss.png" id="1_mmxde"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hyi7k"]
@@ -32,9 +33,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8hp6"]
 size = Vector2(96, 45)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nykwx"]
+resource_local_to_scene = true
+size = Vector2(105, 117)
+
 [node name="Chest" type="StaticBody2D"]
 z_index = 2
 y_sort_enabled = true
+script = ExtResource("1_7ty8e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
@@ -48,3 +54,14 @@ offset = Vector2(0, 6.5)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_m8hp6")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 18)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_nykwx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

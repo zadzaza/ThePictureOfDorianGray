@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ThePictureOfDorianGray"
-run/main_scene="res://UI/MainMenu/main_menu.tscn"
+run/main_scene="res://UI/AccountSet/account_login.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/image="res://UI/LoadScreen/asset_YHgAw7dnMDNCGidd6nuwzooD.png"
 config/icon="res://icon.svg"
@@ -38,6 +38,9 @@ directories/dtl_directory={
 "PenekDialogWithBird": "res://UI/DialogueSystem/PenekDialogWithBird.dtl",
 "PenekDialogWithoutBird": "res://UI/DialogueSystem/PenekDialogWithoutBird.dtl",
 "PrologueTimeline": "res://Levels/Prologue/PrologueTimeline.dtl",
+"chest_choice": "res://Levels/House/Dialogs/Timelines/chest_choice.dtl",
+"coat_rack_choice": "res://Levels/House/Dialogs/Timelines/coat_rack_choice.dtl",
+"fireplace_choice": "res://Levels/House/Dialogs/Timelines/fireplace_choice.dtl",
 "rag_choice": "res://Levels/House/Dialogs/Timelines/rag_choice.dtl",
 "table_choice": "res://Levels/House/Dialogs/Timelines/table_choice.dtl"
 }
@@ -94,6 +97,21 @@ movie_writer/mjpeg_quality=1.0
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[importer_defaults]
+
+wav={
+"compress/mode": 0,
+"edit/loop_begin": 0,
+"edit/loop_end": -1,
+"edit/loop_mode": 0,
+"edit/normalize": false,
+"edit/trim": false,
+"force/8_bit": false,
+"force/max_rate": false,
+"force/max_rate_hz": 44100,
+"force/mono": false
+}
 
 [input]
 

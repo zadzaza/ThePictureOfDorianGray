@@ -6,6 +6,7 @@
 position = Vector2(910.5, -41.75)
 scale = Vector2(1.00586, 1.68262)
 color = Color(0.372549, 0.54902, 0.733333, 1)
+range_item_cull_mask = 3
 shadow_enabled = true
 shadow_filter = 2
 shadow_filter_smooth = 3.0

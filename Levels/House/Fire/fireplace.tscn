@@ -1,0 +1,208 @@
+[gd_scene load_steps=24 format=3 uid="uid://c4l4ygy6gnhp7"]
+
+[ext_resource type="Script" path="res://Levels/House/Fire/Fireplace.gd" id="1_btoen"]
+[ext_resource type="Texture2D" uid="uid://bmi7i02f3xddm" path="res://icon.svg" id="2_7wb8o"]
+[ext_resource type="Texture2D" uid="uid://0abnu66eeif0" path="res://Levels/House/Fire/Sprites/burning_loop_1.png" id="2_a754o"]
+[ext_resource type="Texture2D" uid="uid://bk0yetp2ac5jg" path="res://Levels/House/Fire/Sprites/burning_start_1.png" id="3_dedrs"]
+[ext_resource type="Texture2D" uid="uid://c5nwqkfos7kak" path="res://Light/light.png" id="4_vq66n"]
+[ext_resource type="AudioStream" uid="uid://b4xx4mdfwgifh" path="res://Music/fire-light_zjugrzn_.wav" id="6_kt4mq"]
+[ext_resource type="AudioStream" uid="uid://cgewv6qoornps" path="res://Music/fire-general.wav" id="7_yk7c3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5attl"]
+atlas = ExtResource("2_a754o")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nbb6"]
+atlas = ExtResource("2_a754o")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u1yj"]
+atlas = ExtResource("2_a754o")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cccy"]
+atlas = ExtResource("2_a754o")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22krb"]
+atlas = ExtResource("2_a754o")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xd5x"]
+atlas = ExtResource("2_a754o")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p76j8"]
+atlas = ExtResource("2_a754o")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2hdj"]
+atlas = ExtResource("2_a754o")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11sd0"]
+atlas = ExtResource("3_dedrs")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r63y"]
+atlas = ExtResource("3_dedrs")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nqme"]
+atlas = ExtResource("3_dedrs")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xdql"]
+atlas = ExtResource("3_dedrs")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwthv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5attl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nbb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u1yj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cccy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22krb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xd5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p76j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2hdj")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11sd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r63y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nqme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xdql")
+}],
+"loop": false,
+"name": &"start",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_jwmbp"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D2:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.1]
+}
+
+[sub_resource type="Animation" id="Animation_emdcs"]
+resource_name = "start_fire"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.36, 0.72, 1.2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D2:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.01, 0.36, 0.72, 1.1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_op45d"]
+_data = {
+"RESET": SubResource("Animation_jwmbp"),
+"start_fire": SubResource("Animation_emdcs")
+}
+
+[node name="Fireplace" type="Node2D"]
+z_index = 2
+scale = Vector2(1.34907, 1.34907)
+script = ExtResource("1_btoen")
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(15, -9)
+scale = Vector2(3.80469, 2.85938)
+texture = ExtResource("2_7wb8o")
+
+[node name="FireAnimation" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.86135, 2.30368)
+sprite_frames = SubResource("SpriteFrames_wwthv")
+animation = &"start"
+frame = 3
+frame_progress = 1.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+color = Color(1, 1, 0.74902, 1)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_vq66n")
+texture_scale = 1.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_op45d")
+}
+
+[node name="FireLightAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_kt4mq")
+
+[node name="FireGeneralAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_yk7c3")
+volume_db = -4.657
+
+[connection signal="animation_finished" from="FireAnimation" to="." method="_on_fire_animation_animation_finished"]

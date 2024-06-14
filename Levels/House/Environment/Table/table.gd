@@ -17,7 +17,7 @@ extends StaticBody2D
 	"rag": false
 }
 
-var pick_area = preload("res://Levels/House/pick_area.tscn").instantiate()
+var pick_area = preload("res://Levels/House/pick_area2.tscn").instantiate()
 
 func _ready():
 	add_child(pick_area)
@@ -38,7 +38,7 @@ func collect_corpse(item_name):
 func collect_lamp(item_name):
 	var item_comment: String
 	
-	if Dialogic.VAR.knife_state == "not_has":
+	if Dialogic.VAR.lamp_state == "not_has":
 		item_comment = "Лампа. Мавританская работа, из темного серебра.\n Ее исчезновение из библиотеки могло быть замечено прислугой, вызвать вопросы."
 		ItemsManager.pick_item(item_name, nodes)
 		

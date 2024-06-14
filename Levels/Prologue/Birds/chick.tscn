@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbasef84pjwvt"]
+[gd_scene load_steps=11 format=3 uid="uid://dbasef84pjwvt"]
 
 [ext_resource type="Script" path="res://Levels/Prologue/Birds/chick.gd" id="1_3jbjj"]
 [ext_resource type="Texture2D" uid="uid://dmqo14pm0r0bw" path="res://Levels/Prologue/Birds/Sprites/BirdSprite.png" id="1_ubap7"]
+[ext_resource type="AudioStream" uid="uid://dkeblvaffu5rb" path="res://Music/bird_tweet_6.wav" id="3_bfo12"]
+[ext_resource type="Texture2D" uid="uid://cm4xl0vwxndj4" path="res://UI/music_note.png" id="4_6ki83"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rm8m8"]
 atlas = ExtResource("1_ubap7")
@@ -63,6 +65,16 @@ script = ExtResource("1_3jbjj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gsgoi")
 autoplay = "default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_bfo12")
+volume_db = -20.385
+
+[node name="MusicNote" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(9, -10)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("4_6ki83")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="default_looped"]

@@ -61,9 +61,12 @@ scale = Vector2(0.0473438, 0.0473438)
 texture = ExtResource("5_g042p")
 
 [node name="PointLight2D" type="PointLight2D" parent="Lamp"]
+light_mask = 2
+visibility_layer = 2
 position = Vector2(18, -35)
 color = Color(1, 1, 0.74902, 1)
 energy = 0.7
+range_item_cull_mask = 3
 texture = ExtResource("6_520j4")
 texture_scale = 1.1
 

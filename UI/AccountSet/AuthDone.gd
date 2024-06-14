@@ -34,4 +34,5 @@ func close() -> void:
 	)
 	
 	await tween.finished
+	get_parent().close()
 	queue_free()

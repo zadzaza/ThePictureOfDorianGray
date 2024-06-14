@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://bj3yd1r0x5mwj"]
+[gd_scene load_steps=117 format=3 uid="uid://bj3yd1r0x5mwj"]
 
 [ext_resource type="Texture2D" uid="uid://1vhm7rmidwjk" path="res://Levels/Prologue/Environment/tilemap.png" id="1_7idll"]
 [ext_resource type="Script" path="res://Levels/Prologue/prologue_script.gd" id="1_kslhb"]
@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://4nkes5rrmmad" path="res://UI/Keys/d.png" id="43_q2bil"]
 [ext_resource type="PackedScene" uid="uid://icnif8bfje6l" path="res://Levels/Prologue/NPC/Henry/henry.tscn" id="44_03f8y"]
 [ext_resource type="PackedScene" uid="uid://dyuuu4neoawps" path="res://UI/foreground.tscn" id="49_4t4hl"]
+[ext_resource type="AudioStream" uid="uid://dkyxncidy6hap" path="res://Music/prolog_music.wav" id="50_g1s65"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7wql8"]
 shader = ExtResource("10_va8yl")
@@ -1911,6 +1912,11 @@ rotation = 3.14159
 position = Vector2(1818, 395)
 
 [node name="Foreground" parent="." instance=ExtResource("49_4t4hl")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("50_g1s65")
+volume_db = -8.914
+pitch_scale = 0.9
 
 [connection signal="animation_finished" from="AnimationHelpers/AnimationBird" to="." method="_on_animation_bird_animation_finished"]
 [connection signal="timeout" from="BirdTimer" to="." method="spawn_bird"]

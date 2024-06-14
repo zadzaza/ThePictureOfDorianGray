@@ -1,0 +1,6 @@
+- Взять пальто [if {coat_state} == "not_has"]
+	[signal arg="coat_has"]
+	set {coat_state} = "has"
+- Взять саквояж [if {bag_state} == "not_has"]
+	[signal arg="bag_has"]
+	set {bag_state} = "has"

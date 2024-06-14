@@ -29,7 +29,7 @@ enum CAMERA_STATE {SIDE_LEFT, SIDE_TOP, SIDE_RIGHT, SIDE_BOTTOM}
 func _ready():
 	show_transition_animation()
 	hide_lables()
-	
+	$AudioStreamPlayer.play(0.0)
 
 func _input(event):
 	handle_qte(event)
@@ -165,7 +165,7 @@ func handle_interaction(event):
 		if in_bird_area: # В зоне взаимодействия с птицей
 			InventoryManager.put_item("bird")
 			Dialogic.VAR.have_bird = true
-			%Chick.hide()
+			%Chick.queue_free()
 			%AreaBirdTake.queue_free()
 			%AreaBirdPut.set_monitoring(true)
 			%Player.set_btn_visible(false, "e")

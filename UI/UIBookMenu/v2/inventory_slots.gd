@@ -6,6 +6,8 @@ extends GridContainer
 @onready var rag_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/rag_icon.png")
 @onready var bird_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/bird_icon.png")
 @onready var case_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/case_icon.png")
+@onready var coat_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/coat_icon.png")
+@onready var curtain_icon = preload("res://UI/UIBookMenu/v2/Sprites/icons/curtain_icon.png")
 
 @onready var items_icons = {
 	"lamp": lamp_icon,
@@ -13,7 +15,9 @@ extends GridContainer
 	"knife": knife_icon,
 	"rag": rag_icon,
 	"bird": bird_icon,
-	"case": case_icon
+	"case": case_icon,
+	"coat": coat_icon,
+	"curtain": curtain_icon
 }
 @onready var items_names = {
 	"lamp": "Лампа",
@@ -21,7 +25,9 @@ extends GridContainer
 	"knife": "Нож",
 	"rag": "Тряпка",
 	"bird": "Птица",
-	"case": "Сумка"
+	"case": "Саквояж",
+	"coat": "Пальто",
+	"curtain": "Штора"
 }
 
 func _ready():

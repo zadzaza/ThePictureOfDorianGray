@@ -1,0 +1,12 @@
+- Убрать лампу [if {lamp_state} == "has"]
+	[signal arg="lamp_done"]
+	set {lamp_state} = "done"
+- Убрать нож [if {knife_state} == "has"]
+	[signal arg="knife_done"]
+	set {knife_state} = "done"
+- Убрать пальто [if {coat_state} == "has"]
+	[signal arg="coat_done"]
+	set {coat_state} = "done"
+- Убрать саквояж [if {bag_state} == "has"]
+	[signal arg="bag_done"]
+	set {bag_state} = "done"
