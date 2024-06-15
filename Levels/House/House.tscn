@@ -10,10 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://ddsc3eyocdtd5" path="res://Levels/House/Environment/Sprites/Bookshelves/skaf_drugoi.png" id="6_0su1f"]
 [ext_resource type="Texture2D" uid="uid://b2pl0soi7f5a4" path="res://Levels/House/Environment/Sprites/Bookshelves/skaf_bok.png" id="6_jqotu"]
 [ext_resource type="Texture2D" uid="uid://bdrp3ah0xdnq1" path="res://Levels/Prologue/Birds/Sprites/new_animated_texture.tres" id="7_47db2"]
-[ext_resource type="Texture2D" uid="uid://o2yuy3j0nstd" path="res://Levels/House/Environment/Sprites/Portrait/portrait.png" id="7_d2sca"]
 [ext_resource type="Texture2D" uid="uid://cm6v2dpkyatjw" path="res://Levels/House/Environment/Sprites/stul.png" id="7_r8dnj"]
 [ext_resource type="Texture2D" uid="uid://c2aphjgl3wf55" path="res://Levels/House/Environment/Sprites/Bookshelves/polka_s_kniga.png" id="8_3ywu4"]
-[ext_resource type="Texture2D" uid="uid://bco2plb1pmr50" path="res://Levels/House/Environment/Sprites/Window/WIN.png" id="8_qsycf"]
 [ext_resource type="Texture2D" uid="uid://e8mlmym3bwbv" path="res://Levels/House/Environment/Sprites/Bookshelves/polka.png" id="9_1iwym"]
 [ext_resource type="Script" path="res://Level.gd" id="9_7b74m"]
 [ext_resource type="Texture2D" uid="uid://5in2ufjtb44g" path="res://Levels/House/Environment/Sprites/Bookshelves/polka_prosto_kniga.png" id="9_em7d6"]
@@ -30,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://l8e5unmlyo0" path="res://Levels/House/Environment/Rag/rag.tscn" id="27_ohgs6"]
 [ext_resource type="AudioStream" uid="uid://c1le5otd8wese" path="res://Music/house_music.wav" id="29_p2c78"]
 [ext_resource type="PackedScene" uid="uid://c4l4ygy6gnhp7" path="res://Levels/House/Fire/fireplace.tscn" id="29_xoccp"]
+[ext_resource type="PackedScene" uid="uid://cve0x31ns24hc" path="res://Levels/House/Environment/Window/window.tscn" id="30_gut31"]
+[ext_resource type="PackedScene" uid="uid://dsgpfpvdsag5x" path="res://Levels/House/Environment/Portrait/portrait.tscn" id="30_y8782"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu60g"]
 size = Vector2(22, 492)
@@ -481,17 +481,6 @@ flip_h = true
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Environment"]
 occluder = SubResource("OccluderPolygon2D_fan4p")
 
-[node name="Portrait" type="Sprite2D" parent="Environment"]
-z_index = 1
-position = Vector2(576, -115)
-scale = Vector2(0.57, 0.57)
-texture = ExtResource("7_d2sca")
-
-[node name="Win" type="Sprite2D" parent="Environment"]
-z_index = 1
-position = Vector2(912, -100)
-texture = ExtResource("8_qsycf")
-
 [node name="WindowLight" parent="Environment" instance=ExtResource("18_i3nfk")]
 position = Vector2(172, -98)
 
@@ -629,3 +618,9 @@ autoplay = true
 
 [node name="CoatRack" parent="." instance=ExtResource("23_imchg")]
 position = Vector2(1353, 564)
+
+[node name="Portrait" parent="." instance=ExtResource("30_y8782")]
+position = Vector2(576, -51)
+
+[node name="Window" parent="." instance=ExtResource("30_gut31")]
+position = Vector2(912, -21)

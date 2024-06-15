@@ -1,0 +1,3 @@
+- Завесить портрет [if {curtain_state} == "has"]
+	[signal arg="curtain_done"]
+	set {curtain_state} = "done"

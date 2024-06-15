@@ -1,0 +1,3 @@
+- Сорвать штору
+	[signal arg="curtain_has"]
+	set {curtain_state} = "has"

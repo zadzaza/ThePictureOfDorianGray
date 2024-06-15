@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cve0x31ns24hc"]
+
+[ext_resource type="Script" path="res://Levels/House/Environment/Window/window.gd" id="1_4io1l"]
+[ext_resource type="Texture2D" uid="uid://bco2plb1pmr50" path="res://Levels/House/Environment/Sprites/Window/WIN.png" id="1_jk0i2"]
+[ext_resource type="Texture2D" uid="uid://c4w7oea07undq" path="res://Levels/House/Environment/Sprites/Window/WIN2.png" id="2_k5di4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aslnt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jk0i2")
+}],
+"loop": true,
+"name": &"ne_porvano",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k5di4")
+}],
+"loop": true,
+"name": &"porvano",
+"speed": 5.0
+}]
+
+[node name="Window" type="Node2D"]
+z_index = 1
+position = Vector2(0, 78)
+script = ExtResource("1_4io1l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -78)
+sprite_frames = SubResource("SpriteFrames_aslnt")
+animation = &"ne_porvano"
+
+[node name="Node2D" type="Node2D" parent="."]

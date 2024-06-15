@@ -10,6 +10,8 @@ extends Node2D
 @onready var coat_rack_parent = preload("res://Levels/House/Environment/Coat/coat_rack.tscn").instantiate()
 @onready var fireplace_parent = preload("res://Levels/House/Fire/fireplace.tscn").instantiate()
 @onready var chest_parent = preload("res://Levels/House/Environment/Chest/chest.tscn").instantiate()
+@onready var window_parent = preload("res://Levels/House/Environment/Window/window.tscn").instantiate()
+@onready var portrait_parent = preload("res://Levels/House/Environment/Portrait/portrait.tscn").instantiate()
 
 var player_in_pick_area: bool
 @onready var timeline_to_start: String
@@ -36,6 +38,10 @@ func initialize_timeline():
 		timeline_to_start = "fireplace"
 	elif parent.name == chest_parent.name:
 		timeline_to_start = "chest"
+	elif parent.name == window_parent.name:
+		timeline_to_start = "curtain"
+	elif parent.name == portrait_parent.name:
+		timeline_to_start = "portrait"
 
 func _on_pick_area_body_entered(body):
 	player_in_pick_area = true
@@ -100,4 +106,11 @@ func manage_choice(choice_name: String):
 			item_name = "bag"
 			if parent.name == chest_parent.name:
 				parent.remove_bag(item_name)
-		
+		"curtain_has":
+			item_name = "curtain"
+			if parent.name == window_parent.name:
+				parent.collect_curtain(item_name)
+		"curtain_done":
+			item_name = "curtain"
+			if parent.name == portrait_parent.name:
+				parent.remove_curtain(item_name)

@@ -40,7 +40,10 @@ directories/dtl_directory={
 "PrologueTimeline": "res://Levels/Prologue/PrologueTimeline.dtl",
 "chest_choice": "res://Levels/House/Dialogs/Timelines/chest_choice.dtl",
 "coat_rack_choice": "res://Levels/House/Dialogs/Timelines/coat_rack_choice.dtl",
+"curtain_choice": "res://Levels/House/Dialogs/Timelines/curtain_choice.dtl",
 "fireplace_choice": "res://Levels/House/Dialogs/Timelines/fireplace_choice.dtl",
+"house_intro_timeline": "res://Levels/House/HouseIntro/house_intro_timeline.dtl",
+"portrait_choice": "res://Levels/House/Dialogs/Timelines/portrait_choice.dtl",
 "rag_choice": "res://Levels/House/Dialogs/Timelines/rag_choice.dtl",
 "table_choice": "res://Levels/House/Dialogs/Timelines/table_choice.dtl"
 }
@@ -68,6 +71,7 @@ variables={
 "block_movement": false,
 "coat_state": "not_has",
 "corpse_state": "not_has",
+"curtain_state": "not_has",
 "finish_prolog": false,
 "go_to_penek_timeline_finish": false,
 "have_bird": false,

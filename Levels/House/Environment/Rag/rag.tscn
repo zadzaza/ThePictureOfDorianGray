@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpd16j63hs5eb" path="res://UI/UIBookMenu/v2/Sprites/icons/rag_icon.png" id="1_jy0vo"]
 
 [node name="Rag" type="Node2D"]
-z_index = 2
+z_index = 1
 position = Vector2(0, 78)
 script = ExtResource("1_7wh4g")
 
@@ -12,5 +12,6 @@ script = ExtResource("1_7wh4g")
 position = Vector2(0, -78)
 
 [node name="RagIcon" type="Sprite2D" parent="Rag"]
+modulate = Color(7.12335e-06, 0.911511, 0.823677, 1)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_jy0vo")

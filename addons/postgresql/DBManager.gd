@@ -6,6 +6,8 @@ const HOST := "losoulilkip.beget.app"
 const PORT := 5432 # Default postgres port
 const DATABASE := "dorian_gray_db" # Database name
 
+var current_user: String
+
 var database: PostgreSQLClient = PostgreSQLClient.new()
 
 var query_string: String

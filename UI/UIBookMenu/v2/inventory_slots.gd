@@ -15,7 +15,7 @@ extends GridContainer
 	"knife": knife_icon,
 	"rag": rag_icon,
 	"bird": bird_icon,
-	"case": case_icon,
+	"bag": case_icon,
 	"coat": coat_icon,
 	"curtain": curtain_icon
 }
@@ -25,7 +25,7 @@ extends GridContainer
 	"knife": "Нож",
 	"rag": "Тряпка",
 	"bird": "Птица",
-	"case": "Саквояж",
+	"bag": "Саквояж",
 	"coat": "Пальто",
 	"curtain": "Штора"
 }

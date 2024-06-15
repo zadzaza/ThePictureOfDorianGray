@@ -9,6 +9,9 @@ var current_date
 
 var is_user_exist = false
 
+func _ready():
+	open()
+
 func _on_link_button_pressed():
 	var registration = load("res://UI/AccountSet/registration.tscn").instantiate()
 	add_child(registration)
@@ -42,6 +45,7 @@ func _data_received(error_object: Dictionary, transaction_status: PostgreSQLClie
 		for data in datas:
 			if data.command_tag != "SELECT 0":
 				is_user_exist = true
+				DbManager.current_user = data.data_row[0][1]
 			else:
 				is_user_exist = false
 
@@ -61,3 +65,17 @@ func close() -> void:
 	await tween.finished
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://UI/MainMenu/main_menu.tscn")
+
+func open() -> void:
+	var tween = create_tween()
+	
+	tween.tween_property(
+		self, 'scale', Vector2.ZERO, 0
+	)
+	tween.tween_property(
+		self, 'scale', Vector2.ONE, .3
+	).set_ease(
+		Tween.EASE_OUT
+	).set_trans(
+		Tween.TRANS_BACK
+	)

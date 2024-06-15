@@ -3,6 +3,8 @@ extends CanvasLayer
 var time_to_fill: float  # Время, за которое ProgressBar должен заполниться
 var elapsed_time = 0.0   # Время, прошедшее с начала загрузки
 
+var scene_to_change: String
+
 func _ready():
 	$AnimationPlayer.play("light_up")
 	randomize()
@@ -19,4 +21,10 @@ func _on_progress_bar_value_changed(value):
 	if value == 100:
 		$AnimationPlayer.play('dissolve')
 		await $AnimationPlayer.animation_finished
-		get_tree().change_scene_to_file("res://Levels/Prologue/prologue_scene.tscn")
+		await get_tree().create_timer(2.0).timeout
+		get_tree().change_scene_to_file(scene_to_change)
+
+
+func set_changed_scene(_scene_to_change):
+	scene_to_change = _scene_to_change
+	
