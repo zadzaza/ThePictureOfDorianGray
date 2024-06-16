@@ -43,6 +43,7 @@ directories/dtl_directory={
 "curtain_choice": "res://Levels/House/Dialogs/Timelines/curtain_choice.dtl",
 "fireplace_choice": "res://Levels/House/Dialogs/Timelines/fireplace_choice.dtl",
 "house_intro_timeline": "res://Levels/House/HouseIntro/house_intro_timeline.dtl",
+"open_dialog": "res://Levels/House/Dialogs/open_dialog.dtl",
 "portrait_choice": "res://Levels/House/Dialogs/Timelines/portrait_choice.dtl",
 "rag_choice": "res://Levels/House/Dialogs/Timelines/rag_choice.dtl",
 "table_choice": "res://Levels/House/Dialogs/Timelines/table_choice.dtl"
@@ -91,7 +92,7 @@ general/custom_test_scene_path="res://addons2/dialogue_manager/test_scene.tscn"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
+window/size/mode=4
 window/stretch/mode="viewport"
 
 [editor]

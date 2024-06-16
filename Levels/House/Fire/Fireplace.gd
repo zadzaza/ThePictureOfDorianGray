@@ -13,7 +13,7 @@ func remove_corpse(item_name):
 	
 	if Dialogic.VAR.corpse_state == "has":
 		pick_area.queue_free()
-		item_comment = "Прощай, старый друг"
+		item_comment = "Прощай, мой друг. \nМне нужно было спасти себя."
 		start_fire()
 		ItemsManager.done_item(item_name)
 		

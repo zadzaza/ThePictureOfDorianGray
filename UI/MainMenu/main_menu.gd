@@ -103,3 +103,4 @@ func _on_prolog_btn_pressed():
 
 func _on_exit_auth_btn_pressed():
 	close()
+	DbManager.log_out()

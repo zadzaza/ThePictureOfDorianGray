@@ -1888,7 +1888,7 @@ shape = SubResource("RectangleShape2D_xeb2h")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBorder"]
 z_index = 4096
-position = Vector2(2370, 60)
+position = Vector2(3867, 60)
 shape = SubResource("RectangleShape2D_xeb2h")
 
 [node name="Besedka" type="Node2D" parent="."]

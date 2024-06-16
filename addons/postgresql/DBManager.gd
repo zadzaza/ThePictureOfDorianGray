@@ -6,7 +6,9 @@ const HOST := "losoulilkip.beget.app"
 const PORT := 5432 # Default postgres port
 const DATABASE := "dorian_gray_db" # Database name
 
+var current_id: int = -1
 var current_user: String
+var current_password: String
 
 var database: PostgreSQLClient = PostgreSQLClient.new()
 
@@ -16,6 +18,16 @@ var is_entry_exist = false
 func execute_query(query: String):
 	query_string = query
 	connect_db()
+
+func log_in(id: int, user: String, password: String):
+	current_id = id
+	current_user = user
+	current_password = password
+
+func log_out():
+	current_id = -1
+	current_user = ""
+	current_password = ""
 
 func check_entry(query: String) -> bool:
 	query_string = query

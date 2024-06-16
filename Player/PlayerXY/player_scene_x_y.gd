@@ -13,15 +13,15 @@ const SPEED = 230.0
 const GRAVITY = 1000.0
 
 # Перечисление состояний движения персонажа
-enum MOVE_STATE {IDLE_SIDE, IDLE_UP, IDLE_DOWN, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
+enum MOVE_STATE {IDLE_DOWN, IDLE_UP, IDLE_SIDE, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
 # Инициализация текущего состояния движения персонажа
-@export var move_state = MOVE_STATE.IDLE_SIDE
+@export var move_state = MOVE_STATE.IDLE_DOWN
 var current_state: MOVE_STATE
 
 
 func _physics_process(delta):
 	# Получаем направление движения из пользовательского ввода
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") #if !Dialogic.VAR.block_movement else 0.0
+	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") if !Dialogic.VAR.block_movement else 0.0
 	
 	# Устанавливаем горизонтальную скорость, если есть направление движения
 	if direction:

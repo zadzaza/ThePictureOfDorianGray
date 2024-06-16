@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://fatfc3ebff0e"]
+[gd_scene load_steps=73 format=3 uid="uid://fatfc3ebff0e"]
 
 [ext_resource type="Texture2D" uid="uid://bakljwj75slhy" path="res://Levels/House/Environment/Sprites/O_o.png" id="1_33tlv"]
 [ext_resource type="Texture2D" uid="uid://dl1hmrx00afiw" path="res://kover_porvaniy.png" id="2_1w3t1"]
@@ -383,6 +383,18 @@ size = Vector2(183.875, 468)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdy1q"]
 size = Vector2(156.25, 451)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmj60"]
+size = Vector2(182, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4oi6"]
+size = Vector2(433, 143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6awn"]
+size = Vector2(153, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o41v"]
+size = Vector2(185, 108)
+
 [node name="House" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("9_7b74m")
@@ -520,7 +532,7 @@ unique_name_in_owner = true
 position = Vector2(700, 175)
 
 [node name="PlayerXY" parent="." instance=ExtResource("12_hxfhw")]
-position = Vector2(723, 80)
+position = Vector2(709, 108)
 
 [node name="Foreground" parent="." instance=ExtResource("13_j8pvo")]
 
@@ -624,3 +636,48 @@ position = Vector2(576, -51)
 
 [node name="Window" parent="." instance=ExtResource("30_gut31")]
 position = Vector2(912, -21)
+
+[node name="BookArea" type="Area2D" parent="."]
+position = Vector2(1882, -86)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BookArea"]
+z_index = 100
+position = Vector2(0, 56)
+shape = SubResource("RectangleShape2D_mmj60")
+
+[node name="DivanArea" type="Area2D" parent="."]
+position = Vector2(521, 431)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DivanArea"]
+z_index = 100
+position = Vector2(-11.5, -0.5)
+shape = SubResource("RectangleShape2D_u4oi6")
+
+[node name="ChestArea" type="Area2D" parent="."]
+position = Vector2(1411, -91)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChestArea"]
+z_index = 100
+position = Vector2(116.5, 104.5)
+shape = SubResource("RectangleShape2D_u6awn")
+
+[node name="FireplaceArea" type="Area2D" parent="."]
+position = Vector2(629, -59)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireplaceArea"]
+z_index = 100
+position = Vector2(82.5, 77)
+shape = SubResource("RectangleShape2D_1o41v")
+
+[connection signal="body_entered" from="BookArea" to="." method="_on_book_area_body_entered"]
+[connection signal="body_entered" from="DivanArea" to="." method="_on_divan_area_body_entered"]
+[connection signal="body_entered" from="ChestArea" to="." method="_on_chest_area_body_entered"]
+[connection signal="body_entered" from="FireplaceArea" to="." method="_on_fireplace_area_body_entered"]

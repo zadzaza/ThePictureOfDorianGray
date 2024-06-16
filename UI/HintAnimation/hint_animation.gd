@@ -16,7 +16,7 @@ func _on_start_hint_animation(description: String, _position: Vector2):
 	floating_text.set_text(description)
 	
 	animation_player.play("fade_in")
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(2.5).timeout
 	animation_player.play("fade_out")
 	
 	await animation_player.animation_finished

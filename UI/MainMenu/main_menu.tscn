@@ -56,8 +56,8 @@ pivot_offset = Vector2(-588, -681)
 script = ExtResource("1_28nyw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1758.0
-offset_bottom = 971.0
+offset_right = 2189.0
+offset_bottom = 1203.0
 mouse_filter = 2
 color = Color(0.848292, 0.729333, 0.573451, 1)
 
@@ -87,13 +87,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_w5f70")
 
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-pivot_offset = Vector2(968, 578)
-
-[node name="Title" type="Label" parent="Control"]
+[node name="Title" type="Label" parent="."]
 offset_left = 774.0
 offset_top = 79.0
 offset_right = 1205.0
@@ -101,6 +95,12 @@ offset_bottom = 170.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "ВЫБОР УРОВНЯ"
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(968, 578)
 
 [node name="PrologPreviewPanel" type="NinePatchRect" parent="Control"]
 offset_left = 263.0
@@ -201,6 +201,7 @@ offset_left = 1329.0
 offset_top = 521.0
 offset_right = 1432.0
 offset_bottom = 624.0
+mouse_default_cursor_shape = 2
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 55
 text = " ▷"
@@ -211,15 +212,17 @@ offset_left = 510.0
 offset_top = 521.0
 offset_right = 613.0
 offset_bottom = 624.0
+mouse_default_cursor_shape = 2
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 55
 text = " ▷"
 
-[node name="ExitAuthBtn" type="Button" parent="Control"]
+[node name="ExitAuthBtn" type="Button" parent="."]
 offset_left = 52.0
 offset_top = 43.0
 offset_right = 135.0
 offset_bottom = 106.0
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 40
 text = "←"
 
@@ -238,4 +241,4 @@ color = Color(0, 0, 0, 1)
 [connection signal="body_exited" from="Control/HousePreviewPanel/HouseArea" to="." method="_on_house_area_body_exited"]
 [connection signal="pressed" from="Control/HouseBtn" to="." method="_on_house_btn_pressed"]
 [connection signal="pressed" from="Control/PrologBtn" to="." method="_on_prolog_btn_pressed"]
-[connection signal="pressed" from="Control/ExitAuthBtn" to="." method="_on_exit_auth_btn_pressed"]
+[connection signal="pressed" from="ExitAuthBtn" to="." method="_on_exit_auth_btn_pressed"]

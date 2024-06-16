@@ -40,12 +40,11 @@ func _on_login_btn_pressed():
 		add_child(registr_failed)
 
 func _data_received(error_object: Dictionary, transaction_status: PostgreSQLClient.TransactionStatus, datas: Array) -> void:
-	print(self.name)
 	if self.name == "Auth":
 		for data in datas:
-			if data.command_tag != "SELECT 0":
+			if data.command_tag != "SELECT 0" and data.data_row.size() > 0 and data.data_row[0].size() >= 4:
 				is_user_exist = true
-				DbManager.current_user = data.data_row[0][1]
+				DbManager.log_in(data.data_row[0][0], data.data_row[0][1], data.data_row[0][2])
 			else:
 				is_user_exist = false
 

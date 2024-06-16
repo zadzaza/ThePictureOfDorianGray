@@ -63,7 +63,7 @@ func remove_rag(item_name):
 	var item_comment: String
 	
 	if Dialogic.VAR.rag_state == "has":
-		item_comment = "Теперь чисто"
+		item_comment = "Теперь не осталось ни следа"
 		ItemsManager.done_item(item_name)
 		
 		ItemsManager.start_hint_animation(item_comment, self.global_position)

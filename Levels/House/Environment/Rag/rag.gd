@@ -17,11 +17,11 @@ func collect_rag(item_name):
 		var item_comment: String
 		
 		if Dialogic.VAR.rag_state == "not_has":
-			item_comment = "Пахнет вкусно"
+			item_comment = "Вонючая тряпка. \nЕю можно вытереть кровь со стола"
 			ItemsManager.pick_item(item_name, nodes)
 			self.queue_free()
 		
-		ItemsManager.start_hint_animation(item_comment, self.global_position)
+		ItemsManager.start_hint_animation(item_comment, self.global_position + Vector2(0, -60))
 
 #func remove_rag(item_name):
 	#var item_comment: String

@@ -57,6 +57,7 @@ offset_left = 120.0
 offset_top = 334.0
 offset_right = 328.0
 offset_bottom = 410.0
+mouse_default_cursor_shape = 2
 text = "СОЗДАТЬ АККАУНТ"
 
 [node name="Close" type="Button" parent="NinePatchRect"]
@@ -65,6 +66,7 @@ offset_left = 381.0
 offset_top = 9.0
 offset_right = 426.0
 offset_bottom = 49.0
+mouse_default_cursor_shape = 2
 text = "X"
 
 [connection signal="pressed" from="NinePatchRect/CreateAcc" to="." method="_on_create_acc_pressed"]
