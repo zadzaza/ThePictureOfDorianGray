@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var ui_book = preload("res://UI/UIBookMenu/v2/ui_book_menu.tscn")
+@onready var timer = load("res://UI/Timer/timer.tscn").instantiate()
+
 @onready var foreground = get_tree().get_first_node_in_group("foreground")
 
 @onready var point_portrait_room = %PointPortraitRoom.get_position()
@@ -20,6 +22,8 @@ func _ready():
 	portrait_room_area.body_entered.connect(_on_portrait_room_area_body_entered)
 	library_area.body_entered.connect(_on_library_area_body_entered)
 	toilet_area.body_entered.connect(_on_toilet_area_body_entered)
+	Dialogic.signal_event.connect(_on_choice_selected)
+	timer.time_is_up.connect(_on_time_is_up)
 	
 	start_open_dialog()
 	
@@ -30,6 +34,21 @@ func start_open_dialog():
 	
 	await tween.finished
 	Dialogic.start("open_dialog")
+
+func _on_choice_selected(param: String):
+	if param == "start_timer":
+		add_child(timer)
+		$Timer.start()
+	elif param == "bad_end":
+		await get_tree().create_timer(3.0).timeout
+		get_tree().change_scene_to_file("res://UI/Titles/titles.tscn")
+
+func _on_time_is_up():
+	Dialogic.VAR.block_movement = true
+	Dialogic.start("bad_end_dialog")
+	
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(0, 0, 0, 1.5), 1.0).from(Color(1, 1, 1, 1))
 
 func _on_portrait_room_area_body_entered(body):
 	target_point = point_portrait_room

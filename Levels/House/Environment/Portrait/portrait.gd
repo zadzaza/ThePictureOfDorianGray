@@ -4,10 +4,9 @@ extends Node2D
 	"curtain": false
 }
 
-var pick_area = preload("res://Levels/House/pick_area2.tscn").instantiate()
+@onready var pick_area = get_node("PickArea")
 
 func _ready():
-	add_child(pick_area)
 	$Curtain.hide()
 
 

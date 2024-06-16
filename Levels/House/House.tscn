@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://fatfc3ebff0e"]
+[gd_scene load_steps=74 format=3 uid="uid://cgfj4xmio22gy"]
 
 [ext_resource type="Texture2D" uid="uid://bakljwj75slhy" path="res://Levels/House/Environment/Sprites/O_o.png" id="1_33tlv"]
 [ext_resource type="Texture2D" uid="uid://dl1hmrx00afiw" path="res://kover_porvaniy.png" id="2_1w3t1"]
@@ -22,10 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://dyuuu4neoawps" path="res://UI/foreground.tscn" id="13_j8pvo"]
 [ext_resource type="PackedScene" uid="uid://dxom45fc7gd8h" path="res://Levels/House/Environment/Door/door.tscn" id="13_prpnu"]
 [ext_resource type="PackedScene" uid="uid://byblo6yku2h26" path="res://Levels/House/Environment/window_light.tscn" id="18_i3nfk"]
-[ext_resource type="PackedScene" uid="uid://dxu4hpm7e6ybh" path="res://Levels/House/Environment/Chest/chest.tscn" id="20_jp8ri"]
+[ext_resource type="PackedScene" uid="uid://dkgs8q34e1e26" path="res://Levels/House/Environment/Chest/chest.tscn" id="20_jp8ri"]
+[ext_resource type="PackedScene" uid="uid://kikofgmf2ytt" path="res://Levels/House/pick_area2.tscn" id="20_maff8"]
 [ext_resource type="PackedScene" uid="uid://bxvv1pkbx6eqt" path="res://Levels/House/Environment/Coat/coat_rack.tscn" id="23_imchg"]
 [ext_resource type="Texture2D" uid="uid://c8i1x02lxjrtk" path="res://Levels/House/Environment/toilet_room.png" id="24_k1xoq"]
-[ext_resource type="PackedScene" uid="uid://l8e5unmlyo0" path="res://Levels/House/Environment/Rag/rag.tscn" id="27_ohgs6"]
+[ext_resource type="PackedScene" uid="uid://d2d51ma85nkc2" path="res://Levels/House/Environment/Rag/rag.tscn" id="27_ohgs6"]
 [ext_resource type="AudioStream" uid="uid://c1le5otd8wese" path="res://Music/house_music.wav" id="29_p2c78"]
 [ext_resource type="PackedScene" uid="uid://c4l4ygy6gnhp7" path="res://Levels/House/Fire/fireplace.tscn" id="29_xoccp"]
 [ext_resource type="PackedScene" uid="uid://cve0x31ns24hc" path="res://Levels/House/Environment/Window/window.tscn" id="30_gut31"]
@@ -521,11 +522,10 @@ libraries = {
 "": SubResource("AnimationLibrary_5nb87")
 }
 
-[node name="Rag" parent="." instance=ExtResource("27_ohgs6")]
-position = Vector2(-106, 2)
-
 [node name="Table" parent="." instance=ExtResource("12_bkmsw")]
 position = Vector2(696, 171)
+
+[node name="PickArea" parent="Table" instance=ExtResource("20_maff8")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
@@ -545,9 +545,6 @@ position = Vector2(-34, 101)
 [node name="DoorToOutside" parent="." instance=ExtResource("13_prpnu")]
 position = Vector2(1500, 537)
 current_door_state = 2
-
-[node name="Chest" parent="." instance=ExtResource("20_jp8ri")]
-position = Vector2(1526, -12)
 
 [node name="ToiletRoom" type="Sprite2D" parent="."]
 position = Vector2(-271, 57)
@@ -622,6 +619,8 @@ color = Color(0, 0, 0, 1)
 [node name="Fireplace" parent="." instance=ExtResource("29_xoccp")]
 position = Vector2(711, -17)
 
+[node name="PickArea" parent="Fireplace" instance=ExtResource("20_maff8")]
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_p2c78")
 volume_db = -16.343
@@ -631,11 +630,17 @@ autoplay = true
 [node name="CoatRack" parent="." instance=ExtResource("23_imchg")]
 position = Vector2(1353, 564)
 
+[node name="PickArea" parent="CoatRack" instance=ExtResource("20_maff8")]
+
 [node name="Portrait" parent="." instance=ExtResource("30_y8782")]
 position = Vector2(576, -51)
 
+[node name="PickArea" parent="Portrait" instance=ExtResource("20_maff8")]
+
 [node name="Window" parent="." instance=ExtResource("30_gut31")]
 position = Vector2(912, -21)
+
+[node name="PickArea" parent="Window" instance=ExtResource("20_maff8")]
 
 [node name="BookArea" type="Area2D" parent="."]
 position = Vector2(1882, -86)
@@ -676,6 +681,16 @@ collision_mask = 2
 z_index = 100
 position = Vector2(82.5, 77)
 shape = SubResource("RectangleShape2D_1o41v")
+
+[node name="Chest" parent="." instance=ExtResource("20_jp8ri")]
+position = Vector2(1529, 1)
+
+[node name="PickArea" parent="Chest" instance=ExtResource("20_maff8")]
+
+[node name="Rag" parent="." instance=ExtResource("27_ohgs6")]
+position = Vector2(-108, 2)
+
+[node name="PickArea" parent="Rag" instance=ExtResource("20_maff8")]
 
 [connection signal="body_entered" from="BookArea" to="." method="_on_book_area_body_entered"]
 [connection signal="body_entered" from="DivanArea" to="." method="_on_divan_area_body_entered"]

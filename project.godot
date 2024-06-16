@@ -38,6 +38,7 @@ directories/dtl_directory={
 "PenekDialogWithBird": "res://UI/DialogueSystem/PenekDialogWithBird.dtl",
 "PenekDialogWithoutBird": "res://UI/DialogueSystem/PenekDialogWithoutBird.dtl",
 "PrologueTimeline": "res://Levels/Prologue/PrologueTimeline.dtl",
+"bad_end_dialog": "res://Levels/House/Dialogs/bad_end_dialog.dtl",
 "chest_choice": "res://Levels/House/Dialogs/Timelines/chest_choice.dtl",
 "coat_rack_choice": "res://Levels/House/Dialogs/Timelines/coat_rack_choice.dtl",
 "curtain_choice": "res://Levels/House/Dialogs/Timelines/curtain_choice.dtl",

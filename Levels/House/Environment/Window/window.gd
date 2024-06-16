@@ -10,15 +10,12 @@ extends Node2D
 	"curtain": false
 }
 
-var pick_area = preload("res://Levels/House/pick_area2.tscn").instantiate()
-
-func _ready():
-	add_child(pick_area)
+@onready var pick_area = get_node("PickArea")
 
 func collect_curtain(item_name):
 	var item_comment: String
 	
-	if Dialogic.VAR.corpse_state == "not_has":
+	if Dialogic.VAR.curtain_state == "not_has":
 		item_comment = "Я забыл укрыть портрет"
 		ItemsManager.pick_item(item_name, nodes)
 		

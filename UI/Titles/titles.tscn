@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcbmqb234ugwa"]
+
+[ext_resource type="Script" path="res://UI/Titles/Titles.gd" id="1_fv4l7"]
+
+[node name="Titles" type="Control"]
+z_index = 4096
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fv4l7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -71.0
+offset_right = 2008.0
+offset_bottom = 1103.0
+color = Color(0, 0, 0, 1)
+
+[node name="Creators" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Creators"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NagIgroyRabotali" type="Label" parent="Creators/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Над игрой работали:"
+horizontal_alignment = 1
+
+[node name="Avilov" type="Label" parent="Creators/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Авилов М.Н."
+horizontal_alignment = 1
+
+[node name="Koryakina" type="Label" parent="Creators/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Корякина А.С."
+horizontal_alignment = 1
+
+[node name="Attention" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="AttentionLabel" type="Label" parent="Attention"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Спасибо за внимание!"
+horizontal_alignment = 1

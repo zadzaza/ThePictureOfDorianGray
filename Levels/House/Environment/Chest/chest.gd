@@ -10,10 +10,7 @@ extends StaticBody2D
 
 var in_chest_area = false
 
-var pick_area = preload("res://Levels/House/pick_area2.tscn").instantiate()
-
-func _ready():
-	add_child(pick_area)
+@onready var pick_area = get_node("PickArea")
 
 func _input(event):
 	if event.is_action_pressed("e"):

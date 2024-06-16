@@ -25,7 +25,7 @@ func _on_login_btn_pressed():
 		DbManager.execute_query("SELECT * FROM users WHERE login = '{login}' AND password = '{password}'".format({"login":login, "password":password}))
 		DbManager.database.data_received.connect(_data_received)
 		$NinePatchRect/LoginBtn.set_disabled(true)
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.5).timeout
 		
 		if is_user_exist == true:
 			var auth_done = load("res://UI/AccountSet/auth_done.tscn").instantiate()

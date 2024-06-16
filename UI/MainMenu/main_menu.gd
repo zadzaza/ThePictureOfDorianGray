@@ -90,8 +90,12 @@ func _on_house_btn_pressed():
 	
 	add_child(load_screen)
 	load_screen.set_changed_scene("res://Levels/House/HouseIntro/house_intro.tscn")
+	
+	ItemsManager.reset_house()
 
 func _on_prolog_btn_pressed():
+	ItemsManager.reset_prolog()
+	
 	$Transition.visible = true
 	var tween = create_tween()
 	tween.tween_property($Transition, "modulate", Color(0, 0, 0, 1), 1)

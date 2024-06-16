@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://l8e5unmlyo0"]
+[gd_scene load_steps=3 format=3 uid="uid://d2d51ma85nkc2"]
 
 [ext_resource type="Script" path="res://Levels/House/Environment/Rag/rag.gd" id="1_7wh4g"]
 [ext_resource type="Texture2D" uid="uid://cpd16j63hs5eb" path="res://UI/UIBookMenu/v2/Sprites/icons/rag_icon.png" id="1_jy0vo"]

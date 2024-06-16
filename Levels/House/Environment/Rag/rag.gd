@@ -6,10 +6,7 @@ extends Node2D
 	"rag": rag_node
 }
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	var pick_area = preload("res://Levels/House/pick_area2.tscn").instantiate()
-	add_child(pick_area)
+@onready var pick_area = get_node("PickArea")
 
 func collect_rag(item_name):
 	if get_parent() != null:

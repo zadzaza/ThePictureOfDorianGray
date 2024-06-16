@@ -1,11 +1,9 @@
 extends Node2D
 
 
-var pick_area = preload("res://Levels/House/pick_area2.tscn").instantiate()
-
+@onready var pick_area = get_node("PickArea")
 
 func _ready():
-	add_child(pick_area)
 	self.set_visible(false)
 
 func remove_corpse(item_name):

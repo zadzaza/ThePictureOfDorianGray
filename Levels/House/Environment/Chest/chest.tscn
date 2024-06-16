@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxu4hpm7e6ybh"]
+[gd_scene load_steps=8 format=3 uid="uid://dkgs8q34e1e26"]
 
 [ext_resource type="Script" path="res://Levels/House/Environment/Chest/chest.gd" id="1_7ty8e"]
 [ext_resource type="Texture2D" uid="uid://y3yjxqvdf401" path="res://Levels/House/Environment/Chest/chest-ss.png" id="1_mmxde"]

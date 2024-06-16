@@ -16,12 +16,8 @@ extends StaticBody2D
 	"knife": false,
 	"rag": false
 }
-
-var pick_area = preload("res://Levels/House/pick_area2.tscn").instantiate()
-
-func _ready():
-	add_child(pick_area)
-
+#
+@onready var pick_area = get_node("PickArea")
 
 func collect_corpse(item_name):
 	var item_comment: String

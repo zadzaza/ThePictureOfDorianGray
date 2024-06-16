@@ -56,12 +56,14 @@ pivot_offset = Vector2(-588, -681)
 script = ExtResource("1_28nyw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 2189.0
 offset_bottom = 1203.0
 mouse_filter = 2
 color = Color(0.848292, 0.729333, 0.573451, 1)
 
 [node name="StartButtonPrologue" type="Button" parent="."]
+layout_mode = 0
 offset_left = 358.0
 offset_top = -245.0
 offset_right = 897.0
@@ -69,6 +71,7 @@ offset_bottom = -25.0
 text = "ЗАПУСК ПРОЛОГА"
 
 [node name="StartButtonHouse" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1004.0
 offset_top = -250.0
 offset_right = 1543.0
@@ -88,6 +91,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_w5f70")
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 774.0
 offset_top = 79.0
 offset_right = 1205.0
@@ -103,6 +107,7 @@ offset_bottom = 40.0
 pivot_offset = Vector2(968, 578)
 
 [node name="PrologPreviewPanel" type="NinePatchRect" parent="Control"]
+layout_mode = 0
 offset_left = 263.0
 offset_top = 252.0
 offset_right = 859.0
@@ -115,6 +120,7 @@ patch_margin_right = 25
 patch_margin_bottom = 25
 
 [node name="PrologPrewievVideo" type="VideoStreamPlayer" parent="Control/PrologPreviewPanel"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 146.0
 offset_right = 644.0
@@ -131,6 +137,7 @@ scale = Vector2(0.307022, 0.306592)
 texture = ExtResource("3_punnw")
 
 [node name="PrologLabel" type="Label" parent="Control/PrologPreviewPanel"]
+layout_mode = 0
 offset_left = 84.0
 offset_top = 40.0
 offset_right = 515.0
@@ -150,6 +157,7 @@ position = Vector2(298.5, 313)
 shape = SubResource("RectangleShape2D_6mq8b")
 
 [node name="HousePreviewPanel" type="NinePatchRect" parent="Control"]
+layout_mode = 0
 offset_left = 1082.0
 offset_top = 252.0
 offset_right = 1678.0
@@ -162,6 +170,7 @@ patch_margin_right = 25
 patch_margin_bottom = 25
 
 [node name="HousePrewievVideo" type="VideoStreamPlayer" parent="Control/HousePreviewPanel"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 146.0
 offset_right = 644.0
@@ -178,6 +187,7 @@ scale = Vector2(0.307022, 0.306592)
 texture = ExtResource("3_punnw")
 
 [node name="HouseLabel" type="Label" parent="Control/HousePreviewPanel"]
+layout_mode = 0
 offset_left = 84.0
 offset_top = 40.0
 offset_right = 515.0
@@ -197,6 +207,7 @@ shape = SubResource("RectangleShape2D_6mq8b")
 
 [node name="HouseBtn" type="Button" parent="Control"]
 visible = false
+layout_mode = 0
 offset_left = 1329.0
 offset_top = 521.0
 offset_right = 1432.0
@@ -208,6 +219,7 @@ text = " ▷"
 
 [node name="PrologBtn" type="Button" parent="Control"]
 visible = false
+layout_mode = 0
 offset_left = 510.0
 offset_top = 521.0
 offset_right = 613.0
@@ -218,6 +230,7 @@ theme_override_font_sizes/font_size = 55
 text = " ▷"
 
 [node name="ExitAuthBtn" type="Button" parent="."]
+layout_mode = 0
 offset_left = 52.0
 offset_top = 43.0
 offset_right = 135.0
@@ -229,6 +242,7 @@ text = "←"
 [node name="Transition" type="ColorRect" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_right = 1933.0
 offset_bottom = 1109.0
 color = Color(0, 0, 0, 1)

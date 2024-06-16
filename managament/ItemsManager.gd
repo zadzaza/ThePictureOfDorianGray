@@ -4,6 +4,21 @@ const NOT_HAS: String = "not_has"
 const HAS: String = "has"
 const DONE: String = "done"
 
+func reset_prolog():
+	InventoryManager.inventory.clear()
+	Dialogic.VAR.have_bird = false
+
+func reset_house():
+	InventoryManager.inventory.clear()
+	
+	Dialogic.VAR.bag_state = NOT_HAS
+	Dialogic.VAR.coat_state = NOT_HAS
+	Dialogic.VAR.corpse_state = NOT_HAS
+	Dialogic.VAR.curtain_state = NOT_HAS
+	Dialogic.VAR.knife_state = NOT_HAS
+	Dialogic.VAR.lamp_state = NOT_HAS
+	Dialogic.VAR.rag_state = NOT_HAS
+
 func set_has(item_name):
 	# Тут мы проверяем наличие переменной в Dialogic.VAR перед изменением
 	if Dialogic.VAR.has(item_name + "_state"):

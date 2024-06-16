@@ -13,11 +13,7 @@ extends StaticBody2D
 	"bag": false
 }
 
-var pick_area = preload("res://Levels/House/pick_area2.tscn").instantiate()
-
-
-func _ready():
-	add_child(pick_area)
+@onready var pick_area = get_node("PickArea")
 
 func collect_coat(item_name):
 	var item_comment: String

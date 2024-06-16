@@ -1,3 +1,3 @@
-- Сорвать штору
+- Сорвать штору [if {curtain_state} == "not_has"]
 	[signal arg="curtain_has"]
 	set {curtain_state} = "has"

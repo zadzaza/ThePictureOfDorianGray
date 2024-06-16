@@ -10,3 +10,4 @@ DorianCharacter: Он вел замкнутый образ жизни, был д
 DorianCharacter: А следы можно будет уничтожить гораздо раньше. Этим и стоит сейчас заняться.
 - Бегом наводить порядок
 	set {block_movement} = false
+	[signal arg="start_timer"]
