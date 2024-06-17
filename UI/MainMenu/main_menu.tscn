@@ -50,6 +50,7 @@ radius = 2.23607
 size = Vector2(581, 610)
 
 [node name="MainMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 pivot_offset = Vector2(-588, -681)

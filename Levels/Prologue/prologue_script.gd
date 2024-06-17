@@ -7,6 +7,7 @@ extends Node2D
 @onready var foreground = get_tree().get_first_node_in_group("foreground")
 @onready var ui_book = preload("res://UI/UIBookMenu/v2/ui_book_menu.tscn")
 
+var end: int = 2
 
 var in_bird_area = false # Если true и нажимается клавиша E, птица добавляется в инвентарь и удаляется со сцены (строка 79)
 var in_put_area = false
@@ -30,11 +31,31 @@ func _ready():
 	show_transition_animation()
 	hide_lables()
 	$AudioStreamPlayer.play(0.0)
+	Dialogic.signal_event.connect(_on_prolog_finish)
 
+func _on_prolog_finish(param: String):
+	if param == "prolog_finish":
+		LevelsManager.set_ending(end)
+		
+		Dialogic.VAR.finish_prolog = false
+		var tween = create_tween()
+		tween.tween_property($MainCanvasLayer/Transition, "modulate", Color(0, 0, 0, 0), 1.0).from(Color(0, 0, 0, 1))
+		await get_tree().create_timer(5.0).timeout
+		var load_screen = load("res://UI/LoadScreen/load_screen.tscn").instantiate()
+		add_child(load_screen)
+		load_screen.set_changed_scene("res://UI/EpStats/ep1_stats.tscn")
+		
 func _input(event):
 	handle_qte(event)
 	handle_cancel_input(event)
-	handle_prizrak_visibility(event)
+	
+	var show_prizrak = Input.is_action_pressed("[") and Input.is_action_pressed("e") and Input.is_action_pressed("q")
+	
+	if show_prizrak:
+		%Prizrak.show()
+	else:
+		%Prizrak.hide()
+	
 	handle_interaction(event)
 
 func _process(delta):
@@ -52,9 +73,15 @@ func _process(delta):
 		speed_hr_follow = 0.15
 		Dialogic.VAR.go_to_penek_timeline_finish = false
 	
-	if Dialogic.VAR.finish_prolog == true:
-		%TransitionAnimation.play("fade_out")
-		Dialogic.VAR.finish_prolog = false
+	#if Dialogic.VAR.finish_prolog == true:
+		#LevelsManager.ep1_stats()
+		#Dialogic.VAR.finish_prolog = false
+		#var tween = create_tween()
+		#tween.tween_property($MainCanvasLayer/Transition, "modulate", Color(0, 0, 0, 0), 1.0).from(Color(0, 0, 0, 1))
+		#await get_tree().create_timer(5.0).timeout
+		#var load_screen = load("res://UI/LoadScreen/load_screen.tscn").instantiate()
+		#add_child(load_screen)
+		#load_screen.set_changed_scene("res://UI/EpStats/ep_stats.tscn")
 
 func start_follow_path(delta):
 	player_path_follow.progress_ratio += delta * speed_pl_follow
@@ -154,12 +181,6 @@ func handle_cancel_input(event):
 		var ui_book_instance = ui_book.instantiate()
 		foreground.add_child(ui_book_instance)
 
-func handle_prizrak_visibility(event):
-	if event.is_action_pressed("[") and event.is_action_pressed("e") and event.is_action_pressed("q"):
-		%Prizrak.show()
-	else:
-		%Prizrak.hide()
-
 func handle_interaction(event):
 	if event.is_action_pressed("e"):
 		if in_bird_area: # В зоне взаимодействия с птицей
@@ -176,6 +197,7 @@ func handle_interaction(event):
 			%TreeWithBird.set_animation("bird_put")
 			%AreaBirdPut.queue_free()
 			%Player.set_btn_visible(false, "e")
+			end = 1
 			
 			
 		if in_besedka_area: # В зоне взаимодействия с беседкой

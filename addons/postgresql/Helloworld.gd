@@ -11,7 +11,7 @@ var database: PostgreSQLClient = PostgreSQLClient.new()
 var query_string: String
 
 func _ready():
-	execute_query("select * from users where login = '1'")
+	execute_query("select * from users")
 
 func execute_query(query: String):
 	query_string = query
@@ -51,9 +51,7 @@ func _data_received(error_object: Dictionary, transaction_status: PostgreSQLClie
 	
 	# The datas variable contains an array of PostgreSQLQueryResult object.
 	for data in datas:
-		if data.data_row.size() > 0:
-			var login_name = data.data_row[0][0] # Извлекаем логин
-			print("Login name is: ", login_name)
+		print(data.data_row.size(), " COUNT")
 		#Specifies the number of fields in a row (can be zero).
 		print(data.number_of_fields_in_a_row, " number_of_fields_in_a_row")
 		

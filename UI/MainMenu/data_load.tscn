@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://eblew0vekon2"]
+
+[ext_resource type="Script" path="res://UI/MainMenu/data_load.gd" id="1_03ivu"]
+
+[sub_resource type="Animation" id="Animation_bws4u"]
+resource_name = "loading"
+length = 2.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Points:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wqv4w"]
+_data = {
+"loading": SubResource("Animation_bws4u")
+}
+
+[node name="DataLoad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_03ivu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 2021.0
+offset_bottom = 1137.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 775.0
+offset_top = 489.0
+offset_right = 1151.0
+offset_bottom = 544.0
+theme_override_font_sizes/font_size = 40
+text = "Загрузка данных"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Points" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1136.0
+offset_top = 489.0
+offset_right = 1176.0
+offset_bottom = 544.0
+theme_override_font_sizes/font_size = 40
+text = "..."
+visible_characters = 1
+visible_ratio = 0.351523
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wqv4w")
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

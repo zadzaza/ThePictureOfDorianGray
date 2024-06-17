@@ -10,10 +10,10 @@ func _process(delta):
 	switch_main_menu_buttons()
 
 
-func _input(event):
-	if event.is_action_pressed("e"):
-		pause_manager._resume()
-		queue_free()
+#func _input(event):
+	#if event.is_action_pressed("escape"):
+		#pause_manager._resume()
+		#queue_free()
 
 func _on_continue_btn_pressed():
 	pause_manager._resume()
@@ -37,7 +37,8 @@ func _on_load_btn_pressed():
 	pass # Replace with function body.
 
 func _on_exit_btn_pressed():
-	get_tree().quit()
+	pause_manager._resume()
+	get_tree().change_scene_to_file("res://UI/MainMenu/main_menu.tscn")
 
 func _on_setting_btn_pressed():
 	count += 1

@@ -1,11 +1,22 @@
 extends Control
 
-
+@onready var ending: String = "not_complete"
 @onready var load_screen = load("res://UI/LoadScreen/load_screen.tscn").instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	block_ep()
 	open()
+	
+	var data_load = load("res://UI/MainMenu/data_load.tscn").instantiate()
+	add_child(data_load)
+	ending = await LevelsManager.get_ending()
+	
+	if ending == "not_complete":
+		block_ep()
+	else:
+		unlock_ep()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -33,6 +44,14 @@ func _on_prolog_area_body_entered(body):
 func _on_prolog_area_body_exited(body):
 	exited_ep($Control/PrologPreviewPanel, $Control/PrologBtn)
 
+func block_ep():
+	$Control/HousePreviewPanel.modulate = Color(0, 0, 0, 0.4)
+	$Control/HousePreviewPanel/HouseArea.monitoring = false
+
+func unlock_ep():
+	exited_ep($Control/HousePreviewPanel, $Control/HouseBtn)
+	$Control/HousePreviewPanel/HouseArea.monitoring = true
+
 func entered_ep(preview_panel: NinePatchRect, btn: Button) -> void:
 	var tween = create_tween()
 	tween.tween_property(preview_panel, "modulate", Color(0, 0, 0, 0.4), 0.2)
@@ -49,7 +68,7 @@ func _on_house_area_body_entered(body):
 func _on_house_area_body_exited(body):
 	exited_ep($Control/HousePreviewPanel, $Control/HouseBtn)
 
-func close() -> void:
+func close_to_auth() -> void:
 	var control = $Control
 	var tween = create_tween()
 	tween.tween_property(
@@ -67,6 +86,35 @@ func close() -> void:
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://UI/AccountSet/account_login.tscn")
 
+func close_to_house():
+	LevelsManager.reset_house()
+	if ending != "not_complete":
+		LevelsManager.ep_complete()
+		
+		$Transition.visible = true
+		var tween = create_tween()
+		tween.tween_property($Transition, "modulate", Color(0, 0, 0, 1), 1)
+		await tween.finished
+		
+		add_child(load_screen)
+		load_screen.set_changed_scene("res://Levels/House/House.tscn")
+
+func close_to_prolog():
+	LevelsManager.reset_prolog()
+	if ending == "not_complete":
+		LevelsManager.ep_complete()
+		
+		$Transition.visible = true
+		var tween = create_tween()
+		tween.tween_property($Transition, "modulate", Color(0, 0, 0, 1), 1)
+		await tween.finished
+		
+		add_child(load_screen)
+		load_screen.set_changed_scene("res://Levels/Prologue/prologue_scene.tscn")
+	else:
+		var delete_data = load("res://UI/MainMenu/delete_data.tscn").instantiate()
+		add_child(delete_data)
+
 func open() -> void:
 	var control = $Control
 	var tween = create_tween()
@@ -75,7 +123,7 @@ func open() -> void:
 		control, 'scale', Vector2.ZERO, 0
 	)
 	tween.tween_property(
-		control, 'scale', Vector2.ONE, .3
+		control, 'scale', Vector2.ONE, .5
 	).set_ease(
 		Tween.EASE_OUT
 	).set_trans(
@@ -83,28 +131,11 @@ func open() -> void:
 	)
 
 func _on_house_btn_pressed():
-	$Transition.visible = true
-	var tween = create_tween()
-	tween.tween_property($Transition, "modulate", Color(0, 0, 0, 1), 1)
-	await tween.finished
-	
-	add_child(load_screen)
-	load_screen.set_changed_scene("res://Levels/House/HouseIntro/house_intro.tscn")
-	
-	ItemsManager.reset_house()
+	close_to_house()
 
 func _on_prolog_btn_pressed():
-	ItemsManager.reset_prolog()
-	
-	$Transition.visible = true
-	var tween = create_tween()
-	tween.tween_property($Transition, "modulate", Color(0, 0, 0, 1), 1)
-	await tween.finished
-	
-	add_child(load_screen)
-	load_screen.set_changed_scene("res://Levels/Prologue/prologue_scene.tscn")
-
+	close_to_prolog()
 
 func _on_exit_auth_btn_pressed():
-	close()
+	close_to_auth()
 	DbManager.log_out()

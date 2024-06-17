@@ -9,7 +9,7 @@ var show_btn = false
 var path_going = true
 
 # Константы для скорости и гравитации
-const SPEED = 300.0
+const SPEED = 1000.0
 const GRAVITY = 1000.0
 
 # Перечисление состояний движения персонажа
@@ -21,7 +21,7 @@ enum MOVE_STATE {IDLE_SIDE, IDLE_UP, IDLE_DOWN, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
 
 func _physics_process(delta):
 	# Получаем направление движения из пользовательского ввода
-	var direction = Input.get_axis("ui_left", "ui_right") if !Dialogic.VAR.block_movement else 0.0
+	var direction = Input.get_axis("ui_left", "ui_right") #if !Dialogic.VAR.block_movement else 0.0
 	
 	# Устанавливаем горизонтальную скорость, если есть направление движения
 	if direction:

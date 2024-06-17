@@ -1,23 +1,37 @@
 extends Node
 
+
+signal all_items_done
+
 const NOT_HAS: String = "not_has"
 const HAS: String = "has"
 const DONE: String = "done"
 
-func reset_prolog():
-	InventoryManager.inventory.clear()
-	Dialogic.VAR.have_bird = false
+var is_checking_items = true
 
-func reset_house():
-	InventoryManager.inventory.clear()
-	
-	Dialogic.VAR.bag_state = NOT_HAS
-	Dialogic.VAR.coat_state = NOT_HAS
-	Dialogic.VAR.corpse_state = NOT_HAS
-	Dialogic.VAR.curtain_state = NOT_HAS
-	Dialogic.VAR.knife_state = NOT_HAS
-	Dialogic.VAR.lamp_state = NOT_HAS
-	Dialogic.VAR.rag_state = NOT_HAS
+func _process(delta):
+	if is_checking_items == true:
+		var items_done = [
+			Dialogic.VAR.bag_state,
+			Dialogic.VAR.coat_state,
+			Dialogic.VAR.corpse_state,
+			Dialogic.VAR.curtain_state,
+			Dialogic.VAR.knife_state,
+			Dialogic.VAR.lamp_state,
+			Dialogic.VAR.rag_state
+		]
+		
+		var is_all_items_done = are_all_items_done(items_done)
+		
+		if is_all_items_done:
+			self.all_items_done.emit()
+			is_checking_items = false
+
+func are_all_items_done(items) -> bool:
+	for item in items:
+		if item != DONE:
+			return false
+	return true
 
 func set_has(item_name):
 	# Тут мы проверяем наличие переменной в Dialogic.VAR перед изменением

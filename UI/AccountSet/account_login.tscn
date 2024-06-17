@@ -20,3 +20,14 @@ color = Color(0.848292, 0.729333, 0.573451, 1)
 
 [node name="Auth" parent="." instance=ExtResource("2_7ffk6")]
 layout_mode = 1
+
+[node name="ExitBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1797.0
+offset_top = 40.0
+offset_right = 1872.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[connection signal="pressed" from="ExitBtn" to="." method="_on_exit_btn_pressed"]

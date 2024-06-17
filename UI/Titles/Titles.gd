@@ -8,6 +8,8 @@ func _ready():
 	$Creators/VBoxContainer/Avilov.modulate = Color(1, 1, 1, 0)
 	$Creators/VBoxContainer/Koryakina.modulate = Color(1, 1, 1, 0)
 	
+	await get_tree().create_timer(3.0).timeout
+	
 	var tween = create_tween()
 	
 	tween.tween_property($Creators/VBoxContainer/NagIgroyRabotali, "modulate", Color(1, 1, 1, 1), 1.0).from(Color(1, 1, 1, 0))
