@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://byblo6yku2h26"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Texture2D" uid="uid://c5nwqkfos7kak" path="res://Light/light.png" id="1_ey0nj"]
+[ext_resource type="Texture2D" uid="uid://c5nwqkfos7kak" path="res://Light/light.png" id="1"]
 
 [node name="WindowLight" type="PointLight2D"]
 position = Vector2(910.5, -41.75)
@@ -10,4 +10,4 @@ range_item_cull_mask = 3
 shadow_enabled = true
 shadow_filter = 2
 shadow_filter_smooth = 3.0
-texture = ExtResource("1_ey0nj")
+texture = ExtResource("1")

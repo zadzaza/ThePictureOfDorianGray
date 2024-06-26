@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxFlat" format=3 uid="uid://m7gyepkysu83"]
+[gd_resource type="StyleBoxFlat" format=3]
 
 [resource]
 content_margin_left = 10.0
@@ -10,3 +10,4 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+script = null

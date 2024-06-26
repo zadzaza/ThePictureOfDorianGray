@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://duw8cisfjnhec"]
+[gd_scene load_steps=7 format=3]
 
-[ext_resource type="Script" path="res://UI/HintAnimation/hint_animation.gd" id="1_cu4gn"]
-[ext_resource type="PackedScene" uid="uid://jq6uivjivm4r" path="res://UI/FloatingText.tscn" id="1_v7vef"]
+[ext_resource type="Script" path="res://UI/HintAnimation/hint_animation.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://jq6uivjivm4r" path="res://UI/FloatingText.tscn" id="2"]
 
-[sub_resource type="Animation" id="Animation_tgvcl"]
+[sub_resource type="Animation" id="1"]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
@@ -30,8 +30,9 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(258.908, 0.126833)]
 }
+script = null
 
-[sub_resource type="Animation" id="Animation_cf1bl"]
+[sub_resource type="Animation" id="2"]
 resource_name = "fade_in"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -57,8 +58,9 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(258.908, 0.126833), Vector2(258.908, 20.127)]
 }
+script = null
 
-[sub_resource type="Animation" id="Animation_ue1xr"]
+[sub_resource type="Animation" id="3"]
 resource_name = "fade_out"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -84,18 +86,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(258.908, 20.127), Vector2(258.908, 0.126833)]
 }
+script = null
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tqjyx"]
+[sub_resource type="AnimationLibrary" id="4"]
 _data = {
-"RESET": SubResource("Animation_tgvcl"),
-"fade_in": SubResource("Animation_cf1bl"),
-"fade_out": SubResource("Animation_ue1xr")
+"RESET": SubResource("1"),
+"fade_in": SubResource("2"),
+"fade_out": SubResource("3")
 }
+script = null
 
 [node name="HintAnimation" type="Node2D"]
-script = ExtResource("1_cu4gn")
+script = ExtResource("1")
 
-[node name="FloatingText" parent="." instance=ExtResource("1_v7vef")]
+[node name="FloatingText" parent="." instance=ExtResource("2")]
 self_modulate = Color(1, 1, 1, 0)
 offset_top = -84.6219
 offset_bottom = -42.6229
@@ -105,5 +109,5 @@ pivot_offset = Vector2(258.908, 0.126833)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_tqjyx")
+"": SubResource("4")
 }

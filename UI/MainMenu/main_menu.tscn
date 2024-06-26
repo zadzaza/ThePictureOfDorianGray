@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://d08opj7x8cqfs"]
+[gd_scene load_steps=11 format=3]
 
-[ext_resource type="Script" path="res://UI/MainMenu/main_menu.gd" id="1_28nyw"]
-[ext_resource type="Texture2D" uid="uid://c71v3by3d0a80" path="res://dialogue_menu (1).png" id="2_d5g6s"]
-[ext_resource type="Texture2D" uid="uid://dmjy162r0yy3j" path="res://UI/MainMenu/prolog_preview.png" id="3_punnw"]
-[ext_resource type="VideoStream" path="res://UI/MainMenu/video/prolog_preview.ogv" id="4_ak4px"]
-[ext_resource type="VideoStream" path="res://UI/MainMenu/video/house_preview.ogv" id="5_w2hvs"]
+[ext_resource type="Script" path="res://UI/MainMenu/main_menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c71v3by3d0a80" path="res://dialogue_menu (1).png" id="2"]
+[ext_resource type="VideoStream" path="res://UI/MainMenu/video/prolog_preview.ogv" id="3"]
+[ext_resource type="Texture2D" uid="uid://dmjy162r0yy3j" path="res://UI/MainMenu/prolog_preview.png" id="4"]
+[ext_resource type="VideoStream" path="res://UI/MainMenu/video/house_preview.ogv" id="5"]
 
-[sub_resource type="Animation" id="Animation_y4ct6"]
+[sub_resource type="Animation" id="1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -20,8 +20,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+script = null
 
-[sub_resource type="Animation" id="Animation_3ls2r"]
+[sub_resource type="Animation" id="2"]
 resource_name = "dissolve"
 length = 1.5
 tracks/0/type = "value"
@@ -36,25 +37,29 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
 }
+script = null
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j05ur"]
+[sub_resource type="AnimationLibrary" id="3"]
 _data = {
-"RESET": SubResource("Animation_y4ct6"),
-"dissolve": SubResource("Animation_3ls2r")
+"RESET": SubResource("1"),
+"dissolve": SubResource("2")
 }
+script = null
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_w5f70"]
+[sub_resource type="CircleShape2D" id="4"]
 radius = 2.23607
+script = null
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mq8b"]
+[sub_resource type="RectangleShape2D" id="5"]
 size = Vector2(581, 610)
+script = null
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 pivot_offset = Vector2(-588, -681)
-script = ExtResource("1_28nyw")
+script = ExtResource("1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -81,7 +86,7 @@ text = "ЗАПУСК 2 ЭПИЗОДА"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_j05ur")
+"": SubResource("3")
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -89,7 +94,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CircleShape2D_w5f70")
+shape = SubResource("4")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
@@ -113,7 +118,7 @@ offset_left = 263.0
 offset_top = 252.0
 offset_right = 859.0
 offset_bottom = 878.0
-texture = ExtResource("2_d5g6s")
+texture = ExtResource("2")
 region_rect = Rect2(0, 1, 56, 56)
 patch_margin_left = 25
 patch_margin_top = 25
@@ -127,7 +132,7 @@ offset_top = 146.0
 offset_right = 644.0
 offset_bottom = 514.0
 scale = Vector2(0.918746, 0.918746)
-stream = ExtResource("4_ak4px")
+stream = ExtResource("3")
 autoplay = true
 loop = true
 
@@ -135,7 +140,7 @@ loop = true
 visible = false
 position = Vector2(297.413, 315)
 scale = Vector2(0.307022, 0.306592)
-texture = ExtResource("3_punnw")
+texture = ExtResource("4")
 
 [node name="PrologLabel" type="Label" parent="Control/PrologPreviewPanel"]
 layout_mode = 0
@@ -155,7 +160,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/PrologArea"]
 position = Vector2(298.5, 313)
-shape = SubResource("RectangleShape2D_6mq8b")
+shape = SubResource("5")
 
 [node name="HousePreviewPanel" type="NinePatchRect" parent="Control"]
 layout_mode = 0
@@ -163,7 +168,7 @@ offset_left = 1082.0
 offset_top = 252.0
 offset_right = 1678.0
 offset_bottom = 878.0
-texture = ExtResource("2_d5g6s")
+texture = ExtResource("2")
 region_rect = Rect2(0, 1, 56, 56)
 patch_margin_left = 25
 patch_margin_top = 25
@@ -177,7 +182,7 @@ offset_top = 146.0
 offset_right = 644.0
 offset_bottom = 514.0
 scale = Vector2(0.918746, 0.918746)
-stream = ExtResource("5_w2hvs")
+stream = ExtResource("5")
 autoplay = true
 loop = true
 
@@ -185,7 +190,7 @@ loop = true
 visible = false
 position = Vector2(297.413, 315)
 scale = Vector2(0.307022, 0.306592)
-texture = ExtResource("3_punnw")
+texture = ExtResource("4")
 
 [node name="HouseLabel" type="Label" parent="Control/HousePreviewPanel"]
 layout_mode = 0
@@ -204,7 +209,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/HousePreviewPanel/HouseArea"]
 position = Vector2(298.5, 313)
-shape = SubResource("RectangleShape2D_6mq8b")
+shape = SubResource("5")
 
 [node name="HouseBtn" type="Button" parent="Control"]
 visible = false

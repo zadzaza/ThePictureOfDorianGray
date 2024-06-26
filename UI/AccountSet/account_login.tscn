@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://mf6gtv73hqp4"]
+[gd_scene load_steps=3 format=3 uid="uid://c5sv8bhwxgd42"]
 
-[ext_resource type="Script" path="res://UI/AccountSet/account_login.gd" id="1_rf74w"]
-[ext_resource type="PackedScene" uid="uid://ddjk3owup75jv" path="res://UI/AccountSet/auth.tscn" id="2_7ffk6"]
+[ext_resource type="Script" path="res://UI/AccountSet/account_login.gd" id="1"]
+[ext_resource type="PackedScene" path="res://UI/AccountSet/auth.tscn" id="2"]
 
 [node name="AccountLogin" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rf74w")
+script = ExtResource("1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -18,7 +18,7 @@ offset_right = 2189.0
 offset_bottom = 1203.0
 color = Color(0.848292, 0.729333, 0.573451, 1)
 
-[node name="Auth" parent="." instance=ExtResource("2_7ffk6")]
+[node name="Auth" parent="." instance=ExtResource("2")]
 layout_mode = 1
 
 [node name="ExitBtn" type="Button" parent="."]

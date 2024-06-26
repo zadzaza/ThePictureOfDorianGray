@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://y6eaodvxp2pf"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://Levels/House/HouseIntro/HouseIntro.gd" id="1_egnrc"]
-[ext_resource type="Texture2D" uid="uid://by8old05ks3f6" path="res://Levels/House/HouseIntro/Slides/5.jpg" id="2_2gftk"]
+[ext_resource type="Script" path="res://Levels/House/HouseIntro/HouseIntro.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://by8old05ks3f6" path="res://Levels/House/HouseIntro/Slides/5.jpg" id="2"]
 
 [node name="HouseIntro" type="Node2D"]
-script = ExtResource("1_egnrc")
+script = ExtResource("1")
 
 [node name="5" type="Sprite2D" parent="."]
 position = Vector2(960.139, 540)
 scale = Vector2(1.54861, 1.54861)
-texture = ExtResource("2_2gftk")
+texture = ExtResource("2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

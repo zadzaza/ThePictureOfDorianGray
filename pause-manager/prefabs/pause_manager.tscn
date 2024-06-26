@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd5tolsiqaeo7"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://pause-manager/scripts/pause_manager.gd" id="1_wdn7o"]
+[ext_resource type="Script" path="res://pause-manager/scripts/pause_manager.gd" id="1"]
 
 [node name="PauseManager" type="Node2D"]
 process_mode = 3
@@ -27,4 +27,4 @@ Action Names:
 Keys:
 	Array of keys, when Input Map is not needed.
 	By default, there's only the 'Escape' key from keyboard."
-script = ExtResource("1_wdn7o")
+script = ExtResource("1")

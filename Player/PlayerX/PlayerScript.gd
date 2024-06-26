@@ -9,7 +9,7 @@ var show_btn = false
 var path_going = true
 
 # Константы для скорости и гравитации
-const SPEED = 1000.0
+const SPEED = 300.0
 const GRAVITY = 1000.0
 
 # Перечисление состояний движения персонажа
@@ -21,7 +21,7 @@ enum MOVE_STATE {IDLE_SIDE, IDLE_UP, IDLE_DOWN, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
 
 func _physics_process(delta):
 	# Получаем направление движения из пользовательского ввода
-	var direction = Input.get_axis("ui_left", "ui_right") #if !Dialogic.VAR.block_movement else 0.0
+	var direction = Input.get_axis("left", "right") if !Dialogic.VAR.block_movement else 0.0
 	
 	# Устанавливаем горизонтальную скорость, если есть направление движения
 	if direction:
@@ -33,7 +33,7 @@ func _physics_process(delta):
 	# Для размещения персонажа используется упрощённая гравитация.
 	if not is_on_floor():
 		velocity.y += GRAVITY
-  
+
 	# Определяем, нужно ли отразить спрайт по горизонтали, исходя из направления движения
 	if velocity.x > 0:
 		pl_flip_h = false
@@ -57,7 +57,7 @@ func _physics_process(delta):
 			else:
 				set_block_movement(false)
 		else: pass
-  
+
 	# Установка анимации в условием того, что персонаж двигается
 	if !path_going and !Dialogic.VAR.block_movement:
 		if velocity.x:

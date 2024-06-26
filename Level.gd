@@ -65,7 +65,7 @@ func _on_choice_selected(param: String):
 		get_tree().change_scene_to_file("res://UI/Titles/titles.tscn")
 	elif param == "good_end":
 		await get_tree().create_timer(3.0).timeout
-		get_tree().change_scene_to_file("res://UI/Titles/titles.tscn")
+		get_tree().change_scene_to_file("res://Levels/House/cutscene.tscn")
 
 func _on_time_is_up():
 	timer.stop()

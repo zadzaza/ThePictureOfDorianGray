@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://pefo5uspiirc"
+path="res://.godot/imported/move_side_lamp.png-0ba3b112978b58d2e6c5b876bcab5c80.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Player/PlayerXY/Sprites/move_side_lamp.png"
+dest_files=PackedStringArray("res://.godot/imported/move_side_lamp.png-0ba3b112978b58d2e6c5b876bcab5c80.ctex")
+
+[params]
+
+dummy_value_ignore_me=0

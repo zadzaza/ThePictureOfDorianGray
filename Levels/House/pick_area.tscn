@@ -1,18 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs7vjjfmmb05j"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://Levels/House/pick_area.gd" id="1_1adbg"]
+[ext_resource type="Script" path="res://Levels/House/pick_area.gd" id="1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1mik"]
+[sub_resource type="RectangleShape2D" id="1"]
 resource_local_to_scene = true
 size = Vector2(238, 266.5)
+script = null
 
 [node name="PickArea" type="Node2D"]
-script = ExtResource("1_1adbg")
+script = ExtResource("1")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_u1mik")
+shape = SubResource("1")
 debug_color = Color(0.631373, 0.529412, 1, 0.0901961)

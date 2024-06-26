@@ -1,27 +1,30 @@
-[gd_scene load_steps=10 format=3 uid="uid://brrjowxtot0sl"]
+[gd_scene load_steps=10 format=3]
 
-[ext_resource type="Script" path="res://Levels/Prologue/NPC/Basil/basil.gd" id="1_wvhdo"]
-[ext_resource type="Shader" path="res://no_jittering.gdshader" id="2_ns6kb"]
-[ext_resource type="Texture2D" uid="uid://k1xh0fj006ox" path="res://Levels/Prologue/NPC/Basil/NPC_2.png" id="2_uqegq"]
+[ext_resource type="Script" path="res://Levels/Prologue/NPC/Basil/basil.gd" id="1"]
+[ext_resource type="Shader" path="res://no_jittering.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://k1xh0fj006ox" path="res://Levels/Prologue/NPC/Basil/NPC_2.png" id="3"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cb14j"]
-shader = ExtResource("2_ns6kb")
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("2")
+script = null
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pjxdp"]
+[sub_resource type="SpriteFrames" id="2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_uqegq")
+"texture": ExtResource("3")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
+script = null
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a41o0"]
+[sub_resource type="RectangleShape2D" id="3"]
 size = Vector2(140, 16)
+script = null
 
-[sub_resource type="Animation" id="Animation_1a3hv"]
+[sub_resource type="Animation" id="4"]
 resource_name = "breath"
 length = 2.4
 loop_mode = 1
@@ -37,8 +40,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1.035), Vector2(1, 1)]
 }
+script = null
 
-[sub_resource type="Animation" id="Animation_bk8or"]
+[sub_resource type="Animation" id="5"]
 resource_name = "breath2"
 length = 2.4
 tracks/0/type = "value"
@@ -53,27 +57,29 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1e-05, 1e-05), Vector2(0, 1.03), Vector2(0, 1)]
 }
+script = null
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_w78r5"]
+[sub_resource type="AnimationLibrary" id="6"]
 _data = {
-"breath": SubResource("Animation_1a3hv"),
-"breath2": SubResource("Animation_bk8or")
+"breath": SubResource("4"),
+"breath2": SubResource("5")
 }
+script = null
 
 [node name="Basil" type="CharacterBody2D"]
 collision_layer = 8
-script = ExtResource("1_wvhdo")
+script = ExtResource("1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_cb14j")
+material = SubResource("1")
 scale = Vector2(1, 1.01824)
-sprite_frames = SubResource("SpriteFrames_pjxdp")
+sprite_frames = SubResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-30, 211)
-shape = SubResource("RectangleShape2D_a41o0")
+shape = SubResource("3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_w78r5")
+"": SubResource("6")
 }

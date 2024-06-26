@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb2gmseigqkbl"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Texture2D" uid="uid://c71v3by3d0a80" path="res://dialogue_menu (1).png" id="1_77tb3"]
-[ext_resource type="Script" path="res://UI/AccountSet/registr_failed.gd" id="1_a65yn"]
+[ext_resource type="Script" path="res://UI/AccountSet/registr_failed.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c71v3by3d0a80" path="res://dialogue_menu (1).png" id="2"]
 
 [node name="RegistrFailed" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(957, 548)
-script = ExtResource("1_a65yn")
+script = ExtResource("1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -19,7 +19,7 @@ offset_left = 787.0
 offset_top = 466.0
 offset_right = 1181.0
 offset_bottom = 659.0
-texture = ExtResource("1_77tb3")
+texture = ExtResource("2")
 region_rect = Rect2(0, 1, 56, 56)
 patch_margin_left = 25
 patch_margin_top = 25

@@ -1,24 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxvv1pkbx6eqt"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" path="res://Levels/House/Environment/Coat/coat_rack.gd" id="1_nkb17"]
-[ext_resource type="Texture2D" uid="uid://b50vtskvk2n1e" path="res://Levels/House/Environment/Coat/Hanger.png" id="1_ss1my"]
-[ext_resource type="Texture2D" uid="uid://ck7lm3qk2qlvc" path="res://Levels/House/Environment/Coat/Hanger_Dressed.png" id="2_gtmcn"]
-[ext_resource type="PackedScene" uid="uid://bui07jpn4wnu6" path="res://Levels/House/Environment/Bag/bag.tscn" id="3_oqj42"]
+[ext_resource type="Script" path="res://Levels/House/Environment/Coat/coat_rack.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bui07jpn4wnu6" path="res://Levels/House/Environment/Bag/bag.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://b50vtskvk2n1e" path="res://Levels/House/Environment/Coat/Hanger.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ck7lm3qk2qlvc" path="res://Levels/House/Environment/Coat/Hanger_Dressed.png" id="4"]
 
 [node name="CoatRack" type="StaticBody2D"]
 z_index = 2
 y_sort_enabled = true
-script = ExtResource("1_nkb17")
+script = ExtResource("1")
 
-[node name="Bag" parent="." instance=ExtResource("3_oqj42")]
+[node name="Bag" parent="." instance=ExtResource("2")]
 position = Vector2(-19, 62)
 
 [node name="Rack" type="Node2D" parent="."]
 
 [node name="Hanger" type="Sprite2D" parent="Rack"]
-texture = ExtResource("1_ss1my")
+texture = ExtResource("3")
 
 [node name="Coat" type="Node2D" parent="."]
 
 [node name="HangerDressed" type="Sprite2D" parent="Coat"]
-texture = ExtResource("2_gtmcn")
+texture = ExtResource("4")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7c0mb6jaglt8"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Texture2D" uid="uid://c71v3by3d0a80" path="res://dialogue_menu (1).png" id="1_4moca"]
-[ext_resource type="Script" path="res://UI/AccountSet/acc_exist.gd" id="1_too5g"]
+[ext_resource type="Script" path="res://UI/AccountSet/acc_exist.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c71v3by3d0a80" path="res://dialogue_menu (1).png" id="2"]
 
 [node name="AccExist" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(985, 551)
-script = ExtResource("1_too5g")
+script = ExtResource("1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -19,7 +19,7 @@ offset_left = 787.0
 offset_top = 466.0
 offset_right = 1181.0
 offset_bottom = 659.0
-texture = ExtResource("1_4moca")
+texture = ExtResource("2")
 region_rect = Rect2(0, 1, 56, 56)
 patch_margin_left = 25
 patch_margin_top = 25

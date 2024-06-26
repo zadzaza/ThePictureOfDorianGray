@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="DialogicCharacter" load_steps=2 format=3 uid="uid://dykf1j17ct5mo"]
+[gd_resource type="Resource" script_class="DialogicCharacter" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogic/Resources/character.gd" id="1_qsljv"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/character.gd" id="1"]
 
 [resource]
-script = ExtResource("1_qsljv")
+script = ExtResource("1")
 display_name = "Preview"
 nicknames = [""]
 color = Color(1, 1, 1, 1)

@@ -1,47 +1,52 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbasef84pjwvt"]
+[gd_scene load_steps=11 format=3]
 
-[ext_resource type="Script" path="res://Levels/Prologue/Birds/chick.gd" id="1_3jbjj"]
-[ext_resource type="Texture2D" uid="uid://dmqo14pm0r0bw" path="res://Levels/Prologue/Birds/Sprites/BirdSprite.png" id="1_ubap7"]
-[ext_resource type="AudioStream" uid="uid://dkeblvaffu5rb" path="res://Music/bird_tweet_6.wav" id="3_bfo12"]
-[ext_resource type="Texture2D" uid="uid://cm4xl0vwxndj4" path="res://UI/music_note.png" id="4_6ki83"]
+[ext_resource type="Script" path="res://Levels/Prologue/Birds/chick.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dmqo14pm0r0bw" path="res://Levels/Prologue/Birds/Sprites/BirdSprite.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://dkeblvaffu5rb" path="res://Music/bird_tweet_6.wav" id="3"]
+[ext_resource type="Texture2D" uid="uid://cm4xl0vwxndj4" path="res://UI/music_note.png" id="4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rm8m8"]
-atlas = ExtResource("1_ubap7")
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("2")
 region = Rect2(0, 32, 16, 16)
+script = null
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_42n4c"]
-atlas = ExtResource("1_ubap7")
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("2")
 region = Rect2(16, 32, 16, 16)
+script = null
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_imgcr"]
-atlas = ExtResource("1_ubap7")
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("2")
 region = Rect2(32, 32, 16, 16)
+script = null
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fmpxs"]
-atlas = ExtResource("1_ubap7")
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("2")
 region = Rect2(0, 0, 16, 16)
+script = null
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hdchv"]
-atlas = ExtResource("1_ubap7")
+[sub_resource type="AtlasTexture" id="5"]
+atlas = ExtResource("2")
 region = Rect2(16, 0, 16, 16)
+script = null
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gsgoi"]
+[sub_resource type="SpriteFrames" id="6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rm8m8")
+"texture": SubResource("1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_42n4c")
+"texture": SubResource("2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_imgcr")
+"texture": SubResource("3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_42n4c")
+"texture": SubResource("2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rm8m8")
+"texture": SubResource("1")
 }],
 "loop": false,
 "name": &"cating",
@@ -49,32 +54,33 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fmpxs")
+"texture": SubResource("4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hdchv")
+"texture": SubResource("5")
 }],
 "loop": true,
 "name": &"default",
 "speed": 1.0
 }]
+script = null
 
 [node name="Chick" type="StaticBody2D"]
-script = ExtResource("1_3jbjj")
+script = ExtResource("1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_gsgoi")
+sprite_frames = SubResource("6")
 autoplay = "default"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_bfo12")
+stream = ExtResource("3")
 volume_db = -20.385
 
 [node name="MusicNote" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(9, -10)
 scale = Vector2(0.04, 0.04)
-texture = ExtResource("4_6ki83")
+texture = ExtResource("4")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="default_looped"]

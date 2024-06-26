@@ -35,6 +35,7 @@ func remove_coat(item_name):
 		start_closing_phrase_or_no()
 
 func remove_lamp(item_name):
+	get_parent().get_node("PlayerXY").drop_lamp()
 	var item_comment: String
 	
 	if Dialogic.VAR.lamp_state == "has":

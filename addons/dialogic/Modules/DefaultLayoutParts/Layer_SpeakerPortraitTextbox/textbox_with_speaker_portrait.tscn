@@ -1,17 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://by6waso0mjpjp"]
+[gd_scene load_steps=7 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="2_y0h34"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_11puy"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/speaker_portrait_textbox_layer.gd" id="1"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="2"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="3"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="4"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmg1w"]
+[sub_resource type="StyleBoxFlat" id="1"]
 bg_color = Color(0.254902, 0.254902, 0.254902, 1)
 skew = Vector2(0.073, 0)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
+script = null
 
 [node name="TextboxWithSpeakerPortrait" type="Control"]
 layout_mode = 3
@@ -20,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7jt4d")
+script = ExtResource("1")
 box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/default_stylebox.tres"
 
 [node name="Anchor" type="Control" parent="."]
@@ -59,7 +61,7 @@ clip_children = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
-theme_override_styles/panel = SubResource("StyleBoxFlat_dmg1w")
+theme_override_styles/panel = SubResource("1")
 
 [node name="PortraitBackgroundColor" type="ColorRect" parent="Anchor/Panel/HBox/PortraitPanel"]
 unique_name_in_owner = true
@@ -83,7 +85,7 @@ anchor_bottom = 1.0
 offset_top = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4jxq7")
+script = ExtResource("2")
 mode = 1
 debug_character_portrait = "speaker"
 
@@ -96,7 +98,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Name"
-script = ExtResource("2_y0h34")
+script = ExtResource("3")
 
 [node name="DialogicNode_DialogText" type="RichTextLabel" parent="Anchor/Panel/HBox/VBoxContainer"]
 unique_name_in_owner = true
@@ -106,4 +108,7 @@ theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
 text = "Some text"
 scroll_following = true
-script = ExtResource("3_11puy")
+script = ExtResource("4")
+
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="Anchor/Panel/HBox/VBoxContainer/DialogicNode_DialogText"]
+script = ExtResource("5")

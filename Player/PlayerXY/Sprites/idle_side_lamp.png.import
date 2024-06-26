@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://didbhkdu4838q"
+path="res://.godot/imported/idle_side_lamp.png-bdfe8554f4cb85d54d1e2fc20b74f5e3.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Player/PlayerXY/Sprites/idle_side_lamp.png"
+dest_files=PackedStringArray("res://.godot/imported/idle_side_lamp.png-bdfe8554f4cb85d54d1e2fc20b74f5e3.ctex")
+
+[params]
+
+dummy_value_ignore_me=0

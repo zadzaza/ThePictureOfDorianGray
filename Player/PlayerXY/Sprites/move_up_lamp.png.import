@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://qx4odqj1as65"
+path="res://.godot/imported/move_up_lamp.png-f380b8b05d79cb51bd18be00d096bff9.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Player/PlayerXY/Sprites/move_up_lamp.png"
+dest_files=PackedStringArray("res://.godot/imported/move_up_lamp.png-f380b8b05d79cb51bd18be00d096bff9.ctex")
+
+[params]
+
+dummy_value_ignore_me=0

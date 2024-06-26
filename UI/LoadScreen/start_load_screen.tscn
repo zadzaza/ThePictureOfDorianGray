@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c02rcfw873wft"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://UI/LoadScreen/start_load_screen.gd" id="1_pm126"]
-[ext_resource type="Texture2D" uid="uid://bkv2t5l0re0am" path="res://UI/LoadScreen/asset_YHgAw7dnMDNCGidd6nuwzooD.png" id="2_qqvvw"]
+[ext_resource type="Script" path="res://UI/LoadScreen/start_load_screen.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bkv2t5l0re0am" path="res://UI/LoadScreen/asset_YHgAw7dnMDNCGidd6nuwzooD.png" id="2"]
 
 [node name="StartLoadScreen" type="CanvasLayer"]
-script = ExtResource("1_pm126")
+script = ExtResource("1")
 
 [node name="AssetYHgAw7DnMdncGidd6NuwzooD" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_qqvvw")
+texture = ExtResource("2")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

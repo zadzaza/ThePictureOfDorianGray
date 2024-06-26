@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
 # Инициализируем анимированный спрайт и его поведение при повороте
-@onready var animation = $AnimatedSprite2D
+@onready var animated_sprite = $AnimatedSprite2D
+@onready var animation: String
+@onready var frames_with_lamp = preload("res://Player/PlayerXY/with_lamp.tres")
+@onready var frames_without_lamp = preload("res://Player/PlayerXY/without_lamp.tres")
 @onready var pl_flip_h: bool
+
 var show_btn = false
 @export var pepe = true
 
@@ -19,9 +23,20 @@ enum MOVE_STATE {IDLE_DOWN, IDLE_UP, IDLE_SIDE, MOVE_SIDE, MOVE_UP, MOVE_DOWN}
 var current_state: MOVE_STATE
 
 
+func _ready():
+	drop_lamp()
+
+func take_lamp():
+	animated_sprite.set_sprite_frames(frames_with_lamp)
+	$PointLight2D.visible = true
+	
+func drop_lamp():
+	animated_sprite.set_sprite_frames(frames_without_lamp)
+	$PointLight2D.visible = false
+
 func _physics_process(delta):
 	# Получаем направление движения из пользовательского ввода
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") if !Dialogic.VAR.block_movement else 0.0
+	var direction = Input.get_vector("left", "right", "up", "down") if !Dialogic.VAR.block_movement else 0.0
 	
 	# Устанавливаем горизонтальную скорость, если есть направление движения
 	if direction:
@@ -74,6 +89,7 @@ func _physics_process(delta):
 			current_state = MOVE_STATE.IDLE_DOWN
 	
 	set_anim(current_state)
+	animated_sprite.play(animation)
 	
 	# Перемещаем персонажа и выводим текущее состояние и позицию в консоль
 	move_and_slide()
@@ -85,17 +101,17 @@ func set_anim(new_state: MOVE_STATE):
 	# Выбираем анимацию на основе состояния персонажа
 	match move_state:
 		MOVE_STATE.IDLE_SIDE:
-			animation.set_animation("idle_side")
+			animation = "idle_side"
 		MOVE_STATE.MOVE_SIDE:
-			animation.set_animation("move_side")
+			animation = "move_side"
 		MOVE_STATE.MOVE_UP:
-			animation.set_animation("move_up")
+			animation = "move_up"
 		MOVE_STATE.IDLE_UP:
-			animation.set_animation("idle_up")
+			animation = "idle_up"
 		MOVE_STATE.MOVE_DOWN:
-			animation.set_animation("move_down")
+			animation = "move_down"
 		MOVE_STATE.IDLE_DOWN:
-			animation.set_animation("idle_down")
+			animation ="idle_down"
 			
 			
 func set_block_movement(block: bool):

@@ -1,27 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5oexq1eivnb0"]
+[gd_scene load_steps=8 format=3]
 
-[ext_resource type="Script" path="res://UI/UIBookMenu/v2/ui_book_menu.gd" id="1_gelpy"]
-[ext_resource type="Texture2D" uid="uid://coakusgl1rkh4" path="res://UI/UIBookMenu/v2/Sprites/7b8bbe7812c946cb35c6232434d6c6dd.jpg" id="2_rh6xt"]
-[ext_resource type="Texture2D" uid="uid://qw7wp456wphp" path="res://UI/UIBookMenu/v2/Sprites/RADL_Book_blue.png" id="3_wqcq1"]
-[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="4_kfvpv"]
-[ext_resource type="Texture2D" uid="uid://fn4742xjwx0t" path="res://UI/UIBookMenu/v2/Sprites/button.png" id="4_p1ipg"]
-[ext_resource type="PackedScene" uid="uid://cagoe41f4s7us" path="res://UI/UIBookMenu/v2/inventory_slots.tscn" id="6_kl0xh"]
-[ext_resource type="Script" path="res://pause-manager/scripts/pause_manager.gd" id="7_flh0m"]
+[ext_resource type="Script" path="res://UI/UIBookMenu/v2/ui_book_menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://coakusgl1rkh4" path="res://UI/UIBookMenu/v2/Sprites/7b8bbe7812c946cb35c6232434d6c6dd.jpg" id="2"]
+[ext_resource type="Texture2D" uid="uid://qw7wp456wphp" path="res://UI/UIBookMenu/v2/Sprites/RADL_Book_blue.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://fn4742xjwx0t" path="res://UI/UIBookMenu/v2/Sprites/button.png" id="4"]
+[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="5"]
+[ext_resource type="PackedScene" uid="uid://cagoe41f4s7us" path="res://UI/UIBookMenu/v2/inventory_slots.tscn" id="6"]
+[ext_resource type="Script" path="res://pause-manager/scripts/pause_manager.gd" id="7"]
 
 [node name="UIBookMenu" type="CanvasLayer"]
 process_mode = 3
 layer = 128
-script = ExtResource("1_gelpy")
+script = ExtResource("1")
 
 [node name="7b8Bbe7812c946Cb35c6232434d6c6Dd" type="Sprite2D" parent="."]
 position = Vector2(962, 938)
 scale = Vector2(1.88086, 1.88086)
-texture = ExtResource("2_rh6xt")
+texture = ExtResource("2")
 
 [node name="RadlBookBlue" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 scale = Vector2(5.06094, 5.06094)
-texture = ExtResource("3_wqcq1")
+texture = ExtResource("3")
 
 [node name="Page1" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
@@ -34,7 +34,7 @@ scale = Vector2(4.52085, 4.52085)
 [node name="ContinueBtn" type="TextureButton" parent="Page1"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_p1ipg")
+texture_normal = ExtResource("4")
 
 [node name="Basil" type="Label" parent="Page1/ContinueBtn"]
 layout_mode = 0
@@ -44,14 +44,14 @@ offset_right = 107.309
 offset_bottom = 20.5392
 scale = Vector2(0.353915, 0.353915)
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("4_kfvpv")
+theme_override_fonts/font = ExtResource("5")
 text = "Продолжить"
 horizontal_alignment = 1
 
 [node name="SaveBtn" type="TextureButton" parent="Page1"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_p1ipg")
+texture_normal = ExtResource("4")
 
 [node name="Basil" type="Label" parent="Page1/SaveBtn"]
 layout_mode = 0
@@ -61,14 +61,14 @@ offset_right = 107.309
 offset_bottom = 20.5392
 scale = Vector2(0.353915, 0.353915)
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("4_kfvpv")
+theme_override_fonts/font = ExtResource("5")
 text = "Сохранить"
 horizontal_alignment = 1
 
 [node name="LoadBtn" type="TextureButton" parent="Page1"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_p1ipg")
+texture_normal = ExtResource("4")
 
 [node name="Basil" type="Label" parent="Page1/LoadBtn"]
 layout_mode = 0
@@ -78,14 +78,14 @@ offset_right = 107.309
 offset_bottom = 20.5392
 scale = Vector2(0.353915, 0.353915)
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("4_kfvpv")
+theme_override_fonts/font = ExtResource("5")
 text = "Загрузить"
 horizontal_alignment = 1
 
 [node name="SettingBtn" type="TextureButton" parent="Page1"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_p1ipg")
+texture_normal = ExtResource("4")
 
 [node name="Basil" type="Label" parent="Page1/SettingBtn"]
 layout_mode = 0
@@ -95,14 +95,14 @@ offset_right = 107.309
 offset_bottom = 20.5392
 scale = Vector2(0.353915, 0.353915)
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("4_kfvpv")
+theme_override_fonts/font = ExtResource("5")
 text = "Настройки"
 horizontal_alignment = 1
 
 [node name="ExitBtn" type="TextureButton" parent="Page1"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_p1ipg")
+texture_normal = ExtResource("4")
 
 [node name="Basil" type="Label" parent="Page1/ExitBtn"]
 layout_mode = 0
@@ -112,7 +112,7 @@ offset_right = 107.309
 offset_bottom = 20.5392
 scale = Vector2(0.353915, 0.353915)
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("4_kfvpv")
+theme_override_fonts/font = ExtResource("5")
 text = "Выйти"
 horizontal_alignment = 1
 
@@ -128,7 +128,7 @@ scale = Vector2(4.52085, 4.52085)
 [node name="SoundBtn" type="TextureButton" parent="Page2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_p1ipg")
+texture_normal = ExtResource("4")
 
 [node name="Basil" type="Label" parent="Page2/SoundBtn"]
 layout_mode = 0
@@ -138,14 +138,14 @@ offset_right = 107.309
 offset_bottom = 20.5392
 scale = Vector2(0.353915, 0.353915)
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("4_kfvpv")
+theme_override_fonts/font = ExtResource("5")
 text = "Звук"
 horizontal_alignment = 1
 
 [node name="GraphicsBtn" type="TextureButton" parent="Page2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_p1ipg")
+texture_normal = ExtResource("4")
 
 [node name="Basil" type="Label" parent="Page2/GraphicsBtn"]
 layout_mode = 0
@@ -155,14 +155,14 @@ offset_right = 107.309
 offset_bottom = 20.5392
 scale = Vector2(0.353915, 0.353915)
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("4_kfvpv")
+theme_override_fonts/font = ExtResource("5")
 text = "Графика"
 horizontal_alignment = 1
 
 [node name="VideoBtn" type="TextureButton" parent="Page2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_p1ipg")
+texture_normal = ExtResource("4")
 
 [node name="Basil" type="Label" parent="Page2/VideoBtn"]
 layout_mode = 0
@@ -172,14 +172,14 @@ offset_right = 107.309
 offset_bottom = 20.5392
 scale = Vector2(0.353915, 0.353915)
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("4_kfvpv")
+theme_override_fonts/font = ExtResource("5")
 text = "Видео"
 horizontal_alignment = 1
 
 [node name="BackBtn" type="TextureButton" parent="Page2"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_p1ipg")
+texture_normal = ExtResource("4")
 
 [node name="Basil" type="Label" parent="Page2/BackBtn"]
 layout_mode = 0
@@ -189,7 +189,7 @@ offset_right = 107.309
 offset_bottom = 20.5392
 scale = Vector2(0.353915, 0.353915)
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("4_kfvpv")
+theme_override_fonts/font = ExtResource("5")
 text = "Назад"
 horizontal_alignment = 1
 
@@ -205,7 +205,7 @@ scale = Vector2(4.52085, 4.52085)
 [node name="BackBtn" type="TextureButton" parent="Page3"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_p1ipg")
+texture_normal = ExtResource("4")
 
 [node name="Basil" type="Label" parent="Page3/BackBtn"]
 layout_mode = 0
@@ -215,11 +215,11 @@ offset_right = 107.309
 offset_bottom = 20.5392
 scale = Vector2(0.353915, 0.353915)
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("4_kfvpv")
+theme_override_fonts/font = ExtResource("5")
 text = "Назад"
 horizontal_alignment = 1
 
-[node name="SlotsContainer" parent="." instance=ExtResource("6_kl0xh")]
+[node name="SlotsContainer" parent="." instance=ExtResource("6")]
 offset_left = 1038.0
 offset_top = 315.0
 offset_right = 1282.0
@@ -228,7 +228,7 @@ offset_bottom = 750.0
 [node name="PauseManager" type="Node" parent="."]
 unique_name_in_owner = true
 process_mode = 3
-script = ExtResource("7_flh0m")
+script = ExtResource("7")
 
 [connection signal="pressed" from="Page1/ContinueBtn" to="." method="_on_continue_btn_pressed"]
 [connection signal="pressed" from="Page1/SaveBtn" to="." method="_on_save_btn_pressed"]

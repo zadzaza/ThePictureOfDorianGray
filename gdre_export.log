@@ -1,0 +1,283 @@
+GDRE Tools v0.6.2
+Windows 10.0.22631, NVIDIA GeForce RTX 3060, opengl3
+Extracted 1450 files, no errors detected!
+USER WARNING: Converting lossy imports, you may lose fidelity for indicated assets when re-importing upon loading the project
+   at: ImportExporter::_export_imports (modules\gdsdecomp\utility\import_exporter.cpp:58)
+Recreated plugin config for dialogic
+Recreated plugin config for easy_charts
+USER ERROR: Failed to find main script for plugin postgresql!
+   at: ImportExporter::recreate_plugin_config (modules\gdsdecomp\utility\import_exporter.cpp:610)
+USER WARNING: Failed to recreate plugin.cfg for postgresql
+   at: ImportExporter::recreate_plugin_configs (modules\gdsdecomp\utility\import_exporter.cpp:651)
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Dropdown/default.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Dropdown/divide.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Dropdown/join.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Dropdown/leave.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Dropdown/minus.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Dropdown/multiply.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Dropdown/plus.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Dropdown/set.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Dropdown/update.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Interactable/decrement_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Interactable/increment_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Pieces/add-folder.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Pieces/closed-icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Pieces/expand-icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Pieces/open-icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Pieces/variable.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Pieces/warning.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Resources/character.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Resources/portrait.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Toolbar/add-character.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/Toolbar/add-timeline.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/dialogic-logo.svg
+Did not rewrite import metadata for res://addons/dialogic/Editor/Images/plugin-icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Character/event_portrait_position.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Character/icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Character/update_mirror.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Character/update_portrait.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Character/update_position.svg.2023_09_23_08_37_47.0.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Character/update_position.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Character/update_z_index.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Choice/icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Clear/clear_background.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Clear/clear_characters.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Clear/clear_music.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Clear/clear_positions.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Clear/clear_style.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Clear/clear_textbox.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Condition/icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/background_layer_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/popup_glossary_layer_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/input_layer_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/speaker-textbox-icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/choices_layer_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/portrait_layer_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/textbox_layer_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Glossary/add-glossary.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Glossary/icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/History/definition.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/History/icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Jump/icon_return.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Save/icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Settings/icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/StyleEditor/styles_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Text/icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Text/node_next_indicator_icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Variable/add-variable.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Variable/variable.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/Wait/icon.svg
+Did not rewrite import metadata for res://addons/dialogic/Modules/WaitInput/icon.svg
+Did not rewrite import metadata for res://addons/easy_charts/icon.svg
+Did not rewrite import metadata for res://addons/easy_charts/utilities/icons/linechart.svg
+Did not rewrite import metadata for res://easy_charts.svg
+Did not rewrite import metadata for res://icon.svg
+Saved project config project.godot.
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     0
+Failed scripts:                         0
+Imported resources for export session:  1450
+Successfully converted:                 540
+Lossy:                                  90
+Rewrote metadata:                       0
+Non-importable conversions:             67
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+
+The following files were converted from an import that was stored lossy.
+You may lose fidelity when re-importing these files upon loading the project.
+res://.godot/imported/Comic Sans MS Pixel.ttf-88ec354088450c5b1c0dc386cc772419.fontdata to res://Fonts/Comic Sans MS Pixel.ttf
+res://.godot/imported/PixelCode-Bold.ttf-54ce5d07fcd33b8387e5520e28b065ee.fontdata to res://Fonts/PixelCode/PixelCode-Bold.ttf
+res://.godot/imported/PixelCode.ttf-e6e6ed5ffb00d56497db903005572e69.fontdata to res://Fonts/PixelCode/PixelCode.ttf
+res://.godot/imported/1.jpg-40ac502fe39cc84758e0a8750c11b2e6.ctex to res://Levels/House/HouseIntro/Slides/1.jpg
+res://.godot/imported/2.jpg-d4de652704ad2c00ff861c0d7596d4f5.ctex to res://Levels/House/HouseIntro/Slides/2.jpg
+res://.godot/imported/3.jpg-2ca042ca707d57af4700488bacf1fbad.ctex to res://Levels/House/HouseIntro/Slides/3.jpg
+res://.godot/imported/4.jpg-e5e9c5dc24db2a578f2362ba92eaa516.ctex to res://Levels/House/HouseIntro/Slides/4.jpg
+res://.godot/imported/5.jpg-8bed7ee7c88c9ed520419a22b00e975b.ctex to res://Levels/House/HouseIntro/Slides/5.jpg
+res://.godot/imported/bird_tweet_6.wav-8e0613dad6ea473074bb9152c26f087a.sample to res://Music/bird_tweet_6.wav
+res://.godot/imported/fire-general.wav-f1783558ad9930b84b561c3148b9b8d7.sample to res://Music/fire-general.wav
+res://.godot/imported/fire-light_zjugrzn_.wav-06690639a36f958c687e8f7f56322408.sample to res://Music/fire-light_zjugrzn_.wav
+res://.godot/imported/house_music.wav-51397a78c616e44a8a8f0f98fadc6de7.sample to res://Music/house_music.wav
+res://.godot/imported/prolog_music.wav-6bbc2db7aa498e5a242c198eb8d5600a.sample to res://Music/prolog_music.wav
+res://.godot/imported/7b8bbe7812c946cb35c6232434d6c6dd.jpg-76cde469d8f37d19e5fdfcb3c35e7c82.ctex to res://UI/UIBookMenu/v2/Sprites/7b8bbe7812c946cb35c6232434d6c6dd.jpg
+res://.godot/imported/default.svg-3f34de5e45bef5de4d9c15ef78c00c6c.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/default.png
+res://.godot/imported/divide.svg-4928f878a07ba93ebc44d8ae73ad4c1f.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/divide.png
+res://.godot/imported/join.svg-2f0d7b9e8e01cf0e62b8c3a85aff6213.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/join.png
+res://.godot/imported/leave.svg-c936f6e3d601b8c12c23f205a765084e.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/leave.png
+res://.godot/imported/minus.svg-29f22d1aa24635bae2c03057c07be8bc.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/minus.png
+res://.godot/imported/multiply.svg-0e9db99aafb66d43ee14adcca26c5b47.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/multiply.png
+res://.godot/imported/plus.svg-e094b0b8505b5d910717883d06553532.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/plus.png
+res://.godot/imported/set.svg-f100fad003be2285d5d0da5c58417203.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/set.png
+res://.godot/imported/update.svg-cefa0fe6bfa50911bb9a77982288e485.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/update.png
+res://.godot/imported/decrement_icon.svg-9556cf56db91e200fb946372e010fd5e.ctex to res://.assets/addons/dialogic/Editor/Images/Interactable/decrement_icon.png
+res://.godot/imported/increment_icon.svg-081e6509e76349f0628c55a41e85fd65.ctex to res://.assets/addons/dialogic/Editor/Images/Interactable/increment_icon.png
+res://.godot/imported/add-folder.svg-41a970370f904038e63c13bddbdb6450.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/add-folder.png
+res://.godot/imported/closed-icon.svg-b4f16653b91d6792313a130565319b2f.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/closed-icon.png
+res://.godot/imported/expand-icon.svg-26099b197ab0f314e2253848fcc22962.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/expand-icon.png
+res://.godot/imported/open-icon.svg-1a2ae6d0121a79b624c0fb87cc9ceea2.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/open-icon.png
+res://.godot/imported/variable.svg-50a50248b9d47e5556571e4111e8d5b4.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/variable.png
+res://.godot/imported/warning.svg-a48ae93c4663637f2aca88d055604495.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/warning.png
+res://.godot/imported/character.svg-48bc1c93fa13733a935ca2c669d933a7.ctex to res://.assets/addons/dialogic/Editor/Images/Resources/character.png
+res://.godot/imported/portrait.svg-7d29c7cfe3e086d65dce33c3d66c48cd.ctex to res://.assets/addons/dialogic/Editor/Images/Resources/portrait.png
+res://.godot/imported/add-character.svg-a658b65c1225b02657a50d5c965e0d5e.ctex to res://.assets/addons/dialogic/Editor/Images/Toolbar/add-character.png
+res://.godot/imported/add-timeline.svg-86961b528ebdf01f585931a15fea1755.ctex to res://.assets/addons/dialogic/Editor/Images/Toolbar/add-timeline.png
+res://.godot/imported/dialogic-logo.svg-e43201cabc9573eeb3f78fd91ea9d909.ctex to res://.assets/addons/dialogic/Editor/Images/dialogic-logo.png
+res://.godot/imported/plugin-icon.svg-aa6701e8ed73f5fe5d177dfddce3a0e3.ctex to res://.assets/addons/dialogic/Editor/Images/plugin-icon.png
+res://.godot/imported/Roboto-Bold.ttf-a0c3395776dbc11ee676c5f1ea9c0579.fontdata to res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf
+res://.godot/imported/Roboto-Italic.ttf-844485a0171d6031f98f4829003a881a.fontdata to res://addons/dialogic/Example Assets/Fonts/Roboto-Italic.ttf
+res://.godot/imported/Roboto-Regular.ttf-d9ce0640effe9e93230b445b37d8e692.fontdata to res://addons/dialogic/Example Assets/Fonts/Roboto-Regular.ttf
+res://.godot/imported/typing1.wav-b241c6aab4ce82bf04caf8687873cae0.sample to res://addons/dialogic/Example Assets/sound-effects/typing1.wav
+res://.godot/imported/typing2.wav-64cf50045b34db7d5ef5da984070e0a7.sample to res://addons/dialogic/Example Assets/sound-effects/typing2.wav
+res://.godot/imported/typing3.wav-083712282583242958aaa68128694f95.sample to res://addons/dialogic/Example Assets/sound-effects/typing3.wav
+res://.godot/imported/typing4.wav-4e7a00fb19b7dd0bdfd8e323401b6162.sample to res://addons/dialogic/Example Assets/sound-effects/typing4.wav
+res://.godot/imported/typing5.wav-5315fa96c84bd3957d157e8c978c1f04.sample to res://addons/dialogic/Example Assets/sound-effects/typing5.wav
+res://.godot/imported/event_portrait_position.svg-f91e8e0cc02545b0b28152d6ef70ff10.ctex to res://.assets/addons/dialogic/Modules/Character/event_portrait_position.png
+res://.godot/imported/icon.svg-4f340f6efbb83004dbd5c761dd1dc448.ctex to res://.assets/addons/dialogic/Modules/Character/icon.png
+res://.godot/imported/update_mirror.svg-d6fa4832a7758cad02a7f32282433230.ctex to res://.assets/addons/dialogic/Modules/Character/update_mirror.png
+res://.godot/imported/update_portrait.svg-b90fa6163d3720d34df8578ce2aa35e1.ctex to res://.assets/addons/dialogic/Modules/Character/update_portrait.png
+res://.godot/imported/update_position.svg.2023_09_23_08_37_47.0.svg-d66e70a05e9de92a595b70fa88fca0d4.ctex to res://.assets/addons/dialogic/Modules/Character/update_position.svg.2023_09_23_08_37_47.0.png
+res://.godot/imported/update_position.svg-4be50608dc0768e715ff659ca62cf187.ctex to res://.assets/addons/dialogic/Modules/Character/update_position.png
+res://.godot/imported/update_z_index.svg-204064db9241de79bf8dfd23af57c6c6.ctex to res://.assets/addons/dialogic/Modules/Character/update_z_index.png
+res://.godot/imported/icon.svg-372a9bfce8bea67fff1988d7acf09a9a.ctex to res://.assets/addons/dialogic/Modules/Choice/icon.png
+res://.godot/imported/clear_background.svg-32f657ae646e5867a8ceb0543ae207de.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_background.png
+res://.godot/imported/clear_characters.svg-58481eec0869d46b2d90f2102edd1687.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_characters.png
+res://.godot/imported/clear_music.svg-ab19a5f3dc85de8ba17b7c720b838a73.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_music.png
+res://.godot/imported/clear_positions.svg-9c6ef9c2e28a63b87a3c7d0ed63620d8.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_positions.png
+res://.godot/imported/clear_style.svg-ab3288e6e47f45c4e12ce1862403a99c.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_style.png
+res://.godot/imported/clear_textbox.svg-04935e3d82350d24a197adcb47df6f57.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_textbox.png
+res://.godot/imported/icon.svg-502d45c064cc30f576b7b105a01357ce.ctex to res://.assets/addons/dialogic/Modules/Condition/icon.png
+res://.godot/imported/background_layer_icon.svg-021cd7ab7c646ee621f9b89b8dfc9d60.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/background_layer_icon.png
+res://.godot/imported/popup_glossary_layer_icon.svg-4af96bdb70714a5289a4ffe42cf8f357.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/popup_glossary_layer_icon.png
+res://.godot/imported/history_icon.svg-0be9d23e65368ea3983968e4ce0e43d3.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_icon.png
+res://.godot/imported/input_layer_icon.svg-3f439e08e8c66cbf3522ce60714f7588.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/input_layer_icon.png
+res://.godot/imported/speaker-textbox-icon.svg-e67964032c31cfdc4bf5a376d48a985e.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/speaker-textbox-icon.png
+res://.godot/imported/text_input_layer_icon.svg-5a1e8bca317bf45f6805d82812407215.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer_icon.png
+res://.godot/imported/text_bubble_layer_icon.svg-d46d5806bbf83c1dc50f8d7fc8dac67d.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer_icon.png
+res://.godot/imported/choices_layer_icon.svg-2f676308da08dddba733cb2bfba8fc69.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/choices_layer_icon.png
+res://.godot/imported/portrait_layer_icon.svg-4bc8b0ebd4dd0977a12c09f30758d7e1.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/portrait_layer_icon.png
+res://.godot/imported/next.svg-689f85597f487815b8ddefa23d22bf6f.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.png
+res://.godot/imported/textbox_layer_icon.svg-d6678fedd53dcb59cc32e1c443754ad5.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/textbox_layer_icon.png
+res://.godot/imported/add-glossary.svg-1cde77c043d3874d9bc84cc14d0ec9dc.ctex to res://.assets/addons/dialogic/Modules/Glossary/add-glossary.png
+res://.godot/imported/icon.svg-4fc0c12c53379638e37d654e7bbaea1a.ctex to res://.assets/addons/dialogic/Modules/Glossary/icon.png
+res://.godot/imported/definition.svg-dbaabe55d84e4ad95047a50fc6c13843.ctex to res://.assets/addons/dialogic/Modules/History/definition.png
+res://.godot/imported/icon.svg-82841efe3f86e947d4f66fd24dc8f52c.ctex to res://.assets/addons/dialogic/Modules/History/icon.png
+res://.godot/imported/icon_return.svg-dc7fb704ff391638f73cbbc2b30b32fa.ctex to res://.assets/addons/dialogic/Modules/Jump/icon_return.png
+res://.godot/imported/icon.svg-aad0408eebe298e9d92c76d6f2c79cf6.ctex to res://.assets/addons/dialogic/Modules/Save/icon.png
+res://.godot/imported/icon.svg-d4407cb145fa5c1d965de3d2bd63ce5f.ctex to res://.assets/addons/dialogic/Modules/Settings/icon.png
+res://.godot/imported/styles_icon.svg-c55f9f7d15c3512c8b20dbf30eed7047.ctex to res://.assets/addons/dialogic/Modules/StyleEditor/styles_icon.png
+res://.godot/imported/icon.svg-e2501ddcdef01c7f2c3538940f5abfc1.ctex to res://.assets/addons/dialogic/Modules/Text/icon.png
+res://.godot/imported/node_next_indicator_icon.svg-06167a3b3e290941c1c34386ebd60af8.ctex to res://.assets/addons/dialogic/Modules/Text/node_next_indicator_icon.png
+res://.godot/imported/add-variable.svg-26eb3bd7fac746c574d054e8416d3aac.ctex to res://.assets/addons/dialogic/Modules/Variable/add-variable.png
+res://.godot/imported/variable.svg-52aeb47fe1705a3f04d919f8dcd5d319.ctex to res://.assets/addons/dialogic/Modules/Variable/variable.png
+res://.godot/imported/icon.svg-7e9f52b17ae6e5e1f284e12048cb8f05.ctex to res://.assets/addons/dialogic/Modules/Wait/icon.png
+res://.godot/imported/icon.svg-cb8e50b081a310c64183b12c6d12fcf2.ctex to res://.assets/addons/dialogic/Modules/WaitInput/icon.png
+res://.godot/imported/icon.svg-655bc7c28f15e7cab48b85d562ef0068.ctex to res://.assets/addons/easy_charts/icon.png
+res://.godot/imported/OpenSans-VariableFont_wdth,wght.ttf-d05790715e89c94bb2a3b1122054f8d1.fontdata to res://addons/easy_charts/utilities/assets/OpenSans-VariableFont_wdth,wght.ttf
+res://.godot/imported/linechart.svg-922834f0462a2c88be644081c47c63ad.ctex to res://.assets/addons/easy_charts/utilities/icons/linechart.png
+res://.godot/imported/easy_charts.svg-5963eccbc8d55a9c4bb3a7a394bde2c4.ctex to res://.assets/easy_charts.png
+res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex to res://.assets/icon.png
+------
+
+The following plugins failed to have their plugin.cfg regenerated:
+postgresql
+------
+
+The following files were converted and saved to a non-original path, but did not have their import data rewritten.
+These files will not be re-imported when loading the project.
+res://.godot/imported/default.svg-3f34de5e45bef5de4d9c15ef78c00c6c.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/default.png
+res://.godot/imported/divide.svg-4928f878a07ba93ebc44d8ae73ad4c1f.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/divide.png
+res://.godot/imported/join.svg-2f0d7b9e8e01cf0e62b8c3a85aff6213.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/join.png
+res://.godot/imported/leave.svg-c936f6e3d601b8c12c23f205a765084e.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/leave.png
+res://.godot/imported/minus.svg-29f22d1aa24635bae2c03057c07be8bc.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/minus.png
+res://.godot/imported/multiply.svg-0e9db99aafb66d43ee14adcca26c5b47.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/multiply.png
+res://.godot/imported/plus.svg-e094b0b8505b5d910717883d06553532.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/plus.png
+res://.godot/imported/set.svg-f100fad003be2285d5d0da5c58417203.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/set.png
+res://.godot/imported/update.svg-cefa0fe6bfa50911bb9a77982288e485.ctex to res://.assets/addons/dialogic/Editor/Images/Dropdown/update.png
+res://.godot/imported/decrement_icon.svg-9556cf56db91e200fb946372e010fd5e.ctex to res://.assets/addons/dialogic/Editor/Images/Interactable/decrement_icon.png
+res://.godot/imported/increment_icon.svg-081e6509e76349f0628c55a41e85fd65.ctex to res://.assets/addons/dialogic/Editor/Images/Interactable/increment_icon.png
+res://.godot/imported/add-folder.svg-41a970370f904038e63c13bddbdb6450.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/add-folder.png
+res://.godot/imported/closed-icon.svg-b4f16653b91d6792313a130565319b2f.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/closed-icon.png
+res://.godot/imported/expand-icon.svg-26099b197ab0f314e2253848fcc22962.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/expand-icon.png
+res://.godot/imported/open-icon.svg-1a2ae6d0121a79b624c0fb87cc9ceea2.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/open-icon.png
+res://.godot/imported/variable.svg-50a50248b9d47e5556571e4111e8d5b4.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/variable.png
+res://.godot/imported/warning.svg-a48ae93c4663637f2aca88d055604495.ctex to res://.assets/addons/dialogic/Editor/Images/Pieces/warning.png
+res://.godot/imported/character.svg-48bc1c93fa13733a935ca2c669d933a7.ctex to res://.assets/addons/dialogic/Editor/Images/Resources/character.png
+res://.godot/imported/portrait.svg-7d29c7cfe3e086d65dce33c3d66c48cd.ctex to res://.assets/addons/dialogic/Editor/Images/Resources/portrait.png
+res://.godot/imported/add-character.svg-a658b65c1225b02657a50d5c965e0d5e.ctex to res://.assets/addons/dialogic/Editor/Images/Toolbar/add-character.png
+res://.godot/imported/add-timeline.svg-86961b528ebdf01f585931a15fea1755.ctex to res://.assets/addons/dialogic/Editor/Images/Toolbar/add-timeline.png
+res://.godot/imported/dialogic-logo.svg-e43201cabc9573eeb3f78fd91ea9d909.ctex to res://.assets/addons/dialogic/Editor/Images/dialogic-logo.png
+res://.godot/imported/plugin-icon.svg-aa6701e8ed73f5fe5d177dfddce3a0e3.ctex to res://.assets/addons/dialogic/Editor/Images/plugin-icon.png
+res://.godot/imported/event_portrait_position.svg-f91e8e0cc02545b0b28152d6ef70ff10.ctex to res://.assets/addons/dialogic/Modules/Character/event_portrait_position.png
+res://.godot/imported/icon.svg-4f340f6efbb83004dbd5c761dd1dc448.ctex to res://.assets/addons/dialogic/Modules/Character/icon.png
+res://.godot/imported/update_mirror.svg-d6fa4832a7758cad02a7f32282433230.ctex to res://.assets/addons/dialogic/Modules/Character/update_mirror.png
+res://.godot/imported/update_portrait.svg-b90fa6163d3720d34df8578ce2aa35e1.ctex to res://.assets/addons/dialogic/Modules/Character/update_portrait.png
+res://.godot/imported/update_position.svg.2023_09_23_08_37_47.0.svg-d66e70a05e9de92a595b70fa88fca0d4.ctex to res://.assets/addons/dialogic/Modules/Character/update_position.svg.2023_09_23_08_37_47.0.png
+res://.godot/imported/update_position.svg-4be50608dc0768e715ff659ca62cf187.ctex to res://.assets/addons/dialogic/Modules/Character/update_position.png
+res://.godot/imported/update_z_index.svg-204064db9241de79bf8dfd23af57c6c6.ctex to res://.assets/addons/dialogic/Modules/Character/update_z_index.png
+res://.godot/imported/icon.svg-372a9bfce8bea67fff1988d7acf09a9a.ctex to res://.assets/addons/dialogic/Modules/Choice/icon.png
+res://.godot/imported/clear_background.svg-32f657ae646e5867a8ceb0543ae207de.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_background.png
+res://.godot/imported/clear_characters.svg-58481eec0869d46b2d90f2102edd1687.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_characters.png
+res://.godot/imported/clear_music.svg-ab19a5f3dc85de8ba17b7c720b838a73.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_music.png
+res://.godot/imported/clear_positions.svg-9c6ef9c2e28a63b87a3c7d0ed63620d8.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_positions.png
+res://.godot/imported/clear_style.svg-ab3288e6e47f45c4e12ce1862403a99c.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_style.png
+res://.godot/imported/clear_textbox.svg-04935e3d82350d24a197adcb47df6f57.ctex to res://.assets/addons/dialogic/Modules/Clear/clear_textbox.png
+res://.godot/imported/icon.svg-502d45c064cc30f576b7b105a01357ce.ctex to res://.assets/addons/dialogic/Modules/Condition/icon.png
+res://.godot/imported/background_layer_icon.svg-021cd7ab7c646ee621f9b89b8dfc9d60.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/background_layer_icon.png
+res://.godot/imported/popup_glossary_layer_icon.svg-4af96bdb70714a5289a4ffe42cf8f357.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/popup_glossary_layer_icon.png
+res://.godot/imported/history_icon.svg-0be9d23e65368ea3983968e4ce0e43d3.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_icon.png
+res://.godot/imported/input_layer_icon.svg-3f439e08e8c66cbf3522ce60714f7588.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/input_layer_icon.png
+res://.godot/imported/speaker-textbox-icon.svg-e67964032c31cfdc4bf5a376d48a985e.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/speaker-textbox-icon.png
+res://.godot/imported/text_input_layer_icon.svg-5a1e8bca317bf45f6805d82812407215.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer_icon.png
+res://.godot/imported/text_bubble_layer_icon.svg-d46d5806bbf83c1dc50f8d7fc8dac67d.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer_icon.png
+res://.godot/imported/choices_layer_icon.svg-2f676308da08dddba733cb2bfba8fc69.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/choices_layer_icon.png
+res://.godot/imported/portrait_layer_icon.svg-4bc8b0ebd4dd0977a12c09f30758d7e1.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/portrait_layer_icon.png
+res://.godot/imported/next.svg-689f85597f487815b8ddefa23d22bf6f.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.png
+res://.godot/imported/textbox_layer_icon.svg-d6678fedd53dcb59cc32e1c443754ad5.ctex to res://.assets/addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/textbox_layer_icon.png
+res://.godot/imported/add-glossary.svg-1cde77c043d3874d9bc84cc14d0ec9dc.ctex to res://.assets/addons/dialogic/Modules/Glossary/add-glossary.png
+res://.godot/imported/icon.svg-4fc0c12c53379638e37d654e7bbaea1a.ctex to res://.assets/addons/dialogic/Modules/Glossary/icon.png
+res://.godot/imported/definition.svg-dbaabe55d84e4ad95047a50fc6c13843.ctex to res://.assets/addons/dialogic/Modules/History/definition.png
+res://.godot/imported/icon.svg-82841efe3f86e947d4f66fd24dc8f52c.ctex to res://.assets/addons/dialogic/Modules/History/icon.png
+res://.godot/imported/icon_return.svg-dc7fb704ff391638f73cbbc2b30b32fa.ctex to res://.assets/addons/dialogic/Modules/Jump/icon_return.png
+res://.godot/imported/icon.svg-aad0408eebe298e9d92c76d6f2c79cf6.ctex to res://.assets/addons/dialogic/Modules/Save/icon.png
+res://.godot/imported/icon.svg-d4407cb145fa5c1d965de3d2bd63ce5f.ctex to res://.assets/addons/dialogic/Modules/Settings/icon.png
+res://.godot/imported/styles_icon.svg-c55f9f7d15c3512c8b20dbf30eed7047.ctex to res://.assets/addons/dialogic/Modules/StyleEditor/styles_icon.png
+res://.godot/imported/icon.svg-e2501ddcdef01c7f2c3538940f5abfc1.ctex to res://.assets/addons/dialogic/Modules/Text/icon.png
+res://.godot/imported/node_next_indicator_icon.svg-06167a3b3e290941c1c34386ebd60af8.ctex to res://.assets/addons/dialogic/Modules/Text/node_next_indicator_icon.png
+res://.godot/imported/add-variable.svg-26eb3bd7fac746c574d054e8416d3aac.ctex to res://.assets/addons/dialogic/Modules/Variable/add-variable.png
+res://.godot/imported/variable.svg-52aeb47fe1705a3f04d919f8dcd5d319.ctex to res://.assets/addons/dialogic/Modules/Variable/variable.png
+res://.godot/imported/icon.svg-7e9f52b17ae6e5e1f284e12048cb8f05.ctex to res://.assets/addons/dialogic/Modules/Wait/icon.png
+res://.godot/imported/icon.svg-cb8e50b081a310c64183b12c6d12fcf2.ctex to res://.assets/addons/dialogic/Modules/WaitInput/icon.png
+res://.godot/imported/icon.svg-655bc7c28f15e7cab48b85d562ef0068.ctex to res://.assets/addons/easy_charts/icon.png
+res://.godot/imported/linechart.svg-922834f0462a2c88be644081c47c63ad.ctex to res://.assets/addons/easy_charts/utilities/icons/linechart.png
+res://.godot/imported/easy_charts.svg-5963eccbc8d55a9c4bb3a7a394bde2c4.ctex to res://.assets/easy_charts.png
+res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex to res://.assets/icon.png
+
+
+
+---------------------------------IMPORTANT NOTES----------------------------------
+
+The following addons failed to have their libraries copied or plugin.cfg regenerated:
+- postgresql
+You may encounter editor errors due to this.
+Tip: Try finding the plugin in the Godot Asset Library or Github.
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 4.2.2 to edit the project.
+Note: the project may be using a custom version of Godot. Detection for this has not been implemented yet.
+If you find that you have many non-import errors upon opening the project 
+(i.e. scripts or shaders have many errors), use the original game's binary as the export template.
+
+*******************************************************************************
+

@@ -1,0 +1,90 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3]
+
+[ext_resource type="Texture2D" uid="uid://b80j2mmb4w6jh" path="res://Player/PlayerX/Sprites/idle_down.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dw2hnc8wgfpum" path="res://Player/PlayerX/Sprites/idle_side.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://derjtn747b0me" path="res://Player/PlayerX/Sprites/idle_up.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://wtacoo1h01aw" path="res://Player/PlayerX/Sprites/move_down2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dm62cwffq771h" path="res://Player/PlayerX/Sprites/move_down.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bxwfpaof47k5r" path="res://Player/PlayerX/Sprites/move_side.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c76jdtpdqej8i" path="res://Player/PlayerX/Sprites/move_side2.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://3c0n3rueuabq" path="res://Player/PlayerX/Sprites/move_up2.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://2s5ch2xolbmt" path="res://Player/PlayerX/Sprites/move_up.png" id="9"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
+"loop": true,
+"name": &"idle_side",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
+"loop": true,
+"name": &"move_side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
+"loop": true,
+"name": &"move_up",
+"speed": 7.0
+}]
+script = null

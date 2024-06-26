@@ -1,13 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://cx6h3tck10s1g"]
+[gd_scene load_steps=16 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogic/Modules/StyleEditor/style_editor.gd" id="1_gy14f"]
-[ext_resource type="PackedScene" uid="uid://dbpkta2tjsqim" path="res://addons/dialogic/Editor/Common/hint_tooltip_icon.tscn" id="2_g4mnt"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/StyleEditor/style_layer_editor.gd" id="3_iih7c"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/StyleEditor/Components/style_layer_tree.gd" id="4_kpoqn"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/StyleEditor/Components/style_browser_window.gd" id="5_qbwx0"]
-[ext_resource type="PackedScene" uid="uid://cs381i3h7sveq" path="res://addons/dialogic/Modules/StyleEditor/Components/style_browser.tscn" id="6_p6lia"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/StyleEditor/style_editor.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dbpkta2tjsqim" path="res://addons/dialogic/Editor/Common/hint_tooltip_icon.tscn" id="2"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/StyleEditor/style_layer_editor.gd" id="3"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/StyleEditor/Components/style_layer_tree.gd" id="4"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/StyleEditor/Components/style_browser_window.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://cs381i3h7sveq" path="res://addons/dialogic/Modules/StyleEditor/Components/style_browser.tscn" id="6"]
 
-[sub_resource type="Image" id="Image_66hwb"]
+[sub_resource type="Image" id="1"]
 data = {
 "data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 93, 93, 41, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
 "format": "RGBA8",
@@ -15,11 +15,13 @@ data = {
 "mipmaps": false,
 "width": 16
 }
+script = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_rfmv2"]
-image = SubResource("Image_66hwb")
+[sub_resource type="ImageTexture" id="2"]
+image = SubResource("1")
+script = null
 
-[sub_resource type="Image" id="Image_hsqp4"]
+[sub_resource type="Image" id="3"]
 data = {
 "data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 93, 93, 41, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
 "format": "RGBA8",
@@ -27,22 +29,27 @@ data = {
 "mipmaps": false,
 "width": 16
 }
+script = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_xtj53"]
-image = SubResource("Image_hsqp4")
+[sub_resource type="ImageTexture" id="4"]
+image = SubResource("3")
+script = null
 
-[sub_resource type="Theme" id="Theme_l6tyr"]
+[sub_resource type="Theme" id="5"]
+script = null
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tixgs"]
+[sub_resource type="StyleBoxEmpty" id="6"]
+script = null
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nh8y"]
+[sub_resource type="StyleBoxFlat" id="7"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+script = null
 
-[sub_resource type="Image" id="Image_eolug"]
+[sub_resource type="Image" id="8"]
 data = {
 "data": PackedByteArray(0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255),
 "format": "RGBA8",
@@ -50,12 +57,13 @@ data = {
 "mipmaps": false,
 "width": 2
 }
+script = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_yr3tj"]
-image = SubResource("Image_eolug")
+[sub_resource type="ImageTexture" id="9"]
+image = SubResource("8")
+script = null
 
 [node name="StyleEditor" type="HSplitContainer"]
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -3.0
@@ -63,7 +71,7 @@ offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
-script = ExtResource("1_gy14f")
+script = ExtResource("1")
 
 [node name="Panel" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(150, 0)
@@ -82,14 +90,14 @@ layout_mode = 2
 theme_type_variation = &"DialogicSubTitle"
 text = "Styles"
 
-[node name="HintTooltip" parent="Panel/VBox/Title" instance=ExtResource("2_g4mnt")]
+[node name="HintTooltip" parent="Panel/VBox/Title" instance=ExtResource("2")]
 layout_mode = 2
 tooltip_text = "Each style consist of a list of layers and settings for each layer. 
 A style can inherit from another style (inherited styles can only overwrite settings of their layers).
 When one style is selected as default dialogic will use that style when calling Dialogic.start() otherwise a fallback is used.
 You can change the style with the Change Style event, by setting a style on a character or by calling 
 Dialogic.Styles.load_style(\"Style Name\") before calling Dialogic.start()."
-texture = SubResource("ImageTexture_rfmv2")
+texture = SubResource("2")
 hint_text = "Each style consist of a list of layers and settings for each layer. 
 A style can inherit from another style (inherited styles can only overwrite settings of their layers).
 When one style is selected as default dialogic will use that style when calling Dialogic.start() otherwise a fallback is used.
@@ -104,7 +112,7 @@ alignment = 2
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Add layout-style"
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 switch_on_hover = true
 item_count = 5
 popup/item_0/text = "ADD STYLE"
@@ -124,14 +132,14 @@ popup/item_4/id = 2
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Duplicate style"
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 flat = true
 
 [node name="RemoveButton" type="Button" parent="Panel/VBox/StyleButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Remove style from list"
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 flat = true
 
 [node name="MakeDefaultButton" type="Button" parent="Panel/VBox/StyleButtons"]
@@ -140,7 +148,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 tooltip_text = "Make Default"
 toggle_mode = true
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 flat = true
 
 [node name="StyleList" type="ItemList" parent="Panel/VBox"]
@@ -149,7 +157,7 @@ layout_mode = 2
 size_flags_vertical = 3
 item_count = 1
 item_0/text = "Style"
-item_0/icon = SubResource("ImageTexture_xtj53")
+item_0/icon = SubResource("4")
 
 [node name="StyleView" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
@@ -159,16 +167,16 @@ size_flags_horizontal = 3
 
 [node name="HBox" type="HBoxContainer" parent="StyleView"]
 layout_mode = 2
-theme = SubResource("Theme_l6tyr")
+theme = SubResource("5")
 theme_override_constants/separation = 0
 
 [node name="LayoutStyleName" type="LineEdit" parent="StyleView/HBox"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"DialogicTitle"
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tixgs")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tixgs")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_tixgs")
+theme_override_styles/normal = SubResource("6")
+theme_override_styles/focus = SubResource("6")
+theme_override_styles/read_only = SubResource("6")
 text = "Style"
 expand_to_text_length = true
 
@@ -176,7 +184,7 @@ expand_to_text_length = true
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Edit Name"
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 flat = true
 
 [node name="InheritanceButton" type="MenuButton" parent="StyleView/HBox"]
@@ -184,7 +192,7 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "Inherits VN Style"
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 icon_alignment = 2
 item_count = 1
 popup/item_0/text = "Clear Inheritance"
@@ -196,7 +204,7 @@ layout_mode = 2
 size_flags_horizontal = 10
 tooltip_text = "Play current timeline with this style"
 text = "Test Style"
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 
 [node name="PanelContainer" type="PanelContainer" parent="StyleView"]
 layout_mode = 2
@@ -206,7 +214,7 @@ theme_type_variation = &"DialogicPanelB"
 [node name="StyleEditor" type="HSplitContainer" parent="StyleView/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-script = ExtResource("3_iih7c")
+script = ExtResource("3")
 
 [node name="LayerPanel" type="PanelContainer" parent="StyleView/PanelContainer/StyleEditor"]
 layout_mode = 2
@@ -223,11 +231,11 @@ layout_mode = 2
 theme_type_variation = &"DialogicSubTitle"
 text = "Layers"
 
-[node name="HintTooltip" parent="StyleView/PanelContainer/StyleEditor/LayerPanel/VBox/Title" instance=ExtResource("2_g4mnt")]
+[node name="HintTooltip" parent="StyleView/PanelContainer/StyleEditor/LayerPanel/VBox/Title" instance=ExtResource("2")]
 layout_mode = 2
 tooltip_text = "Each layer is a scene and settings that will be applied to that scene.
 A layer can either be a premade scene or a scene you've made yourself."
-texture = SubResource("ImageTexture_rfmv2")
+texture = SubResource("2")
 hint_text = "Each layer is a scene and settings that will be applied to that scene.
 A layer can either be a premade scene or a scene you've made yourself."
 
@@ -239,7 +247,7 @@ alignment = 2
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Add Layer"
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 switch_on_hover = true
 item_count = 4
 popup/item_0/text = "ADD LAYER"
@@ -257,7 +265,7 @@ popup/item_3/id = 0
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Replace Layer"
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 switch_on_hover = true
 item_count = 4
 popup/item_0/text = "REPLACE LAYER"
@@ -275,7 +283,7 @@ popup/item_3/id = 1
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Make Custom"
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 switch_on_hover = true
 item_count = 4
 popup/item_0/text = "MAKE CUSTOM"
@@ -294,7 +302,7 @@ unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Delete Layer (no undo!)"
 disabled = true
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 flat = true
 
 [node name="LayerTree" type="Tree" parent="StyleView/PanelContainer/StyleEditor/LayerPanel/VBox"]
@@ -306,7 +314,7 @@ allow_rmb_select = true
 hide_folding = true
 enable_recursive_folding = false
 drop_mode_flags = 2
-script = ExtResource("4_kpoqn")
+script = ExtResource("4")
 
 [node name="LayerSettings" type="VBoxContainer" parent="StyleView/PanelContainer/StyleEditor"]
 layout_mode = 2
@@ -324,7 +332,7 @@ text = "Default Layout Base"
 [node name="ExpandLayerInfo" type="Button" parent="StyleView/PanelContainer/StyleEditor/LayerSettings/LayerInfoHeader"]
 unique_name_in_owner = true
 layout_mode = 2
-icon = SubResource("ImageTexture_rfmv2")
+icon = SubResource("2")
 flat = true
 
 [node name="LayerInfoBody" type="VBoxContainer" parent="StyleView/PanelContainer/StyleEditor/LayerSettings"]
@@ -338,12 +346,12 @@ layout_mode = 2
 show_behind_parent = true
 clip_children = 2
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0nh8y")
+theme_override_styles/panel = SubResource("7")
 
 [node name="SmallLayerPreview" type="TextureRect" parent="StyleView/PanelContainer/StyleEditor/LayerSettings/LayerInfoBody/HBox/Panel"]
 unique_name_in_owner = true
 layout_mode = 2
-texture = SubResource("ImageTexture_yr3tj")
+texture = SubResource("9")
 expand_mode = 3
 stretch_mode = 6
 
@@ -424,9 +432,9 @@ visible = false
 wrap_controls = true
 transient = true
 popup_window = true
-script = ExtResource("5_qbwx0")
+script = ExtResource("5")
 
-[node name="StyleBrowser" parent="StyleBrowserWindow" instance=ExtResource("6_p6lia")]
+[node name="StyleBrowser" parent="StyleBrowserWindow" instance=ExtResource("6")]
 unique_name_in_owner = true
 
 [connection signal="pressed" from="Panel/VBox/StyleButtons/DuplicateButton" to="." method="_on_duplicate_button_pressed"]

@@ -97,7 +97,7 @@ func close_to_house():
 		await tween.finished
 		
 		add_child(load_screen)
-		load_screen.set_changed_scene("res://Levels/House/House.tscn")
+		load_screen.set_changed_scene("res://Levels/House/HouseIntro/house_intro.tscn")
 
 func close_to_prolog():
 	LevelsManager.reset_prolog()

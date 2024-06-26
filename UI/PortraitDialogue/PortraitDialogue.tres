@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=3 format=3 uid="uid://db4stidyt0xuo"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://Scenes/UI/CustomPortraitDialogue/custom_portrait_dialogue.tscn" id="1_kanpn"]
-[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="9_5dbip"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="2"]
 
 [resource]
-script = ExtResource("9_5dbip")
+script = ExtResource("1")
 name = "PortraitDialogue"
-base_scene = ExtResource("1_kanpn")
+inherits = null
+base_scene = ExtResource("2")
 base_overrides = {
 "global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
 }
-layers = Array[Resource("res://addons/dialogic/Resources/dialogic_style_layer.gd")]([])
+layers = []
 metadata/_latest_layer = -1

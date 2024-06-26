@@ -32,6 +32,7 @@ func collect_corpse(item_name):
 		start_closing_phrase_or_no()
 
 func collect_lamp(item_name):
+	get_parent().get_node("PlayerXY").take_lamp()
 	var item_comment: String
 	
 	if Dialogic.VAR.lamp_state == "not_has":

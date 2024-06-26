@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://6tdle4y5o03o"]
+[gd_scene load_steps=10 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Variable/variables_editor/variables_editor.gd" id="2"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Variable/variables_editor/variable_tree.gd" id="2_1i17i"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Variable/variables_editor/variables_editor.gd" id="1"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Variable/variables_editor/variable_tree.gd" id="2"]
 
-[sub_resource type="Image" id="Image_vjanf"]
+[sub_resource type="Image" id="1"]
 data = {
 "data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 94, 94, 127, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 231, 255, 94, 94, 54, 255, 94, 94, 57, 255, 93, 93, 233, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 93, 93, 41, 255, 255, 255, 0, 255, 255, 255, 0, 255, 97, 97, 42, 255, 93, 93, 233, 255, 93, 93, 232, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 44, 255, 255, 255, 0, 255, 97, 97, 42, 255, 97, 97, 42, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 96, 96, 45, 255, 93, 93, 235, 255, 94, 94, 234, 255, 95, 95, 43, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 93, 93, 235, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 233, 255, 95, 95, 59, 255, 96, 96, 61, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 93, 93, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
 "format": "RGBA8",
@@ -11,11 +11,13 @@ data = {
 "mipmaps": false,
 "width": 16
 }
+script = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_ikdle"]
-image = SubResource("Image_vjanf")
+[sub_resource type="ImageTexture" id="2"]
+image = SubResource("1")
+script = null
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6616"]
+[sub_resource type="StyleBoxFlat" id="3"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -27,10 +29,12 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 corner_detail = 1
+script = null
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vn21i"]
+[sub_resource type="StyleBoxEmpty" id="4"]
+script = null
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffuxp"]
+[sub_resource type="StyleBoxFlat" id="5"]
 content_margin_bottom = 0.0
 bg_color = Color(0.44, 0.73, 0.98, 0.1)
 border_width_bottom = 2
@@ -40,27 +44,29 @@ expand_margin_top = 2.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 anti_aliasing = false
+script = null
 
-[sub_resource type="Theme" id="Theme_17j6i"]
-Button/styles/hover = SubResource("StyleBoxFlat_o6616")
-Button/styles/normal = SubResource("StyleBoxEmpty_vn21i")
-Button/styles/pressed = SubResource("StyleBoxFlat_o6616")
-pressed/styles/Button = SubResource("StyleBoxFlat_ffuxp")
+[sub_resource type="Theme" id="6"]
+Button/styles/hover = SubResource("3")
+Button/styles/normal = SubResource("4")
+Button/styles/pressed = SubResource("3")
+pressed/styles/Button = SubResource("5")
+script = null
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncgqs"]
+[sub_resource type="StyleBoxFlat" id="7"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
+script = null
 
 [node name="VariablesEditor" type="HSplitContainer"]
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2")
+script = ExtResource("1")
 
 [node name="Editor" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -79,7 +85,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Search"
-right_icon = SubResource("ImageTexture_ikdle")
+right_icon = SubResource("2")
 
 [node name="Tree" type="Tree" parent="Editor"]
 unique_name_in_owner = true
@@ -90,7 +96,7 @@ theme_override_constants/button_margin = 4
 theme_override_constants/draw_guides = 1
 columns = 3
 column_titles_visible = true
-script = ExtResource("2_1i17i")
+script = ExtResource("2")
 
 [node name="ChangeTypePopup" type="PanelContainer" parent="Editor/Tree"]
 unique_name_in_owner = true
@@ -101,8 +107,8 @@ offset_left = 140.0
 offset_top = 160.0
 offset_right = 272.0
 offset_bottom = 190.0
-theme = SubResource("Theme_17j6i")
-theme_override_styles/panel = SubResource("StyleBoxFlat_ncgqs")
+theme = SubResource("6")
+theme_override_styles/panel = SubResource("7")
 
 [node name="HBox" type="HBoxContainer" parent="Editor/Tree/ChangeTypePopup"]
 layout_mode = 2
@@ -112,7 +118,7 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 tooltip_text = "String (Any text)"
 toggle_mode = true
-icon = SubResource("ImageTexture_ikdle")
+icon = SubResource("2")
 icon_alignment = 1
 
 [node name="Float" type="Button" parent="Editor/Tree/ChangeTypePopup/HBox"]
@@ -120,7 +126,7 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 tooltip_text = "Float (Number with Decimals)"
 toggle_mode = true
-icon = SubResource("ImageTexture_ikdle")
+icon = SubResource("2")
 icon_alignment = 1
 
 [node name="Int" type="Button" parent="Editor/Tree/ChangeTypePopup/HBox"]
@@ -128,7 +134,7 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 tooltip_text = "Int (Integer)"
 toggle_mode = true
-icon = SubResource("ImageTexture_ikdle")
+icon = SubResource("2")
 icon_alignment = 1
 
 [node name="Bool" type="Button" parent="Editor/Tree/ChangeTypePopup/HBox"]
@@ -136,7 +142,7 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 tooltip_text = "Bool (True/False flag)"
 toggle_mode = true
-icon = SubResource("ImageTexture_ikdle")
+icon = SubResource("2")
 icon_alignment = 1
 
 [node name="ReferenceInfo" type="HBoxContainer" parent="Editor"]

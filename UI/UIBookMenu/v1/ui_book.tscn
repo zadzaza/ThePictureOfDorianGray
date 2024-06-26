@@ -1,21 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://gspeugd1dcdn"]
+[gd_scene load_steps=15 format=3]
 
-[ext_resource type="Script" path="res://UI/UIBookMenu/v1/UIBook.gd" id="1_lq4qn"]
-[ext_resource type="Texture2D" uid="uid://h7knl6mbxqay" path="res://UI/UIBookMenu/v1/Sprites/book_closed.png" id="2_5ggk1"]
-[ext_resource type="Texture2D" uid="uid://6w5r2t5btttr" path="res://UI/UIBookMenu/v1/Sprites/book_open.png" id="3_qkaek"]
-[ext_resource type="Texture2D" uid="uid://dvexd1b0f0lai" path="res://UI/UIBookMenu/v1/Sprites/peoples_none.png" id="4_w44cr"]
-[ext_resource type="Texture2D" uid="uid://b03jyfbp3efrk" path="res://UI/UIBookMenu/v1/Sprites/inv_none.png" id="5_veb4m"]
-[ext_resource type="Texture2D" uid="uid://c7hsa1ahaexvl" path="res://UI/UIBookMenu/v1/Sprites/settings_none.png" id="6_scu8i"]
-[ext_resource type="Texture2D" uid="uid://s71kjmwm7wda" path="res://UI/UIBookMenu/v1/Sprites/peoples_img.png" id="7_5aiw7"]
-[ext_resource type="Texture2D" uid="uid://d0hdl2rm6j7vs" path="res://UI/UIBookMenu/v1/Sprites/peoples_stats.png" id="8_0wf8p"]
-[ext_resource type="Texture2D" uid="uid://dfk7qm3qokpe4" path="res://UI/UIBookMenu/v1/Sprites/inv_img.png" id="8_gy2s4"]
-[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="9_k5snl"]
+[ext_resource type="Script" path="res://UI/UIBookMenu/v1/UIBook.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://h7knl6mbxqay" path="res://UI/UIBookMenu/v1/Sprites/book_closed.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://6w5r2t5btttr" path="res://UI/UIBookMenu/v1/Sprites/book_open.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dvexd1b0f0lai" path="res://UI/UIBookMenu/v1/Sprites/peoples_none.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b03jyfbp3efrk" path="res://UI/UIBookMenu/v1/Sprites/inv_none.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://c7hsa1ahaexvl" path="res://UI/UIBookMenu/v1/Sprites/settings_none.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://s71kjmwm7wda" path="res://UI/UIBookMenu/v1/Sprites/peoples_img.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://d0hdl2rm6j7vs" path="res://UI/UIBookMenu/v1/Sprites/peoples_stats.png" id="8"]
+[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="9"]
+[ext_resource type="Texture2D" uid="uid://dfk7qm3qokpe4" path="res://UI/UIBookMenu/v1/Sprites/inv_img.png" id="10"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8c0bg"]
+[sub_resource type="SpriteFrames" id="1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5ggk1")
+"texture": ExtResource("2")
 }],
 "loop": true,
 "name": &"book_closed",
@@ -23,14 +23,15 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_qkaek")
+"texture": ExtResource("3")
 }],
 "loop": true,
 "name": &"book_open",
 "speed": 5.0
 }]
+script = null
 
-[sub_resource type="Animation" id="Animation_bohqc"]
+[sub_resource type="Animation" id="2"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -44,8 +45,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+script = null
 
-[sub_resource type="Animation" id="Animation_q6k6s"]
+[sub_resource type="Animation" id="3"]
 resource_name = "appearance"
 length = 1.35
 tracks/0/type = "value"
@@ -60,15 +62,17 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0.1, 0.1), Vector2(0.2, 0.2), Vector2(0.3, 0.3), Vector2(0.4, 0.4), Vector2(0.5, 0.5), Vector2(0.6, 0.6), Vector2(0.7, 0.7), Vector2(0.8, 0.8), Vector2(0.9, 0.9), Vector2(1, 1)]
 }
+script = null
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdcgv"]
+[sub_resource type="AnimationLibrary" id="4"]
 _data = {
-"RESET": SubResource("Animation_bohqc"),
-"appearance": SubResource("Animation_q6k6s")
+"RESET": SubResource("2"),
+"appearance": SubResource("3")
 }
+script = null
 
 [node name="UIBook" type="CanvasLayer"]
-script = ExtResource("1_lq4qn")
+script = ExtResource("1")
 p_selected = true
 
 [node name="Control" type="Control" parent="."]
@@ -83,7 +87,7 @@ offset_bottom = 516.0
 [node name="Book" type="AnimatedSprite2D" parent="Control"]
 unique_name_in_owner = true
 scale = Vector2(6.84043, 6.84043)
-sprite_frames = SubResource("SpriteFrames_8c0bg")
+sprite_frames = SubResource("1")
 animation = &"book_open"
 
 [node name="Elements" type="Node2D" parent="Control/Book"]
@@ -102,7 +106,7 @@ offset_left = -57.1601
 offset_top = -61.692
 offset_right = -43.1601
 offset_bottom = -46.692
-texture_normal = ExtResource("4_w44cr")
+texture_normal = ExtResource("4")
 
 [node name="Inv" type="TextureButton" parent="Control/Book/Elements/Buttons"]
 unique_name_in_owner = true
@@ -111,7 +115,7 @@ offset_left = -38.3017
 offset_top = -62.1306
 offset_right = -24.3017
 offset_bottom = -47.1306
-texture_normal = ExtResource("5_veb4m")
+texture_normal = ExtResource("5")
 
 [node name="Settings" type="TextureButton" parent="Control/Book/Elements/Buttons"]
 unique_name_in_owner = true
@@ -120,7 +124,7 @@ offset_left = 32.0155
 offset_top = -61.8382
 offset_right = 46.0155
 offset_bottom = -46.8382
-texture_normal = ExtResource("6_scu8i")
+texture_normal = ExtResource("6")
 
 [node name="Pages" type="Control" parent="Control/Book/Elements"]
 layout_mode = 3
@@ -137,12 +141,12 @@ offset_bottom = 40.0
 [node name="PeoplesImg" type="Sprite2D" parent="Control/Book/Elements/Pages/Page1"]
 position = Vector2(39.6174, -3.50854)
 scale = Vector2(1.19812, 1.19812)
-texture = ExtResource("7_5aiw7")
+texture = ExtResource("7")
 
 [node name="PeoplesStats" type="Sprite2D" parent="Control/Book/Elements/Pages/Page1"]
 position = Vector2(-39.9098, -3.21617)
 scale = Vector2(1.22306, 1.22306)
-texture = ExtResource("8_0wf8p")
+texture = ExtResource("8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Book/Elements/Pages/Page1"]
 layout_mode = 0
@@ -160,13 +164,13 @@ theme_override_constants/separation = 11
 [node name="Basil" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("9_k5snl")
+theme_override_fonts/font = ExtResource("9")
 text = "Бэзил Холлуорд"
 
 [node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("9_k5snl")
+theme_override_fonts/font = ExtResource("9")
 text = "0"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -178,13 +182,13 @@ theme_override_constants/separation = 26
 [node name="Sibilla" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("9_k5snl")
+theme_override_fonts/font = ExtResource("9")
 text = "Сибилла Вейн"
 
 [node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("9_k5snl")
+theme_override_fonts/font = ExtResource("9")
 text = "0"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -196,13 +200,13 @@ theme_override_constants/separation = 26
 [node name="James" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("9_k5snl")
+theme_override_fonts/font = ExtResource("9")
 text = "Джеймс Вейн"
 
 [node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("9_k5snl")
+theme_override_fonts/font = ExtResource("9")
 text = "0"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -214,13 +218,13 @@ theme_override_constants/separation = 29
 [node name="Henry" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("9_k5snl")
+theme_override_fonts/font = ExtResource("9")
 text = "Генри Уоттон"
 
 [node name="Points" type="Label" parent="Control/Book/Elements/Pages/Page1/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
-theme_override_fonts/font = ExtResource("9_k5snl")
+theme_override_fonts/font = ExtResource("9")
 text = "0"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -235,12 +239,12 @@ offset_bottom = 40.0
 [node name="InvImg" type="Sprite2D" parent="Control/Book/Elements/Pages/Page2"]
 position = Vector2(39.6174, -2.33903)
 scale = Vector2(1.08076, 1.08076)
-texture = ExtResource("8_gy2s4")
+texture = ExtResource("10")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_bdcgv")
+"": SubResource("4")
 }
 speed_scale = 1.7
 

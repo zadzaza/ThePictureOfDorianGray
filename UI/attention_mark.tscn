@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://wmu8y2s6kmrq"]
+[gd_scene load_steps=7 format=3]
 
-[ext_resource type="Texture2D" uid="uid://brn56ay6q144y" path="res://UI/exclamation.png" id="1_cc5m0"]
+[ext_resource type="Texture2D" uid="uid://brn56ay6q144y" path="res://UI/exclamation.png" id="1"]
 
-[sub_resource type="Animation" id="Animation_mx6di"]
+[sub_resource type="Animation" id="1"]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
@@ -29,8 +29,9 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+script = null
 
-[sub_resource type="Animation" id="Animation_lvq3d"]
+[sub_resource type="Animation" id="2"]
 resource_name = "fade_in"
 length = 0.3
 tracks/0/type = "value"
@@ -45,8 +46,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1, 1)]
 }
+script = null
 
-[sub_resource type="Animation" id="Animation_ajumh"]
+[sub_resource type="Animation" id="3"]
 resource_name = "fade_out"
 length = 0.3
 tracks/0/type = "value"
@@ -61,8 +63,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
 }
+script = null
 
-[sub_resource type="Animation" id="Animation_xwgxn"]
+[sub_resource type="Animation" id="4"]
 resource_name = "waiting"
 length = 0.6
 loop_mode = 2
@@ -78,21 +81,23 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 1.3)]
 }
+script = null
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lb4yt"]
+[sub_resource type="AnimationLibrary" id="5"]
 _data = {
-"RESET": SubResource("Animation_mx6di"),
-"fade_in": SubResource("Animation_lvq3d"),
-"fade_out": SubResource("Animation_ajumh"),
-"waiting": SubResource("Animation_xwgxn")
+"RESET": SubResource("1"),
+"fade_in": SubResource("2"),
+"fade_out": SubResource("3"),
+"waiting": SubResource("4")
 }
+script = null
 
 [node name="AttentionMark" type="Node2D"]
 
 [node name="Exclamation" type="Sprite2D" parent="."]
-texture = ExtResource("1_cc5m0")
+texture = ExtResource("1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_lb4yt")
+"": SubResource("5")
 }

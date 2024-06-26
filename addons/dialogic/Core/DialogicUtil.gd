@@ -5,7 +5,9 @@ class_name DialogicUtil
 ## Used whenever the same thing is needed in different parts of the plugin.
 
 #region EDITOR
-################################################################################
+
+# This method should be used instead of EditorInterface.get_editor_scale(), because if you use that
+# it will run perfectly fine from the editor, but crash when the game is exported.
 static func get_editor_scale() -> float:
 	return get_dialogic_plugin().get_editor_interface().get_editor_scale()
 
@@ -95,14 +97,14 @@ static func get_indexers(include_custom := true, force_reload := false) -> Array
 
 	for file in listdir(DialogicUtil.get_module_path(''), false):
 		var possible_script: String = DialogicUtil.get_module_path(file).path_join("index.gd")
-		if FileAccess.file_exists(possible_script):
+		if ResourceLoader.exists(possible_script):
 			indexers.append(load(possible_script).new())
 
 	if include_custom:
 		var extensions_folder: String = ProjectSettings.get_setting('dialogic/extensions_folder', "res://addons/dialogic_additions/")
 		for file in listdir(extensions_folder, false, false):
 			var possible_script: String = extensions_folder.path_join(file + "/index.gd")
-			if FileAccess.file_exists(possible_script):
+			if ResourceLoader.exists(possible_script):
 				indexers.append(load(possible_script).new())
 
 	Engine.get_main_loop().set_meta('dialogic_indexers', indexers)
@@ -365,7 +367,7 @@ static func setup_script_property_edit_node(property_info: Dictionary, value:Var
 			if value != null:
 				input.color = value
 			input.color_changed.connect(DialogicUtil._on_export_color_submitted.bind(property_info.name, property_changed))
-			input.custom_minimum_size.x = get_editor_scale()*50
+			input.custom_minimum_size.x = get_editor_scale() * 50
 		TYPE_INT:
 			if property_info['hint'] & PROPERTY_HINT_ENUM:
 				input = OptionButton.new()

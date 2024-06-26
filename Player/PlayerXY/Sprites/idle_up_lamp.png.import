@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://d0waxdfukxnoe"
+path="res://.godot/imported/idle_up_lamp.png-08aa6043ea320c7ed2055447a9c13b2d.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Player/PlayerXY/Sprites/idle_up_lamp.png"
+dest_files=PackedStringArray("res://.godot/imported/idle_up_lamp.png-08aa6043ea320c7ed2055447a9c13b2d.ctex")
+
+[params]
+
+dummy_value_ignore_me=0

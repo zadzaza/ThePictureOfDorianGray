@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ew6vk4ou6dfw"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Texture2D" uid="uid://b6j2bit8n8vpw" path="res://UI/UIBookMenu/v2/Sprites/cell2.png" id="1_ysret"]
+[ext_resource type="Texture2D" uid="uid://b6j2bit8n8vpw" path="res://UI/UIBookMenu/v2/Sprites/cell2.png" id="1"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyyti"]
-texture = ExtResource("1_ysret")
+[sub_resource type="StyleBoxTexture" id="1"]
+texture = ExtResource("1")
+script = null
 
 [node name="Slot" type="Panel"]
 custom_minimum_size = Vector2(6, 6)
-theme_override_styles/panel = SubResource("StyleBoxTexture_oyyti")
+theme_override_styles/panel = SubResource("1")

@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://5b0y02x5mj68"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Texture2D" uid="uid://cds5k8d0cg8u1" path="res://Sprites/UI/dialogue_menu.png" id="2_3fh35"]
-[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="3_26srf"]
+[ext_resource type="FontFile" uid="uid://b3i2mifyitbyd" path="res://Fonts/Comic Sans MS Pixel.ttf" id="1"]
 
-[sub_resource type="GDScript" id="GDScript_8bvqs"]
+[sub_resource type="GDScript" id="1"]
 script/source = "extends MarginContainer
 
 
@@ -63,7 +62,7 @@ func _on_letter_display_timer_timeout():
 	display_letter()
 "
 
-[sub_resource type="Animation" id="Animation_e6qjo"]
+[sub_resource type="Animation" id="2"]
 resource_name = "appearance"
 length = 0.3
 tracks/0/type = "value"
@@ -78,14 +77,15 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
+script = null
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1dvi4"]
+[sub_resource type="AnimationLibrary" id="3"]
 _data = {
-"appearance": SubResource("Animation_e6qjo")
+"appearance": SubResource("2")
 }
+script = null
 
 [node name="TextBox" type="MarginContainer"]
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -25.0
@@ -98,11 +98,10 @@ scale = Vector2(1.2, 1.2)
 pivot_offset = Vector2(25, 25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = SubResource("GDScript_8bvqs")
+script = SubResource("1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2_3fh35")
 patch_margin_left = 25
 patch_margin_top = 25
 patch_margin_right = 25
@@ -119,7 +118,7 @@ theme_override_constants/margin_bottom = 24
 unique_name_in_owner = true
 z_index = 4096
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_26srf")
+theme_override_fonts/font = ExtResource("1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -128,7 +127,7 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_1dvi4")
+"": SubResource("3")
 }
 
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
